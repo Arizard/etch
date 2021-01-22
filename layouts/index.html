@@ -1,4 +1,6 @@
 {{ define "main" }}
 {{ .Content }}
-{{- partial "posts.html" . -}}
+{{ if gt (len (where site.RegularPages "Type" "in" site.Params.mainSections)) 0 }}
+  {{- partial "posts.html" . -}}
+{{ end }}
 {{ end }}

@@ -27,5 +27,10 @@
     {{ $css := $resources | resources.Concat "css/style.css" | minify }}
     {{ printf `<link rel="stylesheet" href="%s">` $css.RelPermalink | safeHTML }}
 
+    {{ $customSCSS := resources.Get "css/all.scss" }}
+    {{ $customStyle := $customSCSS | resources.ToCSS }}
+
+    <link rel="stylesheet" href="{{ $customStyle.RelPermalink | safeHTML }}" >
+
     <title>{{ .Title }}</title>
 </head>
