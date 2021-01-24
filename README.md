@@ -1,4 +1,6 @@
-# Etch
+# Etch (etch-less-coffee)
+
+**This is the less-coffee fork of etch, for [Less Coffee](https://less.coffee)**
 
 Etch is a simple, responsive theme for [Hugo](https://gohugo.io) with a focus on writing. A live demo is available at https://themes.gohugo.io/theme/etch/.
 
