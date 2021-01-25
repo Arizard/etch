@@ -24,12 +24,13 @@
     {{ end -}}
 
     {{ $css := $resources | resources.Concat "css/style.css" | minify }}
-    {{ printf `<link rel="stylesheet" href="%s">` $css.RelPermalink | safeHTML }}
+    {{ printf `<link async rel="stylesheet" href="%s">` $css.RelPermalink | safeHTML }}
 
     {{ $customSCSS := resources.Get "css/all.scss" }}
-    {{ $customStyle := $customSCSS | resources.ToCSS }}
+    {{ $customStyle := $customSCSS | resources.ToCSS | minify }}
 
-    <link rel="stylesheet" href="{{ $customStyle.RelPermalink | safeHTML }}" >
+    <link rel="preload" href="{{ $customStyle.RelPermalink | safeHTML }}" as="style">
+    <link async rel="stylesheet" href="{{ $customStyle.RelPermalink | safeHTML }}" >
 
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📕️</text></svg>">
 
