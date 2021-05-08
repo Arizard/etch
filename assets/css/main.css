@@ -265,3 +265,11 @@ footer#footer {
     color: #949494;
     margin: 40px 0;
 }
+
+td, th {
+    border: solid 1px gray;
+    padding: 4px;
+}
+table {
+    border-collapse: collapse;
+}
