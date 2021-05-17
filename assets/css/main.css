@@ -273,3 +273,7 @@ td, th {
 table {
     border-collapse: collapse;
 }
+
+.footnotes a {
+    line-break: anywhere;
+}
