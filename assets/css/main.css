@@ -111,8 +111,6 @@ main#content ul#posts li {
 
 main#content ul#posts small {
     font-size: 0.8em;
-    color: #767676;
-    margin-left: 10px;
 }
 
 main#content ul#posts li a {
@@ -137,7 +135,6 @@ main#content header#post-header h1 {
 main#content header#post-header time {
     display: block;
     font-size: 0.85em;
-    color: #767676;
 }
 
 main#content #toc {

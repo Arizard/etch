@@ -1,3 +1,18 @@
 $accent-color: #ff4757;
 $accent-color-light: #ff6b81;
 
+.has-accent-color {
+  color: $accent-color;
+}
+
+.has-accent-color-light {
+  color: $accent-color-light;
+}
+
+.has-body-text-color {
+  color: #313a3d;
+}
+
+.has-body-text-color-muted {
+  color: #767676;
+}
