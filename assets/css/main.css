@@ -9,7 +9,6 @@ html {
 body {
     font-size: 1.6rem;
     font-family: 'Helvetica Neue', 'Arial', sans-serif;
-    color: #313a3d;
     width: 100%;
     margin: 0 auto;
     padding: 0 16px;
@@ -66,10 +65,6 @@ main#content a:hover {
     text-decoration: underline;
 }
 
-main#content p {
-    color: #394548;
-    /*margin: 16px 0;*/
-}
 
 main#content hr {
     height: 1px;
