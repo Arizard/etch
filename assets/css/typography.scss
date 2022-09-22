@@ -8,26 +8,49 @@ body {
   color: $body-text-color;
 }
 
+main#content {
 
-main#content p {
-  color: $body-text-color;
+  header#post-header {
+    time {
+      display: inline-block;
+      font-size: 0.85em;
+    }
+  }
+
+  p {
+    color: $body-text-color;
+    line-height: 1.5;
+    margin-top: 4px;
+    margin-bottom: 8px;
+  }
+  h1, h2, h3, h4 {
+    display: block;
+    margin-bottom: 6px;
+    margin-top: 12px;
+    line-height: 1.1;
+  }
+
+  header h1 {
+    margin-top: 0;
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+
+  h2 {
+    font-size: 3.2rem;
+  }
+
+  h3 {
+    font-size: 2.16rem;
+  }
+
+  h4 {
+    font-size: 1.6rem;
+  }
 }
 
-#content h1 {
-  font-size: 5rem;
-}
-
-#content h2 {
-  font-size: 4rem;
-}
-
-#content h3 {
-  font-size: 2.7rem;
-}
-
-#content h4 {
-  font-size: 1.8rem;
-}
 
 blockquote {
   margin-left: 0;
@@ -42,7 +65,4 @@ blockquote {
   blockquote {
     background-color: #505050;
   }
-}
-#content li {
-  margin-bottom: 1rem;
 }
