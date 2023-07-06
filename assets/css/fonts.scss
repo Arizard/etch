@@ -5,41 +5,15 @@
   font-weight: 400;
   src: local('Manrope'), url('../fonts/manrope/Manrope-Regular.woff') format('woff');
 }
-/* @font-face {
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 200;
-  src: local('Manrope'), url('../fonts/manrope/Manrope-ExtraLight.woff') format('woff');
-}
-@font-face {
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 300;
-  src: local('Manrope'), url('../fonts/manrope/Manrope-Light.woff') format('woff');
-}
-@font-face {
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 500;
-  src: local('Manrope'), url('../fonts/manrope/Manrope-Medium.woff') format('woff');
-}
-@font-face {
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 600;
-  src: local('Manrope'), url('../fonts/manrope/Manrope-SemiBold.woff') format('woff');
-}*/
 @font-face {
   font-family: 'Manrope';
   font-style: normal;
   font-weight: 700;
   src: local('Manrope'), url('../fonts/manrope/Manrope-Bold.woff') format('woff');
 }
-/*@font-face {
-  font-family: 'Manrope';
-  font-style: normal;
-  font-weight: 800;
-  src: local('Manrope'), url('../fonts/manrope/Manrope-ExtraBold.woff') format('woff');
-}*/
-
 $main-font: 'Manrope';
+
+@font-face {
+  font-family: 'Inconsolata';
+  src: local('Inconsolata for Powerline'), url('../fonts/inconsolata/Inconsolata.woff2') format('woff2');
+}

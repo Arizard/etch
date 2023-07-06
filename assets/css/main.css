@@ -166,14 +166,9 @@ main#content figure figcaption p {
     padding-left: 8px;
 }
 
-main#content code,
-main#content pre {
-    font-family: 'Menlo', monospace;
-}
-
-main#content code {
-    font-size: 0.96em;
-    padding: 0 5px;
+code, pre {
+    font-family: 'Inconsolata', monospace;
+    padding: 0;
 }
 
 main#content pre {
@@ -185,10 +180,6 @@ main#content pre {
     padding: 1.5rem 1.5rem;
     line-height: 1.4;
     border-radius: 8px;
-}
-
-main#content pre code {
-    padding: 0;
 }
 
 main#content section.footnotes {
