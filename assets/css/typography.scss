@@ -1,6 +1,7 @@
 header#banner h2 a {
   color: $accent-color;
 }
+
 body {
   font-family: $main-font, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -13,36 +14,44 @@ main#content {
   header#post-header {
     time {
       display: inline-block;
-      font-size: 0.85em;
     }
   }
 
   p {
     color: $body-text-color;
-    line-height: 1.5;
+    margin-top: 0;
+    margin-bottom: 1.4rem;
   }
+
   h1, h2, h3, h4 {
     display: block;
-    line-height: 1.1;
   }
 
   header h1 {
   }
 
   h1 {
-    font-size: 4rem;
+    font-size: 2.8rem;
+    margin-top: 1.8rem;
+    margin-bottom: 1rem;
   }
 
   h2 {
-    font-size: 3.2rem;
+    font-size: 2.3rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
   }
 
   h3 {
-    font-size: 2.16rem;
+    font-size: 1.9rem;
+    margin-top: 1.2rem;
+    margin-bottom: 0.7rem;
   }
 
   h4 {
     font-size: 1.6rem;
+    margin-top: 1.0rem;
+    margin-bottom: 0.6rem;
   }
 }
 
@@ -52,12 +61,22 @@ blockquote {
   margin-right: 0;
   padding-left: 1rem;
   padding-right: 1rem;
-  background-color: #ffd2c7;
+  border-color: $body-text-color;
+  border-left: 2px solid;
   font-style: italic;
 }
 
-@media (prefers-color-scheme: dark) {
-  blockquote {
-    background-color: #505050;
+footer#footer {
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: $body-text-color-muted;
+  margin: 40px 0;
+  text-align: center;
+  a {
+    text-decoration: none;
+    color: $body-text-color-muted;
+  }
+  a:hover {
+    text-decoration: underline;
   }
 }

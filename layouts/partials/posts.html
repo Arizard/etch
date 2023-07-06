@@ -3,7 +3,7 @@
 {{- range where site.RegularPages "Type" "in" site.Params.mainSections }}
     <li>
         <a href="{{ .Permalink }}">
-            <small class="has-body-text-color-muted"><time>{{ .Date.Format "2 January, 2006" }}</time></small>
+            <span class="has-body-text-color-muted"><time>{{ .Date.Format "2 January, 2006" }}</time></span>
             {{ .Title }}
         </a>
     </li>
