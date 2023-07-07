@@ -1,6 +1,7 @@
 @media (min-width: 770px) {
   html {
     width: 100vw;
+    overflow-x: hidden;
   }
   body {
       width: 770px;
