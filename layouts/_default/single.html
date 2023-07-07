@@ -3,7 +3,7 @@
     <header id="post-header">
         <h1>{{ .Title }}</h1>
         {{- if isset .Params "author" -}}
-            <span class="has-body-text-color-muted">by {{ .Params.Author }},&nbsp;</time>
+            <span class="has-body-text-color-muted">{{ .Params.Author }},&nbsp;</time>
         {{- end -}}
         {{- if isset .Params "date" -}}
             <time class="has-body-text-color-muted">{{ .Params.Date.Format "2 January 2006" }}</time>
