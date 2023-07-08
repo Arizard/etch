@@ -1,11 +1,15 @@
 <h3>Posts</h3>
-<ul id="posts">
+<table id="posts-table">
 {{- range where site.RegularPages "Type" "in" site.Params.mainSections }}
-    <li>
+    <tr>
+      <td>
         <a href="{{ .Permalink }}">
-            <span class="has-body-text-color-muted"><time>{{ .Date.Format "2 January, 2006" }}</time></span>
             {{ .Title }}
         </a>
-    </li>
+      </td>
+      <td>
+        <span class="has-body-text-color-muted nowrap"><time>{{ .Date.Format "2 January, 2006" }}</time></span>
+      </td>
+    </tr>
 {{- end }}
-</ul>
+</table>

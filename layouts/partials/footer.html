@@ -1,4 +1,18 @@
 <footer id="footer">
-  <p>{{ .RenderString .Site.Params.copyright }}</p>
-  <p><a href="#">return to top ↑</a></p>
+  <div class="footer-nav-container">
+    <div class="footer-socials">
+      <div class="external-link-icons">
+      {{- if isset .Site.Params "github" -}}
+      <a class="external-link-icons-item" href="{{ .Site.Params.github }}"><i class="fa-brands fa-github"></a></i></p>
+      {{- end -}}
+      {{- if isset .Site.Params "linkedin" -}}
+      <a class="external-link-icons-item" href="{{ .Site.Params.linkedin }}"><i class="fa-brands fa-linkedin-in"></i></a></i></p>
+      {{- end -}}
+      </div>
+    </div>
+    <div class="footer-back-to-top">
+      <a href="#" class="return-to-top"><i class="fa-solid fa-circle-chevron-up"></i>back to top</a>
+    </div>
+  </div>
+  <p class="text-centered">{{ .RenderString .Site.Params.copyright }}</p>
 </footer>
