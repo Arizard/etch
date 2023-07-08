@@ -1,5 +1,20 @@
 {{ define "main" }}
-{{ .Content }}
+<div class="grid-super-container">
+    <div class="grid-container">
+        <div class="grid-profile">
+            <div class="profile-container-inner">
+                <div class="profile-circle">
+                    <img src="{{ site.Params.profilePicture }}" />
+                </div>
+            </div>
+        </div>
+        <div class="grid-intro">
+            <span>
+                {{ .Content }}
+            </span>
+        </div>
+    </div>
+</div>
 {{ if gt (len (where site.RegularPages "Type" "in" site.Params.mainSections)) 0 }}
   {{- partial "posts.html" . -}}
 {{ end }}
