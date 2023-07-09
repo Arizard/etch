@@ -77,7 +77,8 @@ footer#footer {
 }
 
 footer#footer {
-  .footer-nav-container {  display: grid;
+  .footer-nav-container {
+    display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     grid-auto-rows: 1fr;
@@ -85,8 +86,7 @@ footer#footer {
     grid-auto-flow: row;
     justify-content: space-between;
     align-items: stretch;
-    grid-template-areas:
-      "footer-socials footer-back-to-top";
+    grid-template-areas: "footer-socials footer-back-to-top";
     height: 100%;
   }
 
@@ -124,14 +124,13 @@ footer#footer .return-to-top {
   }
 }
 
-code {
+p code {
   font-weight: bold;
   border-radius: 4px;
   color: $body-text-color-muted;
   border: 1px solid $body-text-color-muted;
   padding-left: 4px;
   padding-right: 4px;
-  white-space: nowrap;
 }
 
 pre code {
