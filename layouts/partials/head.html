@@ -37,5 +37,5 @@
 
     <script src="https://kit.fontawesome.com/6a0ddb5277.js" crossorigin="anonymous"></script>
 
-    <title>{{ .Title }} - {{ .Site.Title }}</title>
+    <title>{{ if eq  .Title  .Site.Title }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{.}} - {{ end }}{{ .Site.Title }}{{ end }}</title>
 </head>
