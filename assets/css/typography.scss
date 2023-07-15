@@ -13,6 +13,9 @@ main#content {
 
   header#post-header {
     margin-bottom: 0.5rem;
+    i {
+      font-size: 0.85em;
+    }
   }
 
   p {
@@ -114,8 +117,8 @@ footer#footer .external-link-icons-item {
 
 footer#footer .return-to-top {
   display: inline-block;
-  border-radius: 8px;
-  border: 2px solid $body-text-color-muted;
+  border-radius: 500px;
+  border: 1px solid $body-text-color-muted;
   margin: 8px 8px 8px auto;
   padding: 3px 8px;
 
@@ -142,4 +145,8 @@ pre code {
 
 .text-centered {
   text-align: center;
+}
+
+.has-font-weight-bold {
+  font-weight: bold;
 }
