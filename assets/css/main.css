@@ -73,40 +73,6 @@ main#content hr {
     background: #d8d8d8;
 }
 
-main#content img {
-    max-width: 100%;
-    margin: 0 auto;
-}
-
-main#content figure {
-    margin: 16px 0;
-}
-
-main#content figure img {
-    display: block;
-    max-width: 100%;
-    margin: 0 auto;
-}
-
-main#content figure figcaption {
-    font-style: italic;
-    text-align: center;
-    margin-top: 6px;
-    padding: 0 10px;
-}
-
-main#content figure figcaption h4 {
-    font-style: normal;
-    display: inline;
-    margin: 0;
-}
-
-main#content figure figcaption p {
-    display: inline;
-    margin: 0;
-    padding-left: 8px;
-}
-
 main#content table#posts-table {
     margin: 0;
     width: 100%;

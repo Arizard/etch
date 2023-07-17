@@ -152,3 +152,23 @@ pre code {
 .has-font-weight-bold {
   font-weight: bold;
 }
+
+
+main#content {
+  img {
+    margin: 0 auto;
+    max-height: 50vh;
+    max-width: 100%;
+  }
+
+  figure {
+    text-align: center;
+    margin: 16px 0;
+
+    color: $body-text-color-muted;
+
+    p {
+      color: $body-text-color-muted;
+    }
+  }
+}
