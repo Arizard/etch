@@ -1,4 +1,4 @@
-header#banner h2 a {
+nav#banner h2 a {
   color: $accent-color;
 }
 
@@ -16,6 +16,10 @@ main#content {
     i {
       font-size: 0.85em;
     }
+    text-align: center;
+    // .front-matter {
+    //   text-align: center;
+    // }
   }
 
   p {
@@ -69,7 +73,7 @@ footer#footer {
   font-size: 1.4rem;
   font-weight: 300;
   color: $body-text-color-muted;
-  margin: 40px 0;
+  margin: 48px 0 0 0;
   a {
     text-decoration: none;
     color: $body-text-color-muted;
@@ -159,16 +163,30 @@ main#content {
     margin: 0 auto;
     max-height: 50vh;
     max-width: 100%;
+    display: block;
   }
 
   figure {
-    text-align: center;
-    margin: 16px 0;
-
+    margin: 8px auto;
+    width: 100%;
     color: $body-text-color-muted;
+    display: block;
+    width: 50vh;
 
     p {
       color: $body-text-color-muted;
+    }
+
+    img {
+      margin: 0;
+      max-height: revert;
+      max-width: revert;
+      width: 100%;
+      display: inline-block;
+    }
+
+    figcaption {
+      display: inline-block;
     }
   }
 }

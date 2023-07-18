@@ -1,19 +1,21 @@
 {{ define "main" }}
+<header id="post-header">
+  <h1>{{ .Title }}</h1>
+  <aside class="front-matter">
+    <div>
+      {{- if isset .Params "author" -}}
+      <span class="has-body-text-color-muted"><i class="fa-solid fa-at"></i>&nbsp;{{ .Params.Author }},&nbsp;</span>
+      {{- end -}}
+      {{- if isset .Params "date" -}}
+      <time class="has-body-text-color-muted">{{ .Params.Date.Format "2 January 2006" }}</time>
+      {{- end -}}
+    </div>
+    <div class="has-body-text-color-muted">
+      <span><i class="fa-solid fa-stopwatch"></i>&nbsp;{{ .ReadingTime }} minute read </span>
+    </div>
+  </aside>
+</header>
 <article>
-    <header id="post-header">
-        <h1>{{ .Title }}</h1>
-        <div>
-        {{- if isset .Params "author" -}}
-            <span class="has-body-text-color-muted"><i class="fa-solid fa-at"></i>&nbsp;{{ .Params.Author }},&nbsp;</span>
-        {{- end -}}
-        {{- if isset .Params "date" -}}
-            <time class="has-body-text-color-muted">{{ .Params.Date.Format "2 January 2006" }}</time>
-        {{- end -}}
-        </div>
-        <div class="has-body-text-color-muted">
-        <span><i class="fa-solid fa-stopwatch"></i>&nbsp;{{ .ReadingTime }} minute read </span>
-        </div>
-    </header>
-    {{- .Content -}}
+  {{- .Content -}}
 </article>
 {{ end }}

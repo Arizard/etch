@@ -11,9 +11,8 @@
       width: 100%;
   }
 
-  /* index.html styles */
-  header#banner h2 {
-      /* font-size: 1.9rem; */
+  main#content header#post-header {
+    text-align: left !important;
   }
 }
 

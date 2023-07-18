@@ -1,6 +1,6 @@
-<header id="banner">
+<nav id="banner">
     <h2><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h2>
-    <nav>
+    <div class="navlinks">
         <ul>
             {{ range .Site.Menus.main.ByWeight -}}
             <li>
@@ -8,5 +8,5 @@
             </li>
             {{- end }}
         </ul>
-    </nav>
-</header>
+    </div>
+</nav>
