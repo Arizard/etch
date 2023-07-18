@@ -161,17 +161,19 @@ pre code {
 main#content {
   img {
     margin: 0 auto;
-    max-height: 50vh;
+    max-height: 66vh;
     max-width: 100%;
     display: block;
   }
 
   figure {
     margin: 8px auto;
-    width: 100%;
     color: $body-text-color-muted;
-    display: block;
-    width: 50vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: min-content;
+    max-width: 100%;
 
     p {
       color: $body-text-color-muted;
@@ -179,14 +181,14 @@ main#content {
 
     img {
       margin: 0;
-      max-height: revert;
-      max-width: revert;
-      width: 100%;
-      display: inline-block;
+      flex-grow: 4;
+      max-width: min-content;
+      max-height: 100%;
     }
 
     figcaption {
       display: inline-block;
+      flex-grow: 1;
     }
   }
 }
