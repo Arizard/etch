@@ -16,7 +16,11 @@
     text-decoration: none;
   }
 
-  nav#banner nav ul li a {
+  nav#banner .navlinks ul li a {
+    color: #cccccc;
+  }
+
+  .has-body-text-color-muted {
     color: #cccccc;
   }
 
