@@ -22,7 +22,7 @@
     {{ printf `<link async rel="stylesheet" href="%s">` $css.RelPermalink | safeHTML }}
 
     {{ $customSCSS := resources.Get "css/all.scss" }}
-    {{ $customStyle := $customSCSS | resources.ToCSS | minify }}
+    {{ $customStyle := $customSCSS | css.Sass | minify }}
 
     <link rel="preload" href="{{ $customStyle.RelPermalink | safeHTML }}" as="style">
     <link async rel="stylesheet" href="{{ $customStyle.RelPermalink | safeHTML }}" >
