@@ -19,13 +19,12 @@
     {{ end -}}
 
     {{ $css := $resources | resources.Concat "css/style.css" | minify }}
-    {{ printf `<link async rel="stylesheet" href="%s">` $css.RelPermalink | safeHTML }}
+    {{ printf `<link rel="stylesheet" href="%s">` $css.RelPermalink | safeHTML }}
 
     {{ $customSCSS := resources.Get "css/all.scss" }}
     {{ $customStyle := $customSCSS | css.Sass | minify }}
 
-    <link rel="preload" href="{{ $customStyle.RelPermalink | safeHTML }}" as="style">
-    <link async rel="stylesheet" href="{{ $customStyle.RelPermalink | safeHTML }}" >
+    <link rel="stylesheet" href="{{ $customStyle.RelPermalink | safeHTML }}" >
 
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
