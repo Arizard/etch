@@ -182,7 +182,7 @@ main#content {
     img {
       margin: 0;
       flex-grow: 4;
-      max-width: min-content;
+      max-width: min-content !important;
       max-height: 100%;
     }
 
