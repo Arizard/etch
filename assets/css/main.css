@@ -2,19 +2,13 @@
     box-sizing: border-box;
 }
 
-html {
-    font-size: 70%;
-}
-
 body {
-    font-size: 1.4rem;
     font-family: 'Helvetica Neue', 'Arial', sans-serif;
     width: 100vw;
     overflow-x: hidden;
     margin: 0 auto;
     padding: 0 16px;
     line-height: 150%;
-    background: #f1f2f6;
 }
 
 nav#banner {
@@ -22,7 +16,6 @@ nav#banner {
 }
 
 nav#banner a {
-    color: #313a3d;
     text-decoration: none;
     font-size: 1.9rem;
 }
@@ -32,13 +25,8 @@ nav#banner a:hover {
 }
 
 nav#banner h2 {
-    display: inline-block;
     text-transform: lowercase;
     margin: 0 3px 0 0;
-}
-
-nav#banner .navlinks {
-    display: inline-block;
 }
 
 nav#banner .navlinks ul {
@@ -48,29 +36,8 @@ nav#banner .navlinks ul {
     padding: 0;
 }
 
-nav#banner .navlinks ul li {
-    display: inline;
-    margin: 0 3px;
-}
-
-nav#banner .navlinks ul li a {
-    color: #454545;
-}
-
-a {
-    color: #ff4757;
-    text-decoration: none;
-}
-
 a:hover {
     text-decoration: underline;
-}
-
-
-main#content hr {
-    height: 1px;
-    border: 0;
-    background: #d8d8d8;
 }
 
 main#content table#posts-table {

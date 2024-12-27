@@ -1,10 +1,10 @@
 @media (prefers-color-scheme: dark) {
   body {
     color: #ebebeb;
-    background: #121212;
+    background: $body-background-dark;
   }
   main#content p {
-    color: #f5f5f5;
+    color: $body-text-color-dark;
   }
 
   html {
@@ -12,35 +12,36 @@
   }
 
   nav#banner a {
-    color: #e0e0e0;
+    color: $body-text-color-dark;
     text-decoration: none;
   }
 
   nav#banner .navlinks ul li a {
-    color: #cccccc;
+    color: $body-text-color-dark;
   }
 
   .has-body-text-color-muted {
-    color: #cccccc;
+    color: $body-text-color-muted-dark;
   }
 
   main#content a {
-    color: #00b1ed;
+    color: $body-text-color-dark;
   }
 
-  main#content hr {
-    background: #5c5c5c;
+  footer#footer {
+    color: $body-text-color-muted-dark;
+    a {
+      text-decoration: none;
+      color: $accent-color;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
   }
 
-  main#content #toc h4 {
-    color: #d4d4d4;
-  }
-
-  main#content ul#posts small {
-    color: #a7a7a7;
-  }
-
-  main#content ul#posts li a:hover {
-    color: #21c7ff;
+  p, li, {
+    code {
+      color: $body-text-color-muted-dark;
+    }
   }
 }

@@ -3,7 +3,7 @@
     {{- range where site.RegularPages "Type" "in" site.Params.mainSections }}
     <tr>
         <td>
-            <div class="has-font-weight-bold">
+            <div class="has-font-weight-bold has-heading-font">
                 <a href="{{ .Permalink }}">
                     {{ .Title }}
                 </a>
@@ -15,7 +15,7 @@
             {{- end -}}
         </td>
         <td>
-            <span class="has-body-text-color-muted nowrap"><time>{{ .Date.Format "2 January, 2006" }}</time></span>
+            <span class="has-body-text-color-muted nowrap"><time>{{ .Date.Format "2 Jan '06" }}</time></span>
         </td>
     </tr>
     {{- end }}

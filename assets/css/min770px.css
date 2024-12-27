@@ -14,8 +14,41 @@
   main#content header#post-header {
     text-align: left !important;
   }
+
+  nav#banner h2 {
+    display: inline-block;
+  }
+
+  nav#banner .navlinks {
+    display: inline-block;
+  }
+
+  nav#banner .navlinks ul li {
+      display: inline;
+      margin: 0 3px;
+  }
+
 }
 
+@media (max-width: 769px) {
+  nav#banner h2 {
+    display: block;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  nav#banner .navlinks {
+    display: block;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  nav#banner .navlinks ul li {
+      display: inline;
+      margin: 0;
+      margin-right: 3px;
+  }
+}
 /* main#content ul#posts { */
 /*     font-size: 18px; */
 /*     font-size: 1.8rem; */

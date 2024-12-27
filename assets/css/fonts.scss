@@ -1,4 +1,3 @@
-
 @font-face {
   font-family: 'Manrope';
   font-style: normal;
@@ -11,9 +10,31 @@
   font-weight: 700;
   src: local('Manrope'), url('../fonts/manrope/Manrope-Bold.woff') format('woff');
 }
-$main-font: 'Manrope';
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 800;
+  src: local('Manrope'), url('../fonts/manrope/Manrope-ExtraBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Quattrocento';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Quattrocento'), url('../fonts/quattrocento/Quattrocento-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Quattrocento';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Quattrocento'), url('../fonts/quattrocento/Quattrocento-Bold.woff') format('woff');
+}
 
 @font-face {
   font-family: 'Inconsolata';
   src: local('Inconsolata for Powerline'), url('../fonts/inconsolata/Inconsolata.woff2') format('woff2');
 }
+
+$heading-font: 'Manrope', sans-serif;
+$body-font: 'Quattrocento';
