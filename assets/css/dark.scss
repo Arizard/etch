@@ -44,4 +44,10 @@
       color: $body-text-color-muted-dark;
     }
   }
+
+  .footnotes {
+    hr {
+      background: $body-text-color-dark;
+    }
+}
 }

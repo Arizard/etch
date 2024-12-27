@@ -202,6 +202,16 @@ main#content {
   }
 }
 
-sup, sub {
-  line-height: 0;
+main#content {
+  sup, sub {
+    line-height: 0;
+  }
+}
+
+.footnotes {
+  hr { /* used in footnotes only */
+    border: 0;
+    height: 3px;
+    background: $body-text-color;
+  }
 }
