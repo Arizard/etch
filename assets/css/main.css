@@ -74,10 +74,6 @@ main#content pre {
     border-radius: 8px;
 }
 
-:not(.gist) >> td, :not(.gist) > th {
-    border: solid 1px gray;
-    padding: 4px;
-}
 main#content table {
     border-collapse: collapse;
     max-width: 100%;
