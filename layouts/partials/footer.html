@@ -3,10 +3,10 @@
     <div class="footer-socials">
       <div class="external-link-icons">
       {{- if isset .Site.Params "github" -}}
-      <a class="external-link-icons-item" href="{{ .Site.Params.github }}"><i class="fa-brands fa-github"></a></i></p>
+      <a aria-label="Visit GitHub Profile" class="external-link-icons-item" href="{{ .Site.Params.github }}"><i class="fa-brands fa-github"></a></i></p>
       {{- end -}}
       {{- if isset .Site.Params "linkedin" -}}
-      <a class="external-link-icons-item" href="{{ .Site.Params.linkedin }}"><i class="fa-brands fa-linkedin-in"></i></a></i></p>
+      <a aria-label="Visit LinkedIn Profile" class="external-link-icons-item" href="{{ .Site.Params.linkedin }}"><i class="fa-brands fa-linkedin-in"></i></a></i></p>
       {{- end -}}
       </div>
     </div>
