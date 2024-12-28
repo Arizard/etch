@@ -11,10 +11,6 @@
       width: 100%;
   }
 
-  main#content header#post-header {
-    text-align: left !important;
-  }
-
   nav#banner h2 {
     display: inline-block;
   }
