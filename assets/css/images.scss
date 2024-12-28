@@ -1,0 +1,28 @@
+main#content {
+  figure {
+    display: table;
+    margin: 8px auto;
+    color: $body-text-color-muted;
+    padding: 0;
+    width: 100%;
+
+    figcaption {
+      display: table-caption;
+      caption-side: bottom;
+    }
+
+    p {
+      color: $body-text-color-muted;
+    }
+
+    img {
+      width: 100%;
+      box-sizing: border-box;
+      margin: 0;
+    }
+  }
+
+  figure.portrait {
+    width: 62%;
+  }
+}

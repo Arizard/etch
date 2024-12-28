@@ -40,7 +40,12 @@ body {
 }
 
 main#content {
-
+  sup, sub {
+    line-height: 0;
+  }
+  article li {
+    margin-bottom: 1rem;
+  }
   header#post-header {
     margin-bottom: 0.5rem;
     i {
@@ -58,47 +63,77 @@ main#content {
     margin-bottom: 1.4rem;
   }
 
-  h1, h2, h3, h4 {
+  h1, h2, h3, h4, h5, h6 {
     font-family: "Manrope", sans-serif;
     display: block;
-    line-height: 120%;
     font-weight: 800;
   }
 
   h1 {
-    font-size: 2.7rem;
-    margin-top: 1.8rem;
-    margin-bottom: 1rem;
+    font-size: 4rem;
+    line-height: 4rem;
   }
 
   h2 {
-    font-size: 2.3rem;
-    margin-top: 1.5rem;
-    margin-bottom: 0.8rem;
+    font-size: 3rem;
+    line-height: 3rem;
   }
 
   h3 {
-    font-size: 2.0rem;
-    margin-top: 1.2rem;
-    margin-bottom: 0.7rem;
+    font-size: 2rem;
+    line-height: 2rem;
   }
 
   h4 {
     font-size: 1.8rem;
-    margin-top: 1.0rem;
-    margin-bottom: 0.6rem;
+    line-height: 1.8rem;
   }
-}
 
+  h5 {
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+  }
 
-blockquote {
-  margin-left: 0;
-  margin-right: 0;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  border-color: $body-text-color;
-  border-left: 2px solid;
-  font-style: italic;
+  h6 {
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+  }
+
+  blockquote {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-color: $body-text-color;
+    border-left: 2px solid;
+    font-style: italic;
+  }
+
+  p, li, {
+    code {
+      font-weight: bold;
+      border-radius: 4px;
+      color: $body-text-color-muted;
+      border: 1px solid $body-text-color-muted;
+      padding-left: 4px;
+      padding-right: 4px;
+      white-space: nowrap;
+    }
+  }
+
+  pre code {
+    border: none;
+    color: inherit;
+    font-weight: revert;
+  }
+
+  .footnotes {
+    hr { /* used in footnotes only */
+      border: 0;
+      height: 3px;
+      background: $body-text-color;
+    }
+  }
 }
 
 footer#footer {
@@ -113,45 +148,25 @@ footer#footer {
   a:hover {
     text-decoration: underline;
   }
-}
 
-footer#footer {
   .footer-nav-container {
     height: 100%;
   }
-}
 
-footer#footer .external-link-icons {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  align-content: start;
-  font-size: 2.2rem;
-}
-
-footer#footer .external-link-icons-item {
-  flex: 0 0 auto;
-  margin: 8px;
-}
-
-p, li, {
-  code {
-    font-weight: bold;
-    border-radius: 4px;
-    color: $body-text-color-muted;
-    border: 1px solid $body-text-color-muted;
-    padding-left: 4px;
-    padding-right: 4px;
-    white-space: nowrap;
+  .external-link-icons {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: start;
+    font-size: 2.2rem;
   }
-}
 
-pre code {
-  border: none;
-  color: inherit;
-  font-weight: revert;
+  .external-link-icons-item {
+    flex: 0 0 auto;
+    margin: 8px;
+  }
 }
 
 .text-centered {
@@ -160,58 +175,4 @@ pre code {
 
 .has-font-weight-bold {
   font-weight: bold;
-}
-
-
-main#content {
-  img {
-    margin: 0 auto;
-    max-height: 66vh;
-    max-width: 100%;
-    display: block;
-  }
-
-  figure {
-    margin: 8px auto;
-    color: $body-text-color-muted;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    width: min-content;
-    max-width: 100%;
-
-    p {
-      color: $body-text-color-muted;
-    }
-
-    img {
-      margin: 0;
-      flex-grow: 4;
-      max-width: min-content !important;
-      max-height: 100%;
-    }
-
-    figcaption {
-      display: inline-block;
-      flex-grow: 1;
-    }
-  }
-
-  article li {
-    margin-bottom: 1rem;
-  }
-}
-
-main#content {
-  sup, sub {
-    line-height: 0;
-  }
-}
-
-.footnotes {
-  hr { /* used in footnotes only */
-    border: 0;
-    height: 3px;
-    background: $body-text-color;
-  }
 }

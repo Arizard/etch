@@ -48,6 +48,10 @@
       margin: 0;
       margin-right: 3px;
   }
+
+  figure.portrait {
+    width: 100% !important;
+  }
 }
 /* main#content ul#posts { */
 /*     font-size: 18px; */
