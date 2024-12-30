@@ -1,3 +1,6 @@
+$letter-spacing-headings: -5%;
+$letter-spacing-headings-small: -2.5%;
+
 nav#banner h2 a {
   color: $accent-color;
 }
@@ -27,6 +30,14 @@ body {
 
 .has-heading-font {
   font-family: $heading-font;
+}
+
+.has-heading-letter-spacing {
+  letter-spacing: $letter-spacing-headings;
+}
+
+.has-small-heading-letter-spacing {
+  letter-spacing: $letter-spacing-headings-small;
 }
 
 html {
@@ -65,7 +76,7 @@ main#content {
     font-weight: 800;
     word-wrap: break-word;
     white-space: normal;
-    letter-spacing: -5%;
+    letter-spacing: $letter-spacing-headings;
   }
 
   h1 {
