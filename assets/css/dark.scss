@@ -39,9 +39,10 @@
     }
   }
 
-  p, li, {
+  main#content {
     code {
-      color: $body-text-color-muted-dark;
+      color: $body-text-color-dark;
+      background-color: $body-background-dark-alt;
     }
   }
 

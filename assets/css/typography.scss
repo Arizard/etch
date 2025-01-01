@@ -21,11 +21,16 @@ a {
   text-decoration: none;
 }
 
+$body-font-size: 1.4rem;
+$body-line-height: 2.1rem;
+
 body {
   font-family: $body-font;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $body-text-color;
+  line-height: $body-line-height;
+  font-size: $body-font-size;
 }
 
 .has-heading-font {
@@ -42,12 +47,6 @@ body {
 
 html {
   font-size: 85%;
-}
-
-$body-font-size: 1.4rem;
-
-body {
-  font-size: $body-font-size;
 }
 
 main#content {
@@ -119,22 +118,27 @@ main#content {
     font-style: italic;
   }
 
-  p, li, {
+  pre {
+    border-radius: 8px;
+    line-height: $body-line-height;
     code {
-      font-weight: bold;
-      border-radius: 4px;
-      color: $body-text-color-muted;
-      border: 1px solid $body-text-color-muted;
-      padding-left: 4px;
-      padding-right: 4px;
-      white-space: nowrap;
+      display: block;
+      overflow-x: auto;
     }
   }
 
-  pre code {
-    border: none;
-    color: inherit;
-    font-weight: revert;
+
+  pre.chroma {
+    padding: 1rem 1rem;
+    code {
+      background-color: revert;
+    }
+  }
+
+  code {
+    border-radius: 6px;
+    background-color: $body-background-alt;
+    padding: 0.2rem 0.4rem;
   }
 
   .footnotes {
@@ -143,6 +147,24 @@ main#content {
       height: 3px;
       background: $body-text-color;
     }
+  }
+
+  table, th, td {
+    border: 1px solid $body-text-color-muted;
+  }
+
+  th, td {
+    padding: 1rem 2rem;
+  }
+
+  table {
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+  }
+
+  .table-container {
+    overflow: auto;
   }
 }
 
