@@ -50,5 +50,25 @@
     hr {
       background: $body-text-color-dark;
     }
-}
+  }
+
+  #isso-thread {
+    .isso-thread-heading {
+      color: $body-text-color-dark !important;
+    }
+
+    .isso-textarea {
+      background-color: #747d8c;
+      color: $body-text-color-dark;
+    }
+
+    .isso-preview {
+      background: #57606f;
+    }
+
+    .isso-input-wrapper input {
+      background-color: #747d8c;
+      color: $body-text-color-dark;
+    }
+  }
 }

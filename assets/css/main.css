@@ -72,3 +72,7 @@ code, pre {
 .nowrap {
   white-space: nowrap;
 }
+
+.comments-container {
+  padding-bottom: 4em;
+}

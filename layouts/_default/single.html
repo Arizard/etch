@@ -19,8 +19,10 @@
   {{- .Content -}}
 </article>
 {{- if not .Params.nocomment -}}
-<section id="isso-thread">
+<div class="comments-container">
+  <section id="isso-thread">
     <noscript>Javascript needs to be activated to view comments.</noscript>
-</section>
+  </section>
+</div>
 {{- end -}}
 {{ end }}
