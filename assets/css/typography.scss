@@ -208,3 +208,21 @@ footer#footer {
 .has-font-weight-bold {
   font-weight: bold;
 }
+
+// comments
+.comments-container {
+  padding-bottom: 4em;
+  padding-top: 6px;
+  border-radius: 6px;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+.comments-container #isso-thread {
+  margin-left: 0.7em;
+  margin-right: 0.7em;
+}
+
+.isso-thread-heading {
+  color: $body-text-color !important;
+}
