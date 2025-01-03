@@ -221,6 +221,12 @@ footer#footer {
     color: $body-text-color !important;
   }
 
+  .isso-comment-header {
+    .isso-author {
+      color: $body-text-color !important;
+    }
+  }
+
   .isso-input-wrapper {
     margin-right: 6px !important;
   }

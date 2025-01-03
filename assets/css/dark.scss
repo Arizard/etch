@@ -58,6 +58,12 @@
       background-color: $body-background-dark-alt-1 !important;
     }
 
+    .isso-comment-header {
+      .isso-author {
+        color: $body-text-color-dark !important;
+      }
+    }
+
     #isso-thread {
       .isso-thread-heading {
         color: $body-text-color-dark !important;
