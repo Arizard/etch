@@ -52,31 +52,31 @@
     }
   }
 
-  #isso-thread {
-    .isso-thread-heading {
-      color: $body-text-color-dark !important;
-    }
-
-    .isso-textarea {
-      background-color: #747d8c;
-      color: $body-text-color-dark;
-      border: none !important;
-    }
-
-    .isso-preview {
-      background: none;
-    }
-
-    .isso-input-wrapper input {
-      background-color: #747d8c;
-      color: $body-text-color-dark;
-    }
-  }
-
   .comments-container {
     background: $body-background-dark-alt !important;
     code {
       background-color: $body-background-dark-alt-1 !important;
+    }
+
+    #isso-thread {
+      .isso-thread-heading {
+        color: $body-text-color-dark !important;
+      }
+
+      .isso-textarea {
+        background-color: $body-background-dark-alt-1;
+        color: #fff;
+        border: none !important;
+      }
+
+      .isso-preview {
+        background: none;
+      }
+
+      .isso-input-wrapper input {
+        background-color: $body-background-dark-alt-1;
+        color: #fff;
+      }
     }
   }
 }

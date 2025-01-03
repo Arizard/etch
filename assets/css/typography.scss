@@ -216,13 +216,26 @@ footer#footer {
   border-radius: 6px;
   box-sizing: border-box;
   background: #fff;
+
+  .isso-thread-heading {
+    color: $body-text-color !important;
+  }
+
+  .isso-input-wrapper {
+    margin-right: 6px !important;
+  }
+
+  #isso-thread {
+    margin-left: 0.7em;
+    margin-right: 0.7em;
+  }
+
+  .isso-comment {
+    h1, h2, h3, h4, h5, h6 {
+      font-size: $body-font-size !important;
+      line-height: $body-font-size !important;
+    }
+  }
 }
 
-.comments-container #isso-thread {
-  margin-left: 0.7em;
-  margin-right: 0.7em;
-}
 
-.isso-thread-heading {
-  color: $body-text-color !important;
-}
