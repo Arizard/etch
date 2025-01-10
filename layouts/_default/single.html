@@ -1,6 +1,13 @@
 {{ define "main" }}
 <header id="post-header">
+  {{- if isset .Params "hero" -}}
+  <div class="hero">
+    <img src="{{ .Params.Hero }}" />
+  </div>
+  {{- end -}}
+
   <h1>{{ .Title }}</h1>
+
   <aside class="front-matter">
     <div>
       {{- if isset .Params "author" -}}

@@ -61,6 +61,18 @@ main#content {
     i {
       font-size: 0.85em;
     }
+
+    .hero {
+      width: 100%;
+      img {
+        width: 100%;
+        display: block;
+      }
+      overflow: hidden;
+      border-radius: 6px;
+      box-sizing: border-box;
+      padding: 0;
+    }
   }
 
   p {
@@ -216,6 +228,7 @@ footer#footer {
   border-radius: 6px;
   box-sizing: border-box;
   background: #fff;
+  margin-top: 1in;
 
   .isso-thread-heading {
     color: $body-text-color !important;
@@ -243,5 +256,6 @@ footer#footer {
     }
   }
 }
+
 
 
