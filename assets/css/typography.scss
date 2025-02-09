@@ -94,9 +94,18 @@ main#content {
         display: block;
       }
       overflow: hidden;
-      border-radius: 6px;
+      border-radius: 4px;
       box-sizing: border-box;
       padding: 0;
+    }
+
+    .hero-caption {
+      color: $body-text-color-muted;
+      padding: 4px 0 0 0;
+    }
+
+    h1 {
+      margin-top: 48px;
     }
   }
 

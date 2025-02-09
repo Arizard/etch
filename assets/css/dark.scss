@@ -44,6 +44,11 @@
       color: $body-text-color-dark;
       background-color: $body-background-dark-alt;
     }
+    header#post-header {
+      .hero-caption {
+        color: $body-text-color-muted-dark;
+      }
+    }
   }
 
   .footnotes {

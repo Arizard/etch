@@ -4,6 +4,11 @@
   <div class="hero">
     <img src="{{ .Params.Hero }}" />
   </div>
+  {{- if isset .Params "subtitle" -}}
+  <div class="hero-caption">
+    {{ .Params.Subtitle }}
+  </div>
+  {{- end -}}
   {{- end -}}
 
   <h1>{{ .Title }}</h1>
