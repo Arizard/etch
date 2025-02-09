@@ -10,31 +10,6 @@ body {
     padding: 0 16px;
 }
 
-nav#banner {
-    margin: 16px 0;
-}
-
-nav#banner a {
-    text-decoration: none;
-    font-size: 1.9rem;
-}
-
-nav#banner a:hover {
-    text-decoration: underline;
-}
-
-nav#banner h2 {
-    text-transform: lowercase;
-    margin: 0 3px 0 0;
-}
-
-nav#banner .navlinks ul {
-    list-style-type: none;
-    text-transform: lowercase;
-    margin: 0;
-    padding: 0;
-}
-
 a:hover {
     text-decoration: underline;
 }

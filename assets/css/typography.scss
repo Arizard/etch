@@ -1,21 +1,6 @@
 $letter-spacing-headings: -5%;
 $letter-spacing-headings-small: -2.5%;
 
-nav#banner h2 a {
-  color: $accent-color;
-}
-
-nav#banner {
-  font-family: $heading-font;
-  h2 {
-    font-weight: 800;
-  }
-}
-
-nav#banner .navlinks ul li a {
-  color: $body-text-color;
-}
-
 a {
   color: $accent-color;
   text-decoration: none;
@@ -23,6 +8,47 @@ a {
 
 $body-font-size: 1.4rem;
 $body-line-height: 2.1rem;
+$banner-font-size: 1.9rem;
+$h1-font-size: 1.9rem;
+$h2-font-size: 1.6rem;
+
+nav#banner a {
+    text-decoration: none;
+    font-size: $banner-font-size;
+}
+
+nav#banner {
+  display: block;
+  font-family: $heading-font;
+  margin: 0;
+  padding: 16px 0;
+  border-bottom: solid 5px #ff4757;
+  .banner-inner {
+    margin: 0;
+  }
+  h2 {
+    text-transform: lowercase;
+    margin: 0 3px 0 0;
+    font-weight: 800;
+    a {
+      color: $accent-color;
+    }
+  }
+
+  a:hover {
+      text-decoration: underline;
+  }
+
+  .navlinks ul {
+      list-style-type: none;
+      text-transform: lowercase;
+      margin: 0;
+      padding: 0;
+    li a {
+      color: $body-text-color;
+    }
+  }
+}
 
 body {
   font-family: $body-font;
@@ -88,36 +114,37 @@ main#content {
     word-wrap: break-word;
     white-space: normal;
     letter-spacing: $letter-spacing-headings;
+    margin: ($body-line-height/2) 0 ($body-line-height/2) 0;
   }
 
   h1 {
-    font-size: 4rem;
-    line-height: 4rem;
+    font-size: $h1-font-size;
+    line-height: $body-line-height;
   }
 
   h2 {
-    font-size: 3rem;
-    line-height: 3rem;
+    font-size: $h2-font-size;
+    line-height: $body-line-height;
   }
 
   h3 {
-    font-size: 2rem;
-    line-height: 2rem;
+    font-size: $body-font-size;
+    line-height: $body-line-height;
   }
 
   h4 {
-    font-size: 1.8rem;
-    line-height: 1.8rem;
+    font-size: $body-font-size;
+    line-height: $body-line-height;
   }
 
   h5 {
-    font-size: 1.6rem;
-    line-height: 1.6rem;
+    font-size: $body-font-size;
+    line-height: $body-line-height;
   }
 
   h6 {
-    font-size: 1.4rem;
-    line-height: 1.4rem;
+    font-size: $body-font-size;
+    line-height: $body-line-height;
   }
 
   blockquote {
