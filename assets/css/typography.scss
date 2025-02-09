@@ -12,17 +12,12 @@ $banner-font-size: 1.9rem;
 $h1-font-size: 1.9rem;
 $h2-font-size: 1.6rem;
 
-nav#banner a {
-    text-decoration: none;
-    font-size: $banner-font-size;
-}
-
 nav#banner {
   display: block;
   font-family: $heading-font;
-  margin: 0;
+  margin: 0 0 48px 0;
   padding: 16px 0;
-  border-bottom: solid 5px #ff4757;
+  border-bottom: solid 4px $accent-color;
   .banner-inner {
     margin: 0;
   }
@@ -33,6 +28,10 @@ nav#banner {
     a {
       color: $accent-color;
     }
+  }
+  a {
+      text-decoration: none;
+      font-size: $banner-font-size;
   }
 
   a:hover {
