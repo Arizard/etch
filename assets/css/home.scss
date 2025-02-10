@@ -38,7 +38,7 @@
     .grid-container {
         display: grid;
         grid-template-columns: 1fr 160px;
-        grid-template-rows: 192px;
+        // grid-template-rows: 192px;
         gap: 0px 16px;
         grid-auto-flow: row;
         grid-template-areas:
@@ -51,6 +51,7 @@
     .grid-profile {
         grid-area: grid-profile;
         box-sizing: border-box;
+        height: 192px;
     }
 
     .grid-intro {
