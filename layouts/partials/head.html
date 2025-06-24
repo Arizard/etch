@@ -35,7 +35,19 @@
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#121212" />
 
     <script src="https://kit.fontawesome.com/6a0ddb5277.js" crossorigin="anonymous"></script>
-    <script src='{{ "/js/comments.js" | absURL }}'></script>
+
+    <script>
+        window.siteConfig = {
+            basePath: {{ "" | relURL }},
+            apiURL: {{ if hugo.IsServer }}{{ "http://localhost:8080" }}{{ else }}{{ "https://backend.less.coffee" }}{{ end }},
+        };
+
+        window.articleConfig = {
+            slug: {{ .Page.Slug | default .Page.Path }},
+        };
+    </script>
+    {{ $jsComments := resources.Get "js/comments.js" | js.Build }}
+    <script src='{{ $jsComments.RelPermalink }}'></script>
 
     <title>{{ if eq  .Title  .Site.Title }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{.}} - {{ end }}{{ .Site.Title }}{{ end }}</title>
 </head>

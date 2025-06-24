@@ -1,6 +1,6 @@
 const gomments = {
-  baseURL: "http://localhost:8080/gomments",
-  article: "php-output-buffers",
+  baseURL: `${window.siteConfig.apiURL}/gomments`,
+  article: btoa(window.articleConfig.slug),
   uuid4() {
       return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
           const r = Math.random() * 16 | 0;
@@ -10,6 +10,8 @@ const gomments = {
   },
   nextIdempotencyKey: null,
 }
+
+window.gomments = gomments;
 
 class ReactiveRenderingHTMLElement extends HTMLElement {
   static observedAttributes = [];
@@ -109,11 +111,11 @@ class ReplySubmissionFormComponent extends ReactiveRenderingHTMLElement {
     </style>
     <form id="gomments-reply-form" method="post">
         <div class="row">
-            <input type="text" name="name" placeholder="Name (optional)">
-            <input type="password" name="secret" placeholder="Secret (optional)">
+            <input type="text" name="name" placeholder="Name (optional, max 40 chars)">
+            <input type="password" name="secret" placeholder="Secret (optional, 10 - 40 chars)">
         </div>
         <div class="row">
-            <textarea id="gomments-reply-form-body" name="body" placeholder="Type your message here..."></textarea>
+            <textarea id="gomments-reply-form-body" name="body" placeholder="Type your message here (max 500 characters)"></textarea>
         </div>
         <div class="row">
             <button class="submit-btn" type="submit">Submit Reply</button>
