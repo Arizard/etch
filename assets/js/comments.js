@@ -56,6 +56,20 @@ class ReplySubmissionFormComponent extends ReactiveRenderingHTMLElement {
             flex: 1;
         }
 
+        .field-group {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .field-label {
+            font-family: 'Manrope';
+            font-variant: all-small-caps;
+            font-size: 1.4rem;
+            margin-bottom: 4px;
+            font-weight: bold;
+        }
+
         textarea {
             width: 100%;
             box-sizing: border-box;
@@ -85,9 +99,12 @@ class ReplySubmissionFormComponent extends ReactiveRenderingHTMLElement {
             border: none;
             border-radius: 6px;
             cursor: pointer;
-            font-size: 16px;
             margin-right: 0;
             margin-left: auto;
+            font-family: 'Manrope';
+            font-variant: all-small-caps;
+            font-weight: bold;
+            font-size: 1.4rem;
         }
 
         .submit-btn:hover {
@@ -103,19 +120,43 @@ class ReplySubmissionFormComponent extends ReactiveRenderingHTMLElement {
                 width: 100%;
                 margin-left: 0;
             }
+
+            .row {
+                display: block;
+                margin-bottom: 0;
+            }
+
+            .field-group {
+                margin-bottom: 10px;
+            }
+
+            input[type=text],
+            input[type=password],
+            textarea {
+                margin-bottom: 0;
+            }
         }
 
         form {
-          margin-bottom: 30px;
+            margin-bottom: 30px;
         }
     </style>
     <form id="gomments-reply-form" method="post">
         <div class="row">
-            <input type="text" name="name" placeholder="Name (optional, max 40 chars)">
-            <input type="password" name="secret" placeholder="Secret (optional, 10 - 40 chars)">
+            <div class="field-group">
+                <label class="field-label" for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="(optional, max 40 chars)">
+            </div>
+            <div class="field-group">
+                <label class="field-label" for="secret">Secret</label>
+                <input type="password" id="secret" name="secret" placeholder="(optional, 10 - 40 chars, for ID)">
+            </div>
         </div>
         <div class="row">
-            <textarea id="gomments-reply-form-body" name="body" placeholder="Type your message here (max 500 characters)"></textarea>
+            <div class="field-group">
+                <label class="field-label" for="gomments-reply-form-body">Message</label>
+                <textarea id="gomments-reply-form-body" name="body" placeholder="(max 500 characters)"></textarea>
+            </div>
         </div>
         <div class="row">
             <button class="submit-btn" type="submit">Submit Reply</button>
@@ -137,6 +178,11 @@ class ReplySubmissionFormComponent extends ReactiveRenderingHTMLElement {
 
     // Listen for input changes in the textarea
     textarea.addEventListener('input', updateSubmitButtonState);
+
+    const resetTextArea = () => {
+      textarea.value = "";
+      submitButton.disabled = true;
+    }
 
     this.shadowRoot.querySelector('#gomments-reply-form').addEventListener('submit', async function(e) {
         e.preventDefault(); // Stop normal form submission
@@ -160,9 +206,11 @@ class ReplySubmissionFormComponent extends ReactiveRenderingHTMLElement {
             });
 
             if (response.ok) {
+              resetTextArea();
+              gomments.nextIdempotencyKey = gomments.uuid4();
               const r = await response.json()
-              location.assign(`#comments-container`);
-              location.reload();
+              await reloadThread();
+              location.assign(`#reply-${r.reply.reply_id}-container`);
             } else {
               console.error('Error:', response.status);
             }
@@ -176,6 +224,10 @@ customElements.define("gomments-reply-submission-form", ReplySubmissionFormCompo
 
 class ReplyComponent extends ReactiveRenderingHTMLElement {
   static observedAttributes = ["reply-id", "reply-author-name", "reply-signature", "reply-body"];
+
+  constructor() {
+    super();
+  }
 
   render() {
     const createdAt = new Date(this.getAttribute("reply-created-at"));
@@ -211,8 +263,18 @@ class ReplyComponent extends ReactiveRenderingHTMLElement {
       .italic {
         font-style: italic;
       }
+
+      .has-background {
+        background-color: #ffffff;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .has-background {
+          background-color: #2f3542;
+        }
+      }
     </style>
-      <div class="has-padding has-margin-bottom-m has-border rounded">
+      <div class="has-padding has-margin-bottom-m rounded has-background">
         <div class="italic has-margin-bottom-m">
           <span>[#${this.getAttribute("reply-id")}] </span>
           <span class="has-font-weight-bold">${this.getAttribute("reply-author-name")}</span>
@@ -229,15 +291,36 @@ class ReplyComponent extends ReactiveRenderingHTMLElement {
 
 customElements.define("gomments-reply", ReplyComponent);
 
-addEventListener("load", (_event) => {
-  console.log("gomments");
+class LoadingFill extends ReactiveRenderingHTMLElement {
+  constructor() {
+    super();
+  }
+  render() {
+    this.shadowRoot.innerHTML = `
+      <style>
+        :host {
+          font-family: 'Manrope';
+          font-variant: all-small-caps;
+          text-align: center;
+          font-weight: bold;
+          font-size: 1.4rem;
+          width: 100%;
+        }
+      </style>
+      <p>Loading comments</p>
+    `;
+  }
+}
 
-  gomments.nextIdempotencyKey = gomments.uuid4();
+customElements.define("gomments-loading-fill", LoadingFill);
 
-  const replyForm = document.getElementById("comments-form");
-  replyForm.innerHTML = "<gomments-reply-submission-form />";
+async function reloadThread() {
+  const thread = document.getElementById("comments-thread");
+  thread.innerHTML = "<gomments-loading-fill />";
 
-  fetch(`${gomments.baseURL}/articles/${gomments.article}/replies`)
+  await new Promise(resolve => setTimeout(() => {resolve();}, 1000));
+
+  return await fetch(`${gomments.baseURL}/articles/${gomments.article}/replies`)
     .then(r => r.json())
     .then(r => {
       const thread = document.getElementById("comments-thread");
@@ -255,4 +338,15 @@ addEventListener("load", (_event) => {
         thread.appendChild(reply);
       }
     });
+}
+
+addEventListener("load", (_event) => {
+  console.log("gomments");
+
+  gomments.nextIdempotencyKey = gomments.uuid4();
+
+  const replyForm = document.getElementById("comments-form");
+  replyForm.innerHTML = "<gomments-reply-submission-form />";
+
+  reloadThread();
 });

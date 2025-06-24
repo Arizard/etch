@@ -260,5 +260,7 @@ footer#footer {
 .comments-container {
   padding: 0;
   box-sizing: border-box;
-  margin-top: 1in;
+  margin-top: 1.4rem;
+  padding-top: 1.4rem;
+  border-top: solid 4px $body-text-color-muted;
 }
