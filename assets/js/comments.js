@@ -377,15 +377,17 @@ class ReplyComponent extends ReactiveRenderingHTMLElement {
         border: 2px solid #45a049;
         box-sizing: border-box;
       }
+
+      .wspr {
+        white-space: pre-wrap;
+      }
     </style>
     <div class="${this.getAttribute("reply-id") == gomments.attentionReplyID ? "attention" : ""} has-padding small-font has-margin-bottom-m rounded has-background">
       <div class="has-margin-bottom-m">
         <span class="heading-font has-font-weight-bold">${this.getAttribute("reply-author-name")}</span>
         <span class="heading-font">${signature !== "" ? "(" + signature.slice(-8) + ")" : ""}</span>
       </div>
-      <div class="has-margin-bottom-m body-font">
-        ${this.getAttribute("reply-body")}
-      </div>
+      <div class="has-margin-bottom-m body-font wspr">${this.getAttribute("reply-body")}</div>
       <div class="italic text-muted body-font thick-border-top">
         <span>#${this.getAttribute("reply-id")} ${createdAt.toLocaleString()}</span>
       </div>
