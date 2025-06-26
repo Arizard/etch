@@ -26,6 +26,7 @@ const gomments = {
     --body-background-dark-alt-1: #57606f;
   }
   `,
+  attentionReplyID: "",
 }
 
 window.gomments = gomments;
@@ -273,8 +274,8 @@ class ReplySubmissionFormComponent extends ReactiveRenderingHTMLElement {
               resetTextArea();
               gomments.nextIdempotencyKey = gomments.uuid4();
               const r = await response.json()
+              gomments.attentionReplyID = `${r.reply.reply_id}`;
               await reloadThread();
-              location.assign(`#reply-${r.reply.reply_id}-container`);
             } else {
               console.error('Error:', response.status);
             }
@@ -371,8 +372,13 @@ class ReplyComponent extends ReactiveRenderingHTMLElement {
         border-top: solid 1px var(--body-text-color-muted);
         padding-top: 1.4rem;
       }
+
+      .attention {
+        border: 2px solid #45a049;
+        box-sizing: border-box;
+      }
     </style>
-    <div class="has-padding small-font has-margin-bottom-m rounded has-background">
+    <div class="${this.getAttribute("reply-id") == gomments.attentionReplyID ? "attention" : ""} has-padding small-font has-margin-bottom-m rounded has-background">
       <div class="has-margin-bottom-m">
         <span class="heading-font has-font-weight-bold">${this.getAttribute("reply-author-name")}</span>
         <span class="heading-font">${signature !== "" ? "(" + signature.slice(-8) + ")" : ""}</span>
@@ -469,6 +475,7 @@ async function reloadThread() {
 
           thread.appendChild(reply);
         }
+        console.log("loaded comments");
       });
   } catch (e) {
     thread.innerHTML = "<gomments-error-fill />";
