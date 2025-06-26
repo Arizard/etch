@@ -1,6 +1,6 @@
 const gomments = {
   baseURL: `${window.siteConfig.apiURL}/gomments`,
-  article: btoa(window.articleConfig.slug),
+  article: btoa(window.articleConfig.articleID),
   uuid4() {
       return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
           const r = Math.random() * 16 | 0;
@@ -221,7 +221,7 @@ class ReplySubmissionFormComponent extends ReactiveRenderingHTMLElement {
 
     const setLabelSecret = () => {
       const s = (inputSecret.value.length > 40 || inputSecret.value.length < 10) && inputSecret.value.length != 0 ? "10 – 40 chars" : "";
-      labelSecret.innerHTML = `Secret <span style="color: crimson">${s}</span>`;
+      labelSecret.innerHTML = `Signature <span style="color: crimson">${s}</span>`;
       inputSecret.className = (inputSecret.value.length > 40 || inputSecret.value.length < 10) && inputSecret.value.length != 0 ? "validation-error" : "";
     }
 
