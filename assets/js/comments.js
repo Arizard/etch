@@ -27,6 +27,16 @@ const gomments = {
   }
   `,
   attentionReplyID: "",
+  makeTripcodeClassic: (shaHex) => {
+    const chars = './0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+    const bytes = shaHex.match(/.{2}/g).map(hex => parseInt(hex, 16));
+
+    let result = '';
+    for (let i = 0; i < 10; i++) {
+      result += chars[bytes[i] % 64];
+    }
+    return result;
+  }
 }
 
 window.gomments = gomments;
@@ -385,7 +395,7 @@ class ReplyComponent extends ReactiveRenderingHTMLElement {
     <div class="${this.getAttribute("reply-id") == gomments.attentionReplyID ? "attention" : ""} has-padding small-font has-margin-bottom-m rounded has-background">
       <div class="has-margin-bottom-m">
         <span class="heading-font has-font-weight-bold">${this.getAttribute("reply-author-name")}</span>
-        <span class="heading-font">${signature !== "" ? "(" + signature.slice(-8) + ")" : ""}</span>
+        <span class="heading-font">${signature !== "" ? "(" + gomments.makeTripcodeClassic(signature).slice(-8) + ")" : ""}</span>
       </div>
       <div class="has-margin-bottom-m body-font wspr">${this.getAttribute("reply-body")}</div>
       <div class="italic text-muted body-font thick-border-top">
