@@ -98,11 +98,17 @@ class ReplySubmissionFormComponent extends ReactiveRenderingHTMLElement {
         input[type="text"],
         input[type="password"],
         textarea {
+            font-family: Inconsolata;
+            font-size: 1.2rem;
             width: 100%;
             padding: 12px;
             border: 2px solid #ddd;
             border-radius: 6px;
             box-sizing: border-box;
+        }
+
+        .validation-error {
+          border: 2px dashed crimson !important;
         }
 
         input[type="text"]:focus,
@@ -174,7 +180,12 @@ class ReplySubmissionFormComponent extends ReactiveRenderingHTMLElement {
         <div class="row">
             <div class="field-group">
                 <label id="gomments-input-body-label" class="field-label" for="gomments-reply-form-body"></label>
-                <textarea id="gomments-reply-form-body" name="body" placeholder="(max 500 characters)"></textarea>
+                <textarea
+                  id="gomments-reply-form-body"
+                  name="body"
+                  placeholder="(max 500 characters)"
+                  rows=6
+                ></textarea>
             </div>
         </div>
         <div class="row">
@@ -204,16 +215,19 @@ class ReplySubmissionFormComponent extends ReactiveRenderingHTMLElement {
     const setLabelName = () => {
       const s = inputName.value.length > 40 ? "max 40 chars" : "";
       labelName.innerHTML = `Name <span style="color: crimson">${s}</span>`;
+      inputName.className = inputName.value.length > 40 ? "validation-error" : "";
     }
 
     const setLabelSecret = () => {
       const s = (inputSecret.value.length > 40 || inputSecret.value.length < 10) && inputSecret.value.length != 0 ? "10 – 40 chars" : "";
       labelSecret.innerHTML = `Secret <span style="color: crimson">${s}</span>`;
+      inputSecret.className = (inputSecret.value.length > 40 || inputSecret.value.length < 10) && inputSecret.value.length != 0 ? "validation-error" : "";
     }
 
     const setLabelBody = () => {
       const s = textarea.value.length > 500 ? "max 500 chars" : "";
       labelBody.innerHTML = `Message <span style="color: crimson">${s}</span>`;
+      textarea.className = textarea.value.length > 500 ? "validation-error" : "";
     }
 
     setLabelName();
@@ -383,6 +397,7 @@ class LoadingFill extends ReactiveRenderingHTMLElement {
   render() {
     this.shadowRoot.innerHTML = `
       <style>
+        ${gomments.styleColors}
         :host {
           font-family: 'Manrope';
           font-variant: all-small-caps;
@@ -390,6 +405,12 @@ class LoadingFill extends ReactiveRenderingHTMLElement {
           font-weight: bold;
           font-size: 1.4rem;
           width: 100%;
+          color: var(--body-text-color-muted);
+        }
+        @media (prefers-color-scheme: dark) {
+          :host {
+            color: var(--body-text-color-muted-dark);
+          }
         }
       </style>
       <p>Loading comments</p>
@@ -399,30 +420,59 @@ class LoadingFill extends ReactiveRenderingHTMLElement {
 
 customElements.define("gomments-loading-fill", LoadingFill);
 
+class ErrorFill extends ReactiveRenderingHTMLElement {
+  constructor() {
+    super();
+  }
+  render() {
+    this.shadowRoot.innerHTML = `
+      <style>
+        ${gomments.styleColors}
+        :host {
+          font-family: 'Manrope';
+          font-variant: all-small-caps;
+          text-align: center;
+          font-weight: bold;
+          font-size: 1.4rem;
+          width: 100%;
+          color: crimson;
+        }
+      </style>
+      <p>could not load comments</p>
+    `;
+  }
+}
+
+customElements.define("gomments-error-fill", ErrorFill);
+
 async function reloadThread() {
   const thread = document.getElementById("comments-thread");
-  thread.innerHTML = "<gomments-loading-fill />";
+  thread.innerHTML = `<gomments-loading-fill></gomments-loading-fill>`;
 
   await new Promise(resolve => setTimeout(() => {resolve();}, 500));
 
-  return await fetch(`${gomments.baseURL}/articles/${gomments.article}/replies`)
-    .then(r => r.json())
-    .then(r => {
-      const thread = document.getElementById("comments-thread");
-      thread.innerHTML = "";
+  try {
+    await fetch(`${gomments.baseURL}/articles/${gomments.article}/replies`)
+      .then(r => r.json())
+      .then(r => {
+        const thread = document.getElementById("comments-thread");
+        thread.innerHTML = "";
 
-      for (const respReply of r.replies) {
-        const reply = document.createElement("gomments-reply");
-        reply.setAttribute("id", `reply-${respReply.reply_id || 0}-container`);
-        reply.setAttribute("reply-id", respReply.reply_id);
-        reply.setAttribute("reply-signature", respReply.reply_signature);
-        reply.setAttribute("reply-body", respReply.reply_body);
-        reply.setAttribute("reply-created-at", respReply.reply_created_at);
-        reply.setAttribute("reply-author-name", respReply.reply_author_name);
+        for (const respReply of r.replies) {
+          const reply = document.createElement("gomments-reply");
+          reply.setAttribute("id", `reply-${respReply.reply_id || 0}-container`);
+          reply.setAttribute("reply-id", respReply.reply_id);
+          reply.setAttribute("reply-signature", respReply.reply_signature);
+          reply.setAttribute("reply-body", respReply.reply_body);
+          reply.setAttribute("reply-created-at", respReply.reply_created_at);
+          reply.setAttribute("reply-author-name", respReply.reply_author_name);
 
-        thread.appendChild(reply);
-      }
-    });
+          thread.appendChild(reply);
+        }
+      });
+  } catch (e) {
+    thread.innerHTML = "<gomments-error-fill />";
+  }
 }
 
 addEventListener("load", (_event) => {
