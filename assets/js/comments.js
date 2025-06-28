@@ -27,16 +27,6 @@ const gomments = {
   }
   `,
   attentionReplyID: "",
-  makeTripcodeClassic: (shaHex) => {
-    const chars = './0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-    const bytes = shaHex.match(/.{2}/g).map(hex => parseInt(hex, 16));
-
-    let result = '';
-    for (let i = 0; i < 10; i++) {
-      result += chars[bytes[i] % 64];
-    }
-    return result;
-  }
 }
 
 window.gomments = gomments;
@@ -211,21 +201,37 @@ class ReplySubmissionFormComponent extends ReactiveRenderingHTMLElement {
     const updateSubmitButtonState = () => {
       const l = textarea.value.trim().length;
       submitButton.disabled =
-        l <= 0 ||
-        l > 500 ||
-        inputName.value.length > 40;
+        l == 0 ||
+        getBodyValidationError() != "" ||
+        getNameValidationError() != "";
     };
 
+    const getNameValidationError = () => {
+      const [name, secret] = inputName.value.split("#");
+      const s = [
+        name?.length > 40 ? "max name length exceeded" : "",
+        secret?.length > 8 ? "max secret length exceeded": "",
+      ].filter(s => s != "").join(", ");
+
+      return s;
+    }
+
     const setLabelName = () => {
-      const s = inputName.value.length > 40 ? "max 40 chars" : "";
+      const s = getNameValidationError();
+
       labelName.innerHTML = `Name <span style="color: crimson">${s}</span>`;
-      inputName.className = inputName.value.length > 40 ? "validation-error" : "";
+      inputName.className = s != "" ? "validation-error" : "";
+    }
+
+    const getBodyValidationError = () => {
+      return textarea.value.length > 500 ? "max length exceeded" : "";
     }
 
     const setLabelBody = () => {
-      const s = textarea.value.length > 500 ? "max 500 chars" : "";
+      const s = getBodyValidationError();
+
       labelBody.innerHTML = `Message <span style="color: crimson">${s}</span>`;
-      textarea.className = textarea.value.length > 500 ? "validation-error" : "";
+      textarea.className = s != "" ? "validation-error" : "";
     }
 
     setLabelName();
@@ -244,38 +250,40 @@ class ReplySubmissionFormComponent extends ReactiveRenderingHTMLElement {
     }
 
     this.shadowRoot.querySelector('#gomments-reply-form').addEventListener('submit', async function(e) {
-        e.preventDefault(); // Stop normal form submission
+      e.preventDefault(); // Stop normal form submission
 
-        // Get form data
-        const formData = new FormData(this);
-        const data = Object.fromEntries(formData.entries());
+      // Get form data
+      const formData = new FormData(this);
+      const data = Object.fromEntries(formData.entries());
 
-        try {
-            const response = await fetch(`${gomments.baseURL}/articles/${gomments.article}/replies`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                  reply_author_name: data.name, // TODO
-                  reply_signature_secret: '', // TODO
-                  reply_body: data.body,
-                  reply_idempotency_key: gomments.nextIdempotencyKey,
-                })
-            });
+      const [name, secret] = data.name.split("#");
 
-            if (response.ok) {
-              resetTextArea();
-              gomments.nextIdempotencyKey = gomments.uuid4();
-              const r = await response.json()
-              gomments.attentionReplyID = `${r.reply.reply_id}`;
-              await reloadThread();
-            } else {
-              console.error('Error:', response.status);
-            }
-        } catch (error) {
-            console.error('Network error:', error);
-        }
+      try {
+          const response = await fetch(`${gomments.baseURL}/articles/${gomments.article}/replies`, {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                reply_author_name: name ?? "",
+                reply_signature_secret: secret ?? "",
+                reply_body: data.body,
+                reply_idempotency_key: gomments.nextIdempotencyKey,
+              })
+          });
+
+          if (response.ok) {
+            resetTextArea();
+            gomments.nextIdempotencyKey = gomments.uuid4();
+            const r = await response.json()
+            gomments.attentionReplyID = `${r.reply.reply_id}`;
+            await reloadThread();
+          } else {
+            console.error('Error:', response.status);
+          }
+      } catch (error) {
+          console.error('Network error:', error);
+      }
     });
   }
 }
@@ -374,12 +382,12 @@ class ReplyComponent extends ReactiveRenderingHTMLElement {
 
       .wspr {
         white-space: pre-wrap;
+        word-break: break-word;
       }
     </style>
     <div class="${this.getAttribute("reply-id") == gomments.attentionReplyID ? "attention" : ""} has-padding small-font has-margin-bottom-m rounded has-background">
       <div class="has-margin-bottom-m">
-        <span class="heading-font has-font-weight-bold">${this.getAttribute("reply-author-name")}</span>
-        <span class="heading-font">${signature !== "" ? "(" + gomments.makeTripcodeClassic(signature).slice(-8) + ")" : ""}</span>
+        <span class="heading-font has-font-weight-bold">${this.getAttribute("reply-author-name")}</span><span class="heading-font">${signature !== "" ? "#" + signature.slice(0, 15) : ""}</span>
       </div>
       <div class="has-margin-bottom-m body-font wspr">${this.getAttribute("reply-body")}</div>
       <div class="italic text-muted body-font thick-border-top">
