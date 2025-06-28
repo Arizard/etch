@@ -27,16 +27,6 @@ const gomments = {
   }
   `,
   attentionReplyID: "",
-  makeTripcodeClassic: (shaHex) => {
-    const chars = './0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
-    const bytes = shaHex.match(/.{2}/g).map(hex => parseInt(hex, 16));
-
-    let result = '';
-    for (let i = 0; i < 10; i++) {
-      result += chars[bytes[i] % 64];
-    }
-    return result;
-  }
 }
 
 window.gomments = gomments;
@@ -181,11 +171,7 @@ class ReplySubmissionFormComponent extends ReactiveRenderingHTMLElement {
         <div class="row">
             <div class="field-group">
                 <label id="gomments-input-name-label" class="field-label" for="name"></label>
-                <input type="text" id="gomments-input-name" name="name" placeholder="(optional, max 40 chars)">
-            </div>
-            <div class="field-group">
-                <label id="gomments-input-secret-label" class="field-label" for="secret"></label>
-                <input type="password" id="gomments-input-secret" name="secret" placeholder="(optional, 10 - 40 chars, for ID)">
+                <input type="text" id="gomments-input-name" name="name" placeholder="(optional)">
             </div>
         </div>
         <div class="row">
@@ -207,9 +193,7 @@ class ReplySubmissionFormComponent extends ReactiveRenderingHTMLElement {
 
     const textarea = this.shadowRoot.querySelector('#gomments-reply-form-body');
     const inputName = this.shadowRoot.querySelector('#gomments-input-name');
-    const inputSecret = this.shadowRoot.querySelector('#gomments-input-secret');
     const labelName = this.shadowRoot.querySelector('#gomments-input-name-label');
-    const labelSecret = this.shadowRoot.querySelector('#gomments-input-secret-label');
     const labelBody = this.shadowRoot.querySelector('#gomments-input-body-label');
     const submitButton = this.shadowRoot.querySelector('.submit-btn');
 
@@ -217,41 +201,47 @@ class ReplySubmissionFormComponent extends ReactiveRenderingHTMLElement {
     const updateSubmitButtonState = () => {
       const l = textarea.value.trim().length;
       submitButton.disabled =
-        l <= 0 ||
-        l > 500 ||
-        inputName.value.length > 40 ||
-        ((inputSecret.value.length > 40 || inputSecret.value.length < 10) && inputSecret.value.length != 0);
+        l == 0 ||
+        getBodyValidationError() != "" ||
+        getNameValidationError() != "";
     };
 
-    const setLabelName = () => {
-      const s = inputName.value.length > 40 ? "max 40 chars" : "";
-      labelName.innerHTML = `Name <span style="color: crimson">${s}</span>`;
-      inputName.className = inputName.value.length > 40 ? "validation-error" : "";
+    const getNameValidationError = () => {
+      const [name, secret] = inputName.value.split("#");
+      const s = [
+        name?.length > 40 ? "max name length exceeded" : "",
+        secret?.length > 8 ? "max secret length exceeded": "",
+      ].filter(s => s != "").join(", ");
+
+      return s;
     }
 
-    const setLabelSecret = () => {
-      const s = (inputSecret.value.length > 40 || inputSecret.value.length < 10) && inputSecret.value.length != 0 ? "10 – 40 chars" : "";
-      labelSecret.innerHTML = `Signature <span style="color: crimson">${s}</span>`;
-      inputSecret.className = (inputSecret.value.length > 40 || inputSecret.value.length < 10) && inputSecret.value.length != 0 ? "validation-error" : "";
+    const setLabelName = () => {
+      const s = getNameValidationError();
+
+      labelName.innerHTML = `Name <span style="color: crimson">${s}</span>`;
+      inputName.className = s != "" ? "validation-error" : "";
+    }
+
+    const getBodyValidationError = () => {
+      return textarea.value.length > 500 ? "max length exceeded" : "";
     }
 
     const setLabelBody = () => {
-      const s = textarea.value.length > 500 ? "max 500 chars" : "";
+      const s = getBodyValidationError();
+
       labelBody.innerHTML = `Message <span style="color: crimson">${s}</span>`;
-      textarea.className = textarea.value.length > 500 ? "validation-error" : "";
+      textarea.className = s != "" ? "validation-error" : "";
     }
 
     setLabelName();
-    setLabelSecret();
     setLabelBody();
     updateSubmitButtonState();
 
     textarea.addEventListener('input', updateSubmitButtonState);
     inputName.addEventListener('input', setLabelName);
-    inputSecret.addEventListener('input', setLabelSecret);
     textarea.addEventListener('input', setLabelBody);
     inputName.addEventListener('input', updateSubmitButtonState);
-    inputSecret.addEventListener('input', updateSubmitButtonState);
     textarea.addEventListener('input', updateSubmitButtonState);
 
     const resetTextArea = () => {
@@ -260,38 +250,40 @@ class ReplySubmissionFormComponent extends ReactiveRenderingHTMLElement {
     }
 
     this.shadowRoot.querySelector('#gomments-reply-form').addEventListener('submit', async function(e) {
-        e.preventDefault(); // Stop normal form submission
+      e.preventDefault(); // Stop normal form submission
 
-        // Get form data
-        const formData = new FormData(this);
-        const data = Object.fromEntries(formData.entries());
+      // Get form data
+      const formData = new FormData(this);
+      const data = Object.fromEntries(formData.entries());
 
-        try {
-            const response = await fetch(`${gomments.baseURL}/articles/${gomments.article}/replies`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                  reply_author_name: data.name,
-                  reply_signature_secret: data.secret,
-                  reply_body: data.body,
-                  reply_idempotency_key: gomments.nextIdempotencyKey,
-                })
-            });
+      const [name, secret] = data.name.split("#");
 
-            if (response.ok) {
-              resetTextArea();
-              gomments.nextIdempotencyKey = gomments.uuid4();
-              const r = await response.json()
-              gomments.attentionReplyID = `${r.reply.reply_id}`;
-              await reloadThread();
-            } else {
-              console.error('Error:', response.status);
-            }
-        } catch (error) {
-            console.error('Network error:', error);
-        }
+      try {
+          const response = await fetch(`${gomments.baseURL}/articles/${gomments.article}/replies`, {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                reply_author_name: name ?? "",
+                reply_signature_secret: secret ?? "",
+                reply_body: data.body,
+                reply_idempotency_key: gomments.nextIdempotencyKey,
+              })
+          });
+
+          if (response.ok) {
+            resetTextArea();
+            gomments.nextIdempotencyKey = gomments.uuid4();
+            const r = await response.json()
+            gomments.attentionReplyID = `${r.reply.reply_id}`;
+            await reloadThread();
+          } else {
+            console.error('Error:', response.status);
+          }
+      } catch (error) {
+          console.error('Network error:', error);
+      }
     });
   }
 }
@@ -390,12 +382,12 @@ class ReplyComponent extends ReactiveRenderingHTMLElement {
 
       .wspr {
         white-space: pre-wrap;
+        word-break: break-word;
       }
     </style>
     <div class="${this.getAttribute("reply-id") == gomments.attentionReplyID ? "attention" : ""} has-padding small-font has-margin-bottom-m rounded has-background">
       <div class="has-margin-bottom-m">
-        <span class="heading-font has-font-weight-bold">${this.getAttribute("reply-author-name")}</span>
-        <span class="heading-font">${signature !== "" ? "(" + gomments.makeTripcodeClassic(signature).slice(-8) + ")" : ""}</span>
+        <span class="heading-font has-font-weight-bold">${this.getAttribute("reply-author-name")}</span><span class="heading-font">${signature !== "" ? "#" + signature.slice(0, 15) : ""}</span>
       </div>
       <div class="has-margin-bottom-m body-font wspr">${this.getAttribute("reply-body")}</div>
       <div class="italic text-muted body-font thick-border-top">
