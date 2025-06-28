@@ -181,11 +181,7 @@ class ReplySubmissionFormComponent extends ReactiveRenderingHTMLElement {
         <div class="row">
             <div class="field-group">
                 <label id="gomments-input-name-label" class="field-label" for="name"></label>
-                <input type="text" id="gomments-input-name" name="name" placeholder="(optional, max 40 chars)">
-            </div>
-            <div class="field-group">
-                <label id="gomments-input-secret-label" class="field-label" for="secret"></label>
-                <input type="password" id="gomments-input-secret" name="secret" placeholder="(optional, 10 - 40 chars, for ID)">
+                <input type="text" id="gomments-input-name" name="name" placeholder="(optional)">
             </div>
         </div>
         <div class="row">
@@ -207,9 +203,7 @@ class ReplySubmissionFormComponent extends ReactiveRenderingHTMLElement {
 
     const textarea = this.shadowRoot.querySelector('#gomments-reply-form-body');
     const inputName = this.shadowRoot.querySelector('#gomments-input-name');
-    const inputSecret = this.shadowRoot.querySelector('#gomments-input-secret');
     const labelName = this.shadowRoot.querySelector('#gomments-input-name-label');
-    const labelSecret = this.shadowRoot.querySelector('#gomments-input-secret-label');
     const labelBody = this.shadowRoot.querySelector('#gomments-input-body-label');
     const submitButton = this.shadowRoot.querySelector('.submit-btn');
 
@@ -219,20 +213,13 @@ class ReplySubmissionFormComponent extends ReactiveRenderingHTMLElement {
       submitButton.disabled =
         l <= 0 ||
         l > 500 ||
-        inputName.value.length > 40 ||
-        ((inputSecret.value.length > 40 || inputSecret.value.length < 10) && inputSecret.value.length != 0);
+        inputName.value.length > 40;
     };
 
     const setLabelName = () => {
       const s = inputName.value.length > 40 ? "max 40 chars" : "";
       labelName.innerHTML = `Name <span style="color: crimson">${s}</span>`;
       inputName.className = inputName.value.length > 40 ? "validation-error" : "";
-    }
-
-    const setLabelSecret = () => {
-      const s = (inputSecret.value.length > 40 || inputSecret.value.length < 10) && inputSecret.value.length != 0 ? "10 – 40 chars" : "";
-      labelSecret.innerHTML = `Signature <span style="color: crimson">${s}</span>`;
-      inputSecret.className = (inputSecret.value.length > 40 || inputSecret.value.length < 10) && inputSecret.value.length != 0 ? "validation-error" : "";
     }
 
     const setLabelBody = () => {
@@ -242,16 +229,13 @@ class ReplySubmissionFormComponent extends ReactiveRenderingHTMLElement {
     }
 
     setLabelName();
-    setLabelSecret();
     setLabelBody();
     updateSubmitButtonState();
 
     textarea.addEventListener('input', updateSubmitButtonState);
     inputName.addEventListener('input', setLabelName);
-    inputSecret.addEventListener('input', setLabelSecret);
     textarea.addEventListener('input', setLabelBody);
     inputName.addEventListener('input', updateSubmitButtonState);
-    inputSecret.addEventListener('input', updateSubmitButtonState);
     textarea.addEventListener('input', updateSubmitButtonState);
 
     const resetTextArea = () => {
@@ -273,8 +257,8 @@ class ReplySubmissionFormComponent extends ReactiveRenderingHTMLElement {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                  reply_author_name: data.name,
-                  reply_signature_secret: data.secret,
+                  reply_author_name: data.name, // TODO
+                  reply_signature_secret: '', // TODO
                   reply_body: data.body,
                   reply_idempotency_key: gomments.nextIdempotencyKey,
                 })
