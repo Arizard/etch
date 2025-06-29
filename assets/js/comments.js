@@ -302,9 +302,10 @@ class ReplyComponent extends ReactiveRenderingHTMLElement {
     }
 
     let hash = 0;
-    // Simple hash function - sum character codes
+    let power = 1;
     for (let i = 0; i < str.length; i++) {
-      hash += str.charCodeAt(i);
+      hash += str.charCodeAt(i) * power;
+      power *= 37;
     }
     return `tripcode-color-${(hash % 24).toString()}`;
   }
