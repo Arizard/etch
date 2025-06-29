@@ -297,6 +297,10 @@ class ReplyComponent extends ReactiveRenderingHTMLElement {
   }
 
   getTripColorClass(str) {
+    if (str == "") {
+      return `tripcode-color-anon`;
+    }
+
     let hash = 0;
     // Simple hash function - sum character codes
     for (let i = 0; i < str.length; i++) {
@@ -308,11 +312,17 @@ class ReplyComponent extends ReactiveRenderingHTMLElement {
   render() {
     const createdAt = new Date(this.getAttribute("reply-created-at"));
     const signature = this.getAttribute("reply-signature") || "";
+
+    const tripcodeHTML = signature != "" ? `<span class="tripcode">#${signature.slice(0,15)}</span>` : "";
+
     this.shadowRoot.innerHTML = `
     <style>
       ${gomments.styleColors}
 
       /* Light mode tripcode colors - pastels */
+      .tripcode-color-anon {
+        background: #eee;
+      }
       .tripcode-color-0 {
         background: #c8f7c5;
       }
@@ -410,6 +420,10 @@ class ReplyComponent extends ReactiveRenderingHTMLElement {
       }
       @media (prefers-color-scheme: dark) {
         /* Dark mode tripcode colors - jewel tones */
+        .tripcode-color-anon {
+          background: #333;
+        }
+
         .tripcode-color-0 {
           background: #2d8659;
         }
@@ -590,18 +604,22 @@ class ReplyComponent extends ReactiveRenderingHTMLElement {
       }
 
       .tripcode {
+        font-family: "Inconsolata";
+        font-size: 1.4rem;
+        font-weight: lighter;
+        letter-spacing: 0;
+      }
+
+      .name-pill {
+        display: inline-block;
+        margin-left: -6px;
         border-radius: 6px;
         padding: 2px 6px;
-        margin-left: 4px;
-        font-family: Inconsolata;
-        font-size: 1.4rem;
-        display: inline-block;
-        font-weight: bold;
       }
     </style>
     <div class="${this.getAttribute("reply-id") == gomments.attentionReplyID ? "attention" : ""} has-padding small-font has-margin-bottom-m rounded has-background">
       <div class="has-margin-bottom-m">
-        <span class="heading-font has-font-weight-bold">${this.getAttribute("reply-author-name")}</span><span ${signature != "" ? "" : `style="display:none"`} class="tripcode ${this.getTripColorClass(signature)}">${signature !== "" ? "#" + signature.slice(0, 15) : ""}</span>
+        <span class="heading-font has-font-weight-bold name-pill ${this.getTripColorClass(signature)}">${this.getAttribute("reply-author-name")} ${tripcodeHTML}</span>
       </div>
       <div class="has-margin-bottom-m body-font wspr">${this.getAttribute("reply-body")}</div>
       <div class="italic text-muted body-font thick-border-top">
