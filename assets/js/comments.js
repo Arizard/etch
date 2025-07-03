@@ -125,7 +125,7 @@ class ReplySubmissionFormComponent extends ReactiveRenderingHTMLElement {
             border: none;
             border-radius: 6px;
             cursor: pointer;
-            margin-right: 0;
+            margin-right: auto;
             margin-left: auto;
             font-family: 'Manrope';
             font-variant: all-small-caps;
@@ -616,6 +616,8 @@ class ReplyComponent extends ReactiveRenderingHTMLElement {
         margin-left: -6px;
         border-radius: 6px;
         padding: 2px 6px;
+        word-wrap: break-word;
+        max-width: 100%;
       }
     </style>
     <div class="${this.getAttribute("reply-id") == gomments.attentionReplyID ? "attention" : ""} has-padding small-font has-margin-bottom-m rounded has-background">
@@ -690,30 +692,41 @@ customElements.define("gomments-error-fill", ErrorFill);
 
 async function reloadThread() {
   const thread = document.getElementById("comments-thread");
+  if (!thread) {
+    return;
+  }
   thread.innerHTML = `<gomments-loading-fill></gomments-loading-fill>`;
 
-  await new Promise(resolve => setTimeout(() => {resolve();}, 500));
-
   try {
-    await fetch(`${gomments.baseURL}/articles/${gomments.article}/replies`)
+    let replyCount = null;
+    let replies = [];
+    const fetchStats = fetch(`${gomments.baseURL}/articles/replies/stats?article=${gomments.article}`)
       .then(r => r.json())
       .then(r => {
-        const thread = document.getElementById("comments-thread");
-        thread.innerHTML = "";
-
-        for (const respReply of r.replies) {
-          const reply = document.createElement("gomments-reply");
-          reply.setAttribute("id", `reply-${respReply.reply_id || 0}-container`);
-          reply.setAttribute("reply-id", respReply.reply_id);
-          reply.setAttribute("reply-signature", respReply.reply_signature);
-          reply.setAttribute("reply-body", respReply.reply_body);
-          reply.setAttribute("reply-created-at", respReply.reply_created_at);
-          reply.setAttribute("reply-author-name", respReply.reply_author_name);
-
-          thread.appendChild(reply);
-        }
-        console.log("loaded comments");
+        replyCount = r.stats[gomments.article].count;
+      })
+    const fetchReplies = fetch(`${gomments.baseURL}/articles/${gomments.article}/replies`)
+      .then(r => r.json())
+      .then(r => {
+        replies = r.replies;
       });
+
+    await Promise.all([fetchStats, fetchReplies]);
+
+    thread.innerHTML = `<div style="font-variant: all-small-caps; font-family: Manrope; margin-bottom: 10px; font-weight: bold;">Replies (${replyCount})</div>`;
+
+    for (const respReply of replies) {
+      const reply = document.createElement("gomments-reply");
+      reply.setAttribute("id", `reply-${respReply.reply_id || 0}-container`);
+      reply.setAttribute("reply-id", respReply.reply_id);
+      reply.setAttribute("reply-signature", respReply.reply_signature);
+      reply.setAttribute("reply-body", respReply.reply_body);
+      reply.setAttribute("reply-created-at", respReply.reply_created_at);
+      reply.setAttribute("reply-author-name", respReply.reply_author_name);
+
+      thread.appendChild(reply);
+    }
+    console.log("loaded comments");
   } catch (e) {
     thread.innerHTML = "<gomments-error-fill />";
   }
@@ -725,6 +738,9 @@ addEventListener("load", (_event) => {
   gomments.nextIdempotencyKey = gomments.uuid4();
 
   const replyForm = document.getElementById("comments-form");
+  if (!replyForm) {
+    return;
+  }
   replyForm.innerHTML = "<gomments-reply-submission-form />";
 
   reloadThread();
