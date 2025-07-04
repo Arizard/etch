@@ -209,7 +209,7 @@ class ReplySubmissionFormComponent extends ReactiveRenderingHTMLElement {
     const getNameValidationError = () => {
       const [name, secret] = inputName.value.split("#");
       const s = [
-        name?.length > 40 ? "max name length exceeded" : "",
+        name?.length > 24 ? "max name length exceeded" : "",
         secret?.length > 8 ? "max secret length exceeded": "",
       ].filter(s => s != "").join(", ");
 
@@ -540,20 +540,48 @@ class ReplyComponent extends ReactiveRenderingHTMLElement {
         border-style: solid;
       }
 
-      .has-padding {
-        padding: 1.4rem;
+      .reply-card-heading-lockup {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0;
       }
 
-      .rounded {
+      @media (max-width: 769px) {
+        .reply-card-heading-lockup {
+          display: block;
+        }
+      }
+
+      .reply-card-heading-lockup-column {
+        flex: 0 1 auto;
+      }
+
+      .reply-card-heading-lockup-column-left {
+        flex: 1 0 auto;
+        max-width: 100%;
+      }
+
+      .reply-card {
+        padding: 14px 20px;
+        font-size: 1.4rem;
+        margin-bottom: 14px;
         border-radius: 6px;
+        background-color: #ffffff;
+      }
+
+      .reply-card-timestamp {
+        font-family: Manrope;
+        font-size: 1rem;
+        line-height: 1rem;
+        margin-top: 4px;
+      }
+
+      .reply-card-body {
+        margin-bottom: 6px;
       }
 
       .italic {
         font-style: italic;
-      }
-
-      .has-background {
-        background-color: #ffffff;
       }
 
       .text-muted {
@@ -565,15 +593,16 @@ class ReplyComponent extends ReactiveRenderingHTMLElement {
       }
 
       @media (prefers-color-scheme: dark) {
-        .has-background {
-          background-color: var(--body-background-dark-alt);
-        }
         .text-muted {
           color: var(--body-text-color-muted-dark);
         }
 
         .thick-border-top {
           border-top: solid 1px var(--body-text-color-muted-dark);
+        }
+
+        .reply-card {
+          background-color: var(--body-background-dark-alt);
         }
       }
 
@@ -620,18 +649,17 @@ class ReplyComponent extends ReactiveRenderingHTMLElement {
         max-width: 100%;
       }
     </style>
-    <div class="${this.getAttribute("reply-id") == gomments.attentionReplyID ? "attention" : ""} has-padding small-font has-margin-bottom-m rounded has-background">
-      <div class="has-margin-bottom-m">
-        <span class="heading-font has-font-weight-bold name-pill ${this.getTripColorClass(signature)}">${this.getAttribute("reply-author-name")} ${tripcodeHTML}</span>
+    <div title="ID: ${this.getAttribute("reply-id")}, ${timeAgoExact(createdAt)} at ${createdAt.toLocaleString()}" class="${this.getAttribute("reply-id") == gomments.attentionReplyID ? "attention" : ""} reply-card">
+      <div class="has-margin-bottom-m reply-card-heading-lockup">
+          <span class="heading-font has-font-weight-bold name-pill ${this.getTripColorClass(signature)}">${this.getAttribute("reply-author-name")} ${tripcodeHTML}</span>
       </div>
-      <div class="has-margin-bottom-m body-font wspr">${this.getAttribute("reply-body")}</div>
-      <div class="italic text-muted body-font thick-border-top">
-        <span>#${this.getAttribute("reply-id")} ${createdAt.toLocaleString()}</span>
-      </div>
+      <div class="reply-card-body body-font wspr">${this.getAttribute("reply-body")}</div>
     </div>
     `;
   }
 }
+
+// <span title="ID: ${this.getAttribute("reply-id")}, ${createdAt.toLocaleString()}">${timeAgoExact(createdAt)}</span>
 
 customElements.define("gomments-reply", ReplyComponent);
 
@@ -713,7 +741,7 @@ async function reloadThread() {
 
     await Promise.all([fetchStats, fetchReplies]);
 
-    thread.innerHTML = `<div style="font-family: Manrope; margin-bottom: 10px; font-weight: 800; font-size: 1.1rem;">REPLIES (${replyCount})</div>`;
+    thread.innerHTML = `<div style="font-family: Manrope; margin-bottom: 10px; font-weight: 800; font-size: 1.1rem; line-height: 1.1rem;">REPLIES (${replyCount})</div>`;
 
     for (const respReply of replies) {
       const reply = document.createElement("gomments-reply");
@@ -745,3 +773,26 @@ addEventListener("load", (_event) => {
 
   reloadThread();
 });
+
+// Alternative version that shows exactly the format you requested
+function timeAgoExact(date) {
+  const now = new Date();
+  const past = new Date(date);
+  const diffMs = now - past;
+
+  const totalMinutes = Math.floor(diffMs / (1000 * 60));
+  const totalHours = Math.floor(totalMinutes / 60);
+  const totalDays = Math.floor(totalHours / 24);
+
+  const days = totalDays;
+  const hours = totalHours % 24;
+  const minutes = totalMinutes % 60;
+
+  const parts = [];
+
+  if (days > 0) parts.push(`${days} days`);
+  if (days == 0 && hours > 0) parts.push(`${hours} hours`);
+  if (days == 0 && hours == 0 && minutes > 0) parts.push(`${minutes} minutes`);
+
+  return parts.length > 0 ? parts.join(' ') + ' ago' : 'just now';
+}
