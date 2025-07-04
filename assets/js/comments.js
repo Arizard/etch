@@ -84,10 +84,10 @@ class ReplySubmissionFormComponent extends ReactiveRenderingHTMLElement {
 
         .field-label {
             font-family: 'Manrope';
-            font-variant: all-small-caps;
-            font-size: 1.4rem;
-            margin-bottom: 4px;
-            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 6px;
+            font-weight: 800;
+            line-height: 1.1rem;
         }
 
         textarea {
@@ -219,7 +219,7 @@ class ReplySubmissionFormComponent extends ReactiveRenderingHTMLElement {
     const setLabelName = () => {
       const s = getNameValidationError();
 
-      labelName.innerHTML = `Name <span style="color: crimson">${s}</span>`;
+      labelName.innerHTML = `Name <span style="color: crimson">${s}</span>`.toUpperCase();
       inputName.className = s != "" ? "validation-error" : "";
     }
 
@@ -230,7 +230,7 @@ class ReplySubmissionFormComponent extends ReactiveRenderingHTMLElement {
     const setLabelBody = () => {
       const s = getBodyValidationError();
 
-      labelBody.innerHTML = `Message <span style="color: crimson">${s}</span>`;
+      labelBody.innerHTML = `Message <span style="color: crimson">${s}</span>`.toUpperCase();
       textarea.className = s != "" ? "validation-error" : "";
     }
 
@@ -713,7 +713,7 @@ async function reloadThread() {
 
     await Promise.all([fetchStats, fetchReplies]);
 
-    thread.innerHTML = `<div style="font-variant: all-small-caps; font-family: Manrope; margin-bottom: 10px; font-weight: bold;">Replies (${replyCount})</div>`;
+    thread.innerHTML = `<div style="font-family: Manrope; margin-bottom: 10px; font-weight: 800; font-size: 1.1rem;">REPLIES (${replyCount})</div>`;
 
     for (const respReply of replies) {
       const reply = document.createElement("gomments-reply");
