@@ -290,7 +290,7 @@ class ReplySubmissionFormComponent extends ReactiveRenderingHTMLElement {
 customElements.define("gomments-reply-submission-form", ReplySubmissionFormComponent);
 
 class ReplyComponent extends ReactiveRenderingHTMLElement {
-  static observedAttributes = ["reply-id", "reply-author-name", "reply-signature", "reply-body"];
+  static observedAttributes = ["reply-id", "reply-author-name", "reply-signature", "reply-body", "reply-created-at"];
 
   constructor() {
     super();
@@ -647,11 +647,22 @@ class ReplyComponent extends ReactiveRenderingHTMLElement {
         padding: 2px 6px;
         word-wrap: break-word;
         max-width: 100%;
+        font-size: 1.4rem;
+      }
+
+      .reply-created-at {
+        font-size: 0.8rem;
+        display: block;
+        width: 100%;
+        color: var(--body-text-color-muted);
+        padding: 0;
+        margin-top: 2px;
       }
     </style>
     <div title="ID: ${this.getAttribute("reply-id")}, ${timeAgoExact(createdAt)} at ${createdAt.toLocaleString()}" class="${this.getAttribute("reply-id") == gomments.attentionReplyID ? "attention" : ""} reply-card">
       <div class="has-margin-bottom-m reply-card-heading-lockup">
           <span class="heading-font has-font-weight-bold name-pill ${this.getTripColorClass(signature)}">${this.getAttribute("reply-author-name")} ${tripcodeHTML}</span>
+          <span class="heading-font has-font-weight-bold reply-created-at">${timeAgoExact(createdAt).toUpperCase()}</span>
       </div>
       <div class="reply-card-body body-font wspr">${this.getAttribute("reply-body")}</div>
     </div>
