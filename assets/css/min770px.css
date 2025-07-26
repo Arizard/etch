@@ -4,7 +4,7 @@
     overflow-x: hidden;
   }
   body {
-      width: 60ch;
+      width: 80ch;
   }
 
   main#content hr {
@@ -23,7 +23,9 @@
       display: inline;
       margin: 0 3px;
   }
-
+  html {
+    font-size: 65%;
+  }
 }
 
 @media (max-width: 769px) {
@@ -47,6 +49,10 @@
 
   figure.portrait {
     width: 100% !important;
+  }
+
+  html {
+    font-size: 75%;
   }
 }
 /* main#content ul#posts { */
