@@ -18,23 +18,13 @@
 }
 
 @font-face {
-  font-family: 'Quattrocento';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Quattrocento'), url('../fonts/quattrocento/Quattrocento-Regular.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Quattrocento';
-  font-style: normal;
-  font-weight: 700;
-  src: local('Quattrocento'), url('../fonts/quattrocento/Quattrocento-Bold.woff') format('woff');
-}
-
-@font-face {
   font-family: 'Inconsolata';
   src: local('Inconsolata for Powerline'), url('../fonts/inconsolata/Inconsolata.woff2') format('woff2');
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 $heading-font: 'Manrope', sans-serif;
-$body-font: 'Quattrocento';
+$body-font: 'Manrope', sans-serif;
+$body-font-weight: 400;
+

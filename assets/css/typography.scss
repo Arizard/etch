@@ -8,9 +8,10 @@ a {
 
 $body-font-size: 1.4rem;
 $body-line-height: 2.1rem;
-$banner-font-size: 1.9rem;
-$h1-font-size: 1.9rem;
-$h2-font-size: 1.6rem;
+$banner-font-size: 2.5rem;
+$h1-font-size: 200%;
+$h2-font-size: 160%;
+$h3-font-size: 120%;
 
 nav#banner {
   display: block;
@@ -20,6 +21,7 @@ nav#banner {
   border-bottom: solid 4px $accent-color;
   .banner-inner {
     margin: 0;
+    line-height: $banner-font-size;
   }
   h2 {
     text-transform: lowercase;
@@ -56,6 +58,7 @@ body {
   color: $body-text-color;
   line-height: $body-line-height;
   font-size: $body-font-size;
+  font-weight: $body-font-weight;
 }
 
 .has-heading-font {
@@ -118,37 +121,32 @@ main#content {
     word-wrap: break-word;
     white-space: normal;
     letter-spacing: $letter-spacing-headings;
-    margin: ($body-line-height/2) 0 ($body-line-height/2) 0;
+    margin: ($body-line-height) 0 ($body-line-height) 0;
+    line-height: 120%;
   }
 
   h1 {
     font-size: $h1-font-size;
-    line-height: $body-line-height;
   }
 
   h2 {
     font-size: $h2-font-size;
-    line-height: $body-line-height;
   }
 
   h3 {
-    font-size: $body-font-size;
-    line-height: $body-line-height;
+    font-size: $h3-font-size;
   }
 
   h4 {
     font-size: $body-font-size;
-    line-height: $body-line-height;
   }
 
   h5 {
     font-size: $body-font-size;
-    line-height: $body-line-height;
   }
 
   h6 {
     font-size: $body-font-size;
-    line-height: $body-line-height;
   }
 
   blockquote {
@@ -256,7 +254,6 @@ footer#footer {
 .comments-container {
   padding: 0;
   box-sizing: border-box;
-  margin-top: 1.4rem;
+  margin-top: 48px;
   padding-top: 1.4rem;
-  border-top: solid 4px $body-text-color-muted;
 }

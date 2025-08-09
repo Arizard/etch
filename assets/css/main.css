@@ -14,27 +14,6 @@ a:hover {
     text-decoration: underline;
 }
 
-main#content table#posts-table {
-    margin: 0;
-    width: 100%;
-    border-collapse: collapse;
-    max-width: 100%;
-    border: none;
-}
-
-main#content table#posts-table td:nth-child(2) {
-  text-align: right;
-}
-
-main#content table#posts-table td {
-  border: none;
-  padding: 4px 0 4px 0;
-  vertical-align: top;
-}
-
-main#content table#posts-table tr:hover {
-}
-
 code, pre {
     font-family: 'Inconsolata', monospace;
     padding: 0;

@@ -1,22 +1,41 @@
-<h3>Latest Posts</h3>
-<table id="posts-table">
+<!-- <table id="posts-table"> -->
+<!--     {{- range where site.RegularPages "Type" "in" site.Params.mainSections }} -->
+<!--     <tr> -->
+<!--         <td> -->
+<!--             <div class="has-font-weight-bold has-small-heading-letter-spacing"> -->
+<!--                 <a href="{{ .Permalink }}"> -->
+<!--                     {{ .Title }} -->
+<!--                 </a> -->
+<!--             </div> -->
+<!--             {{- if isset .Params "subtitle" -}} -->
+<!--             <div class="has-body-text-color-muted"> -->
+<!--                     <time>{{ .Date.Format "2 Jan '06" }}</time> &mdash; {{ .Params.Subtitle }} -->
+<!--             </div> -->
+<!--             {{- end -}} -->
+<!--         </td> -->
+<!--     </tr> -->
+<!--     {{- end }} -->
+<!-- </table> -->
+<div class="posts-list-container">
+    <h2>Posts</h2>
     {{- range where site.RegularPages "Type" "in" site.Params.mainSections }}
-    <tr>
-        <td>
-            <div class="has-font-weight-bold has-heading-font has-small-heading-letter-spacing">
+    <div class="posts-list-item">
+            <div class="posts-list-heading">
                 <a href="{{ .Permalink }}">
                     {{ .Title }}
                 </a>
             </div>
+            <div class="has-body-text-color-muted posts-list-time">
+                    <time>{{ .Date.Format "2 Jan 2006" }}</time>
+                    {{- if .Draft -}}
+                    &nbsp;&mdash;&nbsp;draft
+                    {{- end -}}
+            </div>
             {{- if isset .Params "subtitle" -}}
-            <div class="has-body-text-color-muted">
+            <div class="posts-list-subtitle">
                     {{ .Params.Subtitle }}
             </div>
             {{- end -}}
-        </td>
-        <td>
-            <span class="has-body-text-color-muted nowrap"><time>{{ .Date.Format "2 Jan '06" }}</time></span>
-        </td>
-    </tr>
+    </div>
     {{- end }}
-</table>
+</div>

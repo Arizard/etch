@@ -21,9 +21,9 @@ const gomments = {
     /* Dark */
     --body-text-color-dark: #f1f2f6;
     --body-text-color-muted-dark: #ced6e0;
-    --body-background-dark: #121212;
-    --body-background-dark-alt: #2f3542;
-    --body-background-dark-alt-1: #57606f;
+		--body-background-dark: #0f172a;
+		--body-background-dark-alt: #1e293b;
+		--body-background-dark-alt-1: #334155;
   }
   `,
   attentionReplyID: "",
@@ -100,7 +100,7 @@ class ReplySubmissionFormComponent extends ReactiveRenderingHTMLElement {
         input[type="password"],
         textarea {
             font-family: Inconsolata;
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             width: 100%;
             padding: 12px;
             border: 2px solid #ddd;
@@ -615,7 +615,7 @@ class ReplyComponent extends ReactiveRenderingHTMLElement {
       }
 
       .body-font {
-        font-family: quattrocento;
+        font-family: "Manrope", sans-serif;
       }
 
       .thick-border-top {
