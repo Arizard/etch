@@ -13,17 +13,13 @@
     </div>
     {{ $posts := where site.RegularPages "Section" "posts" }}
     {{ $featuredPosts := where $posts "Params.featured" "eq" true }}
-    {{ $unfeaturedPosts := where $posts "Params.featured" "ne" true }}
     <h2>Featured Posts</h2>
     {{ if gt (len $featuredPosts) 0 }}
         {{ range $featuredPosts }}
           {{- partial "post-item.html" . -}}
         {{ end }}
     {{ end }}
-    <h2>Latest Posts</h2>
-    {{ if gt (len $unfeaturedPosts) 0 }}
-        {{ range $unfeaturedPosts }}
-          {{- partial "post-item.html" . -}}
-        {{ end }}
-    {{ end }}
+    <p>
+        <a href="/posts/">See all posts →</a>
+    </p>
 {{ end }}
