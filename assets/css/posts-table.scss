@@ -16,11 +16,11 @@
 
 .posts-list-heading {
   margin-bottom: 5px !important;
-}
-
-.posts-list-heading {
   font-size: $h3-font-size;
   font-family: "Manrope", sans-serif;
+  a {
+    color: $accent-color !important;
+  }
   display: block;
   font-weight: bold;
   word-wrap: break-word;

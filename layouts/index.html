@@ -5,11 +5,6 @@
                 {{ .Content }}
             </span>
         </div>
-        <!-- <div class="about-me-profile"> -->
-        <!--     <div class="profile-circle"> -->
-        <!--         <img alt="Profile photo of Arie" src="{{ site.Params.profilePicture }}" /> -->
-        <!--     </div> -->
-        <!-- </div> -->
     </div>
     {{ $posts := where site.RegularPages "Section" "posts" }}
     {{ $featuredPosts := where $posts "Params.featured" "eq" true }}
