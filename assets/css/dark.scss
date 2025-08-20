@@ -11,13 +11,11 @@
     scrollbar-color: #6c6c6c #2e2e2e;
   }
 
-  nav#banner a {
+  nav#banner {
     color: $body-text-color-dark;
-    text-decoration: none;
-  }
-
-  nav#banner .navlinks ul li a {
-    color: $body-text-color-dark;
+    .navlinks a {
+      color: $body-text-color-dark;
+    }
   }
 
   .has-body-text-color-muted {

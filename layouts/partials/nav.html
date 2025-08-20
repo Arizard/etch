@@ -1,14 +1,19 @@
+{{ $words := split .Site.Title " " }}
+{{ $initials := "" }}
+{{ range $words }}
+  {{ $initials = printf "%s%s" $initials (substr . 0 1) }}
+{{ end }}
+
 <nav id="banner">
   <div class="banner-inner">
     <span class="banner-h"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></span>
+    <span class="banner-h-condensed"><a href="{{ .Site.BaseURL }}">{{ $initials }}</a></span>
     <div class="navlinks">
-        <ul>
-            {{ range .Site.Menus.main.ByWeight -}}
-            <li>
-                {{ .Pre }}<a href="{{ .URL }}" title="{{ .Title }}">{{- .Title -}}</a>{{ .Post }}
-            </li>
-            {{- end }}
-        </ul>
+        {{ range .Site.Menus.main.ByWeight -}}
+        <div class="navlink">
+            {{ .Pre }}<a href="{{ .URL }}" title="{{ .Title }}">{{- .Title -}}</a>{{ .Post }}
+        </div>
+        {{- end }}
     </div>
   </div>
 </nav>

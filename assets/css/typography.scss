@@ -22,51 +22,58 @@ nav#banner {
     margin: 0;
     line-height: $banner-font-size;
   }
-  .banner-h {
+  .banner-h, .banner-h-condensed {
     display: inline-block;
     text-transform: lowercase;
     margin: 0 3px 0 0;
     font-weight: 800;
     font-size: $banner-font-size;
+    background-color: $accent-color;
     a {
-      color: $accent-color;
+      color: $body-background;
     }
+    padding: 6px 9px;
   }
+
   a {
       text-decoration: none;
   }
 
-  a:hover {
-      text-decoration: underline;
-  }
-
   .navlinks {
+    display: inline-block;
     font-size: $banner-font-size;
-  }
-  .navlinks ul {
-      list-style-type: none;
-      text-transform: lowercase;
-      margin: 0;
-      padding: 0;
-    li a {
+    text-transform: lowercase;
+    margin: 0;
+    padding: 0;
+    a {
       color: $body-text-color;
+      text-decoration: underline;
+    }
+
+    display: inline-block;
+    .navlink {
+      display: inline-block;
+      padding: 6px 0px;
+      margin: 0 9px 0 0;
     }
   }
 }
 
-nav#banner .navlinks {
-  display: inline-block;
-}
-
-nav#banner .navlinks ul li {
-    display: inline;
-    margin: 0 3px;
-}
-
 @media (max-width: 769px) {
   nav#banner {
-    .banner-h, .navlinks {
-      font-size: 1.67rem;
+    .navlinks {
+      margin: 0 3px;
+    }
+    .banner-h {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 770px) {
+  nav#banner {
+    .banner-h-condensed {
+      display: none;
     }
   }
 }
@@ -113,9 +120,9 @@ main#content {
         display: block;
       }
       overflow: hidden;
-      border-radius: 4px;
       box-sizing: border-box;
       padding: 0;
+      margin-top: 24px;
     }
 
     .hero-caption {
