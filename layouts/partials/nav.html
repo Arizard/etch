@@ -1,11 +1,11 @@
 <nav id="banner">
   <div class="banner-inner">
-    <h2><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h2>
+    <span class="banner-h"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></span>
     <div class="navlinks">
         <ul>
             {{ range .Site.Menus.main.ByWeight -}}
             <li>
-                {{ .Pre }}<a href="{{ .URL }}" title="{{ .Title }}">{{- .Name -}}</a>{{ .Post }}
+                {{ .Pre }}<a href="{{ .URL }}" title="{{ .Title }}">{{- .Title -}}</a>{{ .Post }}
             </li>
             {{- end }}
         </ul>

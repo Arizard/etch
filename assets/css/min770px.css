@@ -11,41 +11,12 @@
       width: 100%;
   }
 
-  nav#banner h2 {
-    display: inline-block;
-  }
-
-  nav#banner .navlinks {
-    display: inline-block;
-  }
-
-  nav#banner .navlinks ul li {
-      display: inline;
-      margin: 0 3px;
-  }
   html {
     font-size: 65%;
   }
 }
 
 @media (max-width: 769px) {
-  nav#banner h2 {
-    display: block;
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  nav#banner .navlinks {
-    display: block;
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  nav#banner .navlinks ul li {
-      display: inline;
-      margin: 0;
-      margin-right: 3px;
-  }
 
   figure.portrait {
     width: 100% !important;
@@ -59,4 +30,3 @@
 /*     font-size: 18px; */
 /*     font-size: 1.8rem; */
 /* } */
-
