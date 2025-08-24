@@ -1,8 +1,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {{ with .Site.Params.description -}}
+    {{ $description := .Params.description | default .Site.Params.description -}}
+    {{ with $description -}}
     <meta name="description" content="{{ . }}">
+    {{ end }}
+    {{ $keywords := .Params.keywords | default .Site.Params.keywords -}}
+    {{ with $keywords -}}
+    <meta name="keywords" content="{{ if reflect.IsSlice . }}{{ delimit . ", " }}{{ else }}{{ . }}{{ end }}">
     {{ end }}
     {{ with .OutputFormats.Get "rss" -}}
         {{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
