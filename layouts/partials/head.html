@@ -13,24 +13,6 @@
         {{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
     {{ end -}}
 
-    {{ $resources := slice -}}
-
-    {{ $resources = $resources | append (resources.Get "css/main.css") -}}
-
-    {{ $resources = $resources | append (resources.Get "css/min770px.css") -}}
-
-    {{ if .Site.Params.highlight -}}
-        {{ $resources = $resources | append (resources.Get "css/syntax.css") -}}
-    {{ end -}}
-
-    {{ $css := $resources | resources.Concat "css/style.css" | minify }}
-    {{ printf `<link rel="stylesheet" href="%s">` $css.RelPermalink | safeHTML }}
-
-    {{ $customSCSS := resources.Get "css/all.scss" }}
-    {{ $customStyle := $customSCSS | css.Sass | minify }}
-
-    <link rel="stylesheet" href="{{ $customStyle.RelPermalink | safeHTML }}" >
-
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
@@ -39,7 +21,7 @@
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ff4757" />
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#ff4757" />
 
-    <script src="https://kit.fontawesome.com/6a0ddb5277.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/6a0ddb5277.js" crossorigin="anonymous" defer></script>
 
     <script>
         window.siteConfig = {
@@ -49,9 +31,27 @@
         window.articleConfig = {
             articleID: {{ .Page.Slug | default .Page.Path }},
         };
+
+        {{ if ne .Page.Params.nocomment true }}
+        {{ $jsComments := resources.Get "js/comments.js" | js.Build | minify }}
+        {{ $jsComments.Content | safeJS }}
+        {{ end }}
     </script>
-    {{ $jsComments := resources.Get "js/comments.js" | js.Build }}
-    <script src='{{ $jsComments.RelPermalink }}'></script>
+
+    {{ $resources := slice -}}
+    {{ $resources = $resources | append (resources.Get "css/main.css") -}}
+    {{ $resources = $resources | append (resources.Get "css/min770px.css") -}}
+    {{ if .Site.Params.highlight -}}
+        {{ $resources = $resources | append (resources.Get "css/syntax.css") -}}
+    {{ end -}}
+    {{ $customSCSS := resources.Get "css/all.scss" }}
+    {{ $customStyle := $customSCSS | css.Sass | minify }}
+    {{ $css := $resources | resources.Concat "css/style.css" | minify }}
+
+    <style>
+        {{ $css.Content | safeCSS }}
+        {{ $customStyle.Content | safeCSS }}
+    </style>
 
     <title>{{ if eq  .Title  .Site.Title }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{.}} - {{ end }}{{ .Site.Title }}{{ end }}</title>
 </head>
