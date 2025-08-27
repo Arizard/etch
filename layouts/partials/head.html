@@ -21,8 +21,6 @@
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ff4757" />
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#ff4757" />
 
-    <script src="https://kit.fontawesome.com/6a0ddb5277.js" crossorigin="anonymous" defer></script>
-
     <script>
         window.siteConfig = {
             apiURL: {{ if hugo.IsServer }}{{ "http://localhost:8080" }}{{ else }}{{ "https://backend.less.coffee" }}{{ end }},
