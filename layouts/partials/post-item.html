@@ -4,17 +4,16 @@
                 {{ .Title }}
             </a>
         </div>
-        <div class="has-body-text-color-muted posts-list-time">
-                <time>{{ .Date.Format "2 Jan 2006" }}</time>
-                &nbsp;&mdash;&nbsp;{{ .Params.author }}
-                &nbsp;&mdash;&nbsp;{{ .ReadingTime }} min read
-                {{- if .Draft -}}
-                &nbsp;&mdash;&nbsp;draft
-                {{- end -}}
-        </div>
         {{- if isset .Params "subtitle" -}}
         <div class="posts-list-subtitle">
                 {{ .Params.Subtitle }}
         </div>
         {{- end -}}
+        <div class="posts-list-time">
+                <time>{{ .Date.Format "2 Jan 2006" }}</time>
+                &nbsp;&mdash;&nbsp;{{ .ReadingTime }} min read<span data-article-id-for-reply-count="{{ .Slug | default .Path }}" class="post-item-reply-count"></span>
+                {{- if .Draft -}}
+                &nbsp;&mdash;&nbsp;draft
+                {{- end -}}
+        </div>
 </div>

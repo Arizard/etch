@@ -34,6 +34,29 @@
         {{ $jsComments := resources.Get "js/comments.js" | js.Build | minify }}
         {{ $jsComments.Content | safeJS }}
         {{ end }}
+
+        addEventListener("load", async () => {
+            const replyCountSpans = document.querySelectorAll('[data-article-id-for-reply-count]');
+            if (replyCountSpans.length === 0) return;
+
+            try {
+                const articleParams = Array.from(replyCountSpans, el => 
+                    `article=${btoa(el.dataset.articleIdForReplyCount)}`
+                ).join('&');
+                
+                const response = await fetch(`${window.siteConfig.apiURL}/gomments/articles/replies/stats?${articleParams}`);
+                const { stats } = await response.json();
+
+                replyCountSpans.forEach(el => {
+                    const count = stats[btoa(el.dataset.articleIdForReplyCount)]?.count;
+                    if (count) {
+                        el.innerHTML = `&nbsp;&mdash;&nbsp;${count} repl${count === 1 ? 'y' : 'ies'}`;
+                    }
+                });
+            } catch (error) {
+                console.error('Failed to load reply counts:', error);
+            }
+        });
     </script>
 
     {{ $resources := slice -}}
