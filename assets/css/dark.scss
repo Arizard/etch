@@ -29,11 +29,11 @@
   footer#footer {
     color: $body-text-color-muted-dark;
     a {
-      text-decoration: none;
+      text-decoration: underline solid 1px;
       color: $accent-color;
     }
     a:hover {
-      text-decoration: underline;
+      text-decoration: underline solid 1px;
     }
   }
 
