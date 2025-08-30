@@ -18,7 +18,7 @@
 </article>
 <aside class="front-matter">
   <div>
-    <span class="has-body-text-color-muted">
+    <span>
     {{- if and (isset .Params "author") (isset .Params "date") -}}
       {{ .Params.Author }},
       <time>{{ .Params.Date.Format "2 January 2006" }}</time>

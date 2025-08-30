@@ -7,6 +7,17 @@
     color: $body-text-color-dark;
   }
 
+  main#content {
+    figure {
+      color: $body-text-color-dark;
+      figcaption {
+        p {
+          color: $body-text-color-dark;
+        }
+      }
+    }
+  }
+
   html {
     scrollbar-color: #6c6c6c #2e2e2e;
   }
@@ -51,7 +62,7 @@
     }
   }
 
-  .footnotes {
+  main#content .footnotes {
     hr {
       background: $body-text-color-dark;
     }

@@ -175,7 +175,7 @@ main#content {
     padding-left: 1rem;
     padding-right: 1rem;
     border-color: $body-text-color;
-    border-left: 2px solid;
+    border-left: 1.5px solid;
     font-style: italic;
   }
 
@@ -205,7 +205,7 @@ main#content {
   .footnotes {
     hr { /* used in footnotes only */
       border: 0;
-      height: 3px;
+      height: 1.5px;
       background: $body-text-color;
     }
   }
@@ -306,4 +306,8 @@ main#content {
     margin-bottom: 6px;
     padding-bottom: 0;
   }
+}
+
+.front-matter {
+  font-size: 80%;
 }
