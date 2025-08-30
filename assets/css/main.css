@@ -28,11 +28,11 @@ code, pre {
     white-space: nowrap;
 }
 
-main {
-  animation: fadeIn 0.2s ease;
+@view-transition {
+    navigation: auto;
 }
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation-duration: 0.152s;
+    animation-timing-function: ease-in-out;
 }
