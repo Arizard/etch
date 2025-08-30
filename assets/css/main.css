@@ -24,5 +24,14 @@ code, pre {
 }
 
 .nowrap {
-  white-space: nowrap;
+    white-space: nowrap;
+}
+
+main {
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
