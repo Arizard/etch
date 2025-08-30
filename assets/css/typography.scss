@@ -2,7 +2,8 @@ $letter-spacing-headings: -0.05rem;
 $letter-spacing-headings-small: -0.05rem;
 
 a {
-  text-decoration: underline solid 1px;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
 }
 
 $body-font-size: 1.4rem;
@@ -46,7 +47,8 @@ nav#banner {
     padding: 0;
     a {
       color: $body-text-color;
-      text-decoration: underline solid 2px;
+      text-decoration: underline;
+      text-decoration-thickness: 1.5px;
     }
 
     display: inline-block;
@@ -233,11 +235,13 @@ footer#footer {
   color: $body-text-color-muted;
   margin: 48px 0 0 0;
   a {
-    text-decoration: underline solid 1px;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
     color: $body-text-color-muted;
   }
   a:hover {
-    text-decoration: underline solid 1px;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
   }
 
   .footer-nav-container {

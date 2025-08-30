@@ -11,7 +11,8 @@ body {
 }
 
 a:hover {
-    text-decoration: underline solid 1px;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
 }
 
 code, pre {
