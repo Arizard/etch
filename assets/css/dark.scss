@@ -7,6 +7,17 @@
     color: $body-text-color-dark;
   }
 
+  main#content {
+    figure {
+      color: $body-text-color-dark;
+      figcaption {
+        p {
+          color: $body-text-color-dark;
+        }
+      }
+    }
+  }
+
   html {
     scrollbar-color: #6c6c6c #2e2e2e;
   }
@@ -31,7 +42,7 @@
     a {
       text-decoration: underline;
       text-decoration-thickness: 1px;
-      color: $accent-color;
+      color: $body-text-color-muted-dark;
     }
     a:hover {
       text-decoration: underline;
@@ -44,14 +55,9 @@
       color: $body-text-color-dark;
       background-color: $body-background-dark-alt;
     }
-    header#post-header {
-      .hero-caption {
-        color: $body-text-color-muted-dark;
-      }
-    }
   }
 
-  .footnotes {
+  main#content .footnotes {
     hr {
       background: $body-text-color-dark;
     }

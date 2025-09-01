@@ -2,17 +2,19 @@ main#content {
   figure {
     display: table;
     margin: 8px auto;
-    color: $body-text-color-muted;
+    color: $body-text-color;
     padding: 0;
     width: 100%;
 
     figcaption {
       display: table-caption;
       caption-side: bottom;
-    }
 
-    p {
-      color: $body-text-color-muted;
+      p {
+        color: $body-text-color;
+        font-style: italic;
+        font-size: 80%;
+      }
     }
 
     img {
