@@ -35,22 +35,24 @@
         {{ $jsComments.Content | safeJS }}
         {{ end }}
 
+        const iconComment = `{{- partial "svg/comment.html" . -}}`;
+
         addEventListener("load", async () => {
             const replyCountSpans = document.querySelectorAll('[data-article-id-for-reply-count]');
             if (replyCountSpans.length === 0) return;
 
             try {
-                const articleParams = Array.from(replyCountSpans, el => 
+                const articleParams = Array.from(replyCountSpans, el =>
                     `article=${btoa(el.dataset.articleIdForReplyCount)}`
                 ).join('&');
-                
+
                 const response = await fetch(`${window.siteConfig.apiURL}/gomments/articles/replies/stats?${articleParams}`);
                 const { stats } = await response.json();
 
                 replyCountSpans.forEach(el => {
                     const count = stats[btoa(el.dataset.articleIdForReplyCount)]?.count;
                     if (count) {
-                        el.innerHTML = `&nbsp;&mdash;&nbsp;${count} repl${count === 1 ? 'y' : 'ies'}`;
+                        el.innerHTML = `${iconComment} ${count} ${count == 1 ? "reply" : "replies"}`;
                     }
                 });
             } catch (error) {

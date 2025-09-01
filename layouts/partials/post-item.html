@@ -9,11 +9,22 @@
                 {{ .Params.Subtitle }}
         </div>
         {{- end -}}
-        <div class="posts-list-time">
-                <time>{{ .Date.Format "2 Jan 2006" }}</time>
-                &nbsp;&mdash;&nbsp;{{ .ReadingTime }} min read<span data-article-id-for-reply-count="{{ .Slug | default .Path }}" class="post-item-reply-count"></span>
+        <div class="posts-list-pills">
+                <div class="posts-list-pill">
+                        {{- partial "svg/calendar.html" . -}}
+                        <time>{{ .Date.Format "2 Jan 2006" }}</time>
+                </div>
+                <div class="posts-list-pill">
+                        {{- partial "svg/stopwatch.html" . -}}
+                        {{ .ReadingTime }} minutes
+                </div>
+                <div class="posts-list-pill">
+                        <span data-article-id-for-reply-count="{{ .Slug | default .Path }}" class="post-item-reply-count"></span>
+                </div>
                 {{- if .Draft -}}
-                &nbsp;&mdash;&nbsp;draft
+                <div class="posts-list-pill">
+                draft
+                </div>
                 {{- end -}}
         </div>
 </div>
