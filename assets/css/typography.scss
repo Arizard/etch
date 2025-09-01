@@ -110,22 +110,6 @@ main#content {
   }
   header#post-header {
     margin-bottom: 0.5rem;
-    .hero {
-      width: 100%;
-      img {
-        width: 100%;
-        display: block;
-      }
-      overflow: hidden;
-      box-sizing: border-box;
-      padding: 0;
-      margin-top: 24px;
-    }
-
-    .hero-caption {
-      color: $body-text-color-muted;
-      padding: 4px 0 0 0;
-    }
   }
 
   p {
@@ -285,6 +269,49 @@ footer#footer {
   font-weight: bold;
 }
 
+.bottom-nav {
+  margin-top: 32px;
+  .bottom-nav-label {
+    margin-top: 6px;
+  }
+  .bottom-nav-next {
+    text-align: left;
+    a {
+      font-weight: bold;
+    }
+  }
+  svg {
+    margin-bottom: -7px;
+    margin-right: 4px;
+    margin-left: 4px;
+  }
+}
+
+@media (max-width: 769px) {
+  .bottom-nav {
+    grid-template-columns:
+      1fr;
+    grid-template-rows:
+      1fr
+      1fr;
+    gap: 12px;
+    .bottom-nav-next {
+      a {
+        font-weight: bold;
+      }
+    }
+    .bottom-nav-prev {
+      a {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.front-matter {
+  font-size: 80%;
+}
+
 // comments
 .comments-container {
   padding: 0;
@@ -308,6 +335,3 @@ main#content {
   }
 }
 
-.front-matter {
-  font-size: 80%;
-}

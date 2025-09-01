@@ -1,16 +1,5 @@
 {{ define "main" }}
 <header id="post-header">
-  {{- if isset .Params "hero" -}}
-  <div class="hero">
-    <img src="{{ .Params.Hero }}" />
-  </div>
-  {{- if isset .Params "subtitle" -}}
-  <div class="hero-caption">
-    {{ .Params.Subtitle }}
-  </div>
-  {{- end -}}
-  {{- end -}}
-
   <h1>{{ .Title }}</h1>
 </header>
 <article>
@@ -26,6 +15,22 @@
     </span>
   </div>
 </aside>
+
+<div class="bottom-nav">
+  <div class="bottom-nav-next">
+    <div class="bottom-nav-label">Read next {{- partial "svg/arrow-right.html" . -}}</div>
+    {{ with .PrevInSection }}
+    <div class="bottom-nav-label"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
+    {{ else }}
+      {{ with site.GetPage .Section }}
+        {{ with index (.RegularPages.ByDate) (sub (len .RegularPages.ByDate) 1) }}
+        <div class="bottom-nav-label"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  </div>
+</div>
+
 {{- if not .Params.nocomment -}}
 <div class="comments-container">
   <section id="comments-form">
