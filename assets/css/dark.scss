@@ -65,4 +65,22 @@
 
   .comments-container {
   }
+
+  .posts-list-pills {
+    color: $body-text-color-dark !important;
+    svg {
+      path {
+        fill: $body-text-color-dark !important;
+      }
+    }
+  }
+
+  .bottom-nav {
+    svg {
+      path {
+        fill: $body-text-color-dark !important;
+      }
+    }
+  }
 }
+

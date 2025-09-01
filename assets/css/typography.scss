@@ -284,26 +284,8 @@ footer#footer {
     margin-bottom: -7px;
     margin-right: 4px;
     margin-left: 4px;
-  }
-}
-
-@media (max-width: 769px) {
-  .bottom-nav {
-    grid-template-columns:
-      1fr;
-    grid-template-rows:
-      1fr
-      1fr;
-    gap: 12px;
-    .bottom-nav-next {
-      a {
-        font-weight: bold;
-      }
-    }
-    .bottom-nav-prev {
-      a {
-        font-weight: bold;
-      }
+    path {
+      fill: $body-text-color;
     }
   }
 }
