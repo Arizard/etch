@@ -1,7 +1,16 @@
+html {
+  font-size: 75%;
+}
+
+nav#banner {
+  padding: 16px 0 0 0;
+}
+
 @media (min-width: 770px) {
   html {
     width: 100vw;
     overflow-x: hidden;
+    font-size: 65%;
   }
   body {
       width: 80ch;
@@ -11,29 +20,7 @@
       width: 100%;
   }
 
-  html {
-    font-size: 65%;
-  }
-
   nav#banner {
     padding: 64px 0 0 0;
   }
 }
-
-@media (max-width: 769px) {
-  figure.portrait {
-    width: 100% !important;
-  }
-
-  html {
-    font-size: 75%;
-  }
-
-  nav#banner {
-    padding: 16px 0 0 0;
-  }
-}
-/* main#content ul#posts { */
-/*     font-size: 18px; */
-/*     font-size: 1.8rem; */
-/* } */

@@ -541,14 +541,14 @@ class ReplyComponent extends ReactiveRenderingHTMLElement {
       }
 
       .reply-card-heading-lockup {
-        display: flex;
+        display: block;
         flex-wrap: wrap;
         gap: 0;
       }
 
-      @media (max-width: 769px) {
+      @media (min-width: 770px) {
         .reply-card-heading-lockup {
-          display: block;
+          display: flex;
         }
       }
 
