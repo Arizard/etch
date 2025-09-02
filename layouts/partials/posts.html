@@ -1,7 +1,4 @@
 <div class="posts-list-container">
-    <header>
-      <h1>Latest Posts</h1>
-    </header>
     {{- range where site.RegularPages "Type" "in" site.Params.mainSections }}
       {{- partial "post-item.html" . -}}
     {{- end }}
