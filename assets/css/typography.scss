@@ -6,26 +6,33 @@ a {
   text-decoration-thickness: 1px;
 }
 
-$body-font-size: 1.4rem;
+$body-font-size: 1.5rem;
 $body-line-height: 2.1rem;
 $banner-font-size: 1.67rem;
 $h1-font-size: 200%;
 $h2-font-size: 160%;
 $h3-font-size: 120%;
 
+$gap-indent: 38px;
+
+ol {
+  padding-left: $gap-indent;
+}
+
 nav#banner {
   display: block;
   font-family: $heading-font;
   margin: 0;
-  padding: 16px 0 0 0;
   .banner-inner {
     margin: 0;
     line-height: $banner-font-size;
+    display: flex;
+    gap: 8px;
   }
   .banner-h, .banner-h-condensed {
     display: inline-block;
     text-transform: lowercase;
-    margin: 0 3px 0 0;
+    margin: 0;
     font-weight: 800;
     font-size: $banner-font-size;
     background-color: $accent-color;
@@ -40,20 +47,18 @@ nav#banner {
   }
 
   .navlinks {
-    display: inline-block;
     font-size: $banner-font-size;
     text-transform: lowercase;
-    margin: 0;
+    margin: 0 0 0 0;
     padding: 0;
     a {
       color: $body-text-color;
       text-decoration: underline;
       text-decoration-thickness: 1.5px;
     }
-
-    display: inline-block;
+    display: flex;
     .navlink {
-      display: inline-block;
+      display: block;
       padding: 6px 0px;
       margin: 0 9px 0 0;
     }
@@ -101,21 +106,25 @@ body {
   letter-spacing: $letter-spacing-headings-small;
 }
 
+.about-me-intro {
+}
+
 main#content {
+  margin: 32px 0 0 0;
   sup, sub {
     line-height: 0;
   }
   article li {
     margin-bottom: 1rem;
   }
-  header#post-header {
-    margin-bottom: 0.5rem;
+  header {
+    margin: 0 0 24px 0;
   }
 
   p {
     color: $body-text-color;
     margin-top: 0;
-    margin-bottom: 1.4rem;
+    margin-bottom: $body-line-height;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -195,7 +204,7 @@ main#content {
   }
 
   table, th, td {
-    border: 1px solid $body-text-color-muted;
+    border: 1px solid $body-text-color;
   }
 
   th, td {
@@ -214,14 +223,14 @@ main#content {
 }
 
 footer#footer {
-  font-size: 1.4rem;
-  font-weight: 400;
-  color: $body-text-color-muted;
-  margin: 48px 0 0 0;
+  color: $body-text-color;
+  margin: 100px 0 64px 0;
+  text-transform: uppercase;
+  font-size: 80%;
   a {
     text-decoration: underline;
     text-decoration-thickness: 1px;
-    color: $body-text-color-muted;
+    color: $body-text-color;
   }
   a:hover {
     text-decoration: underline;
@@ -239,12 +248,11 @@ footer#footer {
     justify-content: center;
     align-items: center;
     align-content: start;
-    font-size: 2.2rem;
   }
 
   .external-link-icons-item {
     flex: 0 0 auto;
-    margin: 8px;
+    margin: 0;
   }
 
   .lni {
@@ -253,11 +261,14 @@ footer#footer {
       width: 100%;
       height: 100%;
       path {
-        fill: $body-text-color-muted;
+        fill: $body-text-color;
       }
     }
     width: 28px;
     height: 28px;
+  }
+  .footer-text {
+    text-align: center;
   }
 }
 
@@ -272,7 +283,9 @@ footer#footer {
 .bottom-nav {
   margin-top: 32px;
   .bottom-nav-label {
-    margin-top: 6px;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    font-size: 80%;
   }
   .bottom-nav-next {
     text-align: left;
@@ -280,18 +293,12 @@ footer#footer {
       font-weight: bold;
     }
   }
-  svg {
-    margin-bottom: -7px;
-    margin-right: 4px;
-    margin-left: 4px;
-    path {
-      fill: $body-text-color;
-    }
-  }
 }
 
 .front-matter {
   font-size: 80%;
+  text-transform: uppercase;
+  margin-top: 0.2rem-$body-line-height;
 }
 
 // comments
@@ -317,3 +324,9 @@ main#content {
   }
 }
 
+.index-see-all-posts {
+  font-weight: bold;
+  a {
+    text-decoration-thickness: 1.5px;
+  }
+}

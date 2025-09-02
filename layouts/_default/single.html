@@ -1,31 +1,30 @@
 {{ define "main" }}
 <header id="post-header">
   <h1>{{ .Title }}</h1>
+  <aside class="front-matter">
+    <div>
+      <span>
+      {{- if  (isset .Params "date") -}}
+        <time>{{ .Params.Date.Format "2 January 2006" }}</time>
+      {{- end -}}
+      </span>
+    </div>
+  </aside>
 </header>
 <article>
   {{- .Content -}}
 </article>
-<aside class="front-matter">
-  <div>
-    <span>
-    {{- if and (isset .Params "author") (isset .Params "date") -}}
-      {{ .Params.Author }},
-      <time>{{ .Params.Date.Format "2 January 2006" }}</time>
-    {{- end -}}
-    </span>
-  </div>
-</aside>
 
 {{- if not .Params.nobottomnav -}}
 <div class="bottom-nav">
   <div class="bottom-nav-next">
-    <div class="bottom-nav-label">Read next {{- partial "svg/arrow-right.html" . -}}</div>
+    <div class="bottom-nav-label">Read next</div>
     {{ with .PrevInSection }}
-    <div class="bottom-nav-label"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
+      {{- partial "post-item.html" . -}}
     {{ else }}
       {{ with site.GetPage .Section }}
         {{ with index (.RegularPages.ByDate) (sub (len .RegularPages.ByDate) 1) }}
-        <div class="bottom-nav-label"><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
+          {{- partial "post-item.html" . -}}
         {{ end }}
       {{ end }}
     {{ end }}

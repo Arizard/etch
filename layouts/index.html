@@ -1,20 +1,17 @@
 {{ define "main" }}
     <div class="about-me-container">
         <div class="about-me-intro">
-            <span>
-                {{ .Content }}
-            </span>
+            {{ .Content }}
         </div>
     </div>
     {{ $posts := where site.RegularPages "Section" "posts" }}
     {{ $featuredPosts := where $posts "Params.featured" "eq" true }}
-    <h2>Featured Posts</h2>
     {{ if gt (len $featuredPosts) 0 }}
         {{ range $featuredPosts }}
           {{- partial "post-item.html" . -}}
         {{ end }}
     {{ end }}
-    <p>
-        <a href="/posts/">See all posts →</a>
-    </p>
+    <div class="index-see-all-posts">
+        <a href="/posts/">See all posts</a>
+    </div>
 {{ end }}
