@@ -65,14 +65,12 @@ nav#banner {
   }
 }
 
-@media (max-width: 769px) {
-  nav#banner {
-    .navlinks {
-      margin: 0 3px;
-    }
-    .banner-h {
-      display: none;
-    }
+nav#banner {
+  .navlinks {
+    margin: 0 3px;
+  }
+  .banner-h {
+    display: none;
   }
 }
 
@@ -80,6 +78,9 @@ nav#banner {
   nav#banner {
     .banner-h-condensed {
       display: none;
+    }
+    .banner-h {
+      display: block;
     }
   }
 }
@@ -328,5 +329,27 @@ main#content {
   font-weight: bold;
   a {
     text-decoration-thickness: 1.5px;
+  }
+}
+
+.article-after {
+  margin: 64px 0 64px 0;
+  text-align: center;
+  svg {
+    height: 17px;
+    width: 17px;
+    path {
+      fill: $body-text-color;
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .article-after {
+    svg {
+      path {
+        fill: $body-text-color-dark;
+      }
+    }
   }
 }
