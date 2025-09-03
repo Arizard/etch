@@ -139,6 +139,9 @@ main#content {
     letter-spacing: $letter-spacing-headings;
     margin: ($body-line-height) 0 ($body-line-height) 0;
     line-height: 120%;
+    text-align: left;
+    text-wrap: pretty;
+    hyphens: none;
   }
 
   h1 {
