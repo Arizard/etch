@@ -61,19 +61,31 @@
         });
     </script>
 
-    {{ $resources := slice -}}
-    {{ $resources = $resources | append (resources.Get "css/main.css") -}}
-    {{ $resources = $resources | append (resources.Get "css/min770px.css") -}}
-    {{ if .Site.Params.highlight -}}
-        {{ $resources = $resources | append (resources.Get "css/syntax.css") -}}
-    {{ end -}}
-    {{ $customSCSS := resources.Get "css/all.scss" }}
-    {{ $customStyle := $customSCSS | css.Sass | minify }}
-    {{ $css := $resources | resources.Concat "css/style.css" | minify }}
+    {{ $myCSS := slice -}}
+    {{ $myCSS = $myCSS | append (resources.Get "css/main.css") -}}
+    {{ $myCSS = $myCSS | append (resources.Get "css/min770px.css") -}}
+    {{ $css := $myCSS | resources.Concat "css/style.css" | minify }}
+
+    {{ $mySCSS := slice -}}
+    {{ $mySCSS := $mySCSS | append (resources.Get "css/all.scss") -}}
+    {{ $scss := $mySCSS | resources.Concat "css/style2.css" | css.Sass | minify }}
+
 
     <style>
         {{ $css.Content | safeCSS }}
-        {{ $customStyle.Content | safeCSS }}
+        {{ $scss.Content | safeCSS }}
+
+        {{ if .Site.Params.highlight -}}
+            {{ $cssSyntaxDark := resources.Get "css/syntax-dark.css" }}
+            {{ $cssSyntaxLight := resources.Get "css/syntax-light.css" }}
+
+            @media (prefers-color-scheme: light) {
+                {{ $cssSyntaxLight.Content | safeCSS }}
+            }
+            @media (prefers-color-scheme: dark) {
+                {{ $cssSyntaxDark.Content | safeCSS }}
+            }
+        {{ end -}}
     </style>
 
     <title>{{ if eq  .Title  .Site.Title }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{.}} - {{ end }}{{ .Site.Title }}{{ end }}</title>
