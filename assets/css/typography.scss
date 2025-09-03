@@ -75,6 +75,11 @@ nav#banner {
 }
 
 @media (min-width: 770px) {
+  article, .about-me-container {
+    text-align: justify;
+    text-wrap: pretty;
+    hyphens: none;
+  }
   nav#banner {
     .banner-h-condensed {
       display: none;
@@ -114,9 +119,6 @@ main#content {
   margin: 32px 0 0 0;
   sup, sub {
     line-height: 0;
-  }
-  article li {
-    margin-bottom: 1rem;
   }
   header {
     margin: 0 0 24px 0;
