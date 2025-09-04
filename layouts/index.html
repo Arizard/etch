@@ -4,14 +4,13 @@
             {{ .Content }}
         </div>
     </div>
-    {{ $posts := where site.RegularPages "Section" "posts" }}
-    {{ $featuredPosts := where $posts "Params.featured" "eq" true }}
-    {{ if gt (len $featuredPosts) 0 }}
-        {{ range $featuredPosts }}
+    <div class="posts-list-container">
+        {{ $pages := where site.RegularPages "Section" "posts" }}
+        {{- range $pages.Limit 3 }}
           {{- partial "post-item.html" . -}}
-        {{ end }}
-    {{ end }}
+        {{- end }}
+    </div>
     <div class="index-see-all-posts">
-        <a href="/posts/">See all posts</a>
+        <a href="/posts/">See all {{ $pages.Len }} posts</a>
     </div>
 {{ end }}

@@ -4,11 +4,9 @@
                 {{ .Title }}
             </a>
         </div>
-        {{- if isset .Params "subtitle" -}}
         <div class="posts-list-subtitle">
-                {{ .Params.Subtitle }}
+                {{ .Summary }}
         </div>
-        {{- end -}}
         <div class="posts-list-pills">
                 <div class="posts-list-pill">
                         {{- partial "svg/calendar.html" . -}}
