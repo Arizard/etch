@@ -84,10 +84,10 @@ class ReplySubmissionFormComponent extends ReactiveRenderingHTMLElement {
 
         .field-label {
             font-family: 'Manrope';
-            font-size: 1.1rem;
+            font-size: 1.12rem;
             margin-bottom: 6px;
             font-weight: 800;
-            line-height: 1.1rem;
+            line-height: 1.12rem;
         }
 
         textarea {
@@ -119,7 +119,7 @@ class ReplySubmissionFormComponent extends ReactiveRenderingHTMLElement {
         }
 
         .submit-btn {
-            background-color: #4CAF50;
+            background-color: #6ab04c;
             color: white;
             padding: 12px 60px;
             border: none;
@@ -128,17 +128,17 @@ class ReplySubmissionFormComponent extends ReactiveRenderingHTMLElement {
             margin-right: auto;
             margin-left: auto;
             font-family: 'Manrope';
-            font-variant: all-small-caps;
+            text-transform: uppercase;
             font-weight: bold;
-            font-size: 1.4rem;
+            font-size: 1.12rem;
         }
 
         .submit-btn:hover {
-            background-color: #45a049;
+            background-color: #77c157;
         }
 
         .submit-btn:disabled {
-            background-color: grey;
+            background-color: #57606f;
         }
 
         @media (max-width: 770px) {
@@ -165,6 +165,16 @@ class ReplySubmissionFormComponent extends ReactiveRenderingHTMLElement {
 
         form {
             margin-bottom: 30px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+          input[type="text"],
+          input[type="password"],
+          textarea {
+              border: 2px solid #57606f;
+              background-color: var(--body-background-dark-alt);
+              color: white;
+          }
         }
     </style>
     <form id="gomments-reply-form" method="post">
@@ -684,10 +694,10 @@ class LoadingFill extends ReactiveRenderingHTMLElement {
         ${gomments.styleColors}
         :host {
           font-family: 'Manrope';
-          font-variant: all-small-caps;
+          text-transform: uppercase;
           text-align: center;
           font-weight: bold;
-          font-size: 1.4rem;
+          font-size: 1.12rem;
           width: 100%;
           color: var(--body-text-color-muted);
         }
@@ -714,10 +724,10 @@ class ErrorFill extends ReactiveRenderingHTMLElement {
         ${gomments.styleColors}
         :host {
           font-family: 'Manrope';
-          font-variant: all-small-caps;
+          text-transform: uppercase;
           text-align: center;
           font-weight: bold;
-          font-size: 1.4rem;
+          font-size: 1.12rem;
           width: 100%;
           color: crimson;
         }
@@ -752,7 +762,7 @@ async function reloadThread() {
 
     await Promise.all([fetchStats, fetchReplies]);
 
-    thread.innerHTML = `<div style="font-family: Manrope; margin-bottom: 10px; font-weight: 800; font-size: 1.1rem; line-height: 1.1rem;">REPLIES (${replyCount})</div>`;
+    thread.innerHTML = `<div style="font-family: Manrope; margin-bottom: 10px; font-weight: 800; font-size: 1.12rem; line-height: 1.12rem;">REPLIES (${replyCount})</div>`;
 
     for (const respReply of replies) {
       const reply = document.createElement("gomments-reply");

@@ -305,6 +305,29 @@ footer#footer {
   font-size: 80%;
   text-transform: uppercase;
   margin-top: 0.2rem-$body-line-height;
+
+  .params-date {
+    svg {
+      height: 1.4rem;
+      width: 1.4rem;
+      margin-bottom: -0.3rem;
+      path {
+        fill: $body-text-color;
+      }
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .front-matter {
+    .params-date {
+      svg {
+        path {
+          fill: $body-text-color-dark;
+        }
+      }
+    }
+  }
 }
 
 // comments
@@ -331,9 +354,9 @@ main#content {
 }
 
 .index-see-all-posts {
-  font-weight: bold;
+  text-align: center;
   a {
-    text-decoration-thickness: 1.5px;
+    text-decoration-thickness: 1px;
   }
 }
 
