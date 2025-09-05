@@ -602,20 +602,6 @@ class ReplyComponent extends ReactiveRenderingHTMLElement {
         color: var(--body-text-color);
       }
 
-      @media (prefers-color-scheme: dark) {
-        .text-muted {
-          color: var(--body-text-color-muted-dark);
-        }
-
-        .thick-border-top {
-          border-top: solid 1px var(--body-text-color-muted-dark);
-        }
-
-        .reply-card {
-          background-color: var(--body-background-dark-alt);
-        }
-      }
-
       .heading-font {
         font-family: 'Manrope';
       }
@@ -667,6 +653,23 @@ class ReplyComponent extends ReactiveRenderingHTMLElement {
         color: var(--body-text-color-muted);
         padding: 0;
         margin-top: 2px;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .text-muted {
+          color: var(--body-text-color-muted-dark);
+        }
+
+        .thick-border-top {
+          border-top: solid 1px var(--body-text-color-muted-dark);
+        }
+
+        .reply-card {
+          background-color: var(--body-background-dark-alt);
+        }
+        .reply-created-at {
+          color: var(--body-text-color-muted-dark);
+        }
       }
     </style>
     <div title="ID: ${this.getAttribute("reply-id")}, ${timeAgoExact(createdAt)} at ${createdAt.toLocaleString()}" class="${this.getAttribute("reply-id") == gomments.attentionReplyID ? "attention" : ""} reply-card">
