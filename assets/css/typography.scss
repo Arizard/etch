@@ -400,19 +400,20 @@ main#content {
   .terms-cloud-item {
     text-transform: uppercase;
     font-size: 80%;
+    font-weight: 700;
     box-sizing: border-box;
     display: inline-block;
     margin: 0 8px 8px 0;
     padding: 4px 16px;
-    border-radius: 8px;
-    text-decoration-thickness: 1px;
+    text-decoration: none;
 
     background-color: $body-background-alt;
-    border: 1px solid $body-background-alt;
+    color: $body-text-color !important;
   }
   .terms-cloud-item:hover,
   .terms-cloud-item.selected {
-    border: 1px solid $body-text-color-muted;
+    background-color: $body-text-color;
+    color: $body-background !important;
   }
 
 }
@@ -421,11 +422,12 @@ main#content {
   .terms-cloud {
     .terms-cloud-item {
       background-color: $body-background-dark-alt;
-      border: 1px solid $body-background-dark-alt;
+      color: $body-text-color-dark !important;
     }
     .terms-cloud-item:hover,
     .terms-cloud-item.selected {
-      border: 1px solid $body-text-color-dark;
+      background-color: $body-text-color-dark;
+      color: $body-background-dark-alt !important;
     }
   }
 }

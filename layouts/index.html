@@ -12,7 +12,7 @@
         {{- end }}
     </div>
     <div class="tags-container">
-    <div class="index-label-latest-post">posts by tag</div>
+    <div class="index-label-latest-post">all tags</div>
     {{ with .Site.Taxonomies.tags.ByCount }}
         {{- partial "terms-cloud.html" . -}}
     {{ end }}
