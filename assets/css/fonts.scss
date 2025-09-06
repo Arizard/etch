@@ -3,27 +3,27 @@
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: local('Manrope'), url('../fonts/manrope/Manrope-Medium.woff') format('woff');
+  src: local('Manrope'), url('/fonts/manrope/Manrope-Medium.woff') format('woff');
 }
 @font-face {
   font-family: 'Manrope';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: local('Manrope'), url('../fonts/manrope/Manrope-Bold.woff') format('woff');
+  src: local('Manrope'), url('/fonts/manrope/Manrope-Bold.woff') format('woff');
 }
 @font-face {
   font-family: 'Manrope';
   font-style: normal;
   font-weight: 800;
   font-display: swap;
-  src: local('Manrope'), url('../fonts/manrope/Manrope-ExtraBold.woff') format('woff');
+  src: local('Manrope'), url('/fonts/manrope/Manrope-ExtraBold.woff') format('woff');
 }
 
 @font-face {
   font-family: 'Inconsolata';
   font-display: swap;
-  src: local('Inconsolata for Powerline'), url('../fonts/inconsolata/Inconsolata.woff2') format('woff2');
+  src: local('Inconsolata for Powerline'), url('/fonts/inconsolata/Inconsolata.woff2') format('woff2');
 }
 
 $heading-font: 'Manrope', 'Arial', sans-serif;
