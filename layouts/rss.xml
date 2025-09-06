@@ -21,8 +21,10 @@
 {{- $pctx := . }}
 {{- if .IsHome }}{{ $pctx = .Site }}{{ end }}
 {{- $pages := slice }}
-{{- if or $.IsHome $.IsSection }}
+{{- if $.IsHome }}
 {{- $pages = where $pctx.RegularPages "Section" "posts" }}
+{{- else if $.IsSection }}
+{{- $pages = $pctx.RegularPages }}
 {{- else }}
 {{- $pages = $pctx.Pages }}
 {{- end }}
