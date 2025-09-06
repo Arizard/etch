@@ -396,6 +396,7 @@ main#content {
 .terms-cloud {
   margin-bottom: 32px;
   margin-top: 6px;
+  user-select: none;
   .terms-cloud-item {
     text-transform: uppercase;
     font-size: 80%;
