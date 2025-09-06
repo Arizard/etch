@@ -1,0 +1,7 @@
+<div class="terms-cloud">
+  {{ range . }}
+    <a class="terms-cloud-item" href="{{ .Page.RelPermalink }}">
+      #{{ .Page.Name }}
+    </a>
+  {{ end }}
+</div>
