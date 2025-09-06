@@ -1,7 +1,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {{ $description := .Params.description | default .Site.Params.description -}}
+    {{ $description := .Summary | default .Site.Params.description -}}
     {{ with $description -}}
     <meta name="description" content="{{ . }}">
     {{ end }}
