@@ -1,0 +1,12 @@
+{{ define "main" }}
+  {{ with .Site.Taxonomies.tags.ByCount }}
+      {{- partial "terms-cloud.html" . -}}
+  {{ end }}
+  {{ if .Data.Term }} <!-- page for a single term -->
+    <div class="posts-list-container">
+        {{- range .Data.Pages }}
+          {{- partial "post-item.html" . -}}
+        {{- end }}
+    </div>
+  {{ end }}
+{{ end }}

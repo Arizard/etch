@@ -1,0 +1,5 @@
+{{ define "main" }}
+  {{ if .Data.Terms }} <!-- page for a taxonomy -->
+    {{- partial "terms-cloud.html" .Data.Terms.ByCount -}}
+  {{ end }}
+{{ end }}

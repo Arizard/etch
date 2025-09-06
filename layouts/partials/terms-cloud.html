@@ -1,0 +1,11 @@
+<div class="terms-cloud">
+  {{ range . }}
+    {{ if eq page.Name .Page.Name }}
+    <a class="terms-cloud-item selected" href="/posts/">
+    {{ else }}
+    <a class="terms-cloud-item" href="{{ .Page.RelPermalink }}">
+    {{ end }}
+      #{{ .Page.Name }} ({{ .Count }})
+    </a>
+  {{ end }}
+</div>

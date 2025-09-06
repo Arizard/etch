@@ -5,10 +5,17 @@
         </div>
     </div>
     <div class="posts-list-container">
+        <div class="index-label-latest-post">latest post</div>
         {{ $pages := where site.RegularPages "Section" "posts" }}
-        {{- range $pages.Limit 3 }}
+        {{- range $pages.Limit 1 }}
           {{- partial "post-item.html" . -}}
         {{- end }}
+    </div>
+    <div class="tags-container">
+    <div class="index-label-latest-post">posts by tag</div>
+    {{ with .Site.Taxonomies.tags.ByCount }}
+        {{- partial "terms-cloud.html" . -}}
+    {{ end }}
     </div>
     <div class="index-see-all-posts">
         <a href="/posts/">See all {{ $pages.Len }} posts</a>

@@ -360,6 +360,11 @@ main#content {
   }
 }
 
+.index-label-latest-post {
+  text-transform: uppercase;
+  font-size: 80%;
+}
+
 .article-after {
   margin: 64px 0 64px 0;
   text-align: center;
@@ -388,4 +393,39 @@ main#content {
     }
 }
 
+.terms-cloud {
+  text-align: justify;
+  margin-bottom: 32px;
+  margin-top: 6px;
+  .terms-cloud-item {
+    text-transform: uppercase;
+    font-size: 80%;
+    box-sizing: border-box;
+    display: inline-block;
+    margin: 0 8px 8px 0;
+    padding: 4px 16px;
+    border-radius: 8px;
+    text-decoration-thickness: 1px;
 
+    background-color: $body-background-alt;
+    border: 1px solid $body-background-alt;
+  }
+  .terms-cloud-item:hover,
+  .terms-cloud-item.selected {
+    border: 1px solid $body-text-color-muted;
+  }
+
+}
+
+@media (prefers-color-scheme: dark) {
+  .terms-cloud {
+    .terms-cloud-item {
+      background-color: $body-background-dark-alt;
+      border: 1px solid $body-background-dark-alt;
+    }
+    .terms-cloud-item:hover,
+    .terms-cloud-item.selected {
+      border: 1px solid $body-text-color-dark;
+    }
+  }
+}
