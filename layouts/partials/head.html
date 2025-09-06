@@ -88,11 +88,17 @@
         {{ end -}}
     </style>
 
-    {{ if .Data.Term }} <!-- term page -->
-        <title>{{ .Data.Singular | title }}: {{ .Title }} - {{ .Site.Title }}</title>
+    {{- $title := .Site.Title -}}
+    {{- if .Data.Term -}} <!-- term page -->
+        {{- $title = fmt.Printf "%s: %s - %s" (.Data.Singular | title) (.Title) (.Site.Title) -}}
     {{ else if eq  .Title  .Site.Title }} <!-- home page -->
-        <title>{{ .Site.Title }}</title>
-    {{ else }} <!-- post pages -->
-        <title>{{ with .Title }}{{.}} - {{ end }}{{ .Site.Title }}</title>
+        {{- $title = .Site.Title -}}
+    {{ else if .Title }} <!-- post pages -->
+        {{- $title = fmt.Printf "%s - %s" (.Title) (.Site.Title) -}}
+    {{ else }}
+        {{- $title = .Site.Title -}}
     {{ end }}
+
+    <title>{{ $title }}</title>
+    <meta itemprop="name" content="{{ $title }}" />
 </head>
