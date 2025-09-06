@@ -9,4 +9,3 @@ features = ["fast", "blog", "syntax highlighting", "dark mode"]
 
 [taxonomies]
  tag = "tags"
- category = "categories"
