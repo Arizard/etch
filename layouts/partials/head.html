@@ -88,5 +88,11 @@
         {{ end -}}
     </style>
 
-    <title>{{ if eq  .Title  .Site.Title }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{.}} - {{ end }}{{ .Site.Title }}{{ end }}</title>
+    {{ if .Data.Term }} <!-- term page -->
+        <title>{{ .Data.Singular | title }}: {{ .Title }} - {{ .Site.Title }}</title>
+    {{ else if eq  .Title  .Site.Title }} <!-- home page -->
+        <title>{{ .Site.Title }}</title>
+    {{ else }} <!-- post pages -->
+        <title>{{ with .Title }}{{.}} - {{ end }}{{ .Site.Title }}</title>
+    {{ end }}
 </head>

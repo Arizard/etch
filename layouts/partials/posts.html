@@ -1,5 +1,5 @@
 <div class="posts-list-container">
-    {{- range where site.RegularPages "Type" "in" site.Params.mainSections }}
+    {{- range . }}
       {{- partial "post-item.html" . -}}
     {{- end }}
 </div>

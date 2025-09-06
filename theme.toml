@@ -6,3 +6,7 @@ features = ["fast", "blog", "syntax highlighting", "dark mode"]
 [author]
   name = "Arie Oldman (forked from Lukas Joswiak)"
   homepage = "https://less.coffee"
+
+[taxonomies]
+ tag = "tags"
+ category = "categories"
