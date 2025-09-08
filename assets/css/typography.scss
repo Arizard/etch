@@ -1,5 +1,5 @@
-$letter-spacing-headings: -4%;
-$letter-spacing-body: -3%;
+$letter-spacing-headings: -0.08rem;
+$letter-spacing-body: -0.04rem;
 
 a {
   text-decoration: underline;
@@ -98,9 +98,6 @@ body {
   line-height: $body-line-height;
   font-size: $body-font-size;
   font-weight: $body-font-weight;
-}
-
-.about-me-intro {
 }
 
 main#content {
@@ -434,4 +431,27 @@ main#content {
       color: $body-background-dark-alt !important;
     }
   }
+}
+
+@keyframes homeFadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.about-me-intro {
+  h1 {
+    animation: homeFadeIn 0.25s ease-out 0.25s forwards;
+    opacity: 0;
+  }
+
+  p {
+    animation: homeFadeIn 0.25s ease-out 0.5s forwards;
+    opacity: 0;
+  }
+}
+
+.home-fade-in-after-about-me {
+    animation: homeFadeIn 0.25s ease-out 0.75s forwards;
+    opacity: 0;
 }

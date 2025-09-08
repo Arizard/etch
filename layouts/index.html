@@ -4,20 +4,20 @@
             {{ .Content }}
         </div>
     </div>
-    <div class="posts-list-container">
+    <div class="posts-list-container home-fade-in-after-about-me">
         <div class="index-label-latest-post">latest post</div>
         {{ $pages := where site.RegularPages "Section" "posts" }}
         {{- range $pages.Limit 1 }}
           {{- partial "post-item.html" . -}}
         {{- end }}
     </div>
-    <div class="tags-container">
-    <div class="index-label-latest-post">all tags</div>
-    {{ with .Site.Taxonomies.tags.ByCount }}
-        {{- partial "terms-cloud.html" . -}}
-    {{ end }}
+    <div class="tags-container home-fade-in-after-about-me">
+        <div class="index-label-latest-post home-fade-in-after-about-me">all tags</div>
+        {{ with .Site.Taxonomies.tags.ByCount }}
+            {{- partial "terms-cloud.html" . -}}
+        {{ end }}
     </div>
-    <div class="index-see-all-posts">
+    <div class="index-see-all-posts home-fade-in-after-about-me">
         <a href="/posts/">See all {{ $pages.Len }} posts</a>
     </div>
 {{ end }}
