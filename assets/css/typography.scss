@@ -1,5 +1,5 @@
-$letter-spacing-headings: -0.05rem;
-$letter-spacing-headings-small: -0.05rem;
+$letter-spacing-headings: -4%;
+$letter-spacing-body: -3%;
 
 a {
   text-decoration: underline;
@@ -100,23 +100,12 @@ body {
   font-weight: $body-font-weight;
 }
 
-.has-heading-font {
-  font-family: $heading-font;
-}
-
-.has-heading-letter-spacing {
-  letter-spacing: $letter-spacing-headings;
-}
-
-.has-small-heading-letter-spacing {
-  letter-spacing: $letter-spacing-headings-small;
-}
-
 .about-me-intro {
 }
 
 main#content {
   margin: 32px 0 0 0;
+  letter-spacing: $letter-spacing-body;
   sup, sub {
     line-height: 0;
   }
