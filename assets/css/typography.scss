@@ -54,6 +54,7 @@ nav#banner {
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
+    font-weight: 500;
     a {
       color: $body-text-color;
       text-decoration: underline;
@@ -366,6 +367,7 @@ main#content {
 }
 
 .index-see-all-posts {
+  margin-top: 32px;
   text-align: center;
   a {
     text-decoration-thickness: 1px;
