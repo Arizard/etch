@@ -1,8 +1,6 @@
-<div class="posts-list-item">
+<a href="{{ .Permalink }}" class="posts-list-item">
         <div class="posts-list-heading">
-            <a href="{{ .Permalink }}">
                 {{ .Title }}
-            </a>
         </div>
         <div class="posts-list-subtitle">
                 {{ .Summary }}
@@ -25,4 +23,4 @@
                 </div>
                 {{- end -}}
         </div>
-</div>
+</a>

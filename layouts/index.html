@@ -12,7 +12,6 @@
         {{- end }}
     </div>
     <div class="tags-container home-fade-in-after-about-me">
-        <div class="index-label-latest-post home-fade-in-after-about-me">all tags</div>
         {{ with .Site.Taxonomies.tags.ByCount }}
             {{- partial "terms-cloud.html" . -}}
         {{ end }}

@@ -6,8 +6,26 @@
   }
 }
 
-.posts-list-item {
-  margin-bottom: 32px;
+a.posts-list-item {
+  display: block;
+  text-decoration: none;
+  margin-bottom: 16px;
+  background-color: $body-background-alt;
+  padding: 16px 16px;;
+  position: relative;
+
+  .posts-list-heading {
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+  }
+
+  p, .posts-list-pill {
+    font-weight: $body-font-weight;
+  }
+}
+
+a.posts-list-item:hover, a.posts-list-item:active {
+  text-decoration: none;
 }
 
 @media(min-width: 770px) {
