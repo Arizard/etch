@@ -77,3 +77,18 @@ main#content .posts-list-subtitle {
   letter-spacing: $letter-spacing-headings;
   line-height: 120%;
 }
+
+@media (prefers-color-scheme: dark) {
+  .posts-list-pills {
+    color: $body-text-color-dark !important;
+    svg {
+      path {
+        fill: $body-text-color-dark !important;
+      }
+    }
+  }
+
+  a.posts-list-item {
+    background-color: $body-background-dark-alt;
+  }
+}

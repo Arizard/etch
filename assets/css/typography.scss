@@ -27,7 +27,6 @@ nav#banner {
     margin: 0;
     line-height: $banner-font-size;
     display: flex;
-    gap: 8px;
   }
   .banner-h, .banner-h-condensed {
     display: inline-block;
@@ -49,26 +48,38 @@ nav#banner {
   .navlinks {
     font-size: $banner-font-size;
     text-transform: lowercase;
-    margin: 0 0 0 0;
+    margin: 0 0 0 16px;
     padding: 0;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
     a {
       color: $body-text-color;
       text-decoration: underline;
       text-decoration-thickness: 1.5px;
     }
-    display: flex;
     .navlink {
       display: block;
-      padding: 6px 0px;
-      margin: 0 9px 0 0;
+      padding: 6px 0;
+      margin: 0;
+    }
+
+    .navlink::before {
+      content: "$";
+      text-decoration: underline;
+      text-decoration-thickness: 1.5px;
+      margin-right: 0;
+      opacity: 0;
+    }
+
+    .navlink.active::before {
+      opacity: initial;
     }
   }
 }
 
 nav#banner {
-  .navlinks {
-    margin: 0 3px;
-  }
   .banner-h {
     display: none;
   }

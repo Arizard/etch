@@ -1,8 +1,9 @@
-{{ $words := split .Site.Title " " }}
-{{ $initials := "" }}
-{{ range $words }}
-  {{ $initials = printf "%s%s" $initials (substr . 0 1) }}
-{{ end }}
+{{- $words := split .Site.Title " " -}}
+{{- $initials := "" -}}
+{{- range $words -}}
+  {{ $initials = printf "%s%s" $initials (substr . 0 1) -}}
+{{- end -}}
+{{- $page := . -}}
 
 <nav id="banner">
   <div class="banner-inner">
@@ -10,9 +11,16 @@
     <span class="banner-h-condensed"><a href="{{ .Site.BaseURL }}">{{ $initials }}</a></span>
     <div class="navlinks">
         {{ range .Site.Menus.main.ByWeight -}}
-        <div class="navlink">
-            {{ .Pre }}<a href="{{ .URL }}" title="{{ .Title }}">{{- .Title -}}</a>{{ .Post }}
-        </div>
+          {{- $activeClass := "" -}}
+          {{- if $page.IsMenuCurrent .Menu . -}}
+            {{- $activeClass = "active" -}}
+          {{- end -}}
+          {{- if eq .PageRef "/posts" -}}
+            {{- if or (eq $page.Kind "term") (eq $page.Kind "taxonomy") -}}
+              {{- $activeClass = "active" -}}
+            {{- end -}}
+          {{- end -}}
+          <div class="navlink {{ $activeClass }}">{{ .Pre }}<a href="{{ .URL }}" title="{{ .Title }}">{{- .Title -}}</a>{{ .Post }}</div>
         {{- end }}
     </div>
   </div>
