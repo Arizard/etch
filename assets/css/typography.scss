@@ -27,18 +27,32 @@ nav#banner {
     margin: 0;
     line-height: $banner-font-size;
     display: flex;
+    gap: 8px;
   }
   .banner-h, .banner-h-condensed {
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-transform: lowercase;
     margin: 0;
     font-weight: 800;
     font-size: $banner-font-size;
     background-color: $accent-color;
-    a {
-      color: $body-background;
+    color: $body-background;
+    padding: 0;
+    div {
+      height: 22px;
+      line-height: 22px;
     }
-    padding: 6px 9px;
+  }
+
+  .banner-h-condensed {
+    width: 32px;
+  }
+
+  .banner-h {
+    flex-grow: 1;
+    text-align: center;
   }
 
   a {
@@ -46,36 +60,82 @@ nav#banner {
   }
 
   .navlinks {
+    flex-grow: 2;
     font-size: $banner-font-size;
     text-transform: lowercase;
-    margin: 0 0 0 16px;
+    margin: 0;
     padding: 0;
     position: relative;
     display: flex;
     flex-wrap: wrap;
-    gap: 16px;
-    font-weight: 500;
-    a {
-      color: $body-text-color;
-      text-decoration: underline;
-      text-decoration-thickness: 1.5px;
-    }
+    gap: 8px;
     .navlink {
-      display: block;
-      padding: 6px 0;
+      text-align: center;
+      flex-grow: 1;
+      gap: 2px;
+      height: 32px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
       margin: 0;
+      background-color: $body-background-alt;
+      color: $body-text-color;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 80%;
+      font-weight: 700;
+      .navlink-label {
+        display: block;
+        height: 22px;
+        line-height: 22px;
+      }
+      .lni {
+        display: block;
+        height: 16px;
+        width: 16px;
+        line-height: 16px;
+        svg {
+          height: 16px;
+          width: 16px;
+          margin-bottom: 0;
+        }
+      }
     }
 
-    .navlink::before {
-      content: "$";
-      text-decoration: underline;
-      text-decoration-thickness: 1.5px;
-      margin-right: 0;
-      opacity: 0;
+    .navlink.active, .navlink:hover {
+      background-color: $secondary-color;
+      color: $body-text-color-dark;
+      .lni {
+        path {
+          fill: $body-text-color-dark;
+        }
+      }
     }
+  }
+}
 
-    .navlink.active::before {
-      opacity: initial;
+@media (prefers-color-scheme: dark) {
+  nav#banner {
+    .navlinks {
+      .navlink {
+        background-color: $body-background-dark-alt;
+        color: $body-text-color-dark !important;
+        .lni {
+          path {
+            fill: $body-text-color-dark;
+          }
+        }
+      }
+      .navlink.active, .navlink:hover {
+        background-color: $secondary-color-dark;
+        color: $body-background-dark-alt !important;
+        .lni {
+          path {
+            fill: $body-background-dark-alt;
+          }
+        }
+      }
     }
   }
 }
@@ -97,7 +157,7 @@ nav#banner {
       display: none;
     }
     .banner-h {
-      display: block;
+      display: flex;
     }
   }
 }
@@ -436,7 +496,7 @@ main#content {
   .terms-cloud-item:hover,
   .terms-cloud-item:active,
   .terms-cloud-item.selected {
-    background-color: $body-text-color;
+    background-color: $secondary-color;
     color: $body-background !important;
   }
 }
@@ -449,7 +509,7 @@ main#content {
     }
     .terms-cloud-item:hover,
     .terms-cloud-item.selected {
-      background-color: $body-text-color-dark;
+      background-color: $secondary-color-dark;
       color: $body-background-dark-alt !important;
     }
   }

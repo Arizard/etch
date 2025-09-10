@@ -7,8 +7,8 @@
 
 <nav id="banner">
   <div class="banner-inner">
-    <span class="banner-h"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></span>
-    <span class="banner-h-condensed"><a href="{{ .Site.BaseURL }}">{{ $initials }}</a></span>
+    <a href="{{ .Site.BaseURL }}" class="banner-h"><div>{{ .Site.Title }}</div></a>
+    <a href="{{ .Site.BaseURL }}" class="banner-h-condensed"><div>{{ $initials }}</div></a>
     <div class="navlinks">
         {{ range .Site.Menus.main.ByWeight -}}
           {{- $activeClass := "" -}}
@@ -20,7 +20,11 @@
               {{- $activeClass = "active" -}}
             {{- end -}}
           {{- end -}}
-          <div class="navlink {{ $activeClass }}">{{ .Pre }}<a href="{{ .URL }}" title="{{ .Title }}">{{- .Title -}}</a>{{ .Post }}</div>
+          {{- if .PageRef -}}
+          <a class="navlink {{ $activeClass }}" href="{{ .URL }}" title="{{ .Title }}"><div class="navlink-label">{{ .Pre }}{{- .Title -}}{{ .Post }}</div></a>
+          {{- else -}}
+          <a class="navlink {{ $activeClass }}" href="{{ .URL }}" title="{{ .Title }}"><div class="navlink-label">{{ .Pre }}{{- .Title -}}{{ .Post }}</div><div class="lni">{{ partial "svg/chain.html" }}</div></a>
+          {{- end -}}
         {{- end }}
     </div>
   </div>
