@@ -27,12 +27,12 @@ nav#banner {
     margin: 0;
     line-height: $banner-font-size;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     gap: 8px;
   }
   .banner-h, .banner-h-condensed {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     text-transform: lowercase;
     margin: 0;
@@ -40,7 +40,6 @@ nav#banner {
     font-size: $banner-font-size;
     background-color: $accent-color;
     color: $body-background;
-    padding: 0 0 0 9px;
     div {
       height: 22px;
       line-height: 22px;
@@ -48,13 +47,14 @@ nav#banner {
   }
 
   .banner-h-condensed {
-    display: none;
     width: 32px;
   }
 
   .banner-h {
-    flex-grow: 1;
+    display: none;
+    flex-shrink: 1;
     text-align: center;
+    padding: 0 12px;
   }
 
   a {
@@ -147,6 +147,14 @@ nav#banner {
     text-align: justify;
     text-wrap: pretty;
     hyphens: none;
+  }
+  nav#banner {
+    .banner-h {
+      display: flex;
+    }
+    .banner-h-condensed {
+      display: none;
+    }
   }
 }
 
