@@ -27,11 +27,12 @@ nav#banner {
     margin: 0;
     line-height: $banner-font-size;
     display: flex;
+    justify-content: space-between;
     gap: 8px;
   }
   .banner-h, .banner-h-condensed {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     text-transform: lowercase;
     margin: 0;
@@ -39,7 +40,7 @@ nav#banner {
     font-size: $banner-font-size;
     background-color: $accent-color;
     color: $body-background;
-    padding: 0;
+    padding: 0 0 0 9px;
     div {
       height: 22px;
       line-height: 22px;
@@ -47,6 +48,7 @@ nav#banner {
   }
 
   .banner-h-condensed {
+    display: none;
     width: 32px;
   }
 
@@ -60,18 +62,18 @@ nav#banner {
   }
 
   .navlinks {
-    flex-grow: 2;
+    flex-shrink: 1;
     font-size: $banner-font-size;
-    text-transform: lowercase;
     margin: 0;
     padding: 0;
     position: relative;
     display: flex;
     flex-wrap: wrap;
+    justify-content: flex-end;
     gap: 8px;
     .navlink {
+      width: 80px;
       text-align: center;
-      flex-grow: 1;
       gap: 2px;
       height: 32px;
       display: flex;
@@ -140,25 +142,11 @@ nav#banner {
   }
 }
 
-nav#banner {
-  .banner-h {
-    display: none;
-  }
-}
-
 @media (min-width: 770px) {
   article, .about-me-container {
     text-align: justify;
     text-wrap: pretty;
     hyphens: none;
-  }
-  nav#banner {
-    .banner-h-condensed {
-      display: none;
-    }
-    .banner-h {
-      display: flex;
-    }
   }
 }
 
