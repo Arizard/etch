@@ -46,7 +46,7 @@ nav#banner {
       height: 22px;
       line-height: 22px;
     }
-    border-radius: $default-radius;
+    border-radius: $default-radius 0 $default-radius 0;
   }
 
   .banner-h-condensed {
@@ -75,7 +75,7 @@ nav#banner {
     justify-content: flex-end;
     gap: 8px;
     .navlink {
-      border-radius: $default-radius;
+      border-radius: $default-radius 0 $default-radius 0;
       width: 80px;
       text-align: center;
       gap: 2px;
