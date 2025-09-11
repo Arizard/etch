@@ -15,6 +15,9 @@
           {{- if $page.IsMenuCurrent .Menu . -}}
             {{- $activeClass = "active" -}}
           {{- end -}}
+          {{- if $page.HasMenuCurrent .Menu . -}}
+            {{- $activeClass = "active" -}}
+          {{- end -}}
           {{- if eq .PageRef "/posts" -}}
             {{- if or (eq $page.Kind "term") (eq $page.Kind "taxonomy") -}}
               {{- $activeClass = "active" -}}
