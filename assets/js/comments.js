@@ -13,17 +13,20 @@ const gomments = {
   :host {
     --accent-color: #ff4757;
     --accent-color-light: #ff6b81;
-    --body-text-color: #2f3542;
+    --body-text-color: #000000;
     --body-text-color-muted: #747d8c;
-    --body-background: #f1f2f6;
-    --body-background-alt: #dfe4ea;
+    --body-background: #f1f2eb;
+    --body-background-alt: #d8dad3;
+    --body-background-alt-1: #ffffff;
+    --secondary-color: #566246;
 
     /* Dark */
-    --body-text-color-dark: #f1f2f6;
+    --body-text-color-dark: #ffffff;
     --body-text-color-muted-dark: #ced6e0;
-		--body-background-dark: #0f172a;
-		--body-background-dark-alt: #1e293b;
-		--body-background-dark-alt-1: #334155;
+    --body-background-dark: #0f172a;
+    --body-background-dark-alt: #1e293b;
+    --body-background-dark-alt-1: #334155;
+    --secondary-color-dark: #80FFDB;
   }
   `,
   attentionReplyID: "",

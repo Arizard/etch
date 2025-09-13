@@ -1,19 +1,26 @@
+/* remember to update comments.js as well */
+
 $accent-color: #ff4757;
 $accent-color-light: #ff6b81;
-$body-text-color: #2f3542;
+$body-text-color: #000000;
 $body-text-color-muted: #747d8c;
-$body-background: #f8fafc;
-$body-background-alt: #f1f2f6;
+$body-background: #f1f2eb;
+$body-background-alt: #d8dad3;
 $body-background-alt-1: #ffffff;
-$secondary-color: #747d8c;
+$secondary-color: #566246;
 
 /* Dark */
-$body-text-color-dark: #f1f2f6;
+$body-text-color-dark: #ffffff;
 $body-text-color-muted-dark: #ced6e0;
 $body-background-dark: #0f172a;
 $body-background-dark-alt: #1e293b;
 $body-background-dark-alt-1: #334155;
 $secondary-color-dark: #80FFDB;
+
+// idea:
+// buttons have color defined for default and hover/active states
+// section/index have different background to single
+// post-item has the same background as single, so when you tap a post item, you "open" to the page.
 
 .has-accent-color {
   color: $accent-color;

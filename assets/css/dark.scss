@@ -1,6 +1,6 @@
 @media (prefers-color-scheme: dark) {
   body {
-    color: #ebebeb;
+    color: $body-text-color-dark;
     background: $body-background-dark;
   }
   main#content p {
@@ -16,10 +16,6 @@
         }
       }
     }
-  }
-
-  html {
-    scrollbar-color: #6c6c6c #2e2e2e;
   }
 
   nav#banner {
