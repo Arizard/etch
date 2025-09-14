@@ -24,10 +24,10 @@ const gomments = {
     /* Dark */
     --body-text-color-dark: #ffffff;
     --body-text-color-muted-dark: #ced6e0;
-    --body-background-dark: #002029; //#0f172a;
-    --body-background-dark-alt: #00303d; //#1e293b;
+    --body-background-dark: #002029;
+    --body-background-dark-alt: #00303d;
     --body-background-dark-alt-1: #004052;
-    --secondary-color-dark: #9fffcb; //#80FFDB;
+    --secondary-color-dark: #9fffcb;
   }
   `,
   attentionReplyID: "",
@@ -107,9 +107,11 @@ class ReplySubmissionFormComponent extends ReactiveRenderingHTMLElement {
             font-size: 1.4rem;
             width: 100%;
             padding: 12px;
-            border: 2px solid #ddd;
             border-radius: 6px;
             box-sizing: border-box;
+            border: 2px solid var(--body-background-alt);
+            background-color: var(--body-background-alt-1);
+            color: #000;
         }
 
         .validation-error {
@@ -175,8 +177,8 @@ class ReplySubmissionFormComponent extends ReactiveRenderingHTMLElement {
           input[type="text"],
           input[type="password"],
           textarea {
-              border: 2px solid #57606f;
-              background-color: var(--body-background-dark-alt);
+              border: 2px solid var(--body-background-dark-alt);
+              background-color: var(--body-background-dark-alt-1);
               color: white;
           }
         }
@@ -580,7 +582,7 @@ class ReplyComponent extends ReactiveRenderingHTMLElement {
         font-size: 1.4rem;
         margin-bottom: 14px;
         border-radius: 6px;
-        background-color: #ffffff;
+        background-color: var(--body-background-alt-1);
       }
 
       .reply-card-timestamp {
@@ -616,11 +618,6 @@ class ReplyComponent extends ReactiveRenderingHTMLElement {
 
       .body-font {
         font-family: "Manrope", sans-serif;
-      }
-
-      .thick-border-top {
-        border-top: solid 1px var(--body-text-color-muted);
-        padding-top: 1.4rem;
       }
 
       .attention {
@@ -664,12 +661,8 @@ class ReplyComponent extends ReactiveRenderingHTMLElement {
           color: var(--body-text-color-muted-dark);
         }
 
-        .thick-border-top {
-          border-top: solid 1px var(--body-text-color-muted-dark);
-        }
-
         .reply-card {
-          background-color: var(--body-background-dark-alt);
+          background-color: var(--body-background-dark-alt-1);
         }
         .reply-created-at {
           color: var(--body-text-color-muted-dark);
