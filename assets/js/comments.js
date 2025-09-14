@@ -13,6 +13,7 @@ const gomments = {
   :host {
     --accent-color: #ff4757;
     --accent-color-light: #ff6b81;
+
     --body-text-color: #000000;
     --body-text-color-muted: #747d8c;
     --body-background: #f1f2eb;
@@ -23,10 +24,10 @@ const gomments = {
     /* Dark */
     --body-text-color-dark: #ffffff;
     --body-text-color-muted-dark: #ced6e0;
-    --body-background-dark: #0f172a;
-    --body-background-dark-alt: #1e293b;
-    --body-background-dark-alt-1: #334155;
-    --secondary-color-dark: #80FFDB;
+    --body-background-dark: #002029; //#0f172a;
+    --body-background-dark-alt: #00303d; //#1e293b;
+    --body-background-dark-alt-1: #004052;
+    --secondary-color-dark: #9fffcb; //#80FFDB;
   }
   `,
   attentionReplyID: "",
