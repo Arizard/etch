@@ -248,6 +248,7 @@ main#content {
 
   pre.chroma {
     padding: 1rem 1rem;
+    background-color: $body-background-alt;
     code {
       background-color: revert;
     }
@@ -255,7 +256,7 @@ main#content {
 
   code {
     border-radius: 6px;
-    background-color: $body-background-alt-1;
+    background-color: $body-background-alt;
     padding: 0.2rem 0.4rem;
   }
 
