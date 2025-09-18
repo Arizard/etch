@@ -1,14 +1,9 @@
-{{- $words := split .Site.Title " " -}}
-{{- $initials := "" -}}
-{{- range $words -}}
-  {{ $initials = printf "%s%s" $initials (substr . 0 1) -}}
-{{- end -}}
 {{- $page := . -}}
 
 <nav id="banner">
   <div class="banner-inner">
-    <a href="{{ .Site.BaseURL }}" class="banner-h"><div>{{ .Site.Title }}</div></a>
-    <a href="{{ .Site.BaseURL }}" class="banner-h-condensed"><div>{{ $initials }}</div></a>
+    <a href="{{ .Site.BaseURL }}" class="banner-h"><div>less coffee</div></a>
+    <a href="{{ .Site.BaseURL }}" class="banner-h-condensed"><div>lc</div></a>
     <div class="navlinks">
         {{ range .Site.Menus.main.ByWeight -}}
           {{- $activeClass := "" -}}
