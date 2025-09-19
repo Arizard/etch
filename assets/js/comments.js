@@ -17,8 +17,8 @@ const gomments = {
     --body-text-color: #000000;
     --body-text-color-muted: #747d8c;
     --body-background: #f1f2eb;
-    --body-background-alt: #d8dad3;
-    --body-background-alt-1: #ffffff;
+    --body-background-alt: #e0e3dd;
+    --body-background-alt-1: #FFFFFF;
     --secondary-color: #566246;
 
     /* Dark */
