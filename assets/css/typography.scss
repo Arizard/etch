@@ -237,21 +237,15 @@ main#content {
     font-style: italic;
   }
 
-  pre {
+  pre, pre.chroma {
+    padding: 1rem 1rem;
+    background-color: $body-background-alt;
     border-radius: 6px;
     line-height: $body-line-height;
     code {
+      background-color: revert;
       display: block;
       overflow-x: auto;
-    }
-  }
-
-
-  pre.chroma {
-    padding: 1rem 1rem;
-    background-color: $body-background-alt;
-    code {
-      background-color: revert;
     }
   }
 

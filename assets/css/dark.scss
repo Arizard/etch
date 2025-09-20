@@ -47,7 +47,7 @@
   }
 
   main#content {
-    pre.chroma {
+    pre.chroma, pre {
       background-color: $body-background-dark-alt;
       code {
         color: $body-text-color-dark;
