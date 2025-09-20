@@ -1,5 +1,5 @@
 html {
-  font-size: 70%;
+  font-size: 65%;
 }
 
 nav#banner {
@@ -10,7 +10,6 @@ nav#banner {
   html {
     width: 100vw;
     overflow-x: hidden;
-    font-size: 65%;
   }
   body {
       width: 65ch;
