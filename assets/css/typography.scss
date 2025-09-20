@@ -146,12 +146,13 @@ nav#banner {
   }
 }
 
+article, .about-me-container {
+  text-align: justify;
+  text-wrap: pretty;
+  hyphens: none;
+}
+
 @media (min-width: 770px) {
-  article, .about-me-container {
-    text-align: justify;
-    text-wrap: pretty;
-    hyphens: none;
-  }
   nav#banner {
     .banner-h {
       display: flex;
