@@ -181,6 +181,14 @@ class ReplySubmissionFormComponent extends ReactiveRenderingHTMLElement {
               background-color: var(--body-background-dark-alt-1);
               color: white;
           }
+          ::placeholder {
+              color: white;
+              opacity: 1; /* Firefox */
+          }
+
+          ::-ms-input-placeholder { /* Edge 12 -18 */
+              color: white;
+          }
         }
     </style>
     <form id="gomments-reply-form" method="post">
