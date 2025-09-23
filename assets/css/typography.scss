@@ -24,8 +24,8 @@ ol {
 
 nav#banner {
   display: block;
+  margin: 16px 0 $body-line-height 0;
   font-family: $heading-font;
-  margin: 0;
   .banner-inner {
     margin: 0;
     line-height: $banner-font-size;
@@ -122,6 +122,19 @@ nav#banner {
   }
 }
 
+@media (min-width: 770px) {
+  nav#banner {
+    margin: 16px auto 64px auto;
+    width: 75ch;
+    .banner-h {
+      display: flex;
+    }
+    .banner-h-condensed {
+      display: none;
+    }
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   nav#banner {
     .navlinks {
@@ -147,23 +160,6 @@ nav#banner {
   }
 }
 
-article, .about-me-container {
-  text-align: justify;
-  text-wrap: pretty;
-  hyphens: none;
-}
-
-@media (min-width: 770px) {
-  nav#banner {
-    .banner-h {
-      display: flex;
-    }
-    .banner-h-condensed {
-      display: none;
-    }
-  }
-}
-
 body {
   font-family: $body-font;
   -webkit-font-smoothing: antialiased;
@@ -175,13 +171,16 @@ body {
 }
 
 main#content {
-  margin: 32px 0 0 0;
+  margin: 0 auto 0 auto;
   letter-spacing: $letter-spacing-body;
   sup, sub {
     line-height: 0;
   }
   header {
     margin: 0 0 24px 0;
+    h1 {
+      margin-top: 0;
+    }
   }
 
   p {
@@ -535,4 +534,22 @@ main#content {
 .home-fade-in-after-about-me {
     animation: homeFadeIn 0.25s ease-out 0.75s forwards;
     opacity: 0;
+}
+
+// justify text
+  article, .about-me-container {
+    text-align: left;
+    text-wrap: pretty;
+    hyphens: none;
+  }
+
+  main#content .posts-list-subtitle {
+    text-align: left;
+    text-wrap: pretty;
+    hyphenate: none;
+  }
+@media (min-width: 770px) {
+  article, .about-me-container {
+    text-align: justify;
+  }
 }

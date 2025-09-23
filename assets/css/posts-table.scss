@@ -30,12 +30,6 @@ a.posts-list-item:hover, a.posts-list-item:active {
 }
 
 main#content .posts-list-subtitle {
-  text-align: justify;
-  text-wrap: pretty;
-  hyphenate: none;
-}
-
-main#content .posts-list-subtitle {
   p:last-child {
     margin-bottom: 0;
   }
