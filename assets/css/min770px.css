@@ -2,6 +2,10 @@ html {
   font-size: 65%;
 }
 
+main#content {
+    width: 100%;
+}
+
 @media (min-width: 770px) {
   html {
     width: 100vw;
