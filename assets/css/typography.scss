@@ -25,6 +25,7 @@ ol {
 nav#banner {
   display: block;
   margin: 16px 0 $body-line-height 0;
+  padding: 0 16px 0 16px;
   font-family: $heading-font;
   .banner-inner {
     margin: 0;
@@ -124,8 +125,8 @@ nav#banner {
 
 @media (min-width: 770px) {
   nav#banner {
-    margin: 16px auto 64px auto;
-    width: 75ch;
+    margin: 16px auto 48px auto;
+    width: 706px;
     .banner-h {
       display: flex;
     }
@@ -172,6 +173,7 @@ body {
 
 main#content {
   margin: 0 auto 0 auto;
+  padding: 0 16px 0 16px;
   letter-spacing: $letter-spacing-body;
   sup, sub {
     line-height: 0;
@@ -282,10 +284,22 @@ main#content {
   }
 }
 
+// footer shit
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+main#content {
+  flex-grow: 1;
+}
+
 footer#footer {
   color: $body-text-color;
-  margin: 100px 0 64px 0;
-  text-transform: uppercase;
+  background-color: $body-background-alt;
+  padding: 24px 0 24px 0;
+  margin: 48px 0 0 0;
   font-size: 80%;
   a {
     text-decoration: underline;
@@ -299,6 +313,13 @@ footer#footer {
 
   .footer-nav-container {
     height: 100%;
+    width: 100%;
+    margin: 0 auto 0 auto;
+    padding: 0 16px 0 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: space-between;
   }
 
   .external-link-icons {
@@ -332,6 +353,15 @@ footer#footer {
   }
   .footer-text {
     text-align: center;
+  }
+}
+
+@media (min-width: 770px) {
+  footer#footer {
+    .footer-nav-container {
+      flex-direction: row;
+      gap: 8px;
+    }
   }
 }
 

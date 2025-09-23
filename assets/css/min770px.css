@@ -8,7 +8,11 @@ html {
     overflow-x: hidden;
   }
   main#content {
-      width: 75ch;
+      width: 706px;
+  }
+
+  .footer-nav-container {
+    max-width: 706px;
   }
 
   main#content hr {

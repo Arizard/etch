@@ -5,9 +5,10 @@
 body {
     font-family: 'Helvetica Neue', 'Arial', sans-serif;
     width: 100vw;
+    min-height: 100vh;
     overflow-x: hidden;
-    margin: 0 auto;
-    padding: 0 16px;
+    margin: 0;
+    padding: 0;
 }
 
 a:hover {
