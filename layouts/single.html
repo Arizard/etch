@@ -1,20 +1,20 @@
 {{ define "main" }}
 <header id="post-header">
   <h1>{{ .Title }}</h1>
-  <aside class="front-matter">
-    {{- if  (isset .Params "date") -}}
-      <div class="params-date">
-        {{- partial "svg/calendar.html" . -}}
-        <time>{{ .Params.Date.Format "2 January 2006" }}</time>
-      </div>
-    {{- end -}}
-  </aside>
 </header>
 <article>
   {{- .Content -}}
 </article>
-<div class="article-after">{{- partial "svg/coffee.html" -}}{{- partial "svg/coffee.html" -}}{{- partial "svg/coffee.html" -}}
+<div class="article-after">{{- partial "svg/coffee.html" -}}
 </div>
+<aside class="front-matter">
+  {{- if  (isset .Params "date") -}}
+    <div class="params-date">
+      {{- partial "svg/calendar.html" . -}}
+      <time>{{ .Params.Date.Format "2 January 2006" }}</time>
+    </div>
+  {{- end -}}
+</aside>
 
 {{- if not .Params.nobottomnav -}}
 <div class="bottom-nav">

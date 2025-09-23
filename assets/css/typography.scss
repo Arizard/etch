@@ -357,7 +357,7 @@ footer#footer {
 }
 
 .bottom-nav {
-  margin-top: 32px;
+  margin-top: 0;
   .bottom-nav-label {
     margin-bottom: 6px;
     text-transform: uppercase;
@@ -372,6 +372,7 @@ footer#footer {
 }
 
 .front-matter {
+  display: none;
   font-size: 80%;
   text-transform: uppercase;
   margin-top: 1rem;
