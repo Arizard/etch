@@ -89,13 +89,13 @@ nav#banner {
       background-color: $body-background-alt;
       color: $body-text-color;
       text-decoration: none;
-      text-transform: uppercase;
+      text-transform: lowercase;
       font-size: 80%;
       font-weight: 700;
       .navlink-label {
         display: block;
         height: 22px;
-        line-height: 22px;
+        line-height: 20px;
       }
       .lni {
         display: block;
@@ -479,7 +479,7 @@ main#content {
   gap: 8px;
   .terms-cloud-item {
     border-radius: $default-radius;
-    text-transform: uppercase;
+    text-transform: lowercase;
     font-size: 80%;
     font-weight: 700;
     box-sizing: border-box;
