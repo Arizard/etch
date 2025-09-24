@@ -4,7 +4,7 @@
             {{ .Content }}
         </div>
     </div>
-    <div class="posts-list-container home-fade-in-after-about-me">
+    <div class="posts-list-container home home-fade-in-after-about-me">
         <div class="index-label-latest-post">latest post</div>
         {{ $pages := where site.RegularPages "Section" "posts" }}
         {{- range $pages.Limit 1 }}

@@ -403,6 +403,9 @@ footer#footer {
     a {
       font-weight: bold;
     }
+    a.posts-list-item {
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
   }
 }
 
@@ -572,6 +575,12 @@ main#content {
     opacity: 0;
 }
 
+.home.posts-list-container {
+  a.posts-list-item {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  }
+}
+
 // justify text
   article, .about-me-container {
     text-align: left;
@@ -593,6 +602,7 @@ main#content {
 // post-hero
 main#content {
   .post-hero-container {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     margin: 0 0 24px 0;
     background-color: $body-background-alt;
     overflow: hidden;
