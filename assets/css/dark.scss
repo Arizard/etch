@@ -76,5 +76,11 @@
       }
     }
   }
+
+  main#content {
+    .post-hero-container {
+      background-color: $body-background-dark-alt;
+    }
+  }
 }
 

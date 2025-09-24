@@ -104,7 +104,6 @@
     {{ $mySCSS := $mySCSS | append (resources.Get "css/all.scss") -}}
     {{ $scss := $mySCSS | resources.Concat "css/style2.css" | css.Sass | minify }}
 
-
     <style>
         {{ $css.Content | safeCSS }}
         {{ $scss.Content | safeCSS }}
