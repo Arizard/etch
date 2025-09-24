@@ -24,7 +24,7 @@ ol {
 
 nav#banner {
   display: block;
-  margin: 16px 0 $body-line-height 0;
+  margin: 16px 0 16px 0;
   padding: 0 16px 0 16px;
   font-family: $heading-font;
   .banner-inner {
@@ -125,7 +125,7 @@ nav#banner {
 
 @media (min-width: 770px) {
   nav#banner {
-    margin: 16px auto 48px auto;
+    margin: 16px auto 16px auto;
     width: 706px;
     .banner-h {
       display: flex;
@@ -179,7 +179,12 @@ main#content {
     line-height: 0;
   }
   header {
-    margin: 0 0 24px 0;
+    h1 {
+      margin-top: 0;
+    }
+  }
+
+  .about-me-intro {
     h1 {
       margin-top: 0;
     }
@@ -582,5 +587,52 @@ main#content {
 @media (min-width: 770px) {
   article, .about-me-container {
     text-align: justify;
+  }
+}
+
+// post-hero
+main#content {
+  .post-hero-container {
+    margin: 0 0 24px 0;
+    background-color: $body-background-alt;
+    overflow: hidden;
+    margin: 0 -16px 24px -16px;
+    .post-hero {
+      background-size: cover;
+      width: auto;
+      aspect-ratio: 5/4;
+      margin: 0;
+      background-position: center;
+    }
+
+    .post-header {
+      margin: 0;
+      h1 {
+        margin: 0;
+        display: inline-block;
+        width: 100%;
+        padding: 16px;
+        margin: 0;
+      }
+    }
+
+    .post-hero-attribution {
+      padding: 4px 16px;
+      text-align: right;
+      font-size: 80%;
+    }
+  }
+}
+
+@media (min-width: 770px) {
+  main#content {
+    .post-hero-container {
+      border-radius: $default-radius;
+      .post-hero {
+        aspect-ratio: 16/9;
+      }
+      .post-header {
+      }
+    }
   }
 }

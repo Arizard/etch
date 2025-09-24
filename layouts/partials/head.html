@@ -6,11 +6,41 @@
     <meta name="description" content="{{ . }}">
     {{ end }}
     {{ $keywords := .Params.keywords | default .Site.Params.keywords -}}
-    {{ with $keywords -}}
-    <meta name="keywords" content="{{ if reflect.IsSlice . }}{{ delimit . ", " }}{{ else }}{{ . }}{{ end }}">
-    {{ end }}
     {{ with .OutputFormats.Get "rss" -}}
         {{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+    {{ end -}}
+
+    {{- $title := .Site.Title -}}
+    {{- if .Data.Term -}} <!-- term page -->
+        {{- $title = fmt.Printf "%s: %s - %s" (.Data.Singular | title) (.Title) (.Site.Title) -}}
+    {{ else if eq  .Title  .Site.Title }} <!-- home page -->
+        {{- $title = .Site.Title -}}
+    {{ else if .Title }} <!-- post pages -->
+        {{- $title = fmt.Printf "%s - %s" (.Title) (.Site.Title) -}}
+    {{ else }}
+        {{- $title = .Site.Title -}}
+    {{ end }}
+
+    <title>{{ $title }}</title>
+
+    {{ $baseURL := .Page.Site.BaseURL -}}
+    <meta property="og:title" content="{{ $title }}">
+    {{ with $description -}}
+    <meta property="og:description" content="{{ . }}">
+    {{ end -}}
+    {{ with .Page.Params.hero -}}
+    <meta property="og:image" content="{{ $baseURL }}{{ . }}">
+    {{ end -}}
+    <meta property="og:url" content="{{- .Page.Permalink -}}">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ $title }}">
+    {{ with $description -}}
+    <meta name="twitter:description" content="{{ . }}">
+    {{ end -}}
+    {{ with .Page.Params.hero -}}
+    <meta name="twitter:image" content="{{ $baseURL }}{{ . }}">
     {{ end -}}
 
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
@@ -18,8 +48,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
     <link rel="manifest" href="/favicon/site.webmanifest">
 
-    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ff4757" />
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#ff4757" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f1f2eb" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#002029" />
 
     <script>
         window.siteConfig = {
@@ -61,7 +91,9 @@
         });
     </script>
 
+    {{- if not hugo.IsServer -}}
     <script defer src="https://cloud.umami.is/script.js" data-website-id="f6e489e0-5149-4d45-b189-50b70706a490"></script>
+    {{- end -}}
 
     {{ $myCSS := slice -}}
     {{ $myCSS = $myCSS | append (resources.Get "css/main.css") -}}
@@ -89,18 +121,4 @@
             }
         {{ end -}}
     </style>
-
-    {{- $title := .Site.Title -}}
-    {{- if .Data.Term -}} <!-- term page -->
-        {{- $title = fmt.Printf "%s: %s - %s" (.Data.Singular | title) (.Title) (.Site.Title) -}}
-    {{ else if eq  .Title  .Site.Title }} <!-- home page -->
-        {{- $title = .Site.Title -}}
-    {{ else if .Title }} <!-- post pages -->
-        {{- $title = fmt.Printf "%s - %s" (.Title) (.Site.Title) -}}
-    {{ else }}
-        {{- $title = .Site.Title -}}
-    {{ end }}
-
-    <title>{{ $title }}</title>
-    <meta itemprop="name" content="{{ $title }}" />
 </head>

@@ -1,7 +1,22 @@
 {{ define "main" }}
+{{- if .Page.Params.hero -}}
+<div class="post-hero-container">
+  <header id="post-header" class="post-header">
+    <h1>{{ .Title }}</h1>
+  </header>
+  <div class="post-hero" style="background-image: url('{{ .Page.Params.hero }}')">
+  </div>
+  {{- if .Page.Params.hero_attribution -}}
+  <div class="post-hero-attribution">
+    <span>{{ .RenderString .Page.Params.hero_attribution }}</span>
+  </div>
+  {{- end -}}
+</div>
+{{- else -}}
 <header id="post-header">
   <h1>{{ .Title }}</h1>
 </header>
+{{- end -}}
 <article>
   {{- .Content -}}
 </article>
