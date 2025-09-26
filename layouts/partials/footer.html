@@ -1,20 +1,19 @@
 <footer id="footer">
   <div class="footer-nav-container">
     <div class="footer-text">{{ .RenderString .Site.Params.copyright }}</div>
-  {{- if or .IsHome .IsSection .Data.Term -}}
     <div class="footer-socials">
       <div class="external-link-icons">
+  {{- if .Data.Term -}}
       <a alt="rss" href="index.xml" class="external-link-icons-item"> <!-- rss relative to page -->
-        rss</a>
-      </div>
-    </div>
+        rss (tag: {{ .Name }})</a>
+  {{- else if .IsSection -}}
+      <a alt="rss" href="index.xml" class="external-link-icons-item"> <!-- rss relative to page -->
+        rss (section: {{ .Name }})</a>
   {{- else -}}
-    <div class="footer-socials">
-      <div class="external-link-icons">
       <a alt="rss" href="/index.xml" class="external-link-icons-item"> <!-- rss absolute -->
-        rss</a>
+        rss (all)</a>
+  {{- end -}}
       </div>
     </div>
-  {{- end -}}
   </div>
 </footer>
