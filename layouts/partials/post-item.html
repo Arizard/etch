@@ -1,26 +1,31 @@
 <a href="{{ .Permalink }}" class="posts-list-item">
-        <div class="posts-list-heading">
-                {{ .Title }}
+    <div class="posts-list-heading">
+        {{ .Title }}
+    </div>
+    {{- with .Page.Resources.Get .Params.hero -}}
+    <div class="posts-list-hero-container">
+            <div class="posts-list-hero" style="background-image: url('{{ .Permalink }}');"></div>
+    </div>
+    {{- end -}}
+    <div class="posts-list-subtitle">
+        {{ transform.Plainify .Summary }}
+    </div>
+    <div class="posts-list-pills">
+        <div class="posts-list-pill">
+            {{- partial "svg/calendar.html" . -}}
+            <time>{{ .Date.Format "2 Jan 2006" }}</time>
         </div>
-        <div class="posts-list-subtitle">
-                {{ transform.Plainify .Summary }}
+        <div class="posts-list-pill">
+            {{- partial "svg/stopwatch.html" . -}}
+            {{ .ReadingTime }} minutes
         </div>
-        <div class="posts-list-pills">
-                <div class="posts-list-pill">
-                        {{- partial "svg/calendar.html" . -}}
-                        <time>{{ .Date.Format "2 Jan 2006" }}</time>
-                </div>
-                <div class="posts-list-pill">
-                        {{- partial "svg/stopwatch.html" . -}}
-                        {{ .ReadingTime }} minutes
-                </div>
-                <div class="posts-list-pill">
-                        <span data-article-id-for-reply-count="{{ .Slug | default .Path }}" class="post-item-reply-count"></span>
-                </div>
-                {{- if .Draft -}}
-                <div class="posts-list-pill">
-                draft
-                </div>
-                {{- end -}}
+        <div class="posts-list-pill">
+            <span data-article-id-for-reply-count="{{ .Slug | default .Path }}" class="post-item-reply-count"></span>
         </div>
+        {{- if .Draft -}}
+        <div class="posts-list-pill">
+        draft
+        </div>
+        {{- end -}}
+    </div>
 </a>

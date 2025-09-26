@@ -20,6 +20,22 @@ a.posts-list-item {
     text-decoration-thickness: 1.5px;
   }
 
+  .posts-list-hero-container {
+    width: 100%;
+    aspect-ratio: 16/9;
+    margin: 16px 0;
+  }
+  .posts-list-hero {
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    margin: 0 -16px 0 -16px;
+  }
+
+  .posts-list-subtitle {
+    margin-bottom: 16px;
+  }
+
   .posts-list-subtitle, p, .posts-list-pill {
     font-weight: $body-font-weight;
   }
