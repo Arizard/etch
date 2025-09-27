@@ -5,7 +5,7 @@
     <h1>{{ .Title }}</h1>
   </header>
   {{- with .Page.Resources.Get .Params.hero -}}
-  {{- $heroImage := .Process "fit 1000x4000 webp q90 box" -}}
+  {{- $heroImage := .Process "fit 1000x4000 jpeg q80 box" -}}
   <div class="post-hero" style="background-image: url('{{ $heroImage.Permalink }}')">
   </div>
   {{- end -}}

@@ -7,12 +7,12 @@
   {{- $src := $u.String -}}
   {{- if not $u.IsAbs -}}
     {{- with or (.Page.Resources.Get $u.Path) (resources.Get $u.Path) -}}
-      {{- $resized := .Process "fit 1200x4800 webp q95" -}}
+      {{- $resized := .Process "fit 1200x4800 jpeg q95" -}}
       {{- $src = $resized.Permalink -}}
     {{- end -}}
   {{- end -}}
 
-  <img src="{{ $src }}"
+  <img loading="lazy" src="{{ $src }}"
     {{- if or (.Get "alt") (.Get "caption") }}
     alt="{{ with .Get "alt" }}{{ . }}{{ else }}{{ .Get "caption" | markdownify| plainify }}{{ end }}"
     {{- end -}}
