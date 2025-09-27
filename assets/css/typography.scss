@@ -689,3 +689,10 @@ main#content {
     }
   }
 }
+
+#toc {
+  ol {
+    margin: 0;
+  }
+  margin-bottom: $body-line-height;
+}
