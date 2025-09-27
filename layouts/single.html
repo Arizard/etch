@@ -20,7 +20,11 @@
   <h1>{{ .Title }}</h1>
 </header>
 {{- end -}}
+{{- if .Params.indent_and_line_break -}}
+<article class="indent-and-line-break">
+{{- else -}}
 <article>
+{{- end -}}
   {{- .Content -}}
 </article>
 <div class="article-after">{{- partial "svg/coffee.html" -}}

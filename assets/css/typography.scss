@@ -193,7 +193,16 @@ main#content {
   p {
     color: $body-text-color;
     margin-top: 0;
-    margin-bottom: $body-line-height;
+    margin-bottom: $body-line-height / 2;
+  }
+
+  .indent-and-line-break {
+    p {
+      margin-bottom: 0;
+    }
+    p::before {
+      content: " ";
+    }
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -203,7 +212,7 @@ main#content {
     word-wrap: break-word;
     white-space: normal;
     letter-spacing: $letter-spacing-headings;
-    margin: ($body-line-height) 0 ($body-line-height) 0;
+    margin: ($body-line-height/2) 0 ($body-line-height/2) 0;
     line-height: 120%;
     text-align: left;
     text-wrap: pretty;
@@ -462,6 +471,30 @@ main#content {
   }
 }
 
+@media print, screen and (min-width: 770px) {
+  main#content {
+    .sc-heading-with-sub-label-container {
+      display: flex;
+      padding: $body-line-height/2 0 $body-line-height/2 0;
+    }
+    .sc-sub-label {
+      text-transform: uppercase;
+      font-size: 80%;
+      margin: 0;
+      display: block;
+      flex-grow: 1;
+      text-align: right;
+      line-height: $body-line-height * 0.8;
+    }
+    .sc-heading-with-sub-label {
+      margin: 0;
+      padding: 0;
+      display: block;
+      flex-basis: 70%;
+    }
+  }
+}
+
 .index-see-all-posts {
   margin-top: 32px;
   text-align: center;
@@ -584,13 +617,13 @@ main#content {
 article, .about-me-container {
   text-align: left;
   text-wrap: pretty;
-  hyphens: none;
+  hyphens: auto;
 }
 
 main#content .posts-list-subtitle {
   text-align: left;
   text-wrap: pretty;
-  hyphenate: none;
+  hyphens: auto;
 }
 
 .about-me-container {
