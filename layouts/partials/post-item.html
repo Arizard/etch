@@ -3,8 +3,9 @@
         {{ .Title }}
     </div>
     {{- with .Page.Resources.Get .Params.hero -}}
+    {{- $heroImage := .Process "resize 800x webp q90 box" -}}
     <div class="posts-list-hero-container">
-            <div class="posts-list-hero" style="background-image: url('{{ .Permalink }}');"></div>
+            <div class="posts-list-hero" style="background-image: url('{{ $heroImage.Permalink }}');"></div>
     </div>
     {{- end -}}
     <div class="posts-list-subtitle">

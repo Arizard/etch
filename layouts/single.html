@@ -4,8 +4,11 @@
   <header id="post-header" class="post-header">
     <h1>{{ .Title }}</h1>
   </header>
-  <div class="post-hero" style="background-image: url('{{ .Page.Params.hero }}')">
+  {{- with .Page.Resources.Get .Params.hero -}}
+  {{- $heroImage := .Process "resize 1000x webp q90 box" -}}
+  <div class="post-hero" style="background-image: url('{{ $heroImage.Permalink }}')">
   </div>
+  {{- end -}}
   {{- if .Page.Params.hero_attribution -}}
   <div class="post-hero-attribution">
     <span>{{ .RenderString .Page.Params.hero_attribution }}</span>
