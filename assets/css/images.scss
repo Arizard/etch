@@ -1,19 +1,25 @@
 main#content {
   figure {
     display: table;
-    margin: 8px auto;
+    margin: $body-line-height/2 auto;
     color: $body-text-color;
     padding: 0;
     width: 100%;
+    border-radius: $default-radius $default-radius 0 0;
+    overflow: hidden;
+    background-color: $body-background-alt;
 
     figcaption {
       display: table-caption;
       caption-side: bottom;
+      border-radius: 0 0 $default-radius $default-radius;
+      background-color: $body-background-alt;
 
       p {
         color: $body-text-color;
-        font-style: italic;
         font-size: 80%;
+        text-align: center;
+        margin: 0 16px 8px 16px;
       }
     }
 
