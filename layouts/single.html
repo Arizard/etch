@@ -22,51 +22,51 @@
 {{- end -}}
 {{- if .Params.indent_and_line_break -}}
 <article class="indent-and-line-break">
-{{- else -}}
-<article>
-{{- end -}}
-  {{- .Content -}}
-</article>
-<div class="article-after">{{- partial "svg/coffee.html" -}}
-</div>
-<aside class="front-matter">
-  {{- if  (isset .Params "date") -}}
+  {{- else -}}
+  <article>
+    {{- end -}}
+    {{- .Content -}}
+  </article>
+  <div class="article-after">{{- partial "svg/coffee.html" -}}
+  </div>
+  <aside class="front-matter">
+    {{- if (isset .Params "date") -}}
     <div class="params-date">
       {{- partial "svg/calendar.html" . -}}
       <time>{{ .Params.Date.Format "2 January 2006" }}</time>
     </div>
-  {{- end -}}
-</aside>
+    {{- end -}}
+  </aside>
 
-{{- if not .Params.nobottomnav -}}
-<div class="bottom-nav">
-  <div class="tags-container">
-    <div class="bottom-nav-label">Tags</div>
-    {{ with .Page.GetTerms "tags" }}
-        {{- partial "terms-cloud-page.html" . -}}
-    {{ end }}
-  </div>
-  <div class="bottom-nav-next">
-    <div class="bottom-nav-label">Read next</div>
-    {{ with .PrevInSection }}
-      {{- partial "post-item.html" . -}}
-    {{ else }}
-      {{ with site.GetPage .Section }}
-        {{ with index (.RegularPages.ByDate) (sub (len .RegularPages.ByDate) 1) }}
-          {{- partial "post-item.html" . -}}
-        {{ end }}
+  {{- if not .Params.nobottomnav -}}
+  <div class="bottom-nav">
+    <div class="tags-container">
+      <div class="bottom-nav-label">Tags</div>
+      {{ with .Page.GetTerms "tags" }}
+      {{- partial "terms-cloud-page.html" . -}}
       {{ end }}
-    {{ end }}
+    </div>
+    <div class="bottom-nav-next">
+      <div class="bottom-nav-label">Read next</div>
+      {{ with .PrevInSection }}
+      {{- partial "post-item.html" . -}}
+      {{ else }}
+      {{ with site.GetPage .Section }}
+      {{ with index (.RegularPages.ByDate) (sub (len .RegularPages.ByDate) 1) }}
+      {{- partial "post-item.html" . -}}
+      {{ end }}
+      {{ end }}
+      {{ end }}
+    </div>
   </div>
-</div>
-{{ end }}
+  {{ end }}
 
-{{- if not .Params.nocomment -}}
-<div class="comments-container">
-  <section id="comments-form">
-  </section>
-  <section id="comments-thread">
-  </section>
-</div>
-{{- end -}}
-{{ end }}
+  {{- if not .Params.nocomment -}}
+  <div class="comments-container">
+    <section id="comments-form">
+    </section>
+    <section id="comments-thread">
+    </section>
+  </div>
+  {{- end -}}
+  {{ end }}

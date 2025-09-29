@@ -1,4 +1,6 @@
-*, *:before, *:after {
+*,
+*:before,
+*:after {
     box-sizing: border-box;
 }
 
@@ -16,7 +18,8 @@ a:hover {
     text-decoration-thickness: 1px;
 }
 
-code, pre {
+code,
+pre {
     font-family: 'Inconsolata', monospace;
     padding: 0;
 }
@@ -32,6 +35,7 @@ code, pre {
 @view-transition {
     navigation: auto;
 }
+
 ::view-transition-old(root),
 ::view-transition-new(root) {
     animation-duration: 0.152s;
