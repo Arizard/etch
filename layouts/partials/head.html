@@ -29,7 +29,8 @@
     {{ end -}}
     {{ if .Page.Params.hero -}}
     {{ with .Page.Resources.Get .Page.Params.hero -}}
-    <meta property="og:image" content="{{ .Permalink }}">
+      {{- $heroImage := .Process "fit 1000x4000 jpeg q80 box" -}}
+    <meta property="og:image" content="{{ $heroImage.Permalink }}">
     {{ end -}}
     {{ end -}}
     <meta property="og:url" content="{{- .Page.Permalink -}}">
@@ -42,7 +43,8 @@
     {{ end -}}
     {{ if .Page.Params.hero -}}
     {{ with .Page.Resources.Get .Page.Params.hero -}}
-    <meta name="twitter:image" content="{{ .Permalink }}">
+      {{- $heroImage := .Process "fit 1000x4000 jpeg q80 box" -}}
+    <meta name="twitter:image" content="{{ $heroImage.Permalink }}">
     {{ end -}}
     {{ end -}}
 
