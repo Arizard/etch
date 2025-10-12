@@ -25,6 +25,7 @@ nav#banner {
   margin: 16px 0 16px 0;
   padding: 0 16px 0 16px;
   font-family: $heading-font;
+
   .banner-inner {
     margin: 0;
     line-height: $banner-font-size;
@@ -32,7 +33,9 @@ nav#banner {
     justify-content: space-between;
     gap: 8px;
   }
-  .banner-h, .banner-h-condensed {
+
+  .banner-h,
+  .banner-h-condensed {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,10 +45,12 @@ nav#banner {
     font-size: $banner-font-size;
     background-color: $accent-color;
     color: #ffffff;
+
     div {
       height: 22px;
       line-height: 22px;
     }
+
     border-radius: $default-radius 0 $default-radius 0;
   }
 
@@ -61,7 +66,7 @@ nav#banner {
   }
 
   a {
-      text-decoration: none;
+    text-decoration: none;
   }
 
   .navlinks {
@@ -74,6 +79,7 @@ nav#banner {
     flex-wrap: wrap;
     justify-content: flex-end;
     gap: 8px;
+
     .navlink {
       border-radius: $default-radius 0 $default-radius 0;
       width: 80px;
@@ -91,16 +97,19 @@ nav#banner {
       text-transform: lowercase;
       font-size: 80%;
       font-weight: 700;
+
       .navlink-label {
         display: block;
         height: 22px;
         line-height: 20px;
       }
+
       .lni {
         display: block;
         height: 16px;
         width: 16px;
         line-height: 16px;
+
         svg {
           height: 16px;
           width: 16px;
@@ -109,9 +118,11 @@ nav#banner {
       }
     }
 
-    .navlink.active, .navlink:hover {
+    .navlink.active,
+    .navlink:hover {
       background-color: $secondary-color;
       color: $body-text-color-dark;
+
       .lni {
         path {
           fill: $body-text-color-dark;
@@ -125,9 +136,11 @@ nav#banner {
   nav#banner {
     margin: 16px auto 16px auto;
     width: 706px;
+
     .banner-h {
       display: flex;
     }
+
     .banner-h-condensed {
       display: none;
     }
@@ -140,15 +153,19 @@ nav#banner {
       .navlink {
         background-color: $body-background-dark-alt;
         color: $body-text-color-dark !important;
+
         .lni {
           path {
             fill: $body-text-color-dark;
           }
         }
       }
-      .navlink.active, .navlink:hover {
+
+      .navlink.active,
+      .navlink:hover {
         background-color: $secondary-color-dark;
         color: $body-background-dark-alt !important;
+
         .lni {
           path {
             fill: $body-background-dark-alt;
@@ -173,9 +190,12 @@ main#content {
   margin: 0 auto 0 auto;
   padding: 0 16px 0 16px;
   letter-spacing: $letter-spacing-body;
-  sup, sub {
+
+  sup,
+  sub {
     line-height: 0;
   }
+
   header {
     h1 {
       margin-top: 0;
@@ -198,12 +218,18 @@ main#content {
     p {
       margin-bottom: 0;
     }
+
     p::before {
       content: " ";
     }
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: "Manrope", sans-serif;
     display: block;
     font-weight: 800;
@@ -251,11 +277,13 @@ main#content {
     font-style: italic;
   }
 
-  pre, pre.chroma {
+  pre,
+  pre.chroma {
     padding: 1rem 1rem;
     background-color: $body-background-alt;
     border-radius: 6px;
     line-height: $body-line-height;
+
     code {
       background-color: revert;
       display: block;
@@ -270,18 +298,22 @@ main#content {
   }
 
   .footnotes {
-    hr { /* used in footnotes only */
+    hr {
+      /* used in footnotes only */
       border: 0;
       height: 1.5px;
       background: $body-text-color;
     }
   }
 
-  table, th, td {
+  table,
+  th,
+  td {
     border: 1px solid $body-text-color;
   }
 
-  th, td {
+  th,
+  td {
     padding: 1rem 2rem;
   }
 
@@ -314,11 +346,13 @@ footer#footer {
   margin: 48px 0 0 0;
   font-size: 80%;
   width: 100%;
+
   a {
     text-decoration: underline;
     text-decoration-thickness: 1px;
     color: $body-text-color;
   }
+
   a:hover {
     text-decoration: underline;
     text-decoration-thickness: 1px;
@@ -352,18 +386,22 @@ footer#footer {
 
   .lni {
     display: inline-block;
+
     svg {
       display: block;
       width: 100%;
       height: 100%;
+
       path {
         fill: $body-text-color;
       }
     }
+
     width: 28px;
     height: 28px;
     margin-bottom: -6px;
   }
+
   .footer-text {
     text-align: center;
   }
@@ -382,9 +420,9 @@ footer#footer {
   footer#footer {
     .lni {
       svg {
-      path {
-        fill: $body-text-color-dark;
-      }
+        path {
+          fill: $body-text-color-dark;
+        }
       }
     }
   }
@@ -400,16 +438,20 @@ footer#footer {
 
 .bottom-nav {
   margin-top: 0;
+
   .bottom-nav-label {
     margin-bottom: 6px;
     text-transform: uppercase;
     font-size: 80%;
   }
+
   .bottom-nav-next {
     text-align: left;
+
     a {
       font-weight: bold;
     }
+
     a.posts-list-item {
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     }
@@ -427,6 +469,7 @@ footer#footer {
       height: 1.4rem;
       width: 1.4rem;
       margin-bottom: -0.3rem;
+
       path {
         fill: $body-text-color;
       }
@@ -469,12 +512,14 @@ main#content {
   }
 }
 
-@media print, screen and (min-width: 770px) {
+@media print,
+screen and (min-width: 770px) {
   main#content {
     .sc-heading-with-sub-label-container {
       display: flex;
       padding: $body-line-height/2 0 $body-line-height/2 0;
     }
+
     .sc-sub-label {
       text-transform: uppercase;
       font-size: 80%;
@@ -484,6 +529,7 @@ main#content {
       text-align: right;
       line-height: $body-line-height * 0.8;
     }
+
     .sc-heading-with-sub-label {
       margin: 0;
       padding: 0;
@@ -496,6 +542,7 @@ main#content {
 .index-see-all-posts {
   margin-top: 32px;
   text-align: center;
+
   a {
     text-decoration-thickness: 1px;
   }
@@ -510,9 +557,11 @@ main#content {
 .article-after {
   margin: 64px 0 64px 0;
   text-align: center;
+
   svg {
     height: 17px;
     width: 17px;
+
     path {
       fill: $body-text-color;
     }
@@ -531,8 +580,8 @@ main#content {
 
 @media (min-width: 770px) {
   main#content figure.portrait {
-      width: 62%;
-    }
+    width: 62%;
+  }
 }
 
 .terms-cloud-label {
@@ -547,6 +596,7 @@ main#content {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+
   .terms-cloud-item {
     border-radius: $default-radius;
     text-transform: lowercase;
@@ -561,6 +611,7 @@ main#content {
     background-color: $body-background-alt;
     color: $body-text-color !important;
   }
+
   .terms-cloud-item:hover,
   .terms-cloud-item:active,
   .terms-cloud-item.selected {
@@ -575,6 +626,7 @@ main#content {
       background-color: $body-background-dark-alt;
       color: $body-text-color-dark !important;
     }
+
     .terms-cloud-item:hover,
     .terms-cloud-item.selected {
       background-color: $secondary-color-dark;
@@ -602,17 +654,17 @@ main#content {
 }
 
 .home-fade-in-after-about-me {
-    animation: homeFadeIn 0.25s ease-out 0.75s forwards;
-    opacity: 0;
+  animation: homeFadeIn 0.25s ease-out 0.75s forwards;
+  opacity: 0;
 }
 
 .home.posts-list-container {
-  a.posts-list-item {
-  }
+  a.posts-list-item {}
 }
 
 // justify text
-article, .about-me-container {
+article,
+.about-me-container {
   text-align: left;
   text-wrap: pretty;
   hyphens: auto;
@@ -633,7 +685,9 @@ main#content .posts-list-subtitle {
 }
 
 @media (min-width: 770px) {
-  article, .about-me-container {
+
+  article,
+  .about-me-container {
     text-align: justify;
   }
 
@@ -650,6 +704,7 @@ main#content {
     background-color: $body-background-alt;
     overflow: hidden;
     margin: 0 -16px 24px -16px;
+
     .post-hero {
       background-size: cover;
       width: auto;
@@ -660,6 +715,7 @@ main#content {
 
     .post-header {
       margin: 0;
+
       h1 {
         margin: 0;
         display: inline-block;
@@ -681,11 +737,12 @@ main#content {
   main#content {
     .post-hero-container {
       border-radius: $default-radius;
+
       .post-hero {
         aspect-ratio: 16/9;
       }
-      .post-header {
-      }
+
+      .post-header {}
     }
   }
 }
@@ -694,5 +751,72 @@ main#content {
   ol {
     margin: 0;
   }
+
   margin-bottom: $body-line-height;
+}
+
+.callout {
+  border: 1px solid;
+  padding: 16px 20px;
+  margin: 20px 0;
+  border-radius: $default-radius;
+}
+
+.callout-info {
+  background: #e3f2fd;
+  border-color: #2196f3;
+}
+
+.callout-warning {
+  background: #fff3e0;
+  border-color: #ff9800;
+}
+
+.callout-success {
+  background: #e8f5e9;
+  border-color: #4caf50;
+}
+
+.callout-error {
+  background: #ffebee;
+  border-color: #f44336;
+}
+
+.callout-title {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.callout-content {
+  color: $body-text-color;
+  line-height: $body-line-height;
+  text-align: left;
+  hyphens: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .callout-info {
+    background: #1e3a5f;
+    border-color: #64b5f6;
+  }
+
+  .callout-warning {
+    background: #4a3800;
+    border-color: #ffb74d;
+  }
+
+  .callout-success {
+    background: #1b4d20;
+    border-color: #81c784;
+  }
+
+  .callout-error {
+    background: #4d1f1f;
+    border-color: #e57373;
+  }
+
+  .callout-title,
+  .callout-content {
+    color: $body-text-color-dark;
+  }
 }
