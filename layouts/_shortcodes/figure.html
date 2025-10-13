@@ -3,9 +3,10 @@
     <a href="{{ .Get "link" }}"{{ with .Get "target" }} target="{{ . }}"{{ end }}{{ with .Get "rel" }} rel="{{ . }}"{{ end }}>
   {{- end -}}
 
+  {{- $keepOriginal := .Get "original" -}}
   {{- $u := urls.Parse (.Get "src") -}}
   {{- $src := $u.String -}}
-  {{- if not $u.IsAbs -}}
+  {{- if and (not $u.IsAbs) (not $keepOriginal) -}}
     {{- with or (.Page.Resources.Get $u.Path) (resources.Get $u.Path) -}}
       {{- $resized := .Process "fit 1200x4800 q95" -}}
       {{- $src = $resized.Permalink -}}
