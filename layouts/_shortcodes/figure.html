@@ -7,7 +7,7 @@
   {{- $src := $u.String -}}
   {{- if not $u.IsAbs -}}
     {{- with or (.Page.Resources.Get $u.Path) (resources.Get $u.Path) -}}
-      {{- $resized := .Process "fit 1200x4800 jpeg q95" -}}
+      {{- $resized := .Process "fit 1200x4800 q95" -}}
       {{- $src = $resized.Permalink -}}
     {{- end -}}
   {{- end -}}
