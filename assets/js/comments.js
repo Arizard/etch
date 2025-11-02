@@ -289,10 +289,10 @@ class ReplySubmissionFormComponent extends ReactiveRenderingHTMLElement {
                   'Content-Type': 'application/json',
               },
               body: JSON.stringify({
-                reply_author_name: name ?? "",
-                reply_signature_secret: secret ?? "",
-                reply_body: data.body,
-                reply_idempotency_key: gomments.nextIdempotencyKey,
+                author_name: name ?? "",
+                signature_secret: secret ?? "",
+                body: data.body,
+                idempotency_key: gomments.nextIdempotencyKey,
               })
           });
 
@@ -300,7 +300,7 @@ class ReplySubmissionFormComponent extends ReactiveRenderingHTMLElement {
             resetTextArea();
             gomments.nextIdempotencyKey = gomments.uuid4();
             const r = await response.json()
-            gomments.attentionReplyID = `${r.reply.reply_id}`;
+            gomments.attentionReplyID = `${r.reply.id}`;
             await reloadThread();
           } else {
             console.error('Error:', response.status);
@@ -774,12 +774,12 @@ async function reloadThread() {
 
     for (const respReply of replies) {
       const reply = document.createElement("gomments-reply");
-      reply.setAttribute("id", `reply-${respReply.reply_id || 0}-container`);
-      reply.setAttribute("reply-id", respReply.reply_id);
-      reply.setAttribute("reply-signature", respReply.reply_signature);
-      reply.setAttribute("reply-body", respReply.reply_body);
-      reply.setAttribute("reply-created-at", respReply.reply_created_at);
-      reply.setAttribute("reply-author-name", respReply.reply_author_name);
+      reply.setAttribute("id", `reply-${respReply.id || 0}-container`);
+      reply.setAttribute("reply-id", respReply.id);
+      reply.setAttribute("reply-signature", respReply.signature);
+      reply.setAttribute("reply-body", respReply.body);
+      reply.setAttribute("reply-created-at", respReply.created_at);
+      reply.setAttribute("reply-author-name", respReply.author_name);
 
       thread.appendChild(reply);
     }
