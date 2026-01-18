@@ -15,7 +15,6 @@ export default function App() {
   const [idempotencyKey, setIdempotencyKey] = useState(() => uuid4());
 
   const loadReplies = useCallback(async () => {
-    setLoading(true);
     setError(false);
 
     try {

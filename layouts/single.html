@@ -64,9 +64,14 @@
   {{- if not .Params.nocomment -}}
   <div id="gomments-container">
   </div>
-  {{- $reactBuilt := resources.Get "js/react.js" | js.Build "react.js" | minify -}}
+  {{- $reactBuilt := resources.Get "js/react.js" | js.Build (dict "minify" true "targetPath" "react.js") -}}
   <script src="{{ $reactBuilt.RelPermalink }}" defer></script>
-  {{- $gommentsBuilt := resources.Get "js/react-gomments/index.jsx" | js.Build "gomments.js" -}}
+  {{$gommentsBuildOpts := dict
+    "minify" (not hugo.IsDevelopment)
+    "sourceMap" (cond hugo.IsDevelopment "external" "")
+    "targetPath" "gomments.js"
+  }}
+  {{- $gommentsBuilt := resources.Get "js/react-gomments/index.jsx" | js.Build $gommentsBuildOpts -}}
   <script src="{{ $gommentsBuilt.RelPermalink }}" defer></script>
   {{- end -}}
   {{ end }}
