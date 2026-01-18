@@ -62,11 +62,11 @@
   {{ end }}
 
   {{- if not .Params.nocomment -}}
-  <div class="comments-container">
-    <section id="comments-form">
-    </section>
-    <section id="comments-thread">
-    </section>
+  <div id="gomments-container">
   </div>
+  {{- $reactBuilt := resources.Get "js/react.js" | js.Build "react.js" | minify -}}
+  <script src="{{ $reactBuilt.RelPermalink }}" defer></script>
+  {{- $gommentsBuilt := resources.Get "js/react-gomments/index.jsx" | js.Build "gomments.js" -}}
+  <script src="{{ $gommentsBuilt.RelPermalink }}" defer></script>
   {{- end -}}
   {{ end }}

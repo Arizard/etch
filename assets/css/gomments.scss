@@ -1,0 +1,304 @@
+// Gomments - React comment system styles
+
+// =============================================================================
+// Form Styles
+// =============================================================================
+
+.gomments-container {
+  font-family: 'Manrope', sans-serif;
+
+  form {
+    margin-bottom: 30px;
+  }
+
+  .row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+
+    input {
+      flex: 1;
+    }
+
+    @media (max-width: 770px) {
+      display: block;
+      margin-bottom: 0;
+    }
+  }
+
+  .field-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: 770px) {
+      margin-bottom: 10px;
+    }
+  }
+
+  .field-label {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.12rem;
+    margin-bottom: 6px;
+    font-weight: 800;
+    line-height: 1.12rem;
+    text-transform: uppercase;
+  }
+
+  .validation-error-text {
+    color: crimson;
+  }
+
+  input[type="text"],
+  input[type="password"],
+  textarea {
+    font-family: 'Inconsolata', monospace;
+    font-size: 1.4rem;
+    width: 100%;
+    padding: 12px;
+    border-radius: $default-radius;
+    box-sizing: border-box;
+    border: 2px solid $body-background-alt;
+    background-color: $body-background-alt-1;
+    color: #000;
+
+    &:focus {
+      outline: none;
+    }
+
+    &.validation-error {
+      border: 2px dashed crimson;
+    }
+
+    @media (max-width: 770px) {
+      margin-bottom: 0;
+    }
+  }
+
+  textarea {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .submit-btn {
+    background-color: #6ab04c;
+    color: white;
+    padding: 12px 60px;
+    border: none;
+    border-radius: $default-radius;
+    cursor: pointer;
+    margin-right: auto;
+    margin-left: auto;
+    font-family: 'Manrope', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.12rem;
+
+    &:hover {
+      background-color: #77c157;
+    }
+
+    &:disabled {
+      background-color: #57606f;
+      cursor: not-allowed;
+    }
+
+    @media (max-width: 770px) {
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+}
+
+// =============================================================================
+// Reply Feed Styles
+// =============================================================================
+
+.reply-feed {
+  .reply-feed-header {
+    font-family: 'Manrope', sans-serif;
+    margin-bottom: 10px;
+    font-weight: 800;
+    font-size: 1.12rem;
+    line-height: 1.12rem;
+  }
+}
+
+.loading-fill,
+.error-fill {
+  font-family: 'Manrope', sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.12rem;
+  width: 100%;
+}
+
+.loading-fill {
+  color: $body-text-color-muted;
+}
+
+.error-fill {
+  color: crimson;
+}
+
+// =============================================================================
+// Reply Card Styles
+// =============================================================================
+
+.reply-card {
+  font-family: 'Inconsolata', monospace;
+  line-height: 110%;
+  padding: 14px 20px;
+  font-size: 1.4rem;
+  margin-bottom: 14px;
+  border-radius: $default-radius;
+  background-color: $body-background-alt-1;
+
+  &.attention {
+    border: 2px solid #45a049;
+    box-sizing: border-box;
+  }
+}
+
+.reply-card-heading-lockup {
+  display: block;
+  flex-wrap: wrap;
+  gap: 0;
+  margin-bottom: 1.4rem;
+
+  @media (min-width: 770px) {
+    display: flex;
+  }
+}
+
+.reply-card-body {
+  margin-bottom: 6px;
+  font-family: 'Manrope', sans-serif;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.name-pill {
+  display: inline-block;
+  margin-left: -6px;
+  border-radius: $default-radius;
+  padding: 2px 6px;
+  word-wrap: break-word;
+  max-width: 100%;
+  font-size: 1.4rem;
+  font-family: 'Manrope', sans-serif;
+  font-weight: bold;
+}
+
+.tripcode {
+  font-family: 'Inconsolata', monospace;
+  font-size: 1.4rem;
+  font-weight: lighter;
+  letter-spacing: 0;
+}
+
+.reply-created-at {
+  font-size: 0.8rem;
+  display: block;
+  width: 100%;
+  color: $body-text-color-muted;
+  padding: 0;
+  margin-top: 2px;
+  font-family: 'Manrope', sans-serif;
+  font-weight: bold;
+}
+
+// =============================================================================
+// Tripcode Colors - Light Mode (pastels)
+// =============================================================================
+
+.tripcode-color-anon { background: #eee; }
+.tripcode-color-0 { background: #c8f7c5; }
+.tripcode-color-1 { background: #ffb3d9; }
+.tripcode-color-2 { background: #ffe4b5; }
+.tripcode-color-3 { background: #d6c9ff; }
+.tripcode-color-4 { background: #e6e6fa; }
+.tripcode-color-5 { background: #fff2cc; }
+.tripcode-color-6 { background: #ffd6cc; }
+.tripcode-color-7 { background: #ffcccb; }
+.tripcode-color-8 { background: #bfdbfe; }
+.tripcode-color-9 { background: #ccf2f4; }
+.tripcode-color-10 { background: #f0c4e8; }
+.tripcode-color-11 { background: #f4d1ae; }
+.tripcode-color-12 { background: #e8f5e8; }
+.tripcode-color-13 { background: #fce4ec; }
+.tripcode-color-14 { background: #fff8e1; }
+.tripcode-color-15 { background: #f3e5f5; }
+.tripcode-color-16 { background: #e1f5fe; }
+.tripcode-color-17 { background: #f1f8e9; }
+.tripcode-color-18 { background: #fdf2e9; }
+.tripcode-color-19 { background: #fce4ec; }
+.tripcode-color-20 { background: #e8eaf6; }
+.tripcode-color-21 { background: #e0f2f1; }
+.tripcode-color-22 { background: #fff3e0; }
+.tripcode-color-23 { background: #f9fbe7; }
+
+// =============================================================================
+// Dark Mode
+// =============================================================================
+
+@media (prefers-color-scheme: dark) {
+  .gomments-container {
+    input[type="text"],
+    input[type="password"],
+    textarea {
+      border: 2px solid $body-background-dark-alt;
+      background-color: $body-background-dark-alt-1;
+      color: white;
+
+      &::placeholder {
+        color: white;
+        opacity: 1;
+      }
+
+      &::-ms-input-placeholder {
+        color: white;
+      }
+    }
+  }
+
+  .loading-fill {
+    color: $body-text-color-muted-dark;
+  }
+
+  .reply-card {
+    background-color: $body-background-dark-alt-1;
+  }
+
+  .reply-created-at {
+    color: $body-text-color-muted-dark;
+  }
+
+  // Tripcode Colors - Dark Mode (jewel tones)
+  .tripcode-color-anon { background: #333; }
+  .tripcode-color-0 { background: #2d8659; }
+  .tripcode-color-1 { background: #b83280; }
+  .tripcode-color-2 { background: #d68910; }
+  .tripcode-color-3 { background: #7d3c98; }
+  .tripcode-color-4 { background: #5b2c6f; }
+  .tripcode-color-5 { background: #b7950b; }
+  .tripcode-color-6 { background: #ca6f1e; }
+  .tripcode-color-7 { background: #c0392b; }
+  .tripcode-color-8 { background: #2e86ab; }
+  .tripcode-color-9 { background: #138d75; }
+  .tripcode-color-10 { background: #a93226; }
+  .tripcode-color-11 { background: #784212; }
+  .tripcode-color-12 { background: #1b4332; }
+  .tripcode-color-13 { background: #8e2454; }
+  .tripcode-color-14 { background: #9c6644; }
+  .tripcode-color-15 { background: #512e5f; }
+  .tripcode-color-16 { background: #1565c0; }
+  .tripcode-color-17 { background: #2e7d32; }
+  .tripcode-color-18 { background: #bf360c; }
+  .tripcode-color-19 { background: #6a1b9a; }
+  .tripcode-color-20 { background: #283593; }
+  .tripcode-color-21 { background: #00695c; }
+  .tripcode-color-22 { background: #e65100; }
+  .tripcode-color-23 { background: #827717; }
+}
