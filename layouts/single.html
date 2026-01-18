@@ -62,11 +62,16 @@
   {{ end }}
 
   {{- if not .Params.nocomment -}}
-  <div class="comments-container">
-    <section id="comments-form">
-    </section>
-    <section id="comments-thread">
-    </section>
+  <div id="gomments-container">
   </div>
+  {{- $reactBuilt := resources.Get "js/react.js" | js.Build (dict "minify" true "targetPath" "react.js") -}}
+  <script src="{{ $reactBuilt.RelPermalink }}" defer></script>
+  {{$gommentsBuildOpts := dict
+    "minify" (not hugo.IsDevelopment)
+    "sourceMap" (cond hugo.IsDevelopment "external" "")
+    "targetPath" "gomments.js"
+  }}
+  {{- $gommentsBuilt := resources.Get "js/react-gomments/index.jsx" | js.Build $gommentsBuildOpts -}}
+  <script src="{{ $gommentsBuilt.RelPermalink }}" defer></script>
   {{- end -}}
   {{ end }}

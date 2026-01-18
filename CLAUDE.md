@@ -56,3 +56,16 @@ The theme is configured via Hugo's config.toml. Key parameters:
 The theme includes a custom comment system (`assets/js/comments.js`) that connects to the Less Coffee backend API. The API URL is configured dynamically based on environment (localhost for development, backend.less.coffee for production) in `layouts/partials/head.html:40-47`.
 
 The backend source code for the comment system is available at github.com/Arizard/gomments.
+
+## JavaScript Dependencies (React)
+
+This theme uses React components built with Hugo's `js.Build` (esbuild). Dependencies are defined in `package.hugo.json`.
+
+Since esbuild resolves dependencies from the **project root** rather than the theme directory, projects using this theme must run:
+
+```bash
+hugo mod npm pack  # Copies theme dependencies to project's package.json
+npm install        # Installs the dependencies
+```
+
+React components live in `assets/js/react-gomments/`.

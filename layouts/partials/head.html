@@ -65,11 +65,6 @@
             articleID: {{ .Page.Slug | default .Page.Path }},
         };
 
-        {{ if ne .Page.Params.nocomment true }}
-        {{ $jsComments := resources.Get "js/comments.js" | js.Build | minify }}
-        {{ $jsComments.Content | safeJS }}
-        {{ end }}
-
         const iconComment = `{{- partial "svg/comment.html" . -}}`;
 
         addEventListener("load", async () => {
