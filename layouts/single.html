@@ -1,77 +1,56 @@
 {{ define "main" }}
-{{- if .Page.Params.hero -}}
-<div class="post-hero-container">
-  <header id="post-header" class="post-header">
-    <h1>{{ .Title }}</h1>
-  </header>
-  {{- with .Page.Resources.Get .Params.hero -}}
-  {{- $heroImage := .Process "fit 1000x4000 jpeg q80 box" -}}
-  <div class="post-hero" style="background-image: url('{{ $heroImage.Permalink }}')">
-  </div>
+<header class="post-header">
+  <h1>{{ .Title }}</h1>
+</header>
+<article>
+  {{- .Content -}}
+</article>
+<div class="article-after">
+  {{- partial "svg/coffee.html" -}}<br>
+  {{- with .Page.Params.Date -}}
+    <time>{{ .Format "2 January 2006" }}</time>
   {{- end -}}
   {{- if .Page.Params.hero_attribution -}}
   <div class="post-hero-attribution">
-    <span>{{ .RenderString .Page.Params.hero_attribution }}</span>
+    <span>Thumbnail Attribution: {{ .RenderString .Page.Params.hero_attribution }}</span>
   </div>
   {{- end -}}
 </div>
-{{- else -}}
-<header id="post-header">
-  <h1>{{ .Title }}</h1>
-</header>
+
+{{- if not .Params.nobottomnav -}}
+<div class="bottom-nav">
+  <div class="tags-container">
+    <div class="bottom-nav-label">Tags</div>
+    {{ with .Page.GetTerms "tags" }}
+    {{- partial "terms-cloud-page.html" . -}}
+    {{ end }}
+  </div>
+  <div class="bottom-nav-next">
+    <div class="bottom-nav-label">Read next</div>
+    {{ with .PrevInSection }}
+    {{- partial "post-item.html" . -}}
+    {{ else }}
+    {{ with site.GetPage .Section }}
+    {{ with index (.RegularPages.ByDate) (sub (len .RegularPages.ByDate) 1) }}
+    {{- partial "post-item.html" . -}}
+    {{ end }}
+    {{ end }}
+    {{ end }}
+  </div>
+</div>
+{{ end }}
+
+{{- if not .Params.nocomment -}}
+<div id="gomments-container">
+</div>
+{{- $reactBuilt := resources.Get "js/react.js" | js.Build (dict "minify" true "targetPath" "react.js") -}}
+<script src="{{ $reactBuilt.RelPermalink }}" defer></script>
+{{$gommentsBuildOpts := dict
+"minify" (not hugo.IsDevelopment)
+"sourceMap" (cond hugo.IsDevelopment "external" "")
+"targetPath" "gomments.js"
+}}
+{{- $gommentsBuilt := resources.Get "js/react-gomments/index.jsx" | js.Build $gommentsBuildOpts -}}
+<script src="{{ $gommentsBuilt.RelPermalink }}" defer></script>
 {{- end -}}
-{{- if .Params.indent_and_line_break -}}
-<article class="indent-and-line-break">
-  {{- else -}}
-  <article>
-    {{- end -}}
-    {{- .Content -}}
-  </article>
-  <div class="article-after">{{- partial "svg/coffee.html" -}}
-  </div>
-  <aside class="front-matter">
-    {{- if (isset .Params "date") -}}
-    <div class="params-date">
-      {{- partial "svg/calendar.html" . -}}
-      <time>{{ .Params.Date.Format "2 January 2006" }}</time>
-    </div>
-    {{- end -}}
-  </aside>
-
-  {{- if not .Params.nobottomnav -}}
-  <div class="bottom-nav">
-    <div class="tags-container">
-      <div class="bottom-nav-label">Tags</div>
-      {{ with .Page.GetTerms "tags" }}
-      {{- partial "terms-cloud-page.html" . -}}
-      {{ end }}
-    </div>
-    <div class="bottom-nav-next">
-      <div class="bottom-nav-label">Read next</div>
-      {{ with .PrevInSection }}
-      {{- partial "post-item.html" . -}}
-      {{ else }}
-      {{ with site.GetPage .Section }}
-      {{ with index (.RegularPages.ByDate) (sub (len .RegularPages.ByDate) 1) }}
-      {{- partial "post-item.html" . -}}
-      {{ end }}
-      {{ end }}
-      {{ end }}
-    </div>
-  </div>
-  {{ end }}
-
-  {{- if not .Params.nocomment -}}
-  <div id="gomments-container">
-  </div>
-  {{- $reactBuilt := resources.Get "js/react.js" | js.Build (dict "minify" true "targetPath" "react.js") -}}
-  <script src="{{ $reactBuilt.RelPermalink }}" defer></script>
-  {{$gommentsBuildOpts := dict
-    "minify" (not hugo.IsDevelopment)
-    "sourceMap" (cond hugo.IsDevelopment "external" "")
-    "targetPath" "gomments.js"
-  }}
-  {{- $gommentsBuilt := resources.Get "js/react-gomments/index.jsx" | js.Build $gommentsBuildOpts -}}
-  <script src="{{ $gommentsBuilt.RelPermalink }}" defer></script>
-  {{- end -}}
-  {{ end }}
+{{ end }}

@@ -447,10 +447,9 @@ footer#footer {
 }
 
 .front-matter {
-  display: none;
   font-size: 80%;
   text-transform: uppercase;
-  margin-top: 1rem;
+  margin-bottom: 16px;
 
   .params-date {
     svg {
@@ -545,10 +544,12 @@ screen and (min-width: 770px) {
 .article-after {
   margin: 64px 0 64px 0;
   text-align: center;
+  font-size: 80%;
 
   svg {
-    height: 17px;
-    width: 17px;
+    height: 1.4rem;
+    width: 1.4rem;
+    margin-bottom: -0.3rem;
 
     path {
       fill: $body-text-color;
@@ -717,6 +718,15 @@ main#content {
       padding: 4px 16px;
       text-align: right;
       font-size: 80%;
+    }
+  }
+
+  .post-header {
+    margin: 16px 0 0 0;
+
+    h1 {
+      display: inline-block;
+      width: 100%;
     }
   }
 }
