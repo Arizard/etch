@@ -5,18 +5,17 @@
         </div>
     </div>
     <div class="posts-list-container home home-fade-in-after-about-me">
-        <div class="index-label-latest-post">latest post</div>
         {{ $pages := where site.RegularPages "Section" "posts" }}
         {{- range $pages.Limit 1 }}
           {{- partial "post-item.html" . -}}
         {{- end }}
     </div>
+    <div class="index-see-all-posts home-fade-in-after-about-me">
+        <a href="/posts/" data-umami-event="See All Posts">view all {{ $pages.Len }} posts</a>
+    </div>
     <div class="tags-container home-fade-in-after-about-me">
         {{ with .Site.Taxonomies.tags.ByCount }}
             {{- partial "terms-cloud.html" . -}}
         {{ end }}
-    </div>
-    <div class="index-see-all-posts home-fade-in-after-about-me">
-        <a href="/posts/" data-umami-event="See All Posts">See all {{ $pages.Len }} posts</a>
     </div>
 {{ end }}
