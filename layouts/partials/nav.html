@@ -2,8 +2,8 @@
 
 <nav id="banner">
   <div class="banner-inner">
-    <a href="{{ .Site.BaseURL }}" class="banner-h"><div>less coffee</div></a>
-    <a href="{{ .Site.BaseURL }}" class="banner-h-condensed"><div>lc</div></a>
+    <a href="{{ .Site.BaseURL }}" class="banner-h" data-umami-event="Nav Logo"><div>less coffee</div></a>
+    <a href="{{ .Site.BaseURL }}" class="banner-h-condensed" data-umami-event="Nav Logo"><div>lc</div></a>
     <div class="navlinks">
         {{ range .Site.Menus.main.ByWeight -}}
           {{- $activeClass := "" -}}
@@ -19,9 +19,9 @@
             {{- end -}}
           {{- end -}}
           {{- if .PageRef -}}
-          <a class="navlink {{ $activeClass }}" href="{{ .URL }}" title="{{ .Title }}"><div class="navlink-label">{{ .Pre }}{{- .Title -}}{{ .Post }}</div></a>
+          <a class="navlink {{ $activeClass }}" href="{{ .URL }}" title="{{ .Title }}" data-umami-event="Nav {{ .Title }}"><div class="navlink-label">{{ .Pre }}{{- .Title -}}{{ .Post }}</div></a>
           {{- else -}}
-          <a class="navlink {{ $activeClass }}" href="{{ .URL }}" title="{{ .Title }}"><div class="navlink-label">{{ .Pre }}{{- .Title -}}{{ .Post }}</div><div class="lni">{{ partial "svg/chain.html" }}</div></a>
+          <a class="navlink {{ $activeClass }}" href="{{ .URL }}" title="{{ .Title }}" data-umami-event="Nav {{ .Title }}"><div class="navlink-label">{{ .Pre }}{{- .Title -}}{{ .Post }}</div><div class="lni">{{ partial "svg/chain.html" }}</div></a>
           {{- end -}}
         {{- end }}
     </div>

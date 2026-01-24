@@ -1,6 +1,6 @@
 <div class="terms-cloud">
   {{ range . }}
-    <a class="terms-cloud-item" href="{{ .Page.RelPermalink }}">
+    <a class="terms-cloud-item" href="{{ .Page.RelPermalink }}" data-umami-event="Tag {{ .Page.Name }}">
       #{{ .Page.Name }}
     </a>
   {{ end }}

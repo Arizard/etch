@@ -1,19 +1,27 @@
 <footer id="footer">
   <div class="footer-nav-container">
-    <div class="footer-text">{{ .RenderString .Site.Params.copyright }}</div>
-    <div class="footer-socials">
-      <div class="external-link-icons">
-  {{- if .Data.Term -}}
-      <a alt="rss" href="index.xml" class="external-link-icons-item"> <!-- rss relative to page -->
-        rss (tag: {{ .Name }})</a>
-  {{- else if .IsSection -}}
-      <a alt="rss" href="index.xml" class="external-link-icons-item"> <!-- rss relative to page -->
-        rss (section: {{ .Name }})</a>
-  {{- else -}}
-      <a alt="rss" href="/index.xml" class="external-link-icons-item"> <!-- rss absolute -->
-        rss (all)</a>
-  {{- end -}}
-      </div>
+    <div class="footer-text">
+      <p>{{ .RenderString .Site.Params.copyright }}</p>
+      <p>
+        This site uses <a href="https://umami.is" target="_blank" rel="noopener"
+          data-umami-event="Footer Umami">Umami</a> for privacy-friendly analytics. No personal information is
+        collected.
+      </p>
+      <p>
+        {{- if .Data.Term -}}
+        <a alt="rss" href="index.xml" data-umami-event="Footer RSS" data-umami-event-rss-kind="tag">
+          <!-- rss relative to page -->
+          rss (tag: {{ .Name }})</a>
+        {{- else if .IsSection -}}
+        <a alt="rss" href="index.xml" data-umami-event="Footer RSS" data-umami-event-rss-kind="section">
+          <!-- rss relative to page -->
+          rss (section: {{ .Name }})</a>
+        {{- else -}}
+        <a alt="rss" href="/index.xml" data-umami-event="Footer RSS" data-umami-event-rss-kind="all">
+          <!-- rss absolute -->
+          rss (all)</a>
+        {{- end -}}
+      </p>
     </div>
   </div>
 </footer>

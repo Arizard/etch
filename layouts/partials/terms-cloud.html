@@ -2,9 +2,9 @@
 <div class="terms-cloud">
   {{ range . }}
     {{ if eq page.Name .Page.Name }}
-    <a class="terms-cloud-item selected" href="/posts/">
+    <a class="terms-cloud-item selected" href="/posts/" data-umami-event="De-select Tag {{ .Page.Name }}">
     {{ else }}
-    <a class="terms-cloud-item" href="{{ .Page.RelPermalink }}">
+    <a class="terms-cloud-item" href="{{ .Page.RelPermalink }}" data-umami-event="Select Tag {{ .Page.Name }}">
     {{ end }}
       #{{ .Page.Name }} ({{ .Count }})
     </a>

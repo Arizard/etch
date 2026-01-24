@@ -370,21 +370,6 @@ footer#footer {
     justify-content: space-between;
   }
 
-  .external-link-icons {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    align-content: start;
-  }
-
-  .external-link-icons-item {
-    display: block;
-    flex: 0 0 auto;
-    margin: 0;
-  }
-
   .lni {
     display: inline-block;
 
@@ -403,8 +388,10 @@ footer#footer {
     margin-bottom: -6px;
   }
 
-  .footer-text {
-    text-align: center;
+  .footer-text,
+  .footer-socials {
+    text-align: left;
+    text-transform: lowercase;
   }
 }
 
