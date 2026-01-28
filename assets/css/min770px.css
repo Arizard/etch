@@ -14,16 +14,16 @@ main#content {
 
   main#content {
     width: 706px;
-    margin: 0 auto 0 calc(0.334*(100vw - 706px)) !important;
+    margin: 0 auto 0 calc(0.25*(100vw - 706px)) !important;
   }
 
   .footer-nav-container {
     max-width: 706px;
-    margin: 0 auto 0 calc(0.334*(100vw - 706px)) !important;
+    margin: 0 auto 0 calc(0.25*(100vw - 706px)) !important;
   }
 
   nav#banner {
-    margin: 16px auto 16px calc(0.334*(100vw - 706px)) !important;
+    margin: 16px auto 16px calc(0.25*(100vw - 706px)) !important;
   }
 
   main#content hr {
