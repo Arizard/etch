@@ -187,7 +187,7 @@ body {
 }
 
 main#content {
-  margin: 0 auto 0 auto;
+  margin: 0 auto;
   padding: 0 16px 0 16px;
   letter-spacing: $letter-spacing-body;
 
@@ -543,8 +543,7 @@ screen and (min-width: 770px) {
 
 .article-after {
   margin: 64px 0 64px 0;
-  text-align: center;
-  font-size: 80%;
+  text-align: left;
 
   svg {
     height: 1.4rem;
