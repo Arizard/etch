@@ -1,9 +1,9 @@
 @font-face {
   font-family: 'Manrope';
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   font-display: swap;
-  src: local('Manrope'), url('/fonts/manrope/Manrope-Medium.woff') format('woff');
+  src: local('Manrope'), url('/fonts/manrope/Manrope-Regular.woff') format('woff');
 }
 @font-face {
   font-family: 'Manrope';
@@ -28,5 +28,5 @@
 
 $heading-font: 'Manrope', 'Arial', sans-serif;
 $body-font: 'Manrope', 'Arial', sans-serif;
-$body-font-weight: 500;
+$body-font-weight: 400;
 

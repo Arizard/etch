@@ -6,7 +6,7 @@ a {
   text-decoration-thickness: 1px;
 }
 
-$body-font-size: 1.5rem;
+$body-font-size: 1.8rem;
 // $body-line-height: 2.7rem;
 $banner-font-size: 1.67rem;
 $h1-font-size: 200%;
@@ -455,7 +455,7 @@ footer#footer {
     svg {
       height: 1.4rem;
       width: 1.4rem;
-      margin-bottom: -0.3rem;
+      margin-bottom: -0.2rem;
 
       path {
         fill: $body-text-color;
@@ -549,7 +549,7 @@ screen and (min-width: 770px) {
   svg {
     height: 1.4rem;
     width: 1.4rem;
-    margin-bottom: -0.3rem;
+    margin-bottom: -0.2rem;
 
     path {
       fill: $body-text-color;
