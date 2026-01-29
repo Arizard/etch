@@ -6,7 +6,7 @@ a {
   text-decoration-thickness: 1px;
 }
 
-$body-font-size: 1.8rem;
+$body-font-size: 1.6rem;
 // $body-line-height: 2.7rem;
 $banner-font-size: 1.67rem;
 $h1-font-size: 200%;
@@ -134,8 +134,9 @@ nav#banner {
 
 @media (min-width: 770px) {
   nav#banner {
-    margin: 16px auto 16px auto;
-    width: 706px;
+    margin: 16px auto 16px calc((100vw - 770px)/2);
+    width: calc(100% - (100vw - 770px)/2);
+    max-width: 770px;
 
     .banner-h {
       display: flex;

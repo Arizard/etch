@@ -12,18 +12,19 @@ main#content {
     overflow-x: hidden;
   }
 
+  .main-container {
+    width: 770px;
+    margin: 0 auto 0 auto !important;
+  }
+
   main#content {
-    width: 706px;
-    margin: 0 auto 0 calc(0.25*(100vw - 706px)) !important;
+    width: 64ch;
+    margin: 0 auto 0 0 !important;
   }
 
   .footer-nav-container {
-    max-width: 706px;
-    margin: 0 auto 0 calc(0.25*(100vw - 706px)) !important;
-  }
-
-  nav#banner {
-    margin: 16px auto 16px calc(0.25*(100vw - 706px)) !important;
+    max-width: 770px;
+    margin: 0 auto 0 calc((100vw - 770px)/2) !important;
   }
 
   main#content hr {
