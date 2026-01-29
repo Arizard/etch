@@ -1,29 +1,20 @@
-{{- $page := . -}}
-
-<nav id="banner">
-  <div class="banner-inner">
-    <a href="{{ .Site.BaseURL }}" class="banner-h" data-umami-event="Nav Logo"><div>less coffee</div></a>
-    <a href="{{ .Site.BaseURL }}" class="banner-h-condensed" data-umami-event="Nav Logo"><div>lc</div></a>
-    <div class="navlinks">
-        {{ range .Site.Menus.main.ByWeight -}}
-          {{- $activeClass := "" -}}
-          {{- if $page.IsMenuCurrent .Menu . -}}
-            {{- $activeClass = "active" -}}
-          {{- end -}}
-          {{- if $page.HasMenuCurrent .Menu . -}}
-            {{- $activeClass = "active" -}}
-          {{- end -}}
-          {{- if eq .PageRef "/posts" -}}
-            {{- if or (eq $page.Kind "term") (eq $page.Kind "taxonomy") -}}
-              {{- $activeClass = "active" -}}
-            {{- end -}}
-          {{- end -}}
-          {{- if .PageRef -}}
-          <a class="navlink {{ $activeClass }}" href="{{ .URL }}" title="{{ .Title }}" data-umami-event="Nav {{ .Title }}"><div class="navlink-label">{{ .Pre }}{{- .Title -}}{{ .Post }}</div></a>
-          {{- else -}}
-          <a class="navlink {{ $activeClass }}" href="{{ .URL }}" title="{{ .Title }}" data-umami-event="Nav {{ .Title }}"><div class="navlink-label">{{ .Pre }}{{- .Title -}}{{ .Post }}</div><div class="lni">{{ partial "svg/chain.html" }}</div></a>
-          {{- end -}}
-        {{- end }}
-    </div>
+{{- if not .IsHome -}}
+<nav id="breadcrumbs">
+  <div class="breadcrumbs-list">
+    {{- range .Ancestors.Reverse }}
+    {{- if .IsHome -}}
+    <div class="breadcrumbs-item"><a alt="{{ .Title }}" href="{{ .RelPermalink }}">Home</a></div>
+    {{- else -}}
+    <div class="breadcrumbs-item"><a alt="{{ .Title }}" href="{{ .RelPermalink }}">{{ .Title }}</a></div>
+    {{- end -}}
+    <div class="breadcrumbs-separator">/</div>
+    {{- end }}
+    <div class="breadcrumbs-item current"><a alt="{{ .Title }}" href="{{ .RelPermalink }}">{{ .Title }}</a></div>
   </div>
 </nav>
+{{- else -}}
+<nav id="breadcrumbs">
+  <div class="breadcrumbs-list">
+  </div>
+</nav>
+{{- end -}}

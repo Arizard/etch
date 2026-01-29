@@ -20,158 +20,52 @@ ol {
   margin-bottom: $body-line-height;
 }
 
-nav#banner {
-  display: block;
-  margin: 16px 0 16px 0;
-  padding: 0 16px 0 16px;
-  font-family: $heading-font;
+nav#breadcrumbs {
+  width: 100%;
+  max-width: 770px;
+  margin: 0 auto 0 auto;
+  padding: 0;
+  height: 40px;
 
-  .banner-inner {
-    margin: 0;
-    line-height: $banner-font-size;
+  .breadcrumbs-list {
     display: flex;
-    justify-content: space-between;
-    gap: 8px;
-  }
+    gap: 3px;
+    margin: 8px 16px 0 16px;
+    color: $body-text-color;
 
-  .banner-h,
-  .banner-h-condensed {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-transform: lowercase;
-    margin: 0;
-    font-weight: 800;
-    font-size: $banner-font-size;
-    background-color: $accent-color;
-    color: #ffffff;
-
-    div {
-      height: 22px;
-      line-height: 22px;
-    }
-
-    border-radius: $default-radius 0 $default-radius 0;
-  }
-
-  .banner-h-condensed {
-    display: none;
-    width: 32px;
-  }
-
-  .banner-h {
-    flex-shrink: 1;
-    text-align: center;
-    padding: 0 12px;
-  }
-
-  a {
-    text-decoration: none;
-  }
-
-  .navlinks {
-    flex-shrink: 1;
-    font-size: $banner-font-size;
-    margin: 0;
-    padding: 0;
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    gap: 8px;
-
-    .navlink {
-      border-radius: $default-radius 0 $default-radius 0;
-      width: 80px;
-      text-align: center;
-      gap: 2px;
-      height: 32px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 0;
-      margin: 0;
-      background-color: $body-background-alt;
+    a,
+    a:hover,
+    a:visited {
       color: $body-text-color;
-      text-decoration: none;
-      text-transform: lowercase;
-      font-size: 80%;
-      font-weight: 700;
-
-      .navlink-label {
-        display: block;
-        height: 22px;
-        line-height: 20px;
-      }
-
-      .lni {
-        display: block;
-        height: 16px;
-        width: 16px;
-        line-height: 16px;
-
-        svg {
-          height: 16px;
-          width: 16px;
-          margin-bottom: 0;
-        }
-      }
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
     }
 
-    .navlink.active,
-    .navlink:hover {
-      background-color: $secondary-color;
-      color: $body-text-color-dark;
-
-      .lni {
-        path {
-          fill: $body-text-color-dark;
-        }
-      }
-    }
-  }
-}
-
-@media (min-width: 770px) {
-  nav#banner {
-    margin: 16px auto 16px calc((100vw - 770px)/2);
-    width: calc(100% - (100vw - 770px)/2);
-    max-width: 770px;
-
-    .banner-h {
-      display: flex;
+    .breadcrumbs-item {
+      font-weight: 400;
     }
 
-    .banner-h-condensed {
-      display: none;
+    .breadcrumbs-item.current {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .breadcrumbs-separator {
+      font-weight: 400;
     }
   }
 }
 
 @media (prefers-color-scheme: dark) {
-  nav#banner {
-    .navlinks {
-      .navlink {
-        background-color: $body-background-dark-alt;
-        color: $body-text-color-dark !important;
+  nav#breadcrumbs {
+    .breadcrumbs-list {
+      color: $body-text-color-dark;
 
-        .lni {
-          path {
-            fill: $body-text-color-dark;
-          }
-        }
-      }
-
-      .navlink.active,
-      .navlink:hover {
-        background-color: $secondary-color-dark;
-        color: $body-background-dark-alt !important;
-
-        .lni {
-          path {
-            fill: $body-background-dark-alt;
-          }
-        }
+      a,
+      a:hover,
+      a:visited {
+        color: $body-text-color-dark;
       }
     }
   }
@@ -574,13 +468,15 @@ screen and (min-width: 770px) {
 }
 
 .terms-cloud-label {
+  display: none;
   text-transform: uppercase;
   font-size: 80%;
   margin-bottom: 6px;
 }
 
 .terms-cloud {
-  margin-bottom: 16px;
+  margin-top: 24px;
+  margin-bottom: 32px;
   user-select: none;
   display: flex;
   flex-wrap: wrap;
@@ -622,33 +518,6 @@ screen and (min-width: 770px) {
       color: $body-background-dark-alt !important;
     }
   }
-}
-
-@keyframes homeFadeIn {
-  to {
-    opacity: 1;
-  }
-}
-
-.about-me-intro {
-  h1 {
-    animation: homeFadeIn 0.25s ease-out 0.25s forwards;
-    opacity: 0;
-  }
-
-  p {
-    animation: homeFadeIn 0.25s ease-out 0.5s forwards;
-    opacity: 0;
-  }
-}
-
-.home-fade-in-after-about-me {
-  animation: homeFadeIn 0.25s ease-out 0.75s forwards;
-  opacity: 0;
-}
-
-.home.posts-list-container {
-  a.posts-list-item {}
 }
 
 // justify text
