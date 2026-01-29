@@ -6,12 +6,12 @@
     </div>
     <div class="posts-list-container home">
         {{ $pages := where site.RegularPages "Section" "posts" }}
-        {{- range $pages.Limit 1 }}
+        {{- range $pages.Limit 3 }}
           {{- partial "post-item.html" . -}}
         {{- end }}
     </div>
     <div class="index-see-all-posts">
-        <a href="/posts/" data-umami-event="See All Posts">See all {{ $pages.Len }} posts</a>
+        <a href="/posts/" data-umami-event="See All Posts">and {{ sub $pages.Len 3 }} more posts</a>
     </div>
     <div class="tags-container">
         {{ with .Site.Taxonomies.tags.ByCount }}
