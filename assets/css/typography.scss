@@ -9,7 +9,6 @@ a {
 $body-font-size: 1.6rem;
 // $body-line-height: 2.7rem;
 $banner-font-size: 1.67rem;
-$h1-font-size: 200%;
 $h2-font-size: 160%;
 $h3-font-size: 120%;
 
@@ -125,7 +124,6 @@ main#content {
     word-wrap: break-word;
     white-space: normal;
     letter-spacing: $letter-spacing-headings;
-    margin: ($body-line-height/2) 0 ($body-line-height/2) 0;
     line-height: 120%;
     text-align: left;
     text-wrap: pretty;
@@ -133,27 +131,33 @@ main#content {
   }
 
   h1 {
-    font-size: $h1-font-size;
+    font-size: 2 * $body-font-size;
+    margin: (2 * $body-font-size * 1.334) 0 (2 * $body-font-size/3) 0;
   }
 
   h2 {
-    font-size: $h2-font-size;
+    font-size: 1.6 * $body-font-size;
+    margin: (1.6 * $body-font-size * 1.334) 0 (1.6 * $body-font-size/3) 0;
   }
 
   h3 {
-    font-size: $h3-font-size;
+    font-size: 1.2 * $body-font-size;
+    margin: (1.2 * $body-font-size * 1.334) 0 (1.2 * $body-font-size/3) 0;
   }
 
   h4 {
     font-size: $body-font-size;
+    margin: ($body-font-size * 1.334) 0 ($body-font-size/3) 0;
   }
 
   h5 {
     font-size: $body-font-size;
+    margin: ($body-font-size * 1.334) 0 ($body-font-size/3) 0;
   }
 
   h6 {
     font-size: $body-font-size;
+    margin: ($body-font-size * 1.334) 0 ($body-font-size/3) 0;
   }
 
   blockquote {
