@@ -1,6 +1,6 @@
+{{- if not .IsHome -}}
 <nav id="breadcrumbs">
   <div class="breadcrumbs-list">
-    {{- if not .IsHome -}}
     {{- range .Ancestors.Reverse }}
     {{- if .IsHome -}}
     <div class="breadcrumbs-item"><a alt="{{ .Title }}" href="{{ .RelPermalink }}">Home</a></div>
@@ -10,6 +10,8 @@
     <div class="breadcrumbs-separator">/</div>
     {{- end }}
     <div class="breadcrumbs-item current"><a alt="{{ .Title }}" href="{{ .RelPermalink }}">{{ .Title }}</a></div>
-    {{- end -}}
   </div>
 </nav>
+{{- else -}}
+<div id="breadcrumbs-none">&nbsp;</div>
+{{- end -}}

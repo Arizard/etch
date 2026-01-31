@@ -19,17 +19,25 @@ ol {
   margin-bottom: $body-line-height;
 }
 
+#breadcrumbs-none {
+  display: block;
+  height: 16px;
+  overflow-y: hidden;
+}
+
 nav#breadcrumbs {
+  display: flex;
+  align-items: center;
   width: 100%;
   max-width: 770px;
-  margin: 0 auto 0 auto;
+  margin: 16px auto 16px auto;
   padding: 0;
   height: 40px;
 
   .breadcrumbs-list {
     display: flex;
     gap: 3px;
-    margin: 8px 16px 0 16px;
+    margin: 0 16px 0 16px;
     color: $body-text-color;
 
     a,
@@ -465,7 +473,6 @@ screen and (min-width: 770px) {
   }
 
   .taxonomy-container {
-    margin-top: 16px;
   }
 
   .section-container,
@@ -487,7 +494,7 @@ screen and (min-width: 770px) {
 }
 
 .terms-cloud-container {
-  margin: 16px 0 32px 0;
+  margin: 0 0 32px 0;
 }
 
 .terms-cloud-label {
