@@ -460,9 +460,12 @@ screen and (min-width: 770px) {
     width: 62%;
   }
 
+  .taxonomy-container {
+    margin-top: 16px;
+  }
+
   .section-container,
   .term-container {
-    margin-top: 16px;
     display: flex;
     gap: 16px;
 
