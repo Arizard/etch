@@ -1,5 +1,9 @@
 {{ define "main" }}
-  {{ if .Data.Terms }} <!-- page for a taxonomy -->
+<div class="taxonomy-container">
+  <div class="terms-cloud-container">
+    {{ if .Data.Terms }} <!-- page for a taxonomy -->
     {{- partial "terms-cloud.html" .Data.Terms.ByCount -}}
-  {{ end }}
+    {{ end }}
+  </div>
+</div>
 {{ end }}

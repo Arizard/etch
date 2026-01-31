@@ -1,6 +1,10 @@
 {{ define "main" }}
-    {{ with .Site.Taxonomies.tags.ByCount }}
+<div class="section-container">
+    <div class="terms-cloud-container">
+        {{ with .Site.Taxonomies.tags.ByCount }}
         {{- partial "terms-cloud.html" . -}}
-    {{ end }}
+        {{ end }}
+    </div>
     {{- partial "posts.html" .Pages -}}
+</div>
 {{ end }}

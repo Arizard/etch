@@ -97,12 +97,6 @@ main#content {
     }
   }
 
-  .about-me-intro {
-    h1 {
-      margin-top: 0;
-    }
-  }
-
   p {
     color: $body-text-color;
     margin-top: 0;
@@ -465,6 +459,28 @@ screen and (min-width: 770px) {
   main#content figure.portrait {
     width: 62%;
   }
+
+  .section-container,
+  .term-container {
+    margin-top: 16px;
+    display: flex;
+    gap: 16px;
+
+    .posts-list-container {
+      order: 0;
+      flex-basis: 75%;
+    }
+
+    .terms-cloud-container {
+      margin: 0 0 32px 0 !important;
+      order: 1;
+      flex-basis: 25%;
+    }
+  }
+}
+
+.terms-cloud-container {
+  margin: 16px 0 32px 0;
 }
 
 .terms-cloud-label {
@@ -474,8 +490,11 @@ screen and (min-width: 770px) {
   margin-bottom: 6px;
 }
 
+.terms-cloud-container-for-section {
+  margin: 16px 0 32px 0;
+}
+
 .terms-cloud {
-  margin-top: 24px;
   margin-bottom: 32px;
   user-select: none;
   display: flex;
