@@ -18,7 +18,7 @@ main#content {
   }
 
   main#content {
-    width: 64ch;
+    width: 100%;
     margin: 0 auto 0 0 !important;
   }
 

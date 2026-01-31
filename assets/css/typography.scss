@@ -540,12 +540,6 @@ main#content .posts-list-subtitle {
 }
 
 @media (min-width: 770px) {
-
-  article,
-  .about-me-container {
-    text-align: justify;
-  }
-
   .about-me-container {
     border-radius: $default-radius;
   }
