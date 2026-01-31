@@ -265,10 +265,21 @@ footer#footer {
     width: 100%;
     margin: 0 auto 0 auto;
     padding: 0 16px 0 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    justify-content: space-between;
+
+    .footer-nav-menu {
+      display: flex;
+      flex-direction: row;
+      gap: 24px;
+      .footer-nav-menu-item {
+        font-weight: 700;
+      }
+    }
+
+    .footer-text,
+    .footer-socials {
+      text-align: left;
+      text-transform: lowercase;
+    }
   }
 
   .lni {
@@ -289,11 +300,6 @@ footer#footer {
     margin-bottom: -6px;
   }
 
-  .footer-text,
-  .footer-socials {
-    text-align: left;
-    text-transform: lowercase;
-  }
 }
 
 @media (min-width: 770px) {
@@ -472,8 +478,7 @@ screen and (min-width: 770px) {
     width: 62%;
   }
 
-  .taxonomy-container {
-  }
+  .taxonomy-container {}
 
   .section-container,
   .term-container {

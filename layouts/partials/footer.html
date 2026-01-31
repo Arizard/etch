@@ -1,26 +1,37 @@
 <footer id="footer">
   <div class="footer-nav-container">
+    <div class="footer-nav-menu">
+      {{- range .Site.Menus.main -}}
+      <div class="footer-nav-menu-item">
+        <a href="{{- .URL -}}">{{ .Title }}</a>
+      </div>
+      {{- end -}}
+        {{- if .Data.Term -}}
+        <div class="footer-nav-menu-item">
+        <a alt="rss" href="index.xml" data-umami-event="Footer RSS" data-umami-event-rss-kind="tag">
+          <!-- rss relative to page -->
+          rss (tag: {{ .Name }})</a>
+        </div>
+        {{- else if .IsSection -}}
+        <div class="footer-nav-menu-item">
+        <a alt="rss" href="index.xml" data-umami-event="Footer RSS" data-umami-event-rss-kind="section">
+          <!-- rss relative to page -->
+          rss (section: {{ .Name }})</a>
+        </div>
+        {{- else -}}
+        <div class="footer-nav-menu-item">
+        <a alt="rss" href="/index.xml" data-umami-event="Footer RSS" data-umami-event-rss-kind="all">
+          <!-- rss absolute -->
+          rss (all)</a>
+        </div>
+        {{- end -}}
+    </div>
     <div class="footer-text">
       <p>{{ .RenderString .Site.Params.copyright }}</p>
       <p>
         This site uses <a href="https://umami.is" target="_blank" rel="noopener"
           data-umami-event="Footer Umami">Umami</a> for privacy-friendly analytics. No personal information is
         collected.
-      </p>
-      <p>
-        {{- if .Data.Term -}}
-        <a alt="rss" href="index.xml" data-umami-event="Footer RSS" data-umami-event-rss-kind="tag">
-          <!-- rss relative to page -->
-          rss (tag: {{ .Name }})</a>
-        {{- else if .IsSection -}}
-        <a alt="rss" href="index.xml" data-umami-event="Footer RSS" data-umami-event-rss-kind="section">
-          <!-- rss relative to page -->
-          rss (section: {{ .Name }})</a>
-        {{- else -}}
-        <a alt="rss" href="/index.xml" data-umami-event="Footer RSS" data-umami-event-rss-kind="all">
-          <!-- rss absolute -->
-          rss (all)</a>
-        {{- end -}}
       </p>
     </div>
   </div>
