@@ -81,6 +81,7 @@ nav#breadcrumbs {
 
 body {
   font-family: $body-font;
+  text-underline-position: under;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $body-text-color;
@@ -204,7 +205,7 @@ main#content {
     hr {
       /* used in footnotes only */
       border: 0;
-      height: 1.5px;
+      height: 1px;
       background: $body-text-color;
     }
   }
@@ -271,6 +272,7 @@ footer#footer {
       display: flex;
       flex-direction: row;
       gap: 24px;
+
       .footer-nav-menu-item {
         font-weight: 700;
       }
@@ -450,27 +452,18 @@ screen and (min-width: 770px) {
 }
 
 .article-after {
-  margin: 64px 0 64px 0;
+  margin: 64px 0 24px 0;
   text-align: left;
-
-  svg {
-    height: 1.4rem;
-    width: 1.4rem;
-    margin-bottom: -0.2rem;
-
-    path {
-      fill: $body-text-color;
-    }
-  }
+  font-size: 80%;
 }
 
 @media (prefers-color-scheme: dark) {
-  .article-after {
-    svg {
-      path {
-        fill: $body-text-color-dark;
-      }
-    }
+  .article-after {}
+}
+
+.posts-list-container.home {
+  .posts-list-item {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   }
 }
 
@@ -478,8 +471,6 @@ screen and (min-width: 770px) {
   main#content figure.portrait {
     width: 62%;
   }
-
-  .taxonomy-container {}
 
   .section-container,
   .term-container {

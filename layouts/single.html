@@ -5,25 +5,10 @@
 <article>
   {{- .Content -}}
 </article>
-<div class="article-after">
-  {{- with .Page.Params.Date -}}
-    <time>{{ .Format "2 January 2006" }}</time>
-  {{- end -}}
-  {{- if .Page.Params.hero_attribution -}}
-  <div class="post-hero-attribution">
-    <span>Thumbnail Attribution: {{ .RenderString .Page.Params.hero_attribution }}</span>
-  </div>
-  {{- end -}}
-</div>
+{{- partial "front-matter.html" . -}}
 
 {{- if not .Params.nobottomnav -}}
 <div class="bottom-nav">
-  <div class="tags-container">
-    <div class="bottom-nav-label">Tags</div>
-    {{ with .Page.GetTerms "tags" }}
-    {{- partial "terms-cloud-page.html" . -}}
-    {{ end }}
-  </div>
   <div class="bottom-nav-next">
     <div class="bottom-nav-label">Read next</div>
     {{ with .PrevInSection }}

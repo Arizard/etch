@@ -1,0 +1,36 @@
+<div class="article-after">
+  {{- with .Page.Params.Author -}}
+  <div class="article-after-item">
+    Written by <strong>{{- . -}}</strong>.
+  </div>
+  {{- end -}}
+  {{- with .Page.Params.Date -}}
+  <div class="article-after-item">
+    Published on <time>{{ .Format "2 January 2006" }}</time>.
+  </div>
+  {{- end -}}
+  {{- with .Page.Params.updated_at -}}
+  {{- with time.AsTime . -}}
+  <div class="article-after-item">
+    Updated at <time>{{ .Format "2 January 2006" }}</time>.
+  </div>
+  {{- end -}}
+  {{- end -}}
+  {{- if .Page.Params.hero_attribution -}}
+  <div class="article-after-item">
+    <span>Thumbnail Attribution: {{ .RenderString .Page.Params.hero_attribution }}</span>
+  </div>
+  {{- end -}}
+  {{ with .Page.GetTerms "tags" }}
+  <div class="article-after-item">
+    <span>
+      Tags:
+      {{- range . -}}
+      &ensp;<a class="terms-cloud-item" href="{{ .Page.RelPermalink }}" data-umami-event="Select Tag {{ .Page.Name }}">
+        #{{ .Page.Name }}
+      </a>
+      {{- end -}}
+    </span>
+  </div>
+  {{- end -}}
+</div>
