@@ -31,14 +31,15 @@ nav#breadcrumbs {
   width: 100%;
   max-width: 770px;
   margin: 16px auto 16px auto;
-  padding: 0;
+  padding: 0 16px;
   height: 40px;
 
   .breadcrumbs-list {
     display: flex;
     gap: 3px;
-    margin: 0 16px 0 16px;
+    margin: 0;
     color: $body-text-color;
+    width: 100%;
 
     a,
     a:hover,
