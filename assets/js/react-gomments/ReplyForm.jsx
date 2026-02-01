@@ -8,6 +8,7 @@ export default function ReplyForm({ onSubmit }) {
   const [bodyValue, setBodyValue] = useState('');
   const [nameError, setNameError] = useState('');
   const [bodyError, setBodyError] = useState('');
+  const [expanded, setExpanded] = useState(false);
 
   const handleNameChange = useCallback((value) => {
     setNameValue(value);
@@ -44,23 +45,26 @@ export default function ReplyForm({ onSubmit }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="row">
+    {expanded && <div className="row">
         <NameInput
           value={nameValue}
           onChange={handleNameChange}
           error={nameError}
         />
-      </div>
+      </div>}
       <div className="row">
         <MessageInput
           value={bodyValue}
+          focused={expanded}
+          onFocus={() => setExpanded(true)}
           onChange={handleBodyChange}
           error={bodyError}
         />
       </div>
-      <div className="row">
+    {expanded && <div className="row">
         <SubmitReplyButton disabled={!isValid} />
       </div>
-    </form>
+    }
+      </form>
   );
 }

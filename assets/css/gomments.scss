@@ -10,20 +10,22 @@
 
   form {
     margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    background-color: $body-background-alt-1;
+    border: 2px solid $body-background-alt;
+    border-radius: $default-radius;
+    overflow: hidden;
+    padding: 6px;
   }
 
   .row {
     display: flex;
     gap: 10px;
-    margin-bottom: 14px;
 
     input {
       flex: 1;
-    }
-
-    @media (max-width: 770px) {
-      display: block;
-      margin-bottom: 0;
     }
   }
 
@@ -31,10 +33,6 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-
-    @media (max-width: 770px) {
-      margin-bottom: 10px;
-    }
   }
 
   .field-label {
@@ -57,11 +55,10 @@
     font-size: $body-font-size;
     width: 100%;
     padding: 12px;
-    border-radius: $default-radius;
     box-sizing: border-box;
-    border: 2px solid $body-background-alt;
-    background-color: $body-background-alt-1;
+    border: none;
     color: #000;
+    border-radius: $default-radius;
 
     &:focus {
       outline: none;
@@ -79,34 +76,36 @@
   textarea {
     width: 100%;
     box-sizing: border-box;
+    resize: none;
   }
 
   .submit-btn {
-    background-color: #6ab04c;
-    color: white;
-    padding: 12px 60px;
+    color: $body-text-color;
+    padding: 10px 28px;
     border: none;
     border-radius: $default-radius;
     cursor: pointer;
-    margin-right: auto;
-    margin-left: auto;
+    margin: 0 0 0 auto;
     font-family: 'Manrope', sans-serif;
     text-transform: uppercase;
     font-weight: bold;
     font-size: $body-font-size * 0.8;
+    background-color: $body-background-alt;
 
     &:hover {
-      background-color: #77c157;
+      background-color: $secondary-color;
+      color: $body-text-color-dark;
     }
 
     &:disabled {
-      background-color: #57606f;
+      color: $body-text-color-muted;
+      background-color: $body-background-alt;
       cursor: not-allowed;
     }
 
     @media (max-width: 770px) {
+      margin: 0;
       width: 100%;
-      margin-left: 0;
     }
   }
 }
@@ -320,11 +319,15 @@
 
 @media (prefers-color-scheme: dark) {
   .gomments-container {
+    form {
+      border: 2px solid $body-background-dark-alt;
+      background-color: $body-background-dark-alt-1;
+    }
 
     input[type="text"],
     input[type="password"],
     textarea {
-      border: 2px solid $body-background-dark-alt;
+      border: none;
       background-color: $body-background-dark-alt-1;
       color: white;
 
@@ -335,6 +338,21 @@
 
       &::-ms-input-placeholder {
         color: white;
+      }
+    }
+
+    .submit-btn {
+      color: $body-text-color-dark;
+      background-color: $body-background-dark-alt;
+
+      &:hover {
+        background-color: $secondary-color-dark;
+        color: $body-text-color;
+      }
+
+      &:disabled {
+        color: $body-text-color-muted-dark;
+        background-color: $body-background-dark-alt;
       }
     }
   }
