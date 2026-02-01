@@ -1,28 +1,28 @@
-<div class="article-after">
+<div class="front-matter">
   {{- with .Page.Params.Author -}}
-  <div class="article-after-item">
+  <div class="front-matter-item">
     Written by <strong>{{- . -}}</strong>.
   </div>
   {{- end -}}
   {{- with .Page.Params.Date -}}
-  <div class="article-after-item">
+  <div class="front-matter-item">
     Published on <time>{{ .Format "2 January 2006" }}</time>.
   </div>
   {{- end -}}
   {{- with .Page.Params.updated_at -}}
   {{- with time.AsTime . -}}
-  <div class="article-after-item">
+  <div class="front-matter-item">
     Updated at <time>{{ .Format "2 January 2006" }}</time>.
   </div>
   {{- end -}}
   {{- end -}}
   {{- if .Page.Params.hero_attribution -}}
-  <div class="article-after-item">
+  <div class="front-matter-item">
     <span>Thumbnail Attribution: {{ .RenderString .Page.Params.hero_attribution }}</span>
   </div>
   {{- end -}}
   {{ with .Page.GetTerms "tags" }}
-  <div class="article-after-item">
+  <div class="front-matter-item">
     <span>
       Tags:
       {{- range . -}}
