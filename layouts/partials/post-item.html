@@ -1,13 +1,13 @@
 <a href="{{ .Permalink }}" class="posts-list-item" data-umami-event="Post Item" data-umami-event-target-page-title="{{ .Title }}">
-    <div class="posts-list-heading">
-        {{ .Title }}
-    </div>
     {{- with .Page.Resources.Get .Params.hero -}}
     {{- $heroImage := .Process "fit 800x3200 jpeg q85 box" -}}
     <div class="posts-list-hero-container">
             <div class="posts-list-hero" style="background-image: url('{{ $heroImage.Permalink }}');"></div>
     </div>
     {{- end -}}
+    <div class="posts-list-heading">
+        {{ .Title }}
+    </div>
     <div class="posts-list-subtitle">
         {{ transform.Plainify .Summary }}
     </div>

@@ -498,13 +498,13 @@ screen and (min-width: 770px) {
 
     background-color: $body-background-alt;
     color: $body-text-color !important;
+    border: 2px solid transparent;
   }
 
   .terms-cloud-item:hover,
   .terms-cloud-item:active,
   .terms-cloud-item.selected {
-    background-color: $secondary-color;
-    color: $body-background !important;
+    border: 2px solid $body-text-color;
   }
 }
 
@@ -517,8 +517,7 @@ screen and (min-width: 770px) {
 
     .terms-cloud-item:hover,
     .terms-cloud-item.selected {
-      background-color: $secondary-color-dark;
-      color: $body-background-dark-alt !important;
+      border: 2px solid $body-text-color-dark;
     }
   }
 }

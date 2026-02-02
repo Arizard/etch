@@ -12,19 +12,37 @@ a.posts-list-item {
   text-decoration: none;
   margin-bottom: 16px;
   background-color: $body-background-alt;
-  padding: 16px 16px;;
+  padding: 0 16px 16px 16px;
   position: relative;
+  overflow: hidden;
 
   .posts-list-heading {
     text-decoration: underline;
     text-decoration-thickness: 1.5px;
+    margin: 16px 0 8px 0;
+
+    font-size: $h3-font-size;
+    font-family: "Manrope", sans-serif;
+
+    a {
+      text-decoration-thickness: 1.5px;
+    }
+
+    display: block;
+    font-weight: bold;
+    word-wrap: break-word;
+    white-space: normal;
+    letter-spacing: $letter-spacing-headings;
+    line-height: 120%;
   }
+
 
   .posts-list-hero-container {
     width: 100%;
     aspect-ratio: 16/9;
-    margin: 16px 0;
+    margin: 0 0 16px 0;
   }
+
   .posts-list-hero {
     height: 100%;
     background-size: cover;
@@ -36,12 +54,15 @@ a.posts-list-item {
     margin-bottom: 16px;
   }
 
-  .posts-list-subtitle, p, .posts-list-pill {
+  .posts-list-subtitle,
+  p,
+  .posts-list-pill {
     font-weight: $body-font-weight;
   }
 }
 
-a.posts-list-item:hover, a.posts-list-item:active {
+a.posts-list-item:hover,
+a.posts-list-item:active {
   text-decoration: none;
 }
 
@@ -57,10 +78,12 @@ main#content .posts-list-subtitle {
   font-size: 80%;
   color: $body-text-color;
   display: flex;
+
   svg {
     height: 1.4rem;
     width: 1.4rem;
     margin-bottom: -0.2rem;
+
     path {
       fill: $body-text-color;
     }
@@ -72,24 +95,10 @@ main#content .posts-list-subtitle {
   }
 }
 
-.posts-list-heading {
-  margin-bottom: 5px !important;
-  font-size: $h3-font-size;
-  font-family: "Manrope", sans-serif;
-  a {
-    text-decoration-thickness: 1.5px;
-  }
-  display: block;
-  font-weight: bold;
-  word-wrap: break-word;
-  white-space: normal;
-  letter-spacing: $letter-spacing-headings;
-  line-height: 120%;
-}
-
 @media (prefers-color-scheme: dark) {
   .posts-list-pills {
     color: $body-text-color-dark !important;
+
     svg {
       path {
         fill: $body-text-color-dark !important;
