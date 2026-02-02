@@ -153,7 +153,7 @@
   font-size: $body-font-size;
   margin-bottom: 14px;
   border-radius: $default-radius;
-  background-color: $body-background-alt-1;
+  background-color: $body-background-alt;
 
   &.attention {
     border: 2px solid #45a049;
@@ -362,7 +362,7 @@
   }
 
   .reply-card {
-    background-color: $body-background-dark-alt-1;
+    background-color: $body-background-dark-alt;
   }
 
   .reply-created-at {
