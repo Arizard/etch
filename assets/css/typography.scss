@@ -95,6 +95,16 @@ main#content {
   padding: 0 16px 0 16px;
   letter-spacing: $letter-spacing-body;
 
+  article {
+    p {
+      a {
+        hyphens:auto;
+        word-wrap: break-word;
+      }
+    }
+  }
+
+
   sup,
   sub {
     line-height: 0;
@@ -527,13 +537,13 @@ article,
 .about-me-container {
   text-align: left;
   text-wrap: pretty;
-  hyphens: auto;
+  hyphens: none;
 }
 
 main#content .posts-list-subtitle {
   text-align: left;
   text-wrap: pretty;
-  hyphens: auto;
+  hyphens: none;
 }
 
 .about-me-container {

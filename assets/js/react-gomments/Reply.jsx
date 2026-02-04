@@ -15,14 +15,12 @@ export default function Reply({
 
   return (
     <div
-      className={`reply-card ${isAttention ? 'attention' : ''}`}
+      className={`reply-card ${tripColorClass} ${isAttention ? 'attention' : ''}`}
       title={`ID: ${id}, ${timeAgoExact(date)} at ${date.toLocaleString()}`}
     >
       <div className="reply-card-heading-lockup">
-        <span className={`name-pill ${tripColorClass}`}>
-          {authorName} {tripcodeDisplay && <span className="tripcode">{tripcodeDisplay}</span>}
-        </span>
-        <span className="reply-created-at">{timeAgoExact(date).toUpperCase()}</span>
+        <div className={`name-pill`}>{authorName}</div>
+        <div className="reply-created-at">{timeAgoExact(date).toLowerCase()}</div>
       </div>
       <div className="reply-card-body">{body}</div>
     </div>

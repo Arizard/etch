@@ -8,7 +8,7 @@ export default function ReplyFeed({
   attentionReplyId,
 }) {
   if (loading) {
-    return <div className="loading-fill">Loading comments</div>;
+    return <div className="loading-fill">loading comments</div>;
   }
 
   if (error) {
@@ -17,7 +17,6 @@ export default function ReplyFeed({
 
   return (
     <div className="reply-feed">
-      <div className="reply-feed-header">REPLIES ({replyCount})</div>
       {replies.map((reply) => (
         <Reply
           key={reply.id}

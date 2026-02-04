@@ -4,7 +4,7 @@ export default function MessageInput({ value, onChange, focused, onFocus, error 
       <textarea
         id="gomments-reply-form-body"
         name="body"
-        placeholder="add a reply..."
+        placeholder="add a reply"
     rows={focused ? 6 : 1}
         value={value}
         onChange={(e) => onChange(e.target.value)}

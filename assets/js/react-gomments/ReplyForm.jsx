@@ -40,18 +40,19 @@ export default function ReplyForm({ onSubmit }) {
 
     if (success) {
       setBodyValue('');
+      setExpanded(false);
     }
   };
 
   return (
     <form onSubmit={handleSubmit}>
-    {expanded && <div className="row">
+    {expanded && <><div className="row">
         <NameInput
           value={nameValue}
           onChange={handleNameChange}
           error={nameError}
         />
-      </div>}
+      </div><div class="hr"></div></>}
       <div className="row">
         <MessageInput
           value={bodyValue}
