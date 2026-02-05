@@ -59,8 +59,28 @@
     text-transform: uppercase;
   }
 
-  .validation-error-text {
+  .reply-form-submit-row {
+    padding: 2px 8px;
+    justify-content: space-between;
+    font-family: 'Inconsolata', monospace;
+  }
+
+  .char-count-text {
+    opacity: 0.5;
+    color: $body-text-color-muted;
+
+    @media (prefers-color-scheme: dark) {
+      color: $body-text-color-muted-dark;
+    }
+  }
+
+  .char-count-text.validation-error-text {
+    opacity: 1;
     color: crimson;
+    @media (prefers-color-scheme: dark) {
+      color: red;
+      font-weight: bold;
+    }
   }
 
   input[type="text"],
@@ -76,10 +96,6 @@
 
     &:focus {
       outline: none;
-    }
-
-    &.validation-error {
-      border: 2px dashed crimson;
     }
 
     @media (max-width: 770px) {
@@ -110,7 +126,7 @@
     border: none;
     border-radius: 100%;
     cursor: pointer;
-    margin: 6px 6px 6px auto;
+    margin: 6px 6px 6px 6px;
     font-family: 'Manrope', sans-serif;
     text-transform: uppercase;
     font-weight: bold;

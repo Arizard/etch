@@ -6,27 +6,33 @@ import SubmitReplyButton from './SubmitReplyButton';
 export default function ReplyForm({ onSubmit }) {
   const [nameValue, setNameValue] = useState('');
   const [bodyValue, setBodyValue] = useState('');
-  const [nameError, setNameError] = useState('');
-  const [bodyError, setBodyError] = useState('');
   const [expanded, setExpanded] = useState(false);
 
-  const handleNameChange = useCallback((value) => {
+  const charLimit = 500
+
+  isValidBody = (bodyValue) => (
+    bodyValue.trim().length <= charLimit &&
+    bodyValue.trim().length > 0
+  );
+
+  isValidName = (nameValue) => {
+    const [name, secret] = nameValue.split('#');
+    return (name ?? '').trim().length <= 24 &&
+    (secret ?? '').trim().length <= 8;;
+  };
+
+  const isValid = isValidName(nameValue) && isValidBody(bodyValue);
+
+  console.log(isValid);
+
+  const handleNameChange = (value) => {
+    if (!isValidName(value)) return;
     setNameValue(value);
+  };
 
-    const [name, secret] = value.split('#');
-    const errors = [];
-    if (name?.length > 24) errors.push('max name length exceeded');
-    if (secret?.length > 8) errors.push('max secret length exceeded');
-    setNameError(errors.join(', '));
-  }, []);
-
-  const handleBodyChange = useCallback((value) => {
+  const handleBodyChange = (value) => {
     setBodyValue(value);
-    setBodyError(value.length > 500 ? 'max length exceeded' : '');
-  }, []);
-
-  const isValid =
-    bodyValue.trim().length > 0 && nameError === '' && bodyError === '';
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -40,7 +46,6 @@ export default function ReplyForm({ onSubmit }) {
 
     if (success) {
       setBodyValue('');
-      setExpanded(false);
     }
   };
 
@@ -50,19 +55,20 @@ export default function ReplyForm({ onSubmit }) {
         <NameInput
           value={nameValue}
           onChange={handleNameChange}
-          error={nameError}
+          error={''}
         />
-      </div><div class="hr"></div></>}
+      </div><div className="hr"></div></>}
       <div className="row">
         <MessageInput
           value={bodyValue}
           focused={expanded}
           onFocus={() => setExpanded(true)}
           onChange={handleBodyChange}
-          error={bodyError}
+          error={''}
         />
       </div>
-    {expanded && <div className="row">
+    {expanded && <div className="row reply-form-submit-row">
+      <div className={bodyValue.length > charLimit ? 'char-count-text validation-error-text' : 'char-count-text'}>{bodyValue.length}{'/'}{charLimit}</div>
         <SubmitReplyButton disabled={!isValid} />
       </div>
     }
