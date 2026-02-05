@@ -212,12 +212,12 @@
 
 .reply-card {
   font-family: 'Inconsolata', monospace;
-  line-height: 110%;
+  line-height: $body-line-height;
   padding: 2px 16px;
   font-size: $body-font-size;
   margin-bottom: 14px;
 
-  border-left: solid 6px $body-text-color-muted;
+  border-left: solid 4px $body-text-color-muted;
 
   @media (prefers-color-scheme: dark) {
     border-left: solid 6px $body-text-color-muted-dark;
@@ -279,6 +279,7 @@
   font-family: 'Manrope', sans-serif;
   white-space: pre-wrap;
   word-break: break-word;
+  text-wrap: pretty;
 }
 
 // =============================================================================
