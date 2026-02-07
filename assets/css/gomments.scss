@@ -236,11 +236,8 @@
   border-left: solid 4px $body-text-color-muted;
 
   @media (prefers-color-scheme: dark) {
-    border-left: solid 6px $body-text-color-muted-dark;
+    border-left-color: $body-text-color-muted-dark;
   }
-
-
-  &.attention {}
 
   max-width: 600px;
 

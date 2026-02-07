@@ -23,8 +23,6 @@ export default function ReplyForm({ onSubmit }) {
 
   const isValid = isValidName(nameValue) && isValidBody(bodyValue);
 
-  console.log(isValid);
-
   const handleNameChange = (value) => {
     if (!isValidName(value)) return;
     setNameValue(value);
