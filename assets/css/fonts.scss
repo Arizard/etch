@@ -3,21 +3,23 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local('Manrope'), url('/fonts/manrope/Manrope-Regular.woff') format('woff');
+  src: local('Manrope'), url('/fonts/manrope/Manrope-VariableFont_wght.ttf') format('truetype');
 }
+
 @font-face {
   font-family: 'Manrope';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: local('Manrope'), url('/fonts/manrope/Manrope-Bold.woff') format('woff');
+  src: local('Manrope'), url('/fonts/manrope/Manrope-VariableFont_wght.ttf') format('truetype');
 }
+
 @font-face {
   font-family: 'Manrope';
   font-style: normal;
   font-weight: 800;
   font-display: swap;
-  src: local('Manrope'), url('/fonts/manrope/Manrope-ExtraBold.woff') format('woff');
+  src: local('Manrope'), url('/fonts/manrope/Manrope-VariableFont_wght.ttf') format('truetype');
 }
 
 @font-face {
@@ -26,8 +28,40 @@
   src: local('Inconsolata for Powerline'), url('/fonts/inconsolata/Inconsolata.woff2') format('woff2');
 }
 
-$heading-font: 'Manrope', 'Arial', sans-serif;
-$body-font: 'Manrope', 'Arial', sans-serif;
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Inter'), url('/fonts/inter/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Inter'), url('/fonts/inter/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Inter'), url('/fonts/inter/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Inter'), url('/fonts/inter/Inter-Italic-VariableFont_opsz,wght.ttf') format('woff');
+}
+
+$heading-font: 'Manrope', sans-serif;
+$button-font: 'Manrope', sans-serif;
+$body-font: 'Inter', sans-serif;
 $body-font-weight: 400;
 $body-font-size: 1.6rem;
-
