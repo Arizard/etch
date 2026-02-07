@@ -294,14 +294,14 @@ main#content {
     overflow: auto;
     margin-bottom: $body-font-size * 2;
     border-radius: $default-radius;
-    padding: 0 8px;
+    padding: 0;
 
     border: 1px solid $body-background-muted;
-    background-color: $body-background-alt;
+    background-color: $body-background;
 
     @media(prefers-color-scheme: dark) {
       border-color: $body-background-dark-muted;
-      background-color: $body-background-dark-alt;
+      background-color: $body-background-dark;
     }
   }
 }
