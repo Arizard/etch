@@ -237,6 +237,7 @@ main#content {
 
   th {
     border-bottom: 3px solid $body-background-muted;
+
     @media(prefers-color-scheme: dark) {
       border-bottom-color: $body-background-dark-muted;
     }
@@ -244,6 +245,7 @@ main#content {
 
   tr {
     border-bottom: 1px solid $body-background-muted;
+
     @media(prefers-color-scheme: dark) {
       border-bottom-color: $body-background-dark-muted;
     }
@@ -533,7 +535,7 @@ screen and (min-width: 770px) {
   .terms-cloud-item:hover,
   .terms-cloud-item:active,
   .terms-cloud-item.selected {
-    border: 2px solid $body-text-color;
+    border-color: $body-background-muted;
   }
 }
 
@@ -546,7 +548,7 @@ screen and (min-width: 770px) {
 
     .terms-cloud-item:hover,
     .terms-cloud-item.selected {
-      border: 2px solid $body-text-color-dark;
+      border-color: $body-background-dark-muted;
     }
   }
 }
