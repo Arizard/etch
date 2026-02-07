@@ -16,13 +16,12 @@ a.posts-list-item {
   position: relative;
   overflow: hidden;
   border: 1px solid $body-background-muted;
+
   @media(prefers-color-scheme: dark) {
     border-color: $body-background-dark-muted;
   }
 
   .posts-list-heading {
-    text-decoration: underline;
-    text-decoration-thickness: 1.5px;
     margin: 16px 0 8px 0;
 
     font-size: $h3-font-size;
@@ -78,7 +77,6 @@ main#content .posts-list-subtitle {
 
 .posts-list-pills {
   margin-top: 4px;
-  text-transform: uppercase;
   font-size: 80%;
   color: $body-text-color;
   display: flex;
