@@ -49,6 +49,10 @@ export default function ReplyForm({ onSubmit }) {
 
   return (
     <form onSubmit={handleSubmit}>
+      {/* disables implicit submission via enter key */}
+      <div className="row" style={{display: "none"}}>
+        <button type="submit" disabled aria-hidden="true"></button>
+      </div>
     {expanded && <><div className="row">
         <NameInput
           value={nameValue}
