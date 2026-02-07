@@ -1,19 +1,28 @@
 main#content {
+  .figure-container {
+    margin: $body-font-size 0 $body-font-size * 2 0;
+    border-radius: $default-radius;
+
+    border: 1px solid $body-background-muted;
+    background-color: $body-background-alt;
+
+    @media(prefers-color-scheme: dark) {
+      border-color: $body-background-dark-muted;
+      background-color: $body-background-dark-alt;
+    }
+  }
   figure {
     display: table;
-    margin: $body-line-height/2 auto;
     color: $body-text-color;
     padding: 0;
     width: 100%;
-    border-radius: $default-radius $default-radius 0 0;
     overflow: hidden;
-    background-color: $body-background-alt;
+    margin: 0;
 
     figcaption {
       display: table-caption;
       caption-side: bottom;
       border-radius: 0 0 $default-radius $default-radius;
-      background-color: $body-background-alt;
 
       p {
         color: $body-text-color;

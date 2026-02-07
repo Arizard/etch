@@ -6,7 +6,6 @@ a {
   text-decoration-thickness: 1px;
 }
 
-$body-font-size: 1.6rem;
 $body-line-height: 2.7rem;
 $banner-font-size: 1.67rem;
 $h2-font-size: 160%;
@@ -33,6 +32,7 @@ nav#breadcrumbs {
   margin: 16px auto 16px auto;
   padding: 0 16px;
   height: 40px;
+  white-space: nowrap;
 
   .breadcrumbs-list {
     display: flex;
@@ -197,9 +197,16 @@ main#content {
   pre,
   pre.chroma {
     padding: 1rem 1rem;
-    background-color: $body-background-alt;
     border-radius: 6px;
     line-height: $body-line-height;
+
+    border: 1px solid $body-background-muted;
+    background-color: $body-background-alt;
+
+    @media(prefers-color-scheme: dark) {
+      border-color: $body-background-dark-muted;
+      background-color: $body-background-dark-alt;
+    }
 
     code {
       background-color: revert;
@@ -208,11 +215,18 @@ main#content {
     }
   }
 
-  code {
+  :not(pre.chroma, pre) > code {
     border-radius: 6px;
     padding: 0.2rem 0.4rem;
-    background-color: $body-background-alt;
     line-height: 2rem;
+
+    border: 1px solid $body-background-muted;
+    background-color: $body-background-alt;
+
+    @media(prefers-color-scheme: dark) {
+      border-color: $body-background-dark-muted;
+      background-color: $body-background-dark-alt;
+    }
   }
 
   .footnotes {
@@ -243,7 +257,7 @@ main#content {
     }
   }
 
-  tr {
+  tr:not(:last-child) {
     border-bottom: 1px solid $body-background-muted;
 
     @media(prefers-color-scheme: dark) {
@@ -261,6 +275,16 @@ main#content {
   .table-container {
     overflow: auto;
     margin-bottom: $body-font-size * 2;
+    border-radius: $default-radius;
+    padding: 0 8px;
+
+    border: 1px solid $body-background-muted;
+    background-color: $body-background-alt;
+
+    @media(prefers-color-scheme: dark) {
+      border-color: $body-background-dark-muted;
+      background-color: $body-background-dark-alt;
+    }
   }
 }
 
@@ -528,29 +552,27 @@ screen and (min-width: 770px) {
     text-decoration: none;
 
     background-color: $body-background-alt;
-    color: $body-text-color !important;
-    border: 2px solid transparent;
+    color: $body-text-color;
+    border: 1px solid $body-background-muted;
+
+    @media(prefers-color-scheme: dark) {
+      background-color: $body-background-dark-alt;
+      border-color: $body-background-dark-muted;
+      color: $body-text-color-dark;
+    }
   }
 
   .terms-cloud-item:hover,
   .terms-cloud-item:active,
   .terms-cloud-item.selected {
-    border-color: $body-background-muted;
-  }
-}
+    border-color: $body-text-color-muted;
 
-@media (prefers-color-scheme: dark) {
-  .terms-cloud {
-    .terms-cloud-item {
-      background-color: $body-background-dark-alt;
-      color: $body-text-color-dark !important;
-    }
-
-    .terms-cloud-item:hover,
-    .terms-cloud-item.selected {
-      border-color: $body-background-dark-muted;
+    @media (prefers-color-scheme: dark) {
+      border-color: $body-text-color-muted-dark;
     }
   }
+
+
 }
 
 // justify text

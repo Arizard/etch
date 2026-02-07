@@ -9,7 +9,7 @@
   font-family: 'Manrope', sans-serif;
 
   .hr {
-    height: 2px;
+    height: 1px;
     width: 100%;
     background-color: $body-background-alt;
 
@@ -24,7 +24,7 @@
     flex-direction: column;
     gap: 0;
     background-color: $body-background-alt-1;
-    border: 2px solid $body-background-alt;
+    border: 1px solid $body-background-alt;
     border-radius: $default-radius;
     overflow: hidden;
     padding: 0;
@@ -432,7 +432,7 @@
 @media (prefers-color-scheme: dark) {
   .gomments-container {
     form {
-      border: 2px solid $body-background-dark-alt;
+      border-color: $body-background-dark-alt;
       background-color: $body-background-dark-alt-1;
     }
 

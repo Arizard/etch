@@ -40,19 +40,6 @@
     }
   }
 
-  main#content {
-    pre.chroma, pre {
-      background-color: $body-background-dark-alt;
-      code {
-        color: $body-text-color-dark;
-      }
-    }
-
-    code {
-      background-color: $body-background-dark-alt;
-    }
-  }
-
   main#content .footnotes {
     hr {
       background: $body-text-color-dark;
@@ -71,9 +58,6 @@
     .post-hero-container {
       background-color: $body-background-dark-alt;
     }
-  }
-  main#content figure figcaption, main#content figure {
-    background-color: $body-background-dark-alt;
   }
 }
 
