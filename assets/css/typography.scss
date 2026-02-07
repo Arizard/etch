@@ -95,6 +95,23 @@ body {
   font-weight: $body-font-weight;
 }
 
+body.single {
+  background-color: $body-background-alt;
+
+  @media(prefers-color-scheme: dark) {
+    background-color: $body-background-dark-alt;
+  }
+
+  footer#footer {
+    background-color: $body-background;
+
+    @media(prefers-color-scheme: dark) {
+      background-color: $body-background-dark;
+    }
+  }
+
+}
+
 main#content {
   margin: 0 auto;
   padding: 0 16px 0 16px;
@@ -202,11 +219,11 @@ main#content {
     line-height: $body-line-height;
 
     border: 1px solid $body-background-muted;
-    background-color: $body-background-alt;
+    background-color: $body-background;
 
     @media(prefers-color-scheme: dark) {
       border-color: $body-background-dark-muted;
-      background-color: $body-background-dark-alt;
+      background-color: $body-background-dark;
     }
 
     code {
@@ -222,11 +239,11 @@ main#content {
     line-height: 2rem;
 
     border: 1px solid $body-background-muted;
-    background-color: $body-background-alt;
+    background-color: $body-background;
 
     @media(prefers-color-scheme: dark) {
       border-color: $body-background-dark-muted;
-      background-color: $body-background-dark-alt;
+      background-color: $body-background-dark;
     }
   }
 
@@ -303,6 +320,12 @@ footer#footer {
   margin: auto 0 0 0;
   font-size: 80%;
   width: 100%;
+
+  border-top: 1px solid $body-background-muted;
+
+  @media(prefers-color-scheme: dark) {
+    border-top-color: $body-background-dark-muted;
+  }
 
   a {
     text-decoration: underline;
