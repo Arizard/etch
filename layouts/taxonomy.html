@@ -2,7 +2,12 @@
 <div class="taxonomy-container">
   <div class="terms-cloud-container">
     {{ if .Data.Terms }} <!-- page for a taxonomy -->
-    {{- partial "terms-cloud.html" .Data.Terms.ByCount -}}
+    {{-
+    $ctx := dict
+    "tags" .Data.Terms.ByCount
+    "all" false
+    -}}
+    {{- partial "terms-cloud.html" $ctx -}}
     {{ end }}
   </div>
 </div>

@@ -132,12 +132,6 @@ main#content {
     line-height: 0;
   }
 
-  header {
-    h1 {
-      margin-top: 0;
-    }
-  }
-
   p {
     color: $body-text-color;
     margin-top: 0;
@@ -483,8 +477,9 @@ screen and (min-width: 770px) {
 }
 
 .index-see-all-posts {
+  display: flex;
+  justify-content: center;
   margin: 32px 0;
-  text-align: center;
 
   a {
     text-decoration-thickness: 1px;
@@ -595,8 +590,7 @@ screen and (min-width: 770px) {
 }
 
 // justify text
-article,
-.about-me-container {
+article {
   text-align: left;
   text-wrap: pretty;
   hyphens: none;
@@ -606,17 +600,6 @@ main#content .posts-list-subtitle {
   text-align: left;
   text-wrap: pretty;
   hyphens: none;
-}
-
-.about-me-container {
-  margin: 16px 0 0 0;
-  overflow: hidden;
-}
-
-@media (min-width: 770px) {
-  .about-me-container {
-    border-radius: $default-radius;
-  }
 }
 
 // post-hero

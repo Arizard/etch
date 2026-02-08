@@ -12,10 +12,4 @@
     <div class="breadcrumbs-item current">{{ .Title }}</div>
   </div>
 </nav>
-{{- else -}}
-<nav id="breadcrumbs">
-  <div class="breadcrumbs-list">
-    <div class="breadcrumbs-item home"><a alt="{{ .Title }}" href="{{ .RelPermalink }}">{{ .Site.Title }}</a></div>
-  </div>
-</nav>
 {{- end -}}

@@ -2,7 +2,12 @@
 <div class="section-container">
     <div class="terms-cloud-container">
         {{ with .Site.Taxonomies.tags.ByCount }}
-        {{- partial "terms-cloud.html" . -}}
+        {{-
+        $ctx := dict
+        "tags" .
+        "all" false
+        -}}
+        {{- partial "terms-cloud.html" $ctx -}}
         {{ end }}
     </div>
     {{- partial "posts.html" .Pages -}}
