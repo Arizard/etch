@@ -505,7 +505,16 @@ screen and (min-width: 770px) {
 @media (prefers-color-scheme: dark) {}
 
 .posts-list-container.home {
+  display: grid;
+  grid-gap: 16px;
+  align-items: start;
+
+  @media (min-width: 770px) {
+    grid-template-columns: 50% 50%;
+  }
+
   .posts-list-item {
+    margin: 0;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   }
 }

@@ -1,11 +1,13 @@
 {{ define "main" }}
 <div class="section-container">
     <div class="terms-cloud-container">
+        {{- $page := . -}}
         {{ with .Site.Taxonomies.tags.ByCount }}
         {{-
         $ctx := dict
         "tags" .
-        "all" false
+        "all" true
+        "isPostsSection" ($page.Eq ($page.GetPage "posts"))
         -}}
         {{- partial "terms-cloud.html" $ctx -}}
         {{ end }}
