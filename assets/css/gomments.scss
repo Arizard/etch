@@ -255,11 +255,8 @@
     font-family: $body-font, sans-serif;
     font-style: italic;
     text-overflow: ellipsis;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    .reply-created-at {
-      color: $body-text-color-dark;
+    @media (prefers-color-scheme: dark) {
+        color: $body-text-color-muted-dark;
     }
   }
 }
