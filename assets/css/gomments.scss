@@ -67,7 +67,6 @@
   }
 
   .char-count-text.validation-error-text {
-    opacity: 1;
     color: crimson;
     @media (prefers-color-scheme: dark) {
       color: red;
@@ -216,11 +215,7 @@
   font-size: $body-font-size;
   margin-bottom: 14px;
 
-  border-left: solid 4px $body-text-color-muted;
-
-  @media (prefers-color-scheme: dark) {
-    border-left-color: $body-text-color-muted-dark;
-  }
+  border-left: solid 4px transparent;
 
   max-width: 600px;
 
@@ -254,8 +249,7 @@
   .reply-created-at {
     font-size: $body-font-size * 0.8;
     display: block;
-    color: $body-text-color;
-    opacity: 0.5;
+    color: $body-text-color-muted;
     padding: 0;
     margin: 0;
     font-family: $body-font, sans-serif;
