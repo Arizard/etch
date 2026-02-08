@@ -6,25 +6,6 @@
         <a href="{{- .URL -}}">{{ .Title }}</a>
       </div>
       {{- end -}}
-        {{- if .Data.Term -}}
-        <div class="footer-nav-menu-item">
-        <a alt="rss" href="index.xml" data-umami-event="Footer RSS" data-umami-event-rss-kind="tag">
-          <!-- rss relative to page -->
-          rss (tag: {{ .Name }})</a>
-        </div>
-        {{- else if .IsSection -}}
-        <div class="footer-nav-menu-item">
-        <a alt="rss" href="index.xml" data-umami-event="Footer RSS" data-umami-event-rss-kind="section">
-          <!-- rss relative to page -->
-          rss (section: {{ .Name }})</a>
-        </div>
-        {{- else -}}
-        <div class="footer-nav-menu-item">
-        <a alt="rss" href="/index.xml" data-umami-event="Footer RSS" data-umami-event-rss-kind="all">
-          <!-- rss absolute -->
-          rss (all)</a>
-        </div>
-        {{- end -}}
     </div>
     <div class="footer-text">
       <p>{{ .RenderString .Site.Params.copyright }}</p>
@@ -33,6 +14,27 @@
           data-umami-event="Footer Umami">Umami</a> for privacy-friendly analytics. No personal information is
         collected.
       </p>
+    </div>
+    <div class="footer-nav-menu">
+      {{- if .Data.Term -}}
+      <div class="footer-nav-menu-item">
+        <a alt="rss" href="index.xml" data-umami-event="Footer RSS" data-umami-event-rss-kind="tag">
+          <!-- rss relative to page -->
+          rss (tag: {{ .Name }})</a>
+      </div>
+      {{- else if .IsSection -}}
+      <div class="footer-nav-menu-item">
+        <a alt="rss" href="index.xml" data-umami-event="Footer RSS" data-umami-event-rss-kind="section">
+          <!-- rss relative to page -->
+          rss (section: {{ .Name }})</a>
+      </div>
+      {{- else -}}
+      <div class="footer-nav-menu-item">
+        <a alt="rss" href="/index.xml" data-umami-event="Footer RSS" data-umami-event-rss-kind="all">
+          <!-- rss absolute -->
+          rss (all)</a>
+      </div>
+      {{- end -}}
     </div>
   </div>
 </footer>

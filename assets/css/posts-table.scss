@@ -84,7 +84,7 @@ main#content .posts-list-subtitle {
   svg {
     height: 1.4rem;
     width: 1.4rem;
-    margin-bottom: -0.2rem;
+    margin-top: -0.1rem;
 
     path {
       fill: $body-text-color;
@@ -92,8 +92,13 @@ main#content .posts-list-subtitle {
   }
 
   .posts-list-pill {
-    display: block;
+    display: flex;
+    gap: 4px;
+    align-items: center;
     margin-right: 12px;
+    .posts-list-pill-label {
+      line-height: 1.4rem;
+    }
   }
 }
 

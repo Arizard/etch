@@ -1,8 +1,9 @@
-<a href="{{ .Permalink }}" class="posts-list-item" data-umami-event="Post Item" data-umami-event-target-page-title="{{ .Title }}">
+<a href="{{ .Permalink }}" class="posts-list-item" data-umami-event="Post Item"
+    data-umami-event-target-page-title="{{ .Title }}">
     {{- with .Page.Resources.Get .Params.hero -}}
     {{- $heroImage := .Process "fit 800x3200 jpeg q85 box" -}}
     <div class="posts-list-hero-container">
-            <div class="posts-list-hero" style="background-image: url('{{ $heroImage.Permalink }}');"></div>
+        <div class="posts-list-hero" style="background-image: url('{{ $heroImage.Permalink }}');"></div>
     </div>
     {{- end -}}
     <div class="posts-list-heading">
@@ -14,18 +15,17 @@
     <div class="posts-list-pills">
         <div class="posts-list-pill">
             {{- partial "svg/calendar.html" . -}}
-            <time>{{ .Date.Format "2 Jan 2006" }}</time>
+            <time class="posts-list-pill-label">{{ .Date.Format "2 Jan 2006" }}</time>
         </div>
         <div class="posts-list-pill">
             {{- partial "svg/stopwatch.html" . -}}
-            {{ .ReadingTime }} minutes
+            <div class="posts-list-pill-label">{{ .ReadingTime }} minutes</div>
         </div>
-        <div class="posts-list-pill">
-            <span data-article-id-for-reply-count="{{ .Slug | default .Path }}" class="post-item-reply-count"></span>
+        <div class="posts-list-pill post-item-reply-count" data-article-id-for-reply-count="{{ .Slug | default .Path }}">
         </div>
         {{- if .Draft -}}
         <div class="posts-list-pill">
-        draft
+            draft
         </div>
         {{- end -}}
     </div>
