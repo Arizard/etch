@@ -113,6 +113,37 @@ body.single {
 }
 
 main#content {
+  .post-header {
+    padding: 0 16px;
+  }
+
+  article {
+    text-align: left;
+    text-wrap: pretty;
+    padding: 0 16px;
+
+    li {
+      word-spacing: -1px;
+    }
+
+    p {
+      word-spacing: -1px;
+    }
+
+    ul {
+      list-style: none;
+      list-style-position: outside;
+
+      li::before {
+        content: "–";
+        position: absolute;
+        margin-left: -$body-font-size * 1.5;
+      }
+    }
+  }
+}
+
+main#content {
   margin: 0 auto;
   padding: 0 16px 0 16px;
   letter-spacing: $letter-spacing-body;
@@ -598,13 +629,6 @@ screen and (min-width: 770px) {
 
 }
 
-// justify text
-article {
-  text-align: left;
-  text-wrap: pretty;
-  hyphens: none;
-}
-
 main#content .posts-list-subtitle {
   text-align: left;
   text-wrap: pretty;
@@ -646,15 +670,6 @@ main#content {
       font-size: 80%;
     }
   }
-
-  .post-header {
-    margin: 16px 0 0 0;
-
-    h1 {
-      display: inline-block;
-      width: 100%;
-    }
-  }
 }
 
 @media (min-width: 770px) {
@@ -665,8 +680,6 @@ main#content {
       .post-hero {
         aspect-ratio: 16/9;
       }
-
-      .post-header {}
     }
   }
 }
