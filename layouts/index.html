@@ -4,17 +4,7 @@
         {{ .Content }}
     </div>
 </div>
-<div class="tags-container">
-    {{ with .Site.Taxonomies.tags.ByCount }}
-    {{-
-    $ctx := dict
-    "tags" .
-    "all" true
-    -}}
-    {{- partial "terms-cloud.html" $ctx -}}
-    {{ end }}
-</div>
-<h2>Featured</h2>
+<h4>Featured Posts</h4>
 <div class="posts-list-container home">
     {{ $pages := where site.RegularPages "Params.featured" true }}
     {{- range $pages }}
@@ -24,5 +14,16 @@
 <div class="index-see-all-posts terms-cloud">
   {{- $postCount := (where site.RegularPages "Section" "posts").Len -}}
   <a class="terms-cloud-item" href="/posts/" data-umami-event="See All Posts">see all posts ({{- $postCount }})</a>
+</div>
+<h4>Tags</h4>
+<div class="tags-container">
+    {{ with .Site.Taxonomies.tags.ByCount }}
+    {{-
+    $ctx := dict
+    "tags" .
+    "all" true
+    -}}
+    {{- partial "terms-cloud.html" $ctx -}}
+    {{ end }}
 </div>
 {{ end }}
