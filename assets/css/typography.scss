@@ -1,4 +1,3 @@
-
 a {
   text-decoration: underline;
   text-decoration-thickness: 1px;
@@ -210,6 +209,13 @@ main#content {
     text-wrap: balance;
     hyphens: none;
     text-align: left;
+  }
+
+  .about-me-container {
+    h1 {
+      font-size: 3.815 * $body-font-size;
+      margin: (3.815 * $body-font-size/2) 0 (3.815 * $body-font-size/3) 0;
+    }
   }
 
   // Major second scale (1.125)
