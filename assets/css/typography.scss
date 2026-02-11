@@ -1,4 +1,3 @@
-$letter-spacing-body: -0.5px;
 
 a {
   text-decoration: underline;
@@ -170,7 +169,7 @@ main#content {
 main#content {
   margin: 0 auto;
   padding: 0 16px 0 16px;
-  letter-spacing: $letter-spacing-body;
+  letter-spacing: normal;
 
   article {
     p {
