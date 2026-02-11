@@ -212,33 +212,34 @@ main#content {
     text-align: left;
   }
 
+  // Major second scale (1.125)
   h1 {
-    font-size: 2.408 * $body-font-size;
-    margin: (2.408 * $body-font-size * 1.334) 0 (2.408 * $body-font-size/3) 0;
+    font-size: 2.027 * $body-font-size;
+    margin: (2.027 * $body-font-size * 1.334) 0 (2.027 * $body-font-size/3) 0;
     letter-spacing: -0.15rem;
   }
 
   h2 {
-    font-size: 2.026 * $body-font-size;
-    margin: (2.026 * $body-font-size * 1.334) 0 (2.026 * $body-font-size/3) 0;
+    font-size: 1.802 * $body-font-size;
+    margin: (1.802 * $body-font-size * 1.334) 0 (1.802 * $body-font-size/3) 0;
     letter-spacing: -0.1rem;
   }
 
   h3 {
-    font-size: 1.721 * $body-font-size;
-    margin: (1.721 * $body-font-size * 1.334) 0 (1.721 * $body-font-size/3) 0;
+    font-size: 1.602 * $body-font-size;
+    margin: (1.602 * $body-font-size * 1.334) 0 (1.602 * $body-font-size/3) 0;
     letter-spacing: -0.07rem;
   }
 
   h4 {
-    font-size: 1.477 * $body-font-size;
-    margin: (1.477 * $body-font-size * 1.334) 0 (1.477 * $body-font-size/3) 0;
+    font-size: 1.424 * $body-font-size;
+    margin: (1.424 * $body-font-size * 1.334) 0 (1.424 * $body-font-size/3) 0;
     letter-spacing: -0.05rem;
   }
 
   h5 {
-    font-size: 1.282 * $body-font-size;
-    margin: (1.282 * $body-font-size * 1.334) 0 (1.282 * $body-font-size/3) 0;
+    font-size: 1.266 * $body-font-size;
+    margin: (1.266 * $body-font-size * 1.334) 0 (1.266 * $body-font-size/3) 0;
     letter-spacing: -0.02rem;
   }
 
