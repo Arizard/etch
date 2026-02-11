@@ -434,6 +434,10 @@ footer#footer {
     margin: 0 auto 0 auto;
     padding: 0 16px 0 16px;
 
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
     .footer-nav-menu {
       display: flex;
       flex-direction: row;
@@ -447,7 +451,6 @@ footer#footer {
     .footer-text,
     .footer-socials {
       text-align: left;
-      text-transform: lowercase;
     }
   }
 
@@ -469,15 +472,6 @@ footer#footer {
     margin-bottom: -6px;
   }
 
-}
-
-@media (min-width: 770px) {
-  footer#footer {
-    .footer-nav-container {
-      flex-direction: row;
-      gap: 8px;
-    }
-  }
 }
 
 @media (prefers-color-scheme: dark) {
