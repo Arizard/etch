@@ -24,7 +24,7 @@ a.posts-list-item {
   .posts-list-heading {
     margin: 16px 0 8px 0;
 
-    font-size: $h3-font-size;
+    font-size: 2rem;
     font-family: $heading-font, sans-serif;
 
     a {
@@ -35,7 +35,6 @@ a.posts-list-item {
     font-weight: bold;
     word-wrap: break-word;
     white-space: normal;
-    letter-spacing: $letter-spacing-headings;
     line-height: 120%;
   }
 
