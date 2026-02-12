@@ -53,6 +53,35 @@ a.posts-list-item {
     margin: 0 -16px 0 -16px;
   }
 
+  .posts-list-hero-placeholder-container {
+    width: 100%;
+    aspect-ratio: 16/9;
+    margin: 0 0 16px 0;
+  }
+
+  .posts-list-hero-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Manrope", sans-serif;
+    font-weight: 600;
+    font-size: 2*$body-font-size;
+    line-height: 120%;
+    text-align: center;
+    margin: 0 -16px 0 -16px;
+    padding: 0 32px 0 32px;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background: #ffccd3;
+    background: linear-gradient(45deg, rgba(255, 204, 211, 1) 0%, rgba(255, 238, 201, 1) 100%);
+
+    @media(prefers-color-scheme: dark) {
+      background: #39245c;
+      background: linear-gradient(45deg, rgba(57, 36, 92, 1) 0%, rgba(29, 77, 79, 1) 100%);
+    }
+  }
+
   .posts-list-subtitle {
     margin-bottom: 16px;
   }
@@ -96,6 +125,7 @@ main#content .posts-list-subtitle {
     gap: 4px;
     align-items: center;
     margin-right: 12px;
+
     .posts-list-pill-label {
       line-height: 1.4rem;
     }
