@@ -3,11 +3,11 @@
   <div class="breadcrumbs-list">
     {{- range .Ancestors.Reverse }}
     {{- if .IsHome -}}
-    <div class="breadcrumbs-item home"><a alt="{{ .Title }}" href="{{ .RelPermalink }}">{{ .Site.Title }}</a></div>
+    <div class="breadcrumbs-item home"><a alt="{{ .Title }}" href="{{ .RelPermalink }}">Index</a></div>
     {{- else -}}
     <div class="breadcrumbs-item"><a alt="{{ .Title }}" href="{{ .RelPermalink }}">{{ .Title }}</a></div>
     {{- end -}}
-    <div class="breadcrumbs-separator">/</div>
+    <div class="breadcrumbs-separator">{{- partial "svg/chevron-right.html" . -}}</div>
     {{- end }}
     <div class="breadcrumbs-item current">{{ .Title }}</div>
   </div>

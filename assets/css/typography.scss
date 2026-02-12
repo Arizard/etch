@@ -22,20 +22,29 @@ ol {
 nav#breadcrumbs {
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 100%;
-  max-width: 770px;
-  margin: 16px auto 16px auto;
-  padding: 0 16px;
+  margin: 16px auto;
+  padding: 0 16px 16px 16px;
   height: 40px;
   white-space: nowrap;
-  font-family: $heading-font;
+  font-family: $body-font;
+  font-size: 90%;
+  border-bottom: 1px solid $body-background-muted;
+
+  @media(prefers-color-scheme: dark) {
+    border-bottom: 1px solid $body-background-dark-muted;
+  }
+
 
   .breadcrumbs-list {
     display: flex;
-    gap: 3px;
+    gap: 12px;
     margin: 0;
     color: $body-text-color;
     width: 100%;
+    max-width: 770px - 32px;
+    align-items: center;
 
     a,
     a:hover,
@@ -60,7 +69,13 @@ nav#breadcrumbs {
     }
 
     .breadcrumbs-separator {
-      font-weight: 400;
+      padding-top: 2px;
+      flex-shrink: 0;
+      width: 14px;
+
+      svg {
+        width: 100%;
+      }
     }
   }
 }
@@ -114,8 +129,9 @@ main#content {
 
   article {
     text-align: left;
-    padding: 0;
     word-spacing: -0.5px;
+
+      padding: 0 14px 0 0;
 
     li {
       hyphens: auto;
@@ -160,7 +176,7 @@ main#content {
 
 main#content {
   margin: 0 auto;
-  padding: 0 16px 0 16px;
+  padding: 0 16px;
   letter-spacing: normal;
 
   article {
@@ -202,7 +218,7 @@ main#content {
   h6 {
     font-family: $heading-font, sans-serif;
     display: block;
-    font-weight: 800;
+    font-weight: 600;
     word-wrap: break-word;
     white-space: normal;
     line-height: 120%;
@@ -255,7 +271,7 @@ main#content {
     letter-spacing: -0.02rem;
   }
 
-  @media(min-width: 770px) {
+  @media(min-width: 771px) {
     h1 {
       font-size: 3.815 * $body-font-size;
       margin: (3.815 * $body-font-size * 1.334) 0 (3.815 * $body-font-size/3) 0;
@@ -294,13 +310,15 @@ main#content {
   }
 
   blockquote {
-    margin-left: -4px;
-    margin-right: 0;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    margin: $body-font-size -14px $body-font-size -10px;
+    padding: .5*$body-font-size 0 .5*$body-font-size 8px;
     border-color: $body-text-color;
     border-left: 2px solid;
     font-style: italic;
+    font-size: 110%;
+    p {
+      margin: 0;
+    }
   }
 
   pre,
@@ -545,7 +563,7 @@ main#content {
 }
 
 @media print,
-screen and (min-width: 770px) {
+screen and (min-width: 771px) {
   main#content {
     .sc-heading-with-sub-label-container {
       display: flex;
@@ -604,8 +622,8 @@ screen and (min-width: 770px) {
   grid-gap: 16px;
   align-items: stretch;
 
-  @media (min-width: 770px) {
-    grid-template-columns: 50% 50%;
+  @media (min-width: 771px) {
+    grid-template-columns: 1fr 1fr;
   }
 
   .posts-list-item {
@@ -614,7 +632,7 @@ screen and (min-width: 770px) {
   }
 }
 
-@media (min-width: 770px) {
+@media (min-width: 771px) {
   main#content .portrait {
     width: 62%;
   }
@@ -700,42 +718,12 @@ main#content .posts-list-subtitle {
 
 // post-hero
 main#content {
-  .post-hero-container {
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    margin: 0 0 24px 0;
-    background-color: $body-background-alt;
-    overflow: hidden;
-    margin: 0 -16px 24px -16px;
-
-    .post-hero {
-      background-size: cover;
-      width: auto;
-      aspect-ratio: 5/4;
-      margin: 0;
-      background-position: center;
-    }
-
-    .post-header {
-      margin: 0;
-
-      h1 {
-        margin: 0;
-        display: inline-block;
-        width: 100%;
-        padding: 16px;
-        margin: 0;
-      }
-    }
-
-    .post-hero-attribution {
-      padding: 4px 16px;
-      text-align: right;
-      font-size: 80%;
-    }
+  .post-header {
+    margin-bottom: 24px;
   }
 }
 
-@media (min-width: 770px) {
+@media (min-width: 771px) {
   main#content {
     .post-hero-container {
       border-radius: $default-radius;

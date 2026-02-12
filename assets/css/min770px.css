@@ -2,7 +2,7 @@ main#content {
   width: 100%;
 }
 
-@media (min-width: 770px) {
+@media (min-width: 771px) {
   html {
     width: 100vw;
     overflow-x: hidden;
