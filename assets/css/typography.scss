@@ -24,9 +24,9 @@ nav#breadcrumbs {
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin: 16px auto;
-  padding: 0 16px 16px 16px;
-  height: 40px;
+  margin: 0 auto 16px auto;
+  padding: 16px;
+  height: 60px;
   white-space: nowrap;
   font-family: $body-font;
   font-size: 90%;
@@ -103,6 +103,16 @@ body {
   line-height: $body-line-height;
   font-size: $body-font-size;
   font-weight: $body-font-weight;
+
+  .gradient-surface {
+    position: absolute;
+    width: 100%;
+    height: 101vw;
+    z-index: -999;
+    transform-origin: top;
+    transform: scale(1, 0.70);
+    opacity: 0.5;
+  }
 }
 
 body.single {
@@ -120,6 +130,17 @@ body.single {
     }
   }
 
+  .gradient-surface {
+    background: radial-gradient(farthest-side circle at 100% 0, $body-background-muted 0%, $body-background-alt 90%);
+
+    @media(prefers-color-scheme: dark) {
+      background: radial-gradient(farthest-side circle at 0 0, $body-background-dark-muted 0%, $body-background-dark-alt 90%);
+    }
+  }
+}
+
+:not(.single) > .gradient-surface {
+  display: none;
 }
 
 main#content {
@@ -131,7 +152,7 @@ main#content {
     text-align: left;
     word-spacing: -0.5px;
 
-      padding: 0 14px 0 0;
+    padding: 0 14px 0 0;
 
     li {
       hyphens: auto;
@@ -316,6 +337,7 @@ main#content {
     border-left: 2px solid;
     font-style: italic;
     font-size: 110%;
+
     p {
       margin: 0;
     }
