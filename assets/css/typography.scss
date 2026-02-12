@@ -597,6 +597,11 @@ screen and (min-width: 771px) {
   a {
     text-decoration-thickness: 1px;
   }
+
+  .terms-cloud-item {
+    flex-grow: 0 !important;
+  }
+
 }
 
 .index-label-latest-post {
