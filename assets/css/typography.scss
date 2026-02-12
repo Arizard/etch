@@ -309,7 +309,7 @@ main#content {
   }
 
   blockquote {
-    margin: $body-font-size -20px $body-font-size -4px;
+    margin: $body-font-size 0 $body-font-size -4px;
     padding: .5*$body-font-size 0 .5*$body-font-size 8px;
     border-color: $body-text-color;
     border-left: 2px solid;
