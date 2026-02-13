@@ -18,7 +18,7 @@
     background-color: $body-background-alt;
 
     @media (prefers-color-scheme: dark) {
-      background-color: $body-background-dark-alt;
+      background-color: $body-background-dark-muted;
     }
   }
 
@@ -160,13 +160,13 @@
 
       &:disabled {
         color: $body-text-color-muted-dark;
-        border-color: $body-background-dark-alt;
+        border-color: $body-background-dark-muted;
         background-color: transparent;
 
         svg {
           path {
-            stroke: $body-background-dark-alt;
-            fill: $body-background-dark-alt;
+            stroke: $body-background-dark-muted;
+            fill: $body-background-dark-muted;
           }
         }
       }
@@ -408,15 +408,15 @@
 @media (prefers-color-scheme: dark) {
   .gomments-container {
     form {
-      border-color: $body-background-dark-alt;
-      background-color: $body-background-dark-alt-1;
+      border-color: $body-background-dark-muted;
+      background-color: $body-background-dark;
     }
 
     input[type="text"],
     input[type="password"],
     textarea {
       border: none;
-      background-color: $body-background-dark-alt-1;
+      background-color: $body-background-dark;
       color: white;
 
       &::placeholder {
