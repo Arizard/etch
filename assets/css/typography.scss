@@ -176,7 +176,7 @@ main#content {
 main#content {
   margin: 0 auto;
   padding: 0 16px;
-  letter-spacing: normal;
+  letter-spacing: -0.5px;
 
   article {
     p {
@@ -221,7 +221,6 @@ main#content {
     word-wrap: break-word;
     white-space: normal;
     line-height: 120%;
-    text-wrap: balance;
     hyphens: none;
     text-align: left;
   }

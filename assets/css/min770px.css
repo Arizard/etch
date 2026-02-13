@@ -13,6 +13,12 @@ main#content {
     margin: 0 auto 0 auto !important;
   }
 
+  body.single {
+    .main-container {
+      padding: 0 40px;
+    }
+  }
+
   main#content {
     width: 100%;
     margin: 0 auto 0 0 !important;
