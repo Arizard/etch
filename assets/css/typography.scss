@@ -41,7 +41,7 @@ nav#breadcrumbs {
     display: flex;
     gap: 12px;
     margin: 0;
-    color: $body-text-color;
+    color: $link-text-color;
     width: 100%;
     max-width: 770px - 32px;
     align-items: center;
@@ -49,7 +49,7 @@ nav#breadcrumbs {
     a,
     a:hover,
     a:visited {
-      color: $body-text-color;
+      color: $link-text-color;
       text-decoration: underline;
       text-decoration-thickness: 1px;
     }
@@ -75,6 +75,14 @@ nav#breadcrumbs {
 
       svg {
         width: 100%;
+
+        polyline {
+          stroke: $link-text-color;
+
+          @media(prefers-color-scheme: dark) {
+            stroke: $link-text-color-dark;
+          }
+        }
       }
     }
   }
@@ -83,12 +91,12 @@ nav#breadcrumbs {
 @media (prefers-color-scheme: dark) {
   nav#breadcrumbs {
     .breadcrumbs-list {
-      color: $body-text-color-dark;
+      color: $link-text-color-dark;
 
       a,
       a:hover,
       a:visited {
-        color: $body-text-color-dark;
+        color: $link-text-color-dark;
       }
     }
   }
@@ -223,9 +231,31 @@ main#content {
     line-height: 120%;
     hyphens: none;
     text-align: left;
+    color: $heading-text-color;
+
+    @media(prefers-color-scheme: dark) {
+      color: $heading-text-color-dark;
+    }
+
+    a {
+      color: $heading-text-color;
+
+      @media(prefers-color-scheme: dark) {
+        color: $heading-text-color-dark;
+      }
+
+    }
   }
 
   .about-me-container {
+    a {
+      color: $heading-text-color;
+
+      @media(prefers-color-scheme: dark) {
+        color: $heading-text-color-dark;
+      }
+    }
+
     h1 {
       font-size: 3.815 * $body-font-size;
       margin: (3.815 * $body-font-size/2) 0 (3.815 * $body-font-size/3) 0;
@@ -309,11 +339,16 @@ main#content {
 
   blockquote {
     margin: $body-font-size 0 $body-font-size -4px;
-    padding: .5*$body-font-size 0 .5*$body-font-size 8px;
-    border-color: $body-text-color;
+    padding: 0 0 $body-font-size 8px;
     border-left: 2px solid;
     font-style: italic;
     font-size: 110%;
+
+    border-color: $body-text-color;
+
+    @media(prefers-color-scheme: dark) {
+      border-color: $body-text-color-dark;
+    }
 
     p {
       margin: 0;
@@ -442,7 +477,7 @@ footer#footer {
   a {
     text-decoration: underline;
     text-decoration-thickness: 1px;
-    color: $body-text-color;
+    color: $link-text-color;
   }
 
   a:hover {
@@ -506,6 +541,23 @@ footer#footer {
       }
     }
   }
+
+  footer#footer {
+    color: $body-text-color-dark;
+    background-color: $body-background-dark-alt;
+
+    a {
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      color: $link-text-color-dark;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+    }
+  }
+
 }
 
 .text-centered {
@@ -726,6 +778,28 @@ main#content .posts-list-subtitle {
 main#content {
   .post-header {
     margin-bottom: 24px;
+  }
+
+  .byline {
+    display: flex;
+    gap: 16px;
+    margin: 0 0 (2.027 * $body-font-size/3) 0;
+    font-style: italic;
+    font-size: 90%;
+
+    .author {
+      font-weight: 700;
+    }
+
+    color: $body-text-color-muted;
+
+    @media(prefers-color-scheme: dark) {
+      color: $body-text-color-muted-dark;
+    }
+
+    @media(min-width: 771px) {
+      margin: 0 0 (3.815 * $body-font-size/3) 0;
+    }
   }
 }
 

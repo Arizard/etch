@@ -3,6 +3,10 @@
 <header class="post-header">
   <h1>{{ .Title }}</h1>
 </header>
+<div class="byline">
+  <div class="author">{{- with .Params.Author -}}{{- . -}}{{- end -}}</div>
+  {{- with .Page.Params.Date -}}<div><time>{{ .Format "2 January 2006" }}</time></div>{{- end -}}
+</div>
 <article>
   {{- .Content -}}
 </article>

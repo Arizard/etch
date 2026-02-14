@@ -26,20 +26,6 @@
     color: $body-text-color-dark;
   }
 
-  footer#footer {
-    color: $body-text-color-dark;
-    background-color: $body-background-dark-alt;
-    a {
-      text-decoration: underline;
-      text-decoration-thickness: 1px;
-      color: $body-text-color-dark;
-    }
-    a:hover {
-      text-decoration: underline;
-      text-decoration-thickness: 1px;
-    }
-  }
-
   main#content .footnotes {
     hr {
       background: $body-text-color-dark;

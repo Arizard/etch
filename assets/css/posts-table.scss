@@ -74,11 +74,11 @@ a.posts-list-item {
     background-size: cover;
     background-position: center;
     background: #ffccd3;
-    background: linear-gradient(45deg, rgba(255, 204, 211, 1) 0%, rgba(255, 238, 201, 1) 100%);
+    background: linear-gradient(45deg, #EADFD7 0%, #CFBAAB 100%);
 
     @media(prefers-color-scheme: dark) {
       background: #39245c;
-      background: linear-gradient(45deg, rgba(57, 36, 92, 1) 0%, rgba(29, 77, 79, 1) 100%);
+      background: linear-gradient(45deg, #3F3427 0%, #6F5B49 100%);
     }
   }
 
@@ -96,6 +96,14 @@ a.posts-list-item {
 a.posts-list-item:hover,
 a.posts-list-item:active {
   text-decoration: none;
+}
+
+main#content a.posts-list-item {
+  color: $body-text-color;
+
+  @media(prefers-color-scheme: dark) {
+    color: $body-text-color-dark;
+  }
 }
 
 main#content .posts-list-subtitle {

@@ -1,7 +1,8 @@
 $accent-color: #ff4757;
 $accent-color-light: #ff6b81;
 
-$heading-text-color: #000000;
+$heading-text-color: #3F3427; //#564639;
+$link-text-color: #3F3427;
 
 $body-text-color: #000000;
 $body-text-color-muted: #7B6551;
@@ -12,11 +13,14 @@ $body-background-alt-1: #FFFFFF;
 $secondary-color: #566246;
 
 /* Dark */
+$heading-text-color-dark: #EADFD7; //#564639;
+$link-text-color-dark: #CFBAAB;
+
 $body-text-color-dark: #ffffff;
-$body-text-color-muted-dark: #ced6e0;
-$body-background-dark-alt: #002029; //#0f172a;
-$body-background-dark-muted: #1F3E46; //#005066;
-$body-background-dark: #092B34; //#00303d; //#1e293b;
+$body-text-color-muted-dark: #CFBAAB;
+$body-background-dark-alt: #261F17; //#0f172a;
+$body-background-dark-muted: #4B3D30; //#005066;
+$body-background-dark: #392E24; //#00303d; //#1e293b;
 $body-background-dark-alt-1: #335057;//#00607A;
 $secondary-color-dark: #9fffcb; //#80FFDB;
 
