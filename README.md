@@ -19,3 +19,10 @@ npm install
 
 This copies dependencies from the theme's `package.hugo.json` into your project's `package.json`, then installs them.
 
+## Syntax highlighting
+
+`hugo gen chromastyles`
+
+```
+hugo gen chromastyles --style="gruvbox" > assets/css/syntax-dark.css
+```

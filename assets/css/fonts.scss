@@ -33,6 +33,14 @@
 @font-face {
   font-family: 'Inconsolata';
   font-display: swap;
+  font-weight: 400;
+  src: local('Inconsolata for Powerline'), url('/fonts/inconsolata/Inconsolata.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inconsolata';
+  font-display: swap;
+  font-weight: 700;
   src: local('Inconsolata for Powerline'), url('/fonts/inconsolata/Inconsolata.woff2') format('woff2');
 }
 

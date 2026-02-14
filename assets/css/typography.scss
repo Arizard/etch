@@ -782,8 +782,8 @@ main#content {
 
   .byline {
     display: flex;
-    gap: 16px;
-    margin: 0 0 (2.027 * $body-font-size/3) 0;
+    gap: 8px;
+    margin: 0 0 24px 0;
     font-style: italic;
     font-size: 90%;
 
@@ -795,10 +795,6 @@ main#content {
 
     @media(prefers-color-scheme: dark) {
       color: $body-text-color-muted-dark;
-    }
-
-    @media(min-width: 771px) {
-      margin: 0 0 (3.815 * $body-font-size/3) 0;
     }
   }
 }
