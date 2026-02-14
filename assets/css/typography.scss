@@ -337,24 +337,6 @@ main#content {
     }
   }
 
-  blockquote {
-    margin: $body-font-size 0 $body-font-size -4px;
-    padding: 0 0 $body-font-size 8px;
-    border-left: 2px solid;
-    font-style: italic;
-    font-size: 110%;
-
-    border-color: $body-text-color;
-
-    @media(prefers-color-scheme: dark) {
-      border-color: $body-text-color-dark;
-    }
-
-    p {
-      margin: 0;
-    }
-  }
-
   pre,
   pre.chroma {
     padding: 1rem 1rem;
