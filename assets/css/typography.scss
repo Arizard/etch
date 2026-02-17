@@ -141,7 +141,6 @@ main#content {
     padding: 0 14px 0 0;
 
     li {
-      hyphens: auto;
       text-align: justify;
     }
 
@@ -156,8 +155,6 @@ main#content {
     }
 
     p {
-      hyphens: auto;
-
       text-align: justify;
     }
 
@@ -189,7 +186,6 @@ main#content {
   article {
     p {
       a {
-        hyphens: auto;
         word-wrap: break-word;
       }
     }
