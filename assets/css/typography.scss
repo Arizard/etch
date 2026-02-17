@@ -370,15 +370,6 @@ main#content {
     }
   }
 
-  .footnotes {
-    hr {
-      /* used in footnotes only */
-      border: 0;
-      height: 1px;
-      background: $body-text-color;
-    }
-  }
-
   table {
     min-width: 500px;
   }

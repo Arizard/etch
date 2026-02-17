@@ -24,10 +24,6 @@ pre {
     padding: 0;
 }
 
-.footnotes a {
-    line-break: anywhere;
-}
-
 .nowrap {
     white-space: nowrap;
 }
