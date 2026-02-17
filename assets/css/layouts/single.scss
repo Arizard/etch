@@ -1,19 +1,21 @@
 main#content {
-  blockquote {
-    margin: $body-font-size 0 $body-font-size -4px;
-    padding: 0 0 0 12px;
-    border-left: 3px solid;
-    font-style: italic;
-    font-size: 110%;
+  article {
+    blockquote {
+      margin: $body-font-size 0 $body-font-size -9.5px;
+      padding: 0 0 0 12px;
+      border-left: 3px solid;
+      font-style: italic;
+      font-size: 110%;
 
-    border-color: $body-text-color;
+      border-color: $body-text-color;
 
-    @media(prefers-color-scheme: dark) {
-      border-color: $body-text-color-dark;
-    }
+      @media(prefers-color-scheme: dark) {
+        border-color: $body-text-color-dark;
+      }
 
-    p {
-      margin: 0;
+      p {
+        margin: 0;
+      }
     }
   }
 }

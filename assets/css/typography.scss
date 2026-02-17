@@ -138,10 +138,11 @@ main#content {
     text-align: left;
     word-spacing: -0.5px;
 
-    padding: 0 14px 0 0;
+    padding: 0;
 
     li {
       text-align: justify;
+      word-spacing: -1px;
     }
 
     li+li {
@@ -156,6 +157,7 @@ main#content {
 
     p {
       text-align: justify;
+      word-spacing: -1px;
     }
 
     ol {
