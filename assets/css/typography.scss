@@ -181,7 +181,6 @@ main#content {
 
 main#content {
   margin: 0 auto;
-  padding: 0 32px;
   letter-spacing: normal;
 
   article {
@@ -857,4 +856,14 @@ main#content {
 
 .heading-anchor {
   text-decoration: none !important;
+}
+
+body.single {
+  main#content {
+    padding: 0 32px;
+  }
+}
+
+main#content {
+  padding: 0 16px;
 }
