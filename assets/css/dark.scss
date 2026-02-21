@@ -3,11 +3,11 @@
     color: $body-text-color-dark;
     background: $body-background-dark;
   }
-  main#content p {
+  main p {
     color: $body-text-color-dark;
   }
 
-  main#content {
+  main {
     figure {
       color: $body-text-color-dark;
       figcaption {
@@ -22,7 +22,7 @@
     color: $body-text-color-muted-dark;
   }
 
-  main#content a {
+  main a {
     color: $body-text-color-dark;
   }
 
@@ -34,7 +34,7 @@
     }
   }
 
-  main#content {
+  main {
     .post-hero-container {
       background-color: $body-background-dark-alt;
     }

@@ -129,7 +129,7 @@ body.single {
   }
 }
 
-main#content {
+main {
   .post-header {
     padding: 0;
   }
@@ -179,7 +179,7 @@ main#content {
   }
 }
 
-main#content {
+main {
   margin: 0 auto;
   letter-spacing: normal;
 
@@ -568,7 +568,7 @@ footer#footer {
 }
 
 /* shortcodes */
-main#content {
+main {
   .sc-sub-label {
     line-height: 80%;
     text-transform: uppercase;
@@ -584,7 +584,7 @@ main#content {
 
 @media print,
 screen and (min-width: 771px) {
-  main#content {
+  main {
     .sc-heading-with-sub-label-container {
       display: flex;
       padding: $body-line-height/2 0 $body-line-height/2 0;
@@ -658,7 +658,7 @@ screen and (min-width: 771px) {
 }
 
 @media (min-width: 771px) {
-  main#content .portrait {
+  main .portrait {
     width: 62%;
   }
 
@@ -738,13 +738,13 @@ screen and (min-width: 771px) {
 
 }
 
-main#content .posts-list-subtitle {
+main .posts-list-subtitle {
   text-align: left;
   hyphens: none;
 }
 
 // post-hero
-main#content {
+main {
   .post-header {
     margin-bottom: 24px;
   }
@@ -769,7 +769,7 @@ main#content {
 }
 
 @media (min-width: 771px) {
-  main#content {
+  main {
     .post-hero-container {
       border-radius: $default-radius;
 
@@ -859,11 +859,11 @@ main#content {
 }
 
 body.single {
-  main#content {
+  main {
     padding: 0 32px;
   }
 }
 
-main#content {
+main {
   padding: 0 16px;
 }

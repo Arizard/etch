@@ -98,7 +98,7 @@ a.posts-list-item:active {
   text-decoration: none;
 }
 
-main#content a.posts-list-item {
+main a.posts-list-item {
   color: $body-text-color;
 
   @media(prefers-color-scheme: dark) {
@@ -106,7 +106,7 @@ main#content a.posts-list-item {
   }
 }
 
-main#content .posts-list-subtitle {
+main .posts-list-subtitle {
   p:last-child {
     margin-bottom: 0;
   }
