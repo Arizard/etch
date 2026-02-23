@@ -631,13 +631,13 @@ screen and (min-width: 771px) {
 }
 
 .front-matter {
-  margin: 48px 0 96px 0;
-  text-align: left;
-  font-size: 80%;
-  line-height: 130%;
+  font-style: italic;
+  color: $body-text-color-muted;
+  margin: 96px 0 96px 0;
+  font-size: 90%;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 0px;
 }
 
 @media (prefers-color-scheme: dark) {}
@@ -751,13 +751,18 @@ main {
 
   .byline {
     display: flex;
-    gap: 8px;
+    flex-wrap: wrap;
+    gap: 0 8px;
     margin: 0 0 24px 0;
     font-style: italic;
     font-size: 90%;
 
     .author {
       font-weight: 700;
+    }
+
+    .hero-attribution {
+      width: 100%;
     }
 
     color: $body-text-color-muted;
@@ -771,8 +776,6 @@ main {
 @media (min-width: 771px) {
   main {
     .post-hero-container {
-      border-radius: $default-radius;
-
       .post-hero {
         aspect-ratio: 16/9;
       }

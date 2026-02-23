@@ -6,11 +6,15 @@
 <div class="byline">
   <div class="author">{{- with .Params.Author -}}{{- . -}}{{- end -}}</div>
   {{- with .Page.Params.Date -}}<div><time>{{ .Format "2 January 2006" }}</time></div>{{- end -}}
+  {{- if .Page.Params.hero_attribution -}}
+  <div class="hero-attribution">
+    <span>{{ .RenderString .Page.Params.hero_attribution }}</span>
+  </div>
+  {{- end -}}
 </div>
 <article>
   {{- .Content -}}
 </article>
-{{- partial "front-matter.html" . -}}
 {{- if not .Params.nocomment -}}
 <div id="gomments-container">
 </div>
