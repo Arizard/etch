@@ -15,7 +15,7 @@ export default function Reply({
 
   return (
     <div className="reply-card-container">
-      <div className={`reply-card-avatar ${tripColorClass}`}></div>
+    <div className={`reply-card-avatar ${tripColorClass}`}><div>{authorName.charAt(0).toUpperCase()}</div></div>
       <div className="reply-card-chat-bubble">
         <div
           className={`reply-card ${isAttention ? 'attention' : ''}`}

@@ -215,9 +215,11 @@
   font-size: $body-font-size;
 
   background-color: $body-background-alt-1;
+
   @media (prefers-color-scheme: dark) {
     background-color: $body-background-dark;
   }
+
   border-radius: 12px;
   width: 100%;
 }
@@ -238,6 +240,15 @@
   height: 30px;
   width: 30px;
   flex-shrink: 0;
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 2px;
+  font-weight: bold;
+  color: $body-text-color-dark;
+
+  @media (prefers-color-scheme: dark) {
+    color: $body-text-color;
+  }
 }
 
 .reply-created-at {
