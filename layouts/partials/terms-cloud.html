@@ -2,17 +2,16 @@
 <div class="terms-cloud">
   {{- if .all -}}
   {{- $postCount := (where site.RegularPages "Section" "posts").Len -}}
-  {{- if .isPostsSection -}} <a class="terms-cloud-item selected" href="/posts/"
-    data-umami-event="See All Posts">all posts ({{- $postCount }})</a>
+  {{- if .isPostsSection -}} <a class="terms-cloud-item selected" href="/posts/">all posts ({{- $postCount }})</a>
   {{- else -}}
-  <a class="terms-cloud-item" href="/posts/" data-umami-event="See All Posts">all posts ({{- $postCount }})</a>
+  <a class="terms-cloud-item" href="/posts/">all posts ({{- $postCount }})</a>
   {{- end -}}
   {{- end -}}
   {{ range .tags }}
   {{ if eq page.Name .Page.Name }}
-  <a class="terms-cloud-item selected" href="/posts/" data-umami-event="De-select Tag {{ .Page.Name }}">
+  <a class="terms-cloud-item selected" href="/posts/">
     {{ else }}
-    <a class="terms-cloud-item" href="{{ .Page.RelPermalink }}" data-umami-event="Select Tag {{ .Page.Name }}">
+    <a class="terms-cloud-item" href="{{ .Page.RelPermalink }}">
       {{ end }}
       #{{ .Page.Name }} ({{ .Count }})
     </a>

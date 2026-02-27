@@ -1,5 +1,4 @@
-<a href="{{ .Permalink }}" class="posts-list-item" data-umami-event="Post Item"
-    data-umami-event-target-page-title="{{ .Title }}">
+<a href="{{ .Permalink }}" class="posts-list-item">
     {{- if .Page.Resources.Get .Params.hero -}}
     <div class="posts-list-hero-container">
         {{- with .Page.Resources.Get .Params.hero -}}

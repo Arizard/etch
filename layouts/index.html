@@ -13,7 +13,7 @@
 </div>
 <div class="index-see-all-posts terms-cloud">
     {{- $postCount := (where site.RegularPages "Section" "posts").Len -}}
-    <a class="terms-cloud-item" href="/posts/" data-umami-event="See All Posts">see all posts ({{- $postCount }})</a>
+    <a class="terms-cloud-item" href="/posts/">see all posts ({{- $postCount }})</a>
 </div>
 {{- if .Site.Params.tags_on_index -}}
 <h4>Tags</h4>
