@@ -185,9 +185,7 @@
 // Reply Feed Styles
 // =============================================================================
 
-.reply-feed {
-  max-width: 600px;
-}
+.reply-feed {}
 
 .loading-fill,
 .error-fill {
@@ -213,21 +211,55 @@
 
 .reply-card {
   line-height: $body-line-height;
-  padding: 2px 16px;
+  padding: 10px 14px;
   font-size: $body-font-size;
+
+  background-color: $body-background-alt-1;
+  @media (prefers-color-scheme: dark) {
+    background-color: $body-background-dark;
+  }
+  border-radius: 12px;
+  width: 100%;
+}
+
+.reply-card-chat-bubble {
+  width: 100%;
+}
+
+.reply-card-container {
+  display: flex;
+  gap: 6px;
   margin-bottom: 14px;
+}
 
-  border-left: solid 4px transparent;
+.reply-card-avatar {
+  background-color: $body-background-alt-1;
+  border-radius: 100%;
+  height: 30px;
+  width: 30px;
+  flex-shrink: 0;
+}
 
-  max-width: 600px;
+.reply-created-at {
+  font-size: $body-font-size * 0.8;
+  display: block;
+  color: $body-text-color-muted;
+  padding: 0;
+  margin: 4px 0;
+  font-family: $body-font;
+  font-style: italic;
+  text-overflow: ellipsis;
+  text-align: right;
+  width: 100%;
 
-  margin-left: -6px;
-  margin-right: 0;
+  @media (prefers-color-scheme: dark) {
+    color: $body-text-color-muted-dark;
+  }
 }
 
 .reply-card-heading-lockup {
   display: flex;
-  gap: 6px;
+  gap: 12px;
   margin-bottom: 6px;
   align-items: center;
 
@@ -240,32 +272,9 @@
     font-family: $body-font, sans-serif;
     font-weight: bold;
   }
-
-  .tripcode {
-    font-size: $body-font-size * 0.8;
-    font-family: $body-font, sans-serif;
-    letter-spacing: 0;
-    opacity: 0.5;
-  }
-
-  .reply-created-at {
-    font-size: $body-font-size * 0.8;
-    display: block;
-    color: $body-text-color-muted;
-    padding: 0;
-    margin: 0;
-    font-family: $body-font;
-    font-style: italic;
-    text-overflow: ellipsis;
-
-    @media (prefers-color-scheme: dark) {
-      color: $body-text-color-muted-dark;
-    }
-  }
 }
 
 .reply-card-body {
-  margin-bottom: 12px;
   font-family: $body-font, sans-serif;
   white-space: pre-wrap;
   word-break: break-word;
@@ -276,126 +285,126 @@
 // =============================================================================
 
 .tripcode-color-anon {
-  border-color: #888;
+  background-color: #888;
 }
 
 .tripcode-color-0 {
-  border-color: #e53935;
+  background-color: #e53935;
 }
 
 // red
 .tripcode-color-1 {
-  border-color: #d81b60;
+  background-color: #d81b60;
 }
 
 // pink
 .tripcode-color-2 {
-  border-color: #8e24aa;
+  background-color: #8e24aa;
 }
 
 // purple
 .tripcode-color-3 {
-  border-color: #5e35b1;
+  background-color: #5e35b1;
 }
 
 // deep purple
 .tripcode-color-4 {
-  border-color: #3949ab;
+  background-color: #3949ab;
 }
 
 // indigo
 .tripcode-color-5 {
-  border-color: #1e88e5;
+  background-color: #1e88e5;
 }
 
 // blue
 .tripcode-color-6 {
-  border-color: #039be5;
+  background-color: #039be5;
 }
 
 // light blue
 .tripcode-color-7 {
-  border-color: #00acc1;
+  background-color: #00acc1;
 }
 
 // cyan
 .tripcode-color-8 {
-  border-color: #00897b;
+  background-color: #00897b;
 }
 
 // teal
 .tripcode-color-9 {
-  border-color: #43a047;
+  background-color: #43a047;
 }
 
 // green
 .tripcode-color-10 {
-  border-color: #7cb342;
+  background-color: #7cb342;
 }
 
 // light green
 .tripcode-color-11 {
-  border-color: #c0ca33;
+  background-color: #c0ca33;
 }
 
 // lime
 .tripcode-color-12 {
-  border-color: #fdd835;
+  background-color: #fdd835;
 }
 
 // yellow
 .tripcode-color-13 {
-  border-color: #ffb300;
+  background-color: #ffb300;
 }
 
 // amber
 .tripcode-color-14 {
-  border-color: #fb8c00;
+  background-color: #fb8c00;
 }
 
 // orange
 .tripcode-color-15 {
-  border-color: #f4511e;
+  background-color: #f4511e;
 }
 
 // deep orange
 .tripcode-color-16 {
-  border-color: #6d4c41;
+  background-color: #6d4c41;
 }
 
 // brown
 .tripcode-color-17 {
-  border-color: #757575;
+  background-color: #757575;
 }
 
 // grey
 .tripcode-color-18 {
-  border-color: #546e7a;
+  background-color: #546e7a;
 }
 
 // blue grey
 .tripcode-color-19 {
-  border-color: #c62828;
+  background-color: #c62828;
 }
 
 // red 800
 .tripcode-color-20 {
-  border-color: #ad1457;
+  background-color: #ad1457;
 }
 
 // pink 800
 .tripcode-color-21 {
-  border-color: #6a1b9a;
+  background-color: #6a1b9a;
 }
 
 // purple 800
 .tripcode-color-22 {
-  border-color: #283593;
+  background-color: #283593;
 }
 
 // indigo 800
 .tripcode-color-23 {
-  border-color: #1565c0;
+  background-color: #1565c0;
 }
 
 // blue 800
@@ -438,126 +447,126 @@
 
   // Tripcode Colors - Dark Mode (bright, pops on dark background)
   .tripcode-color-anon {
-    border-color: #aaa;
+    background-color: #aaa;
   }
 
   .tripcode-color-0 {
-    border-color: #ff5252;
+    background-color: #ff5252;
   }
 
   // red
   .tripcode-color-1 {
-    border-color: #ff4081;
+    background-color: #ff4081;
   }
 
   // pink
   .tripcode-color-2 {
-    border-color: #e040fb;
+    background-color: #e040fb;
   }
 
   // purple
   .tripcode-color-3 {
-    border-color: #7c4dff;
+    background-color: #7c4dff;
   }
 
   // deep purple
   .tripcode-color-4 {
-    border-color: #536dfe;
+    background-color: #536dfe;
   }
 
   // indigo
   .tripcode-color-5 {
-    border-color: #448aff;
+    background-color: #448aff;
   }
 
   // blue
   .tripcode-color-6 {
-    border-color: #40c4ff;
+    background-color: #40c4ff;
   }
 
   // light blue
   .tripcode-color-7 {
-    border-color: #18ffff;
+    background-color: #18ffff;
   }
 
   // cyan
   .tripcode-color-8 {
-    border-color: #64ffda;
+    background-color: #64ffda;
   }
 
   // teal
   .tripcode-color-9 {
-    border-color: #69f0ae;
+    background-color: #69f0ae;
   }
 
   // green
   .tripcode-color-10 {
-    border-color: #b2ff59;
+    background-color: #b2ff59;
   }
 
   // light green
   .tripcode-color-11 {
-    border-color: #eeff41;
+    background-color: #eeff41;
   }
 
   // lime
   .tripcode-color-12 {
-    border-color: #ffff00;
+    background-color: #ffff00;
   }
 
   // yellow
   .tripcode-color-13 {
-    border-color: #ffd740;
+    background-color: #ffd740;
   }
 
   // amber
   .tripcode-color-14 {
-    border-color: #ffab40;
+    background-color: #ffab40;
   }
 
   // orange
   .tripcode-color-15 {
-    border-color: #ff6e40;
+    background-color: #ff6e40;
   }
 
   // deep orange
   .tripcode-color-16 {
-    border-color: #bcaaa4;
+    background-color: #bcaaa4;
   }
 
   // brown
   .tripcode-color-17 {
-    border-color: #b0bec5;
+    background-color: #b0bec5;
   }
 
   // blue grey
   .tripcode-color-18 {
-    border-color: #ff8a80;
+    background-color: #ff8a80;
   }
 
   // red accent
   .tripcode-color-19 {
-    border-color: #ea80fc;
+    background-color: #ea80fc;
   }
 
   // purple accent
   .tripcode-color-20 {
-    border-color: #8c9eff;
+    background-color: #8c9eff;
   }
 
   // indigo accent
   .tripcode-color-21 {
-    border-color: #80d8ff;
+    background-color: #80d8ff;
   }
 
   // light blue accent
   .tripcode-color-22 {
-    border-color: #a7ffeb;
+    background-color: #a7ffeb;
   }
 
   // teal accent
   .tripcode-color-23 {
-    border-color: #ccff90;
+    background-color: #ccff90;
   }
 
   // light green accent

@@ -14,15 +14,20 @@ export default function Reply({
     signature && signature !== '' ? `#${signature.slice(0, 15)}` : '';
 
   return (
-    <div
-      className={`reply-card ${tripColorClass} ${isAttention ? 'attention' : ''}`}
-      title={`ID: ${id}, ${timeAgoExact(date)} at ${date.toLocaleString()}`}
-    >
-      <div className="reply-card-heading-lockup">
-        <div className={`name-pill`}>{authorName}</div>
+    <div className="reply-card-container">
+      <div className={`reply-card-avatar ${tripColorClass}`}></div>
+      <div className="reply-card-chat-bubble">
+        <div
+          className={`reply-card ${isAttention ? 'attention' : ''}`}
+          title={`ID: ${id}, ${timeAgoExact(date)} at ${date.toLocaleString()}`}
+        >
+          <div className="reply-card-heading-lockup">
+            <div className={`name-pill`}>{authorName}</div>
+          </div>
+          <div className="reply-card-body">{body}</div>
+        </div>
         <div className="reply-created-at">{timeAgoExact(date).toLowerCase()}</div>
       </div>
-      <div className="reply-card-body">{body}</div>
     </div>
   );
 }
