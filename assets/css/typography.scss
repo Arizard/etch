@@ -165,16 +165,6 @@ main {
 
     ul {
       padding-left: 30px;
-      list-style: none;
-      list-style-position: outside;
-
-      li::before {
-        content: "–";
-        display: inline-block;
-        width: 1.5rem;
-        margin-right: 0;
-        margin-left: -1.5rem;
-      }
     }
   }
 }
@@ -190,7 +180,6 @@ main {
       }
     }
   }
-
 
   sup,
   sub {

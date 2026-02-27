@@ -191,7 +191,7 @@
 
 .loading-fill,
 .error-fill {
-  font-family: $heading-font, sans-serif;
+  font-family: $body-font, sans-serif;
   text-transform: lowercase;
   text-align: center;
   font-weight: bold;
@@ -236,14 +236,14 @@
     align-items: center;
     gap: 6px;
     margin: 0;
-    font-size: 0.8 * $body-font-size;
-    font-family: $heading-font, sans-serif;
+    font-size: $body-font-size;
+    font-family: $body-font, sans-serif;
     font-weight: bold;
   }
 
   .tripcode {
     font-size: $body-font-size * 0.8;
-    font-family: $heading-font, sans-serif;
+    font-family: $body-font, sans-serif;
     letter-spacing: 0;
     opacity: 0.5;
   }
@@ -254,7 +254,7 @@
     color: $body-text-color-muted;
     padding: 0;
     margin: 0;
-    font-family: $body-font, sans-serif;
+    font-family: $body-font;
     font-style: italic;
     text-overflow: ellipsis;
 

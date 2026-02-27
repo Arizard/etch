@@ -1,6 +1,6 @@
 main {
   article {
-    blockquote {
+    blockquote:not(.alert) {
       margin: $body-font-size 0 $body-font-size -9.5px;
       padding: 0 0 0 12px;
       border-left: 3px solid;
@@ -17,6 +17,180 @@ main {
         margin: 0;
       }
     }
+
+    .alert {
+      border: 1px solid;
+      border-radius: 6px;
+
+      p {
+        text-align: left;
+        margin-right: 24px;
+      }
+
+      padding: $body-font-size * 0.5 $body-font-size * 0.8;
+      margin-bottom: $body-font-size;
+
+      border-color: $body-background-muted;
+      background-color: $body-background;
+
+      p {
+        color: $body-text-color-muted;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        border-color: $body-background-dark-muted;
+        background-color: $body-background-dark;
+
+        p {
+          color: $body-text-color-muted-dark;
+        }
+      }
+
+      .alert-heading {
+        margin: 0;
+        font-weight: 700;
+      }
+
+      p:last-child {
+        margin-bottom: 0;
+      }
+
+      // Note: dusty slate-blue
+      &.alert-note {
+        border-color: #C2D0D8;
+        background-color: #D8E3EA;
+
+        p {
+          color: #3D5563;
+        }
+
+        .alert-heading {
+          color: #2E4554;
+        }
+
+        @media (prefers-color-scheme: dark) {
+          border-color: #3D5563;
+          background-color: #1A2830;
+
+          p {
+            color: #C0D4DE;
+          }
+
+          .alert-heading {
+            color: #D8ECF4;
+          }
+        }
+      }
+
+      // Tip: sage green
+      &.alert-tip {
+        border-color: #BBCFB8;
+        background-color: #D2E4CE;
+
+        p {
+          color: #36573A;
+        }
+
+        .alert-heading {
+          color: #274530;
+        }
+
+        @media (prefers-color-scheme: dark) {
+          border-color: #36573A;
+          background-color: #192B1C;
+
+          p {
+            color: #AECFAA;
+          }
+
+          .alert-heading {
+            color: #C8E4C4;
+          }
+        }
+      }
+
+      // Warning: ochre/warm amber
+      &.alert-warning {
+        border-color: #D8C878;
+        background-color: #EDE0AA;
+
+        p {
+          color: #614F18;
+        }
+
+        .alert-heading {
+          color: #4A3A0C;
+        }
+
+        @media (prefers-color-scheme: dark) {
+          border-color: #614F18;
+          background-color: #2A2008;
+
+          p {
+            color: #D8C060;
+          }
+
+          .alert-heading {
+            color: #EDD878;
+          }
+        }
+      }
+
+      // Caution: terracotta
+      &.alert-caution {
+        border-color: #DDB8A4;
+        background-color: #EDD4C2;
+
+        p {
+          color: #6B3420;
+        }
+
+        .alert-heading {
+          color: #522510;
+        }
+
+        @media (prefers-color-scheme: dark) {
+          border-color: #6B3420;
+          background-color: #2A1408;
+
+          p {
+            color: #D4A080;
+          }
+
+          .alert-heading {
+            color: #ECC0A0;
+          }
+        }
+      }
+
+      // Important: dusty mauve
+      &.alert-important {
+        border-color: #CABCD8;
+        background-color: #E0D4EC;
+
+        p {
+          color: #503860;
+        }
+
+        .alert-heading {
+          color: #3C2850;
+        }
+
+        @media (prefers-color-scheme: dark) {
+          border-color: #503860;
+          background-color: #201428;
+
+          p {
+            color: #C0A8D8;
+          }
+
+          .alert-heading {
+            color: #D8C0EC;
+          }
+        }
+      }
+    }
+
 
     .footnotes {
       margin-top: 4em;

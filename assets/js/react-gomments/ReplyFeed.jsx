@@ -12,7 +12,7 @@ export default function ReplyFeed({
   }
 
   if (error) {
-    return <div className="error-fill">could not load comments</div>;
+    return <div className="error-fill">could not load comments...</div>;
   }
 
   return (
