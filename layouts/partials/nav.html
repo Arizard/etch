@@ -16,7 +16,6 @@
 <nav id="breadcrumbs">
   <div class="breadcrumbs-list index">
     <div class="breadcrumbs-item home">Index</div>
-    <div class="breadcrumbs-separator">{{- partial "svg/home.html" . -}}</div>
     {{- range .Site.Menus.main -}}
     <div class="breadcrumbs-item"><a alt="{{ .Title }}" href="{{ .URL }}">{{ title .Title }}</a></div>
     {{- end -}}
