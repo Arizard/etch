@@ -1,19 +1,27 @@
+{{ define "body-class" }}index{{ end }}
 {{ define "main" }}
 <div class="about-me-container">
     <div class="about-me-intro">
         {{ .Content }}
     </div>
 </div>
-<h4>Featured Posts</h4>
+<h4>Featured</h4>
+{{- $pages := where site.RegularPages.ByPublishDate.Reverse "Section" "posts" -}}
+{{- $pages = where $pages "Draft" "ne" true }}
+<div class="posts-list-container home featured">
+    {{- range (where $pages "Params.featured" true) }}
+    {{- partial "post-item.html" . -}}
+    {{- end }}
+</div>
+<h4>Recent</h4>
 <div class="posts-list-container home">
-    {{ $pages := where site.RegularPages "Params.featured" true }}
-    {{- range $pages }}
+    {{- range (where $pages "Params.featured" "ne" true | first 4) }}
     {{- partial "post-item.html" . -}}
     {{- end }}
 </div>
 <div class="index-see-all-posts terms-cloud">
     {{- $postCount := (where site.RegularPages "Section" "posts").Len -}}
-    <a class="terms-cloud-item" href="/posts/">see all posts ({{- $postCount }})</a>
+    <a class="terms-cloud-item" href="/posts/">see all {{ $postCount }} posts</a>
 </div>
 {{- if .Site.Params.tags_on_index -}}
 <h4>Tags</h4>
