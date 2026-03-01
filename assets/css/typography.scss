@@ -136,6 +136,11 @@ main {
     padding: 0;
   }
 
+  .article-container {
+    width: calc(100% - 32px);
+    margin: 0 auto;
+  }
+
   article {
     text-align: left;
 
@@ -879,12 +884,6 @@ main {
 
 .heading-anchor {
   text-decoration: none !important;
-}
-
-body.single {
-  main {
-    padding: 0 32px;
-  }
 }
 
 main {

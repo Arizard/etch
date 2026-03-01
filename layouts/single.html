@@ -1,5 +1,6 @@
 {{- define "body-class" -}}single{{- end -}}
 {{ define "main" }}
+<div class="article-container">
 <header class="post-header">
   <h1>{{ .Title }}</h1>
 </header>
@@ -15,6 +16,7 @@
 <article>
   {{- .Content -}}
 </article>
+</div>
 {{- if not .Params.nocomment -}}
 <div id="gomments-container">
 </div>
