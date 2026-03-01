@@ -13,6 +13,14 @@
   </div>
   {{- end -}}
 </div>
+{{- if .Page.Resources.Get .Params.hero -}}
+<div class="hero-container">
+    {{- with .Page.Resources.Get .Params.hero -}}
+    {{- $heroImage := .Process "fit 800x3200 jpeg q85 box" -}}
+    <div class="hero-img-surface" style="background-image: url('{{ $heroImage.Permalink }}');"></div>
+    {{- end -}}
+</div>
+{{- end -}}
 <article>
   {{- .Content -}}
 </article>

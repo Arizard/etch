@@ -766,7 +766,6 @@ main .posts-list-subtitle {
   hyphens: none;
 }
 
-// post-hero
 main {
   .post-header {
     margin-bottom: 24px;
@@ -796,11 +795,36 @@ main {
   }
 }
 
+.article-container {
+  .hero-container {
+    width: 100%;
+    overflow: hidden;
+    border-radius: $default-radius;
+    margin: 16px auto;
+
+    border: 1px solid $body-background-muted;
+
+    @media(prefers-color-scheme: dark) {
+      border-color: $body-background-dark-muted;
+    }
+
+    .hero-img-surface {
+      aspect-ratio: 4/3;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+    }
+  }
+}
+
 @media (min-width: 771px) {
-  main {
-    .post-hero-container {
-      .post-hero {
-        aspect-ratio: 16/9;
+  .article-container {
+    .hero-container {
+      width: 360px;
+      margin: 32px auto;
+
+      .hero-img-surface {
+        aspect-ratio: 3/2;
       }
     }
   }
