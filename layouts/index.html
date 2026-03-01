@@ -5,7 +5,7 @@
         {{ .Content }}
     </div>
 </div>
-<h4>Featured</h4>
+<h2>Featured</h2>
 {{- $pages := where site.RegularPages.ByPublishDate.Reverse "Section" "posts" -}}
 {{- $pages = where $pages "Draft" "ne" true }}
 <div class="posts-list-container home featured">
@@ -13,7 +13,7 @@
     {{- partial "post-item.html" . -}}
     {{- end }}
 </div>
-<h4>Recent</h4>
+<h2>Recent</h2>
 <div class="posts-list-container home">
     {{- range (where $pages "Params.featured" "ne" true | first 4) }}
     {{- partial "post-item.html" . -}}
@@ -24,7 +24,7 @@
     <a class="terms-cloud-item" href="/posts/">see all {{ $postCount }} posts</a>
 </div>
 {{- if .Site.Params.tags_on_index -}}
-<h4>Tags</h4>
+<h2>Tags</h2>
 <div class="tags-container">
     {{ with .Site.Taxonomies.tags.ByCount }}
     {{-

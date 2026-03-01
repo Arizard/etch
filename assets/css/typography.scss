@@ -316,44 +316,6 @@ main {
     letter-spacing: -0.02rem;
   }
 
-  @media(min-width: 771px) {
-    h1 {
-      font-size: 3.815 * $body-font-size;
-      margin: (3.815 * $body-font-size * 1.334) 0 (3.815 * $body-font-size/3) 0;
-      letter-spacing: -0.2rem;
-    }
-
-    h2 {
-      font-size: 3.052 * $body-font-size;
-      margin: (3.052 * $body-font-size * 1.334) 0 (3.052 * $body-font-size/3) 0;
-      letter-spacing: -0.15rem;
-    }
-
-    h3 {
-      font-size: 2.441 * $body-font-size;
-      margin: (2.441 * $body-font-size * 1.334) 0 (2.441 * $body-font-size/3) 0;
-      letter-spacing: -0.1rem;
-    }
-
-    h4 {
-      font-size: 1.953 * $body-font-size;
-      margin: (1.953 * $body-font-size * 1.334) 0 (1.953 * $body-font-size/3) 0;
-      letter-spacing: -0.07rem;
-    }
-
-    h5 {
-      font-size: 1.563 * $body-font-size;
-      margin: (1.563 * $body-font-size * 1.334) 0 (1.563 * $body-font-size/3) 0;
-      letter-spacing: -0.05rem;
-    }
-
-    h6 {
-      font-size: 1.25 * $body-font-size;
-      margin: (1.25 * $body-font-size * 1.334) 0 (1.25 * $body-font-size/3) 0;
-      letter-spacing: -0.05rem;
-    }
-  }
-
   pre,
   pre.chroma {
     padding: 1rem 1rem;
@@ -410,6 +372,8 @@ main {
     @media(prefers-color-scheme: dark) {
       border-bottom-color: $body-background-dark-muted;
     }
+
+    white-space: nowrap;
   }
 
   tr:not(:last-child) {
