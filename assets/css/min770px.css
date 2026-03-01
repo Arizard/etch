@@ -1,6 +1,3 @@
-main {
-  width: 100%;
-}
 
 @media (min-width: 771px) {
   html {
@@ -9,22 +6,12 @@ main {
   }
 
   .main-container {
-    width: 770px;
-    margin: 0 auto 0 auto !important;
-  }
-
-  body.single {
-    .main-container {
-      padding: 0 16px;
-    }
-  }
-
-  body.index {
-  }
-
-  main {
     width: 100%;
-    margin: 0 auto 0 0 !important;
+    margin: 0;
+    main {
+      width: 100%;
+      max-width: 770px;
+    }
   }
 
   .footer-nav-container {

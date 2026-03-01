@@ -53,9 +53,6 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
     <link rel="manifest" href="/favicon/site.webmanifest">
 
-    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f1f2eb" />
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#002029" />
-
     <script>
         window.siteConfig = {
             apiURL: {{ if hugo.IsServer }}{{ "http://localhost:8080" }}{{ else }}{{ "https://backend.less.coffee" }}{{ end }},

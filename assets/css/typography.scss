@@ -24,20 +24,12 @@ nav#breadcrumbs {
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin: 0 auto 16px auto;
+  margin: 0 auto 0 auto;
   padding: 16px;
   height: 60px;
   white-space: nowrap;
   font-family: $body-font;
   font-size: 90%;
-  border-bottom: 1px solid $body-background-muted;
-  background-color: $body-background-alt;
-
-  @media(prefers-color-scheme: dark) {
-    border-bottom: 1px solid $body-background-dark-muted;
-    background-color: $body-background-dark-alt;
-  }
-
 
   .breadcrumbs-list {
     display: flex;
@@ -113,16 +105,28 @@ body {
   line-height: $body-line-height;
   font-size: $body-font-size;
   font-weight: $body-font-weight;
-}
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 
-body.single {
   background-color: $body-background-alt;
 
   @media(prefers-color-scheme: dark) {
     background-color: $body-background-dark-alt;
+    color: $body-text-color-dark;
   }
 
-  footer#footer {
+  nav#breadcrumbs {
+    border-bottom: 1px solid $body-background-muted;
+    background-color: $body-background-alt;
+
+    @media(prefers-color-scheme: dark) {
+      border-bottom: 1px solid $body-background-dark-muted;
+      background-color: $body-background-dark-alt;
+    }
+  }
+
+  .main-container {
     background-color: $body-background;
 
     @media(prefers-color-scheme: dark) {
@@ -130,7 +134,41 @@ body.single {
     }
   }
 
+  footer#footer {
+    background-color: $body-background-alt;
+    border-top: 1px solid $body-background-muted;
+
+    @media(prefers-color-scheme: dark) {
+      border-top-color: $body-background-dark-muted;
+      background-color: $body-background-dark-alt;
+    }
+  }
+}
+
+body.single {
+  background-color: $body-background;
+
+  @media(prefers-color-scheme: dark) {
+    background-color: $body-background-dark;
+  }
+
   nav#breadcrumbs {
+    background-color: $body-background;
+
+    @media(prefers-color-scheme: dark) {
+      background-color: $body-background-dark;
+    }
+  }
+
+  .main-container {
+    background-color: $body-background-alt;
+
+    @media(prefers-color-scheme: dark) {
+      background-color: $body-background-dark-alt;
+    }
+  }
+
+  footer#footer {
     background-color: $body-background;
 
     @media(prefers-color-scheme: dark) {
@@ -185,7 +223,8 @@ main {
 }
 
 main {
-  margin: 0 auto;
+  width: 100%;
+  margin: 16px auto 0 auto;
   letter-spacing: normal;
 
   article {
@@ -415,26 +454,13 @@ main {
   }
 }
 
-// footer shit
-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
 footer#footer {
   color: $body-text-color;
-  background-color: $body-background-alt;
   padding: 24px 0 24px 0;
   margin: auto 0 0 0;
   font-size: 80%;
   width: 100%;
 
-  border-top: 1px solid $body-background-muted;
-
-  @media(prefers-color-scheme: dark) {
-    border-top-color: $body-background-dark-muted;
-  }
 
   a {
     text-decoration: underline;
