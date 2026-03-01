@@ -31,9 +31,11 @@ nav#breadcrumbs {
   font-family: $body-font;
   font-size: 90%;
   border-bottom: 1px solid $body-background-muted;
+  background-color: $body-background-alt;
 
   @media(prefers-color-scheme: dark) {
     border-bottom: 1px solid $body-background-dark-muted;
+    background-color: $body-background-dark-alt;
   }
 
 
