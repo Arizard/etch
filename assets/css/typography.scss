@@ -129,6 +129,14 @@ body.single {
       background-color: $body-background-dark;
     }
   }
+
+  nav#breadcrumbs {
+    background-color: $body-background;
+
+    @media(prefers-color-scheme: dark) {
+      background-color: $body-background-dark;
+    }
+  }
 }
 
 main {
