@@ -10,13 +10,13 @@
     margin: 0;
     main {
       width: 100%;
-      max-width: 770px;
+      max-width: 960px;
     }
   }
 
   .footer-nav-container {
-    max-width: 770px;
-    margin: 0 auto 0 calc((100vw - 770px)/2) !important;
+    max-width: 920px;
+    margin: 0 auto 0 calc((100vw - 960px)/2) !important;
   }
 
   main hr {
