@@ -16,7 +16,7 @@
 
   .footer-nav-container {
     max-width: 920px;
-    margin: 0 auto 0 calc((100vw - 960px)/2) !important;
+    margin: 0 auto;
   }
 
   main hr {
