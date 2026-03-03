@@ -5,7 +5,7 @@
   <h1>{{ .Title }}</h1>
 </header>
 <div class="byline">
-  <div class="author">{{- with .Params.Author -}}{{- . -}}{{- end -}}</div>
+  {{- with .Params.Author -}}<div class="author">{{- . -}}</div>{{- end -}}
   {{- with .Page.Params.Date -}}<div><time>{{ .Format "2 January 2006" }}</time></div>{{- end -}}
   {{- if .Page.Params.hero_attribution -}}
   <div class="hero-attribution">

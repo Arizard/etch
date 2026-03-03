@@ -104,6 +104,7 @@ body {
   color: $body-text-color;
   line-height: $body-line-height;
   font-size: $body-font-size;
+  letter-spacing: $body-letter-spacing-pc * $body-font-size;
   font-weight: $body-font-weight;
   display: flex;
   flex-direction: column;
@@ -225,7 +226,6 @@ main {
 main {
   width: 100%;
   margin: 16px auto 0 auto;
-  letter-spacing: normal;
 
   article {
     p {
@@ -330,37 +330,41 @@ main {
   h1 {
     font-size: 2.027 * $body-font-size;
     margin: (2.027 * $body-font-size * 1.334) 0 (2.027 * $body-font-size/3) 0;
-    letter-spacing: -0.15rem;
+    letter-spacing: $body-letter-spacing-pc * 2.027 * $body-font-size;
   }
 
   h2 {
     font-size: 1.802 * $body-font-size;
     margin: (1.802 * $body-font-size * 1.334) 0 (1.802 * $body-font-size/3) 0;
     letter-spacing: -0.1rem;
+    letter-spacing: $body-letter-spacing-pc * 1.802 * $body-font-size;
   }
 
   h3 {
     font-size: 1.602 * $body-font-size;
     margin: (1.602 * $body-font-size * 1.334) 0 (1.602 * $body-font-size/3) 0;
     letter-spacing: -0.07rem;
+    letter-spacing: $body-letter-spacing-pc * 1.602 * $body-font-size;
   }
 
   h4 {
     font-size: 1.424 * $body-font-size;
     margin: (1.424 * $body-font-size * 1.334) 0 (1.424 * $body-font-size/3) 0;
     letter-spacing: -0.05rem;
+    letter-spacing: $body-letter-spacing-pc * 1.424 * $body-font-size;
   }
 
   h5 {
     font-size: 1.266 * $body-font-size;
     margin: (1.266 * $body-font-size * 1.334) 0 (1.266 * $body-font-size/3) 0;
     letter-spacing: -0.02rem;
+    letter-spacing: $body-letter-spacing-pc * 1.266 * $body-font-size;
   }
 
   h6 {
     font-size: 1.125 * $body-font-size;
     margin: (1.125 * $body-font-size * 1.334) 0 (1.125 * $body-font-size/3) 0;
-    letter-spacing: -0.02rem;
+    letter-spacing: $body-letter-spacing-pc * 1.125 * $body-font-size;
   }
 
   pre,
@@ -767,6 +771,10 @@ main .posts-list-subtitle {
 }
 
 // post-hero
+.byline:empty {
+  display: none;
+}
+
 main {
   .post-header {
     margin-bottom: 24px;
