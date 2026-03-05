@@ -185,7 +185,7 @@ main {
   }
 
   .article-container {
-    width: calc(100% - 32px);
+    width: 100%;
     margin: 0 auto;
   }
 
@@ -194,6 +194,14 @@ main {
     margin-bottom: 120px;
 
     padding: 0;
+
+    li::marker {
+      color: $body-text-color-muted;
+
+      @media(prefers-color-scheme: dark) {
+        color: $body-text-color-muted-dark;
+      }
+    }
 
     @media (min-width: 771px) {
       li {
