@@ -389,7 +389,7 @@ main {
   pre,
   pre.chroma {
     padding: 1rem 1rem;
-    border-radius: 6px;
+    border-radius: $default-radius/2;
     line-height: $body-line-height;
 
     border: 1px solid $body-background-muted;
@@ -408,7 +408,7 @@ main {
   }
 
   :not(pre.chroma, pre)>code {
-    border-radius: 6px;
+    border-radius: $default-radius/2;
     padding: 0.2rem 0.4rem;
     line-height: 2rem;
 

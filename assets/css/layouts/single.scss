@@ -20,7 +20,7 @@ main {
 
     .alert {
       border: 1px solid;
-      border-radius: 6px;
+      border-radius: $default-radius/2;
 
       p {
         text-align: left;
