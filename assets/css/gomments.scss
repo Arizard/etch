@@ -248,10 +248,10 @@
   justify-content: space-evenly;
   align-items: center;
   font-weight: 700;
-  color: $body-text-color-dark;
+  color: #fff;
 
   @media (prefers-color-scheme: dark) {
-    color: $body-text-color;
+    color: #000;
   }
 }
 
