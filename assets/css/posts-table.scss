@@ -8,7 +8,8 @@
 
 a.posts-list-item {
   border-radius: $default-radius;
-  display: block;
+  display: flex;
+  flex-direction: column;
   text-decoration: none;
   margin-bottom: 16px;
   background-color: $body-background-alt;
@@ -24,8 +25,16 @@ a.posts-list-item {
     border-color: $body-background-dark-muted;
   }
 
+  .posts-list-copy-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: space-between;
+  }
+
   .posts-list-heading {
-    margin: 16px 0 8px 0;
+    margin: 0 16px 24px 0;
     font-family: $heading-font;
     font-weight: $heading-font-weight;
     font-style: italic;
@@ -49,7 +58,10 @@ a.posts-list-item {
 
   .posts-list-hero-container {
     width: 100%;
-    aspect-ratio: 16/9;
+    aspect-ratio: 3/2;
+    @media(min-width: 771px) {
+      aspect-ratio: 16/10;
+    }
     margin: 0 0 16px 0;
   }
 
@@ -116,7 +128,6 @@ main .posts-list-subtitle {
 }
 
 .posts-list-pills {
-  margin-top: 4px;
   font-size: 0.8 * $body-font-size;
   font-family: $ui-font;
   color: $body-text-color;

@@ -11,28 +11,27 @@
         <div class="posts-list-hero-placeholder">&nbsp</div>
     </div>
     {{- end -}}
-    <div class="posts-list-heading">
-        {{ .Title }}
-    </div>
-    <div class="posts-list-subtitle">
-        {{ transform.Plainify .Summary }}
-    </div>
-    <div class="posts-list-pills">
-        <div class="posts-list-pill">
-            {{- partial "svg/calendar.html" . -}}
-            <time class="posts-list-pill-label">{{ .Date.Format "2 Jan 2006" }}</time>
+    <div class="posts-list-copy-container">
+        <div class="posts-list-heading">
+            {{ .Title }}
         </div>
-        <div class="posts-list-pill">
-            {{- partial "svg/stopwatch.html" . -}}
-            <div class="posts-list-pill-label">{{ .ReadingTime }} minutes</div>
+        <div class="posts-list-pills">
+            <div class="posts-list-pill">
+                {{- partial "svg/calendar.html" . -}}
+                <time class="posts-list-pill-label">{{ .Date.Format "2 Jan 2006" }}</time>
+            </div>
+            <div class="posts-list-pill">
+                {{- partial "svg/stopwatch.html" . -}}
+                <div class="posts-list-pill-label">{{ .ReadingTime }} minutes</div>
+            </div>
+            <div class="posts-list-pill post-item-reply-count"
+                data-article-id-for-reply-count="{{ .Slug | default .Path }}">
+            </div>
+            {{- if .Draft -}}
+            <div class="posts-list-pill">
+                draft
+            </div>
+            {{- end -}}
         </div>
-        <div class="posts-list-pill post-item-reply-count"
-            data-article-id-for-reply-count="{{ .Slug | default .Path }}">
-        </div>
-        {{- if .Draft -}}
-        <div class="posts-list-pill">
-            draft
-        </div>
-        {{- end -}}
     </div>
 </a>
