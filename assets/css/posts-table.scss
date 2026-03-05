@@ -16,6 +16,9 @@ a.posts-list-item {
   position: relative;
   overflow: hidden;
   border: 1px solid $body-background-muted;
+  font-family: $ui-font;
+  font-size: $body-font-size * 1;
+  letter-spacing: $body-letter-spacing-pc * 1 * $body-font-size;
 
   @media(prefers-color-scheme: dark) {
     border-color: $body-background-dark-muted;
@@ -23,17 +26,21 @@ a.posts-list-item {
 
   .posts-list-heading {
     margin: 16px 0 8px 0;
-
-    font-size: $body-font-size * 1.2;
-    letter-spacing: $body-letter-spacing-pc * 1.2 * $body-font-size;
-    font-family: $heading-font, sans-serif;
+    font-family: $heading-font;
+    font-weight: $heading-font-weight;
+    font-style: italic;
+    font-size: $body-font-size * 2.027;
+    letter-spacing: $body-letter-spacing-pc * 2.027 * $body-font-size;
+    color: $heading-text-color;
+    @media(prefers-color-scheme: dark) {
+      color: $heading-text-color-dark;
+    }
 
     a {
       text-decoration-thickness: 1.5px;
     }
 
     display: block;
-    font-weight: 600;
     word-wrap: break-word;
     white-space: normal;
     line-height: 120%;
@@ -110,7 +117,8 @@ main .posts-list-subtitle {
 
 .posts-list-pills {
   margin-top: 4px;
-  font-size: 80%;
+  font-size: 0.8 * $body-font-size;
+  font-family: $ui-font;
   color: $body-text-color;
   display: flex;
 

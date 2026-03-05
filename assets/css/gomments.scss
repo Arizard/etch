@@ -7,7 +7,7 @@
 .gomments-container {
   margin-top: 48px;
   margin-bottom: 72px;
-  font-family: $body-font, sans-serif;
+  font-family: $ui-font, sans-serif;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -72,14 +72,14 @@
 
     @media (prefers-color-scheme: dark) {
       color: red;
-      font-weight: bold;
+      font-weight: 700;
     }
   }
 
   input[type="text"],
   input[type="password"],
   textarea {
-    font-family: 'Inter', sans-serif;
+    font-family: $ui-font;
     font-size: $body-font-size;
     letter-spacing: $body-letter-spacing-pc * $body-font-size;
     width: 100%;
@@ -121,9 +121,9 @@
     border-radius: 100%;
     cursor: pointer;
     margin: 6px 6px 6px 6px;
-    font-family: $button-font, sans-serif;
+    font-family: $ui-font;
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: 700;
     font-size: $body-font-size * 0.8;
     letter-spacing: $body-letter-spacing-pc * 0.8 * $body-font-size;
     background-color: $body-background-alt;
@@ -194,7 +194,7 @@
   font-family: $body-font, sans-serif;
   text-transform: lowercase;
   text-align: center;
-  font-weight: bold;
+  font-weight: 700;
   font-size: $body-font-size * 0.8;
   letter-spacing: $body-letter-spacing-pc * 0.8 * $body-font-size;
   width: 100%;
@@ -248,7 +248,7 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  font-weight: bold;
+  font-weight: 700;
   color: $body-text-color-dark;
 
   @media (prefers-color-scheme: dark) {
@@ -263,7 +263,7 @@
   color: $body-text-color-muted;
   padding: 0;
   margin: 4px 0;
-  font-family: $body-font;
+  font-family: $ui-font;
   font-style: italic;
   text-overflow: ellipsis;
   text-align: right;
@@ -287,13 +287,13 @@
     margin: 0;
     font-size: $body-font-size;
     letter-spacing: $body-letter-spacing-pc * $body-font-size;
-    font-family: $body-font, sans-serif;
-    font-weight: bold;
+    font-family: $ui-font, sans-serif;
+    font-weight: 700;
   }
 }
 
 .reply-card-body {
-  font-family: $body-font, sans-serif;
+  font-family: $ui-font, sans-serif;
   white-space: pre-wrap;
   word-break: break-word;
 }

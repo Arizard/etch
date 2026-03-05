@@ -25,10 +25,10 @@ nav#breadcrumbs {
   justify-content: center;
   width: 100%;
   margin: 0 auto 0 auto;
-  padding: 16px;
+  padding: 16px 20px;
   height: 60px;
   white-space: nowrap;
-  font-family: $body-font;
+  font-family: $ui-font;
   font-size: 90%;
 
   .breadcrumbs-list {
@@ -49,7 +49,7 @@ nav#breadcrumbs {
     }
 
     .breadcrumbs-item {
-      font-weight: 400;
+      font-weight: $ui-font-weight;
     }
 
     .breadcrumbs-item.current {
@@ -109,6 +109,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  font-optical-sizing: auto;
 
   background-color: $body-background-alt;
 
@@ -262,9 +263,10 @@ main {
   h4,
   h5,
   h6 {
-    font-family: $heading-font, sans-serif;
+    font-family: $heading-font;
+    font-style: italic;
     display: block;
-    font-weight: 600;
+    font-weight: $heading-font-weight;
     word-wrap: break-word;
     white-space: normal;
     line-height: 120%;
@@ -295,31 +297,11 @@ main {
       }
     }
 
-    margin-bottom: 32px;
-    margin: 16px 0 0 0;
     overflow: hidden;
     text-align: left;
     hyphens: none;
 
-    padding: 16px;
-
-    @media (min-width: 771px) {
-      padding: 32px;
-    }
-
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    border-radius: $default-radius;
-    background-color: $body-background-alt;
-    border: 1px solid $body-background-muted;
-
-    @media(prefers-color-scheme: dark) {
-      border-color: $body-background-dark-muted;
-      background-color: $body-background-dark-alt;
-    }
-
-    h1 {
-      margin-top: 0;
-    }
+    padding: 0;
 
     p:last-child {
       margin-bottom: 0;
@@ -336,28 +318,24 @@ main {
   h2 {
     font-size: 1.802 * $body-font-size;
     margin: (1.802 * $body-font-size * 1.334) 0 (1.802 * $body-font-size/3) 0;
-    letter-spacing: -0.1rem;
     letter-spacing: $body-letter-spacing-pc * 1.802 * $body-font-size;
   }
 
   h3 {
     font-size: 1.602 * $body-font-size;
     margin: (1.602 * $body-font-size * 1.334) 0 (1.602 * $body-font-size/3) 0;
-    letter-spacing: -0.07rem;
     letter-spacing: $body-letter-spacing-pc * 1.602 * $body-font-size;
   }
 
   h4 {
     font-size: 1.424 * $body-font-size;
     margin: (1.424 * $body-font-size * 1.334) 0 (1.424 * $body-font-size/3) 0;
-    letter-spacing: -0.05rem;
     letter-spacing: $body-letter-spacing-pc * 1.424 * $body-font-size;
   }
 
   h5 {
     font-size: 1.266 * $body-font-size;
     margin: (1.266 * $body-font-size * 1.334) 0 (1.266 * $body-font-size/3) 0;
-    letter-spacing: -0.02rem;
     letter-spacing: $body-letter-spacing-pc * 1.266 * $body-font-size;
   }
 
@@ -365,6 +343,46 @@ main {
     font-size: 1.125 * $body-font-size;
     margin: (1.125 * $body-font-size * 1.334) 0 (1.125 * $body-font-size/3) 0;
     letter-spacing: $body-letter-spacing-pc * 1.125 * $body-font-size;
+  }
+
+  @media(min-width: 771px) {
+
+    // Major thirds scale (1.25)
+    h1 {
+      font-size: 3.815 * $body-font-size;
+      margin: (3.815 * $body-font-size * 1.334) 0 (3.815 * $body-font-size / 3) 0;
+      letter-spacing: $body-letter-spacing-pc * 3.815 * $body-font-size;
+    }
+
+    h2 {
+      font-size: 3.052 * $body-font-size;
+      margin: (3.052 * $body-font-size * 1.334) 0 (3.052 * $body-font-size / 3) 0;
+      letter-spacing: $body-letter-spacing-pc * 3.052 * $body-font-size;
+    }
+
+    h3 {
+      font-size: 2.441 * $body-font-size;
+      margin: (2.441 * $body-font-size * 1.334) 0 (2.441 * $body-font-size / 3) 0;
+      letter-spacing: $body-letter-spacing-pc * 2.441 * $body-font-size;
+    }
+
+    h4 {
+      font-size: 1.953 * $body-font-size;
+      margin: (1.953 * $body-font-size * 1.334) 0 (1.953 * $body-font-size / 3) 0;
+      letter-spacing: $body-letter-spacing-pc * 1.953 * $body-font-size;
+    }
+
+    h5 {
+      font-size: 1.563 * $body-font-size;
+      margin: (1.563 * $body-font-size * 1.334) 0 (1.563 * $body-font-size / 3) 0;
+      letter-spacing: $body-letter-spacing-pc * 1.563 * $body-font-size;
+    }
+
+    h6 {
+      font-size: 1.25 * $body-font-size;
+      margin: (1.25 * $body-font-size * 1.334) 0 (1.25 * $body-font-size / 3) 0;
+      letter-spacing: $body-letter-spacing-pc * 1.25 * $body-font-size;
+    }
   }
 
   pre,
@@ -462,7 +480,9 @@ footer#footer {
   color: $body-text-color;
   padding: 24px 0 24px 0;
   margin: auto 0 0 0;
-  font-size: 80%;
+  font-size: 0.8 * $body-font-size;
+  letter-spacing: $body-letter-spacing-pc * 0.8 * $body-font-size;
+  font-family: $ui-font;
   width: 100%;
 
 
@@ -556,10 +576,6 @@ footer#footer {
   text-align: center;
 }
 
-.has-font-weight-bold {
-  font-weight: bold;
-}
-
 .bottom-nav {
   margin-top: 0;
 
@@ -573,7 +589,7 @@ footer#footer {
     text-align: left;
 
     a {
-      font-weight: bold;
+      font-weight: 700;
     }
 
     a.posts-list-item {
@@ -654,7 +670,6 @@ screen and (min-width: 771px) {
 }
 
 .front-matter {
-  font-style: italic;
   color: $body-text-color-muted;
   margin: 96px 0 96px 0;
   font-size: 90%;
@@ -733,8 +748,8 @@ screen and (min-width: 771px) {
     flex-grow: 1;
     border-radius: $default-radius;
     text-transform: lowercase;
-    font-family: $button-font;
-    font-weight: 600;
+    font-family: $ui-font;
+    font-weight: $ui-font-weight;
     font-size: 90%;
     box-sizing: border-box;
     display: block;
@@ -785,8 +800,6 @@ main {
     flex-wrap: wrap;
     gap: 0 8px;
     margin: 0 0 24px 0;
-    font-style: italic;
-    font-size: 90%;
 
     .author {
       font-weight: 700;
@@ -850,7 +863,7 @@ main {
 }
 
 .callout-title {
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 8px;
 }
 
@@ -894,4 +907,24 @@ main {
 
 main {
   padding: 0 16px;
+}
+
+.index-section {
+  margin: 0 0 (2.027 * $body-font-size * 1.334) 0;
+}
+
+.section-label {
+  margin: 16px 0;
+  font-family: $heading-font;
+  font-style: italic;
+  font-weight: $heading-font-weight;
+
+  font-size: 2.027 * $body-font-size;
+  letter-spacing: $body-letter-spacing-pc * 2.027 * $body-font-size;
+
+  color: $heading-text-color;
+
+  @media(prefers-color-scheme: dark) {
+    color: $heading-text-color-dark;
+  }
 }

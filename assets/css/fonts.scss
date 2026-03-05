@@ -1,9 +1,49 @@
 @font-face {
-  font-family: 'Manrope';
+  font-family: 'EB Garamond';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('EB Garamond'), url('/fonts/manrope/EB Garamond-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'EB Garamond';
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: local('Manrope'), url('/fonts/manrope/Manrope-VariableFont_wght.ttf') format('truetype');
+  src: local('EB Garamond'), url('/fonts/manrope/EB Garamond-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'EB Garamond';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: local('EB Garamond'), url('/fonts/manrope/EB Garamond-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'EB Garamond';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('EB Garamond'), url('/fonts/eb-garamond/EBGaramond-Italic-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'EB Garamond';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: local('EB Garamond'), url('/fonts/eb-garamond/EBGaramond-Italic-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'EB Garamond';
+  font-style: italic;
+  font-weight: 800;
+  font-display: swap;
+  src: local('EB Garamond'), url('/fonts/eb-garamond/EBGaramond-Italic-VariableFont_wght.ttf') format('truetype');
 }
 
 @font-face {
@@ -23,6 +63,14 @@
 @font-face {
   font-family: 'Inter';
   font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local('Inter'), url('/fonts/inter/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
   font-weight: 400;
   font-display: swap;
   src: local('Inter'), url('/fonts/inter/Inter-VariableFont_opsz,wght.ttf') format('truetype');
@@ -34,6 +82,14 @@
   font-weight: 700;
   font-display: swap;
   src: local('Inter'), url('/fonts/inter/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: local('Inter'), url('/fonts/inter/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype');
 }
 
 @font-face {
@@ -52,12 +108,14 @@
   src: local('Inter'), url('/fonts/inter/Inter-Italic-VariableFont_opsz,wght.ttf') format('woff');
 }
 
-$heading-font: 'Manrope', sans-serif;
-$button-font: 'Manrope', sans-serif;
+$heading-font: 'EB Garamond', serif;
+$ui-font: 'Inter', sans-serif;
 $body-font: 'Inter', sans-serif;
 $body-font-weight: 400;
+$ui-font-weight: 400;
+$heading-font-weight: 400;
 $body-font-size: 2rem;
-$body-letter-spacing-pc: -0.025;
+$body-letter-spacing-pc: -0.01;
 
 @media (min-width: 771px) {
   html {
