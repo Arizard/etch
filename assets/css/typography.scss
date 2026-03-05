@@ -688,6 +688,7 @@ screen and (min-width: 771px) {
 
   @media (min-width: 771px) {
     grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 1fr;
   }
 
   .posts-list-item {
@@ -814,16 +815,6 @@ main {
 
     @media(prefers-color-scheme: dark) {
       color: $body-text-color-muted-dark;
-    }
-  }
-}
-
-@media (min-width: 771px) {
-  main {
-    .post-hero-container {
-      .post-hero {
-        aspect-ratio: 16/9;
-      }
     }
   }
 }

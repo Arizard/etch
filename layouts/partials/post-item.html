@@ -20,13 +20,8 @@
                 {{- partial "svg/calendar.html" . -}}
                 <time class="posts-list-pill-label">{{ .Date.Format "2 Jan 2006" }}</time>
             </div>
-            <div class="posts-list-pill">
-                {{- partial "svg/stopwatch.html" . -}}
-                <div class="posts-list-pill-label">{{ .ReadingTime }} minutes</div>
-            </div>
             <div class="posts-list-pill post-item-reply-count"
-                data-article-id-for-reply-count="{{ .Slug | default .Path }}">
-            </div>
+                data-article-id-for-reply-count="{{ .Slug | default .Path }}"></div>
             {{- if .Draft -}}
             <div class="posts-list-pill">
                 draft
