@@ -907,16 +907,17 @@ main {
 
 .section-label {
   margin: 16px 0;
-  font-family: $heading-font;
-  font-style: italic;
+  font-family: $ui-font;
   font-weight: $heading-font-weight;
 
-  font-size: 2.027 * $body-font-size;
-  letter-spacing: $body-letter-spacing-pc * 2.027 * $body-font-size;
+  font-size: $body-font-size * 0.8;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  font-weight: bolder;
 
-  color: $heading-text-color;
+  color: $body-text-color-muted;
 
   @media(prefers-color-scheme: dark) {
-    color: $heading-text-color-dark;
+    color: $body-text-color-muted-dark;
   }
 }

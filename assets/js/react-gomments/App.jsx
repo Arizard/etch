@@ -73,6 +73,7 @@ export default function App() {
 
   return (
     <div className="gomments-container">
+    <div className="section-label">Replies</div>
       <ReplyForm onSubmit={handleSubmitReply} />
       <ReplyFeed
         replies={replies}
