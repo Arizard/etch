@@ -1,4 +1,7 @@
 .posts-list-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 1fr;
   margin: 0 0;
 
   h2 {
@@ -70,9 +73,9 @@ a.posts-list-item {
   }
 
   .posts-list-hero-placeholder-container, .posts-list-hero-container {
-    aspect-ratio: 3/2;
+    aspect-ratio: 2;
     @media(min-width: 771px) {
-      aspect-ratio: 16/10;
+      aspect-ratio: 2;
     }
   }
 
