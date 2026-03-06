@@ -29,7 +29,7 @@ nav#breadcrumbs {
   height: 60px;
   white-space: nowrap;
   font-family: $ui-font;
-  font-size: 90%;
+  font-size: $body-font-size;
 
   .breadcrumbs-list {
     display: flex;
@@ -489,7 +489,7 @@ footer#footer {
   color: $body-text-color;
   padding: 24px 0 24px 0;
   margin: auto 0 0 0;
-  font-size: 0.8 * $body-font-size;
+  font-size: $body-font-size;
   letter-spacing: $body-letter-spacing-pc * 0.8 * $body-font-size;
   font-family: $ui-font;
   width: 100%;
@@ -762,7 +762,7 @@ screen and (min-width: 771px) {
     font-weight: $ui-font-weight;
     font-size: $body-font-size * 0.8;
     text-transform: uppercase;
-    letter-spacing: 0.3rem;
+    letter-spacing: 0.2rem;
     font-weight: bolder;
     box-sizing: border-box;
     display: block;

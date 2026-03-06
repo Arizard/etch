@@ -45,6 +45,7 @@ a.posts-list-item {
     font-size: $body-font-size * 2.027;
     letter-spacing: $body-letter-spacing-pc * 2.027 * $body-font-size;
     color: $heading-text-color;
+
     @media(prefers-color-scheme: dark) {
       color: $heading-text-color-dark;
     }
@@ -72,8 +73,10 @@ a.posts-list-item {
     margin: 0 -16px 0 -16px;
   }
 
-  .posts-list-hero-placeholder-container, .posts-list-hero-container {
+  .posts-list-hero-placeholder-container,
+  .posts-list-hero-container {
     aspect-ratio: 2;
+
     @media(min-width: 771px) {
       aspect-ratio: 2;
     }
@@ -108,10 +111,16 @@ a.posts-list-item {
   }
 
   .posts-list-subtitle,
-  p,
-  .posts-list-pill {
+  p {
     font-weight: $body-font-weight;
   }
+
+  .posts-list-pill {
+    font-weight: bolder;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+  }
+
 }
 
 a.posts-list-item:hover,
@@ -136,16 +145,16 @@ main .posts-list-subtitle {
 .posts-list-pills {
   font-size: 0.8 * $body-font-size;
   font-family: $ui-font;
-  color: $body-text-color;
+  color: $body-text-color-muted;
   display: flex;
 
   svg {
-    height: 1.4rem;
-    width: 1.4rem;
+    height: $body-font-size;
+    width: $body-font-size;
     margin-top: -0.1rem;
 
     path {
-      fill: $body-text-color;
+      fill: $body-text-color-muted;
     }
   }
 
@@ -159,6 +168,7 @@ main .posts-list-subtitle {
       line-height: 1.4rem;
     }
   }
+
   .post-item-reply-count:empty {
     display: none;
   }
@@ -166,11 +176,11 @@ main .posts-list-subtitle {
 
 @media (prefers-color-scheme: dark) {
   .posts-list-pills {
-    color: $body-text-color-dark !important;
+    color: $body-text-color-muted-dark;
 
     svg {
       path {
-        fill: $body-text-color-dark !important;
+        fill: $body-text-color-muted-dark !important;
       }
     }
   }
