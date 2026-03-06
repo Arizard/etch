@@ -760,7 +760,10 @@ screen and (min-width: 771px) {
     text-transform: lowercase;
     font-family: $ui-font;
     font-weight: $ui-font-weight;
-    font-size: 90%;
+    font-size: $body-font-size * 0.8;
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+    font-weight: bolder;
     box-sizing: border-box;
     display: block;
     margin: 0;
@@ -769,13 +772,13 @@ screen and (min-width: 771px) {
     text-align: center;
 
     background-color: $body-background-alt;
-    color: $body-text-color;
+    color: $body-text-color-muted;
     border: 1px solid $body-background-muted;
 
     @media(prefers-color-scheme: dark) {
       background-color: $body-background-dark-alt;
       border-color: $body-background-dark-muted;
-      color: $body-text-color-dark;
+      color: $body-text-color-muted-dark;
     }
   }
 
