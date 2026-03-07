@@ -37,8 +37,10 @@ nav#breadcrumbs {
     margin: 0;
     color: $link-text-color;
     width: 100%;
-    max-width: 960px - 32px;
     align-items: center;
+
+    &.index {
+    }
 
     a,
     a:hover,
@@ -487,7 +489,7 @@ main {
 
 footer#footer {
   color: $body-text-color;
-  padding: 24px 0 24px 0;
+  padding: 16px 0 16px 0;
   margin: auto 0 0 0;
   font-size: $body-font-size;
   letter-spacing: $body-letter-spacing-pc * 0.8 * $body-font-size;
@@ -510,7 +512,7 @@ footer#footer {
     height: 100%;
     width: 100%;
     margin: 0 auto 0 auto;
-    padding: 0 16px 0 16px;
+    padding: 0 20px 0 20px;
 
     display: flex;
     flex-direction: column;
