@@ -25,12 +25,8 @@
     {{- end }}
 </div>
 </section>
-<div class="index-see-all-posts terms-cloud">
-    {{- $postCount := (where site.RegularPages "Section" "posts").Len -}}
-    <a class="terms-cloud-item" href="/posts/">see all {{ $postCount }} posts</a>
-</div>
-{{- if .Site.Params.tags_on_index -}}
-<h2>Tags</h2>
+<section class="index-section">
+<div class="section-label">Browse</div>
 <div class="tags-container">
     {{ with .Site.Taxonomies.tags.ByCount }}
     {{-
@@ -41,5 +37,5 @@
     {{- partial "terms-cloud.html" $ctx -}}
     {{ end }}
 </div>
-{{- end -}}
+</section>
 {{ end }}
