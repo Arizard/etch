@@ -40,6 +40,7 @@ nav#breadcrumbs {
     align-items: center;
 
     &.index {
+      gap: 18px;
     }
 
     a,
@@ -768,7 +769,7 @@ screen and (min-width: 771px) {
     box-sizing: border-box;
     display: block;
     margin: 0;
-    padding: 8px 16px;
+    padding: 4px 16px;
     text-decoration: none;
     text-align: center;
 
