@@ -35,7 +35,7 @@ nav#breadcrumbs {
     display: flex;
     gap: 12px;
     margin: 0;
-    color: $link-text-color;
+    color: $body-text-color-muted;
     width: 100%;
     align-items: center;
 
@@ -46,7 +46,7 @@ nav#breadcrumbs {
     a,
     a:hover,
     a:visited {
-      color: $link-text-color;
+      color: $body-text-color-muted;
       text-decoration: underline;
       text-decoration-thickness: 1px;
     }
@@ -74,10 +74,10 @@ nav#breadcrumbs {
         width: 100%;
 
         polyline {
-          stroke: $link-text-color;
+          stroke: $body-text-color-muted;
 
           @media(prefers-color-scheme: dark) {
-            stroke: $link-text-color-dark;
+            stroke: $body-text-color-muted-dark;
           }
         }
       }
@@ -88,12 +88,12 @@ nav#breadcrumbs {
 @media (prefers-color-scheme: dark) {
   nav#breadcrumbs {
     .breadcrumbs-list {
-      color: $link-text-color-dark;
+      color: $body-text-color-muted-dark;
 
       a,
       a:hover,
       a:visited {
-        color: $link-text-color-dark;
+        color: $body-text-color-muted-dark;
       }
     }
   }
@@ -477,7 +477,7 @@ main {
 }
 
 footer#footer {
-  color: $body-text-color;
+  color: $body-text-color-muted;
   padding: 16px 0 16px 0;
   margin: auto 0 0 0;
   font-size: $body-font-size;
@@ -489,7 +489,7 @@ footer#footer {
   a {
     text-decoration: underline;
     text-decoration-thickness: 1px;
-    color: $link-text-color;
+    color: $body-text-color-muted;
   }
 
   a:hover {
@@ -562,13 +562,13 @@ footer#footer {
   }
 
   footer#footer {
-    color: $body-text-color-dark;
+    color: $body-text-color-muted-dark;
     background-color: $body-background-dark-alt;
 
     a {
       text-decoration: underline;
       text-decoration-thickness: 1px;
-      color: $link-text-color-dark;
+      color: $body-text-color-muted-dark;
     }
 
     a:hover {

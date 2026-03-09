@@ -3,7 +3,7 @@
   <div class="breadcrumbs-list">
     {{- range .Ancestors.Reverse }}
     {{- if .IsHome -}}
-    <div class="breadcrumbs-item home"><a alt="{{ .Title }}" href="{{ .RelPermalink }}">Index</a></div>
+    <div class="breadcrumbs-item home"><a alt="{{ .Title }}" href="{{ .RelPermalink }}">{{ .Site.Title }}</a></div>
     {{- else -}}
     <div class="breadcrumbs-item"><a alt="{{ .Title }}" href="{{ .RelPermalink }}">{{ .Title }}</a></div>
     {{- end -}}
@@ -15,7 +15,7 @@
 {{- else -}}
 <nav id="breadcrumbs">
   <div class="breadcrumbs-list index">
-    <div class="breadcrumbs-item" style="font-weight: 700;">Index</div>
+    <div class="breadcrumbs-item" style="font-weight: 700;">{{ .Site.Title }}</div>
     {{- range .Site.Menus.main -}}
     <div class="breadcrumbs-item"><a alt="{{ .Title }}" href="{{ .URL }}">{{ title .Title }}</a></div>
     {{- end -}}
