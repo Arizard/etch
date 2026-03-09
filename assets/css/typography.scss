@@ -563,7 +563,7 @@ footer#footer {
 
   footer#footer {
     color: $body-text-color-muted-dark;
-    background-color: $body-background-dark-alt;
+    background-color: $body-background-dark;
 
     a {
       text-decoration: underline;
@@ -577,6 +577,11 @@ footer#footer {
     }
   }
 
+  body.single {
+    footer#footer {
+    background-color: $body-background-dark-alt;
+    }
+  }
 }
 
 .text-centered {
