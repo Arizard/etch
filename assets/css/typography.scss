@@ -500,6 +500,7 @@ footer#footer {
   .footer-nav-container {
     height: 100%;
     width: 100%;
+    max-width: 800px;
     margin: 0 auto 0 auto;
     padding: 0 20px 0 20px;
 
@@ -508,9 +509,15 @@ footer#footer {
     gap: 16px;
 
     .footer-nav-menu {
-      display: flex;
-      flex-direction: row;
-      gap: 24px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 16px;
+
+      @media(min-width: 771px) {
+        display: flex;
+        flex-direction: row;
+        gap: 24px;
+      }
 
       .footer-nav-menu-item {
         font-weight: 700;
