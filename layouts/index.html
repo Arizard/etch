@@ -20,7 +20,7 @@
 <section class="index-section">
 <div class="section-label">Recent</div>
 <div class="posts-list-container home">
-    {{- range (where $pages "Params.featured" "ne" true | first 4) }}
+    {{- range (where $pages "Params.featured" "ne" true | first 8) }}
     {{- partial "post-item.html" . -}}
     {{- end }}
 </div>
