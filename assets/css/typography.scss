@@ -3,11 +3,6 @@ a {
   text-decoration-thickness: 1px;
 }
 
-$body-line-height: $body-font-size * 1.6;
-$banner-font-size: 1.67rem;
-
-$gap-indent: 38px;
-
 ol {
   padding-left: $gap-indent;
   margin-bottom: $body-line-height;
@@ -25,7 +20,7 @@ nav#breadcrumbs {
   justify-content: center;
   width: 100%;
   margin: 0 auto 0 auto;
-  padding: 16px 20px;
+  padding: 16px 16px;
   height: 60px;
   white-space: nowrap;
   font-family: $ui-font;
@@ -37,6 +32,7 @@ nav#breadcrumbs {
     margin: 0;
     color: $body-text-color-muted;
     width: 100%;
+    max-width: $content-width - 32px;
     align-items: center;
 
     &.index {
@@ -52,7 +48,7 @@ nav#breadcrumbs {
     }
 
     .breadcrumbs-item {
-      font-weight: $ui-font-weight;
+      font-weight: $body-font-weight;
     }
 
     .breadcrumbs-item.current {
@@ -107,7 +103,7 @@ body {
   color: $body-text-color;
   line-height: $body-line-height;
   font-size: $body-font-size;
-  letter-spacing: $body-letter-spacing-pc * $body-font-size;
+  letter-spacing: $letter-spacing-rel;
   font-weight: $body-font-weight;
   display: flex;
   flex-direction: column;
@@ -123,9 +119,11 @@ body {
 
   nav#breadcrumbs {
     background-color: $body-background;
+    border-bottom: 1px solid $body-background-muted;
 
     @media(prefers-color-scheme: dark) {
       background-color: $body-background-dark;
+      border-bottom-color: $body-background-dark-muted;
     }
   }
 
@@ -264,7 +262,6 @@ main {
   h5,
   h6 {
     font-family: $heading-font;
-    font-style: italic;
     display: block;
     font-weight: $heading-font-weight;
     word-wrap: break-word;
@@ -312,78 +309,78 @@ main {
   h1 {
     font-size: 2.027 * $body-font-size;
     margin: (2.027 * $body-font-size * 1.334) 0 (2.027 * $body-font-size/3) 0;
-    letter-spacing: $body-letter-spacing-pc * 2.027 * $body-font-size;
+    letter-spacing: $letter-spacing-rel;
   }
 
   h2 {
     font-size: 1.802 * $body-font-size;
     margin: (1.802 * $body-font-size * 1.334) 0 (1.802 * $body-font-size/3) 0;
-    letter-spacing: $body-letter-spacing-pc * 1.802 * $body-font-size;
+    letter-spacing: $letter-spacing-rel;
   }
 
   h3 {
     font-size: 1.602 * $body-font-size;
     margin: (1.602 * $body-font-size * 1.334) 0 (1.602 * $body-font-size/3) 0;
-    letter-spacing: $body-letter-spacing-pc * 1.602 * $body-font-size;
+    letter-spacing: $letter-spacing-rel;
   }
 
   h4 {
     font-size: 1.424 * $body-font-size;
     margin: (1.424 * $body-font-size * 1.334) 0 (1.424 * $body-font-size/3) 0;
-    letter-spacing: $body-letter-spacing-pc * 1.424 * $body-font-size;
+    letter-spacing: $letter-spacing-rel;
   }
 
   h5 {
     font-size: 1.266 * $body-font-size;
     margin: (1.266 * $body-font-size * 1.334) 0 (1.266 * $body-font-size/3) 0;
-    letter-spacing: $body-letter-spacing-pc * 1.266 * $body-font-size;
+    letter-spacing: $letter-spacing-rel;
   }
 
   h6 {
     font-size: 1.125 * $body-font-size;
     margin: (1.125 * $body-font-size * 1.334) 0 (1.125 * $body-font-size/3) 0;
-    letter-spacing: $body-letter-spacing-pc * 1.125 * $body-font-size;
+    letter-spacing: $letter-spacing-rel;
   }
 
-  @media(min-width: $min-width-breakpoint) {
+  // @media(min-width: $min-width-breakpoint) {
 
-    // Major thirds scale (1.25)
-    h1 {
-      font-size: 3.815 * $body-font-size;
-      margin: (3.815 * $body-font-size * 1.334) 0 (3.815 * $body-font-size / 3) 0;
-      letter-spacing: $body-letter-spacing-pc * 3.815 * $body-font-size;
-    }
+  //   // Major thirds scale (1.25)
+  //   h1 {
+  //     font-size: 3.815 * $body-font-size;
+  //     margin: (3.815 * $body-font-size * 1.334) 0 (3.815 * $body-font-size / 3) 0;
+  //     letter-spacing: $letter-spacing-rel;
+  //   }
 
-    h2 {
-      font-size: 3.052 * $body-font-size;
-      margin: (3.052 * $body-font-size * 1.334) 0 (3.052 * $body-font-size / 3) 0;
-      letter-spacing: $body-letter-spacing-pc * 3.052 * $body-font-size;
-    }
+  //   h2 {
+  //     font-size: 3.052 * $body-font-size;
+  //     margin: (3.052 * $body-font-size * 1.334) 0 (3.052 * $body-font-size / 3) 0;
+  //     letter-spacing: $letter-spacing-rel;
+  //   }
 
-    h3 {
-      font-size: 2.441 * $body-font-size;
-      margin: (2.441 * $body-font-size * 1.334) 0 (2.441 * $body-font-size / 3) 0;
-      letter-spacing: $body-letter-spacing-pc * 2.441 * $body-font-size;
-    }
+  //   h3 {
+  //     font-size: 2.441 * $body-font-size;
+  //     margin: (2.441 * $body-font-size * 1.334) 0 (2.441 * $body-font-size / 3) 0;
+  //     letter-spacing: $letter-spacing-rel;
+  //   }
 
-    h4 {
-      font-size: 1.953 * $body-font-size;
-      margin: (1.953 * $body-font-size * 1.334) 0 (1.953 * $body-font-size / 3) 0;
-      letter-spacing: $body-letter-spacing-pc * 1.953 * $body-font-size;
-    }
+  //   h4 {
+  //     font-size: 1.953 * $body-font-size;
+  //     margin: (1.953 * $body-font-size * 1.334) 0 (1.953 * $body-font-size / 3) 0;
+  //     letter-spacing: $letter-spacing-rel;
+  //   }
 
-    h5 {
-      font-size: 1.563 * $body-font-size;
-      margin: (1.563 * $body-font-size * 1.334) 0 (1.563 * $body-font-size / 3) 0;
-      letter-spacing: $body-letter-spacing-pc * 1.563 * $body-font-size;
-    }
+  //   h5 {
+  //     font-size: 1.563 * $body-font-size;
+  //     margin: (1.563 * $body-font-size * 1.334) 0 (1.563 * $body-font-size / 3) 0;
+  //     letter-spacing: $letter-spacing-rel;
+  //   }
 
-    h6 {
-      font-size: 1.25 * $body-font-size;
-      margin: (1.25 * $body-font-size * 1.334) 0 (1.25 * $body-font-size / 3) 0;
-      letter-spacing: $body-letter-spacing-pc * 1.25 * $body-font-size;
-    }
-  }
+  //   h6 {
+  //     font-size: 1.25 * $body-font-size;
+  //     margin: (1.25 * $body-font-size * 1.334) 0 (1.25 * $body-font-size / 3) 0;
+  //     letter-spacing: $letter-spacing-rel;
+  //   }
+  // }
 
   pre,
   pre.chroma {
@@ -481,7 +478,7 @@ footer#footer {
   padding: 16px 0 16px 0;
   margin: auto 0 0 0;
   font-size: $body-font-size;
-  letter-spacing: $body-letter-spacing-pc * 0.8 * $body-font-size;
+  letter-spacing: $letter-spacing-rel;
   font-family: $ui-font;
   width: 100%;
 
@@ -517,10 +514,6 @@ footer#footer {
         display: flex;
         flex-direction: row;
         gap: 24px;
-      }
-
-      .footer-nav-menu-item {
-        font-weight: 700;
       }
     }
 
@@ -579,7 +572,7 @@ footer#footer {
 
   body.single {
     footer#footer {
-    background-color: $body-background-dark-alt;
+      background-color: $body-background-dark-alt;
     }
   }
 }
@@ -690,7 +683,6 @@ screen and (min-width: $min-width-breakpoint) {
 
   @media (min-width: $min-width-breakpoint) {
     grid-template-columns: 1fr 1fr;
-    grid-auto-rows: 1fr;
   }
 
   .posts-list-item {
@@ -755,7 +747,7 @@ screen and (min-width: $min-width-breakpoint) {
     text-transform: lowercase;
     font-family: $ui-font;
     font-weight: $ui-font-weight;
-    font-size: $body-font-size * 0.8;
+    font-size: $body-font-size * 0.7;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
     box-sizing: border-box;
@@ -944,6 +936,7 @@ main {
   .main-container {
     width: 100%;
     margin: 0 0 40px 0;
+
     main {
       width: 100%;
       max-width: $content-width;
@@ -958,4 +951,3 @@ main {
     width: 100%;
   }
 }
-

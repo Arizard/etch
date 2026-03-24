@@ -1,13 +1,17 @@
-$heading-font: 'EB Garamond', serif;
+$heading-font: 'Inter', serif;
 $ui-font: 'Inter', sans-serif;
 $body-font: 'Inter', sans-serif;
 $body-font-weight: 400;
-$ui-font-weight: 400;
-$heading-font-weight: 400;
+$ui-font-weight: 500;
+$heading-font-weight: 600;
 $body-font-size: 2rem;
-$body-letter-spacing-pc: -0.02;
+$letter-spacing-rel: -0.025em;
 $content-width: 740px;
 $min-width-breakpoint: 741px;
+$body-line-height: $body-font-size * 1.6;
+$banner-font-size: 1.67rem;
+$gap-indent: 38px;
+$default-radius: 9px;
 
 @import 'reset.scss';
 @import 'color.scss';

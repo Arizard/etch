@@ -80,7 +80,7 @@
   textarea {
     font-family: $ui-font;
     font-size: $body-font-size;
-    letter-spacing: $body-letter-spacing-pc * $body-font-size;
+    letter-spacing: $letter-spacing-rel;
     width: 100%;
     padding: 12px;
     box-sizing: border-box;
@@ -124,7 +124,7 @@
     text-transform: uppercase;
     font-weight: 700;
     font-size: $body-font-size * 0.8;
-    letter-spacing: $body-letter-spacing-pc * 0.8 * $body-font-size;
+    letter-spacing: $letter-spacing-rel;
     background-color: $body-background-alt;
     aspect-ratio: 1;
     border: 2px solid $body-background-alt;
@@ -195,7 +195,7 @@
   text-align: center;
   font-weight: 700;
   font-size: $body-font-size * 0.8;
-  letter-spacing: $body-letter-spacing-pc * 0.8 * $body-font-size;
+  letter-spacing: $letter-spacing-rel;
   width: 100%;
 }
 
@@ -215,7 +215,7 @@
   line-height: $body-line-height;
   padding: 10px 14px;
   font-size: $body-font-size;
-  letter-spacing: $body-letter-spacing-pc * $body-font-size;
+  letter-spacing: $letter-spacing-rel;
 
   background-color: $body-background-alt-1;
 
@@ -257,7 +257,7 @@
 
 .reply-created-at {
   font-size: $body-font-size * 0.8;
-  letter-spacing: $body-letter-spacing-pc * 0.8 * $body-font-size;
+  letter-spacing: $letter-spacing-rel;
   display: block;
   color: $body-text-color-muted;
   padding: 0;
@@ -285,7 +285,7 @@
     gap: 6px;
     margin: 0;
     font-size: $body-font-size;
-    letter-spacing: $body-letter-spacing-pc * $body-font-size;
+    letter-spacing: $letter-spacing-rel;
     font-family: $ui-font, sans-serif;
     font-weight: 700;
   }
