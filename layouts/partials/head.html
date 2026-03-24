@@ -94,7 +94,6 @@
 
     {{ $myCSS := slice -}}
     {{ $myCSS = $myCSS | append (resources.Get "css/main.css") -}}
-    {{ $myCSS = $myCSS | append (resources.Get "css/min770px.css") -}}
     {{ $css := $myCSS | resources.Concat "css/style.css" | minify }}
 
     {{ $mySCSS := slice -}}

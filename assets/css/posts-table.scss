@@ -77,7 +77,7 @@ a.posts-list-item {
   .posts-list-hero-container {
     aspect-ratio: 2;
 
-    @media(min-width: 771px) {
+    @media(min-width: $min-width-breakpoint) {
       aspect-ratio: 2;
     }
   }

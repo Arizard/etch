@@ -54,7 +54,7 @@ main {
   }
 }
 
-@media (min-width: 771px) {
+@media (min-width: $min-width-breakpoint) {
   .post-inline-svg-container {
     padding: 0;
   }
