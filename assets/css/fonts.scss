@@ -3,7 +3,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local('EB Garamond'), url('/fonts/manrope/EB Garamond-VariableFont_wght.ttf') format('truetype');
+  src: local('EB Garamond'), url('/fonts/eb-garamond/EBGaramond-VariableFont_wght.ttf') format('truetype');
 }
 
 @font-face {
@@ -11,7 +11,7 @@
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: local('EB Garamond'), url('/fonts/manrope/EB Garamond-VariableFont_wght.ttf') format('truetype');
+  src: local('EB Garamond'), url('/fonts/eb-garamond/EBGaramond-VariableFont_wght.ttf') format('truetype');
 }
 
 @font-face {
@@ -19,7 +19,7 @@
   font-style: normal;
   font-weight: 800;
   font-display: swap;
-  src: local('EB Garamond'), url('/fonts/manrope/EB Garamond-VariableFont_wght.ttf') format('truetype');
+  src: local('EB Garamond'), url('/fonts/eb-garamond/EBGaramond-VariableFont_wght.ttf') format('truetype');
 }
 
 @font-face {
@@ -108,16 +108,7 @@
   src: local('Inter'), url('/fonts/inter/Inter-Italic-VariableFont_opsz,wght.ttf') format('woff');
 }
 
-$heading-font: 'EB Garamond', serif;
-$ui-font: 'Inter', sans-serif;
-$body-font: 'Inter', sans-serif;
-$body-font-weight: 400;
-$ui-font-weight: 400;
-$heading-font-weight: 400;
-$body-font-size: 2rem;
-$body-letter-spacing-pc: -0.02;
-
-@media (min-width: 771px) {
+@media (min-width: $min-width-breakpoint) {
   html {
     font-size: 62.5%; // 1rem = 10px
   }
