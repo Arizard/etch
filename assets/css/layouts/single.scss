@@ -21,6 +21,7 @@ main {
     .alert {
       border: 1px solid;
       border-radius: $default-radius/2;
+      margin: 1.5 * $body-font-size $body-font-size;
 
       p {
         text-align: left;

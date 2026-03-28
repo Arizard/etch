@@ -1,24 +1,29 @@
 {{- if not .IsHome -}}
 <nav id="breadcrumbs">
+  <div class="site-title"><a alt="Arie's Blog" href="/">{{ .Site.Title }}</a></div>
   <div class="breadcrumbs-list">
     {{- range .Ancestors.Reverse }}
     {{- if .IsHome -}}
-    <div class="breadcrumbs-item home"><a alt="{{ .Title }}" href="{{ .RelPermalink }}">{{ .Site.Title }}</a></div>
+    <div class="breadcrumbs-item"><a alt="Index" href="/">Index</a></div>
+    <div class="breadcrumbs-separator">{{- partial "svg/chevron-right.html" . -}}</div>
     {{- else -}}
     <div class="breadcrumbs-item"><a alt="{{ .Title }}" href="{{ .RelPermalink }}">{{ .Title }}</a></div>
-    {{- end -}}
     <div class="breadcrumbs-separator">{{- partial "svg/chevron-right.html" . -}}</div>
+    {{- end -}}
     {{- end }}
     <div class="breadcrumbs-item current">{{ .Title }}</div>
   </div>
 </nav>
 {{- else -}}
 <nav id="breadcrumbs">
+  <div class="site-title"><a alt="Arie's Blog" href="/">{{ .Site.Title }}</a></div>
   <div class="breadcrumbs-list index">
-    <div class="breadcrumbs-item home">{{ .Site.Title }}</div>
     {{- range .Site.Menus.main -}}
     <div class="breadcrumbs-item"><a alt="{{ .Title }}" href="{{ .URL }}">{{ title .Title }}</a></div>
     {{- end -}}
+    <div class="breadcrumbs-item">
+      <a alt="rss" href="/index.xml">RSS</a>
+    </div>
   </div>
 </nav>
 {{- end -}}

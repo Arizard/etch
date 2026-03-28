@@ -16,15 +16,28 @@ ol {
 
 nav#breadcrumbs {
   display: flex;
+  flex-direction: column;
   align-items: center;
+  gap: 8px;
   justify-content: center;
   width: 100%;
   margin: 0 auto 0 auto;
   padding: 16px 16px;
-  height: 60px;
   white-space: nowrap;
   font-family: $ui-font;
   font-size: $body-font-size;
+
+  .site-title {
+    width: 100%;
+    max-width: $content-width - 32px;
+    font-weight: 600;
+    font-size: 1.2em;
+
+    a {
+      display: inline-block;
+      text-decoration: none;
+    }
+  }
 
   .breadcrumbs-list {
     display: flex;
@@ -35,8 +48,12 @@ nav#breadcrumbs {
     max-width: $content-width - 32px;
     align-items: center;
 
+    .breadcrumbs-item {
+      font-weight: $body-font-weight;
+    }
+
     &.index {
-      gap: 18px;
+      gap: $body-font-size;
     }
 
     a,
@@ -45,10 +62,6 @@ nav#breadcrumbs {
       color: $body-text-color-muted;
       text-decoration: underline;
       text-decoration-thickness: 1px;
-    }
-
-    .breadcrumbs-item {
-      font-weight: $body-font-weight;
     }
 
     .breadcrumbs-item.current {
@@ -65,6 +78,7 @@ nav#breadcrumbs {
       padding-top: 2px;
       flex-shrink: 0;
       width: 14px;
+      text-align: center;
 
       svg {
         width: 100%;
