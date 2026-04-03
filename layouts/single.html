@@ -1,5 +1,13 @@
 {{- define "body-class" -}}single{{- end -}}
 {{ define "main" }}
+{{- if .Page.Resources.Get .Params.hero -}}
+<div class="post-hero-container">
+    {{- with .Page.Resources.Get .Params.hero -}}
+    {{- $heroImage := .Process "fit 800x3200 jpeg q95 box" -}}
+    <div class="post-hero" style="background-image: url('{{ $heroImage.Permalink }}');"></div>
+    {{- end -}}
+</div>
+{{- end -}}
 <div class="article-container">
 <header class="post-header">
   <h1>{{ .Title }}</h1>

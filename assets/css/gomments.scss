@@ -91,7 +91,7 @@
       outline: none;
     }
 
-    @media (max-width: 770px) {
+    @media (max-width: $content-width) {
       margin-bottom: 0;
     }
 
