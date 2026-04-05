@@ -194,6 +194,7 @@ main {
 
   article {
     text-align: left;
+    text-wrap: pretty;
     margin-bottom: 120px;
 
     padding: 0;
@@ -203,16 +204,6 @@ main {
 
       @media(prefers-color-scheme: dark) {
         color: $body-text-color-muted-dark;
-      }
-    }
-
-    @media (min-width: $min-width-breakpoint) {
-      li {
-        text-align: justify;
-      }
-
-      p {
-        text-align: justify;
       }
     }
 
@@ -422,11 +413,9 @@ main {
     padding: 0.2rem 0.4rem;
     line-height: 2rem;
 
-    border: 1px solid $body-background-muted;
     background-color: $body-background;
 
     @media(prefers-color-scheme: dark) {
-      border-color: $body-background-dark-muted;
       background-color: $body-background-dark;
     }
   }
