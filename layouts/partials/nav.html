@@ -22,7 +22,7 @@
     <div class="breadcrumbs-item"><a alt="{{ .Title }}" href="{{ .URL }}">{{ title .Title }}</a></div>
     {{- end -}}
     <div class="breadcrumbs-item">
-      <a alt="rss" href="/index.xml">RSS</a>
+      <a alt="rss" href="{{- urls.AbsURL "index.xml" -}}">RSS</a>
     </div>
   </div>
 </nav>

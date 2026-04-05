@@ -17,26 +17,29 @@
         collected.
       </p>
     </div>
+    {{- $rssName := "" -}}
+    {{- $rssUrl := "" -}}
+    {{- with .OutputFormats.Get "rss" -}}
+      {{- $rssUrl = .Permalink -}}
+    {{- end -}}
+    {{- if .Data.Term -}}
+      {{- $rssName = fmt.Printf "tag: %s" .Name -}}
+    {{- else if .IsSection -}}
+      {{- $rssName = fmt.Printf "section: %s" .Name -}}
+    {{- else -}}
+      {{- $rssName = "all" -}}
+      {{- $rssUrl = urls.AbsURL "/index.xml" -}}
+    {{- end -}}
     <div class="footer-nav-menu">
-      {{- if .Data.Term -}}
       <div class="footer-nav-menu-item">
-        <a alt="rss" href="index.xml">
-          <!-- rss relative to page -->
-          rss (tag: {{ .Name }})</a>
+        <a alt="rss" href="{{- $rssUrl -}}">
+          rss ({{- $rssName -}})</a>
       </div>
-      {{- else if .IsSection -}}
       <div class="footer-nav-menu-item">
-        <a alt="rss" href="index.xml">
-          <!-- rss relative to page -->
-          rss (section: {{ .Name }})</a>
+        <a href="http://www.rssboard.org/rss-validator/check.cgi?url={{- $rssUrl -}}">
+          <img src="/valid-rss-rogers.png" alt="[Valid RSS]" title="Validate my RSS feed" />
+        </a>
       </div>
-      {{- else -}}
-      <div class="footer-nav-menu-item">
-        <a alt="rss" href="/index.xml">
-          <!-- rss absolute -->
-          rss (all)</a>
-      </div>
-      {{- end -}}
     </div>
   </div>
 </footer>
