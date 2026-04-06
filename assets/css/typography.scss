@@ -681,15 +681,9 @@ screen and (min-width: $min-width-breakpoint) {
 
 .posts-list-container.home {
   display: grid;
-  grid-gap: 24px;
   align-items: stretch;
 
-  @media (min-width: $min-width-breakpoint) {
-    grid-template-columns: 1fr 1fr;
-  }
-
   .posts-list-item {
-    margin: 0;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   }
 }
@@ -701,23 +695,6 @@ screen and (min-width: $min-width-breakpoint) {
 @media (min-width: $min-width-breakpoint) {
   main .portrait {
     width: 62%;
-  }
-
-  .section-container,
-  .term-container {
-    display: flex;
-    gap: 16px;
-
-    .posts-list-container {
-      order: 0;
-      flex-basis: 75%;
-    }
-
-    .terms-cloud-container {
-      margin: 0 0 32px 0 !important;
-      order: 1;
-      flex-basis: 25%;
-    }
   }
 }
 
@@ -742,7 +719,6 @@ screen and (min-width: $min-width-breakpoint) {
 
   flex-wrap: wrap;
   gap: 8px;
-  justify-content: center;
 
   .terms-cloud-item {
     border-radius: 20px;
@@ -772,6 +748,7 @@ screen and (min-width: $min-width-breakpoint) {
   }
 
   .terms-cloud-item:active,
+  .terms-cloud-item:hover,
   .terms-cloud-item.selected {
     border-color: $body-text-color-muted;
     background-color: $body-background-alt;

@@ -1,6 +1,11 @@
 .posts-list-container {
   display: grid;
-  grid-template-columns: 1fr;
+
+  @media (min-width: $min-width-breakpoint) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  grid-gap: 24px;
   margin: 0 0;
   height: min-content;
 
@@ -11,10 +16,10 @@
 
 a.posts-list-item {
   border-radius: $default-radius;
+  margin: 0;
   display: flex;
   flex-direction: column;
   text-decoration: none;
-  margin-bottom: 16px;
   background-color: $body-background-alt;
   padding: 0 16px 16px 16px;
   position: relative;
