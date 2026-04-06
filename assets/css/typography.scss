@@ -872,6 +872,8 @@ img.line-art {
   margin-bottom: $body-font-size * 2;
   margin-left: auto;
   margin-right: auto;
+  filter: sepia(0.8) hue-rotate(300deg) saturate(1.2);
+
   @media(prefers-color-scheme: dark) {
     filter: invert(1) sepia(0.8) hue-rotate(300deg) saturate(1.2);
   }
