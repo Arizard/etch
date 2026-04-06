@@ -865,3 +865,14 @@ main {
     width: 100%;
   }
 }
+
+img.line-art {
+  width: 33%;
+  margin-top: $body-font-size * 2;
+  margin-bottom: $body-font-size * 2;
+  margin-left: auto;
+  margin-right: auto;
+  @media(prefers-color-scheme: dark) {
+    filter: invert(1) sepia(0.8) hue-rotate(300deg) saturate(1.2);
+  }
+}

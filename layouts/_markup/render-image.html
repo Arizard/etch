@@ -1,4 +1,9 @@
-{{- if .IsBlock -}}
+{{- if .Attributes.lineart -}}
+<img class="line-art" src="{{ .Destination | safeURL }}"
+  {{- with .PlainText }} alt="{{ . }}"{{ end -}}
+  {{- with .Title }} title="{{ . }}"{{ end -}}
+>
+{{- else if .IsBlock -}}
 <div class="figure-container {{ with .Attributes.class -}}{{ . }}{{- end -}}">
   <figure>
       {{- $keepOriginal := .Attributes.original -}}
