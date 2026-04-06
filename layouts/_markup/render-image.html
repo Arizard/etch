@@ -1,0 +1,32 @@
+{{- if .IsBlock -}}
+<div class="figure-container {{ with .Attributes.class -}}{{ . }}{{- end -}}">
+  <figure>
+      {{- $keepOriginal := .Attributes.original -}}
+      {{- $u := urls.Parse (.Destination | safeURL) -}}
+      {{- $src := $u.String -}}
+      {{- if and (not $u.IsAbs) (not $keepOriginal) -}}
+        {{- with or (.Page.Resources.Get $u.Path) (resources.Get $u.Path) -}}
+          {{- $resized := .Process "fit 1200x4800 q90" -}}
+          {{- $src = $resized.Permalink -}}
+        {{- end -}}
+      {{- end -}}
+
+      <img
+        loading="lazy"
+        src="{{ $src }}"
+        {{- with .PlainText }} alt="{{ . }}"{{ end -}}
+        {{- with .Title }} title="{{ . }}"{{ end -}}
+      >
+    <figcaption>
+      {{ with .Title }}<p><strong>{{ . }}</strong></p>{{ end }}
+      {{ with .PlainText }}<p>{{ . }}</p>{{ end }}
+    </figcaption>
+    </figure>
+</div>
+{{- else -}}
+<img src="{{ .Destination | safeURL }}"
+  {{- with .PlainText }} alt="{{ . }}"{{ end -}}
+  {{- with .Title }} title="{{ . }}"{{ end -}}
+>
+{{- end -}}
+{{- /* chomp trailing newline */ -}}
