@@ -27,22 +27,9 @@ nav#breadcrumbs {
   font-family: $ui-font;
   font-size: $body-font-size;
 
-  .site-title {
-    width: 100%;
-    max-width: $content-width - 32px;
-    font-weight: 600;
-    font-size: 1.2em;
-
-    a {
-      display: inline-block;
-      text-decoration: none;
-      color: inherit;
-    }
-  }
-
   .breadcrumbs-list {
     display: flex;
-    gap: 12px;
+    gap: 3px;
     margin: 0;
     color: $body-text-color-muted;
     width: 100%;
@@ -53,8 +40,16 @@ nav#breadcrumbs {
       font-weight: $body-font-weight;
     }
 
-    &.index {
+    &.primary {
       gap: $body-font-size;
+    }
+
+    &.secondary {
+      font-size: $body-font-size * 0.8;
+      opacity: 0.8;
+      &:hover {
+        opacity: 1;
+      }
     }
 
     .breadcrumbs-item.current {
@@ -85,6 +80,25 @@ nav#breadcrumbs {
         }
       }
     }
+
+    .site-title {
+      width: 100%;
+      max-width: $content-width - 32px;
+      font-weight: 600;
+      font-size: 1.2em;
+      color: $body-text-color;
+
+      @media (prefers-color-scheme: dark) {
+        color: $body-text-color-dark;
+      }
+
+      a {
+        display: inline-block;
+        text-decoration: none;
+        color: inherit;
+      }
+    }
+
   }
 }
 
@@ -257,7 +271,9 @@ main {
       color: $heading-text-color-dark;
     }
 
-    a, a:hover, a:visited {
+    a,
+    a:hover,
+    a:visited {
       color: $heading-text-color;
 
       @media(prefers-color-scheme: dark) {
