@@ -1,7 +1,0 @@
-main a {
-    color: $link-text-color;
-
-    @media(prefers-color-scheme: dark) {
-      color: $link-text-color-dark;
-    }
-}

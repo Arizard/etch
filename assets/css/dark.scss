@@ -17,17 +17,5 @@
   .has-body-text-color-muted {
     color: $body-text-color-muted-dark;
   }
-
-  main a {
-    color: $body-text-color-dark;
-  }
-
-  .bottom-nav {
-    svg {
-      path {
-        fill: $body-text-color-dark !important;
-      }
-    }
-  }
 }
 

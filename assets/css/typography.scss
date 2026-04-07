@@ -36,6 +36,7 @@ nav#breadcrumbs {
     a {
       display: inline-block;
       text-decoration: none;
+      color: inherit;
     }
   }
 
@@ -54,14 +55,6 @@ nav#breadcrumbs {
 
     &.index {
       gap: $body-font-size;
-    }
-
-    a,
-    a:hover,
-    a:visited {
-      color: $body-text-color-muted;
-      text-decoration: underline;
-      text-decoration-thickness: 1px;
     }
 
     .breadcrumbs-item.current {
@@ -99,12 +92,6 @@ nav#breadcrumbs {
   nav#breadcrumbs {
     .breadcrumbs-list {
       color: $body-text-color-muted-dark;
-
-      a,
-      a:hover,
-      a:visited {
-        color: $body-text-color-muted-dark;
-      }
     }
   }
 }
@@ -133,11 +120,9 @@ body {
 
   nav#breadcrumbs {
     background-color: $body-background;
-    border-bottom: 1px solid $body-background-muted;
 
     @media(prefers-color-scheme: dark) {
       background-color: $body-background-dark;
-      border-bottom-color: $body-background-dark-muted;
     }
   }
 
@@ -146,14 +131,6 @@ body {
 
     @media(prefers-color-scheme: dark) {
       background-color: $body-background-dark;
-    }
-  }
-
-  footer#footer {
-    border-top: 1px solid $body-background-muted;
-
-    @media(prefers-color-scheme: dark) {
-      border-top-color: $body-background-dark-muted;
     }
   }
 }
@@ -280,7 +257,7 @@ main {
       color: $heading-text-color-dark;
     }
 
-    a {
+    a, a:hover, a:visited {
       color: $heading-text-color;
 
       @media(prefers-color-scheme: dark) {
@@ -486,17 +463,6 @@ footer#footer {
   width: 100%;
 
 
-  a {
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    color: $body-text-color-muted;
-  }
-
-  a:hover {
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-  }
-
   .footer-nav-container {
     height: 100%;
     width: 100%;
@@ -560,17 +526,6 @@ footer#footer {
   footer#footer {
     color: $body-text-color-muted-dark;
     background-color: $body-background-dark;
-
-    a {
-      text-decoration: underline;
-      text-decoration-thickness: 1px;
-      color: $body-text-color-muted-dark;
-    }
-
-    a:hover {
-      text-decoration: underline;
-      text-decoration-thickness: 1px;
-    }
   }
 
   body.single {
@@ -881,5 +836,21 @@ img.line-art {
 
   @media(prefers-color-scheme: dark) {
     filter: invert(1) sepia(0.2);
+  }
+}
+
+a,
+a:hover,
+a:visited,
+main a,
+main a:hover,
+main a:visited {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+
+  color: $link-text-color;
+
+  @media(prefers-color-scheme: dark) {
+    color: $link-text-color-dark;
   }
 }
