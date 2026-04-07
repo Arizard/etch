@@ -1,40 +1,18 @@
-{{- if not .IsHome -}}
-<nav id="breadcrumbs">
-  <div class="breadcrumbs-list primary">
-    <div class="site-title"><a alt="Arie's Blog" href="/">{{ .Site.Title }}</a></div>
-    {{- range .Site.Menus.main -}}
-    <div class="breadcrumbs-item"><a alt="{{ .Title }}" href="{{ .URL }}">{{ title .Title }}</a></div>
-    {{- end -}}
-    <div class="breadcrumbs-item">
-      <a alt="rss" href="{{- urls.AbsURL "index.xml" -}}">RSS</a>
-    </div>
-  </div>
-  <div class="breadcrumbs-list secondary">
-    {{- range .Ancestors.Reverse }}
-    {{- if .IsHome -}}
-    <div class="breadcrumbs-item"><a alt="Index" href="/">Index</a></div>
-    <div class="breadcrumbs-separator">{{- partial "svg/chevron-right.html" . -}}</div>
-    {{- else -}}
-    <div class="breadcrumbs-item"><a alt="{{ .Title }}" href="{{ .RelPermalink }}">{{ .Title }}</a></div>
-    <div class="breadcrumbs-separator">{{- partial "svg/chevron-right.html" . -}}</div>
-    {{- end -}}
-    {{- end }}
-    <div class="breadcrumbs-item current">{{ .Title }}</div>
-  </div>
-</nav>
-{{- else -}}
 <nav id="breadcrumbs">
   <div class="breadcrumbs-list primary">
     <div class="site-title breadcrumbs-item"><a alt="Arie's Blog" href="/">{{ .Site.Title }}</a></div>
     {{- range .Site.Menus.main -}}
-    <div class="breadcrumbs-item"><a alt="{{ .Title }}" href="{{ .URL }}">{{ title .Title }}</a></div>
+    <div class="breadcrumbs-item navlink"><a alt="{{ .Title }}" href="{{ .URL }}">{{ title .Title }}</a></div>
     {{- end -}}
-    <div class="breadcrumbs-item">
+    <div class="breadcrumbs-item navlink">
       <a alt="rss" href="{{- urls.AbsURL "index.xml" -}}">RSS</a>
     </div>
   </div>
   <div class="breadcrumbs-list secondary">
-    &nbsp;
+    {{- with .Site.Params.greeting -}}
+      {{- . -}}
+    {{- else -}}
+      &nbsp;
+    {{- end -}}
   </div>
 </nav>
-{{- end -}}
