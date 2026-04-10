@@ -247,7 +247,8 @@ a {
 
 article.content {
 
-  width: auto;
+  width: 0;
+  min-width: min(100%, var(--width));
   max-width: var(--width);
   margin: 0 auto 0 auto;
   padding: 0 1em;
@@ -331,10 +332,10 @@ article.content {
       display: grid;
       grid-template-columns: 18ch 1fr;
       grid-gap: 2em;
-    }
 
-    &>* {
-      min-width: 0;
+      &>* {
+        min-width: 0;
+      }
     }
   }
 
@@ -488,8 +489,8 @@ article.content {
     }
   }
 
-  pre,
-  .highlight>pre {
+  pre {
+    display: block;
     overflow-x: auto;
     font-size: 0.8em;
     margin: 1lh 0;
@@ -684,6 +685,7 @@ article.posts {
         &:hover {
           background-color: #1dd1a1;
         }
+
         background-color: #10ac84;
         color: white;
         cursor: pointer;
