@@ -1,0 +1,18 @@
+<div class="post-card">
+    <section class="contents">
+        <header>
+            <p>
+                <span class="title"><a href="{{ .Permalink }}">{{- .Title }}</a></span><span>, </span>
+                <time>{{ .Date.Format "2 January 2006" }}</time>
+                <span class="comment-count" data-article-id-for-reply-count="{{ .Slug | default .Path }}"></span>
+                {{ if .Draft -}}
+                <span style="color: red">draft</span>
+                {{- end -}}
+            </p>
+        </header>
+        <div class="summary">
+            <p>{{ .Summary | plainify }}</p>
+            <div class="overlay"></div>
+        </div>
+    </section>
+</div>

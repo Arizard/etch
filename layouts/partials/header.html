@@ -1,0 +1,13 @@
+<header class="site-header-container">
+  <div class="site-header">
+    <div class="primary">
+      <p><a alt="Arie's Blog" href="/" class="site-title">{{ .Site.Title }}</a></p>
+      {{ with .Site.Params.greeting -}}<p>{{- . -}}</p>{{- end -}}
+    </div>
+    <nav>
+      {{- range .Site.Menus.main -}}
+      <div><a alt="{{ .Title }}" href="{{ .URL }}">{{ title .Title }}</a></div>
+      {{- end -}}
+    </nav>
+  </div>
+</header>

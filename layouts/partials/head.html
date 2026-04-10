@@ -79,7 +79,7 @@
                 replyCountSpans.forEach(el => {
                     const count = stats[btoa(el.dataset.articleIdForReplyCount)]?.count;
                     if (count) {
-                        el.innerHTML = `${iconComment} <div class="posts-list-pill-label"> ${count} ${count == 1 ? "reply" : "replies"} </div>`;
+                        el.innerHTML = `<span>(${count} ${count == 1 ? "reply" : "replies"})</span>`;
                     }
                 });
             } catch (error) {
@@ -93,20 +93,16 @@
     {{- end -}}
 
     {{ $myCSS := slice -}}
-    {{ $myCSS = $myCSS | append (resources.Get "css/main.css") -}}
+    {{ $myCSS = $myCSS | append (resources.Get "css/reset.css") -}}
+    {{ $myCSS = $myCSS | append (resources.Get "css/theme.css") -}}
     {{ $css := $myCSS | resources.Concat "css/style.css" | minify }}
-
-    {{ $mySCSS := slice -}}
-    {{ $mySCSS := $mySCSS | append (resources.Get "css/all.scss") -}}
-    {{ $scss := $mySCSS | resources.Concat "css/style2.css" | css.Sass | minify }}
 
     <style>
         {{ $css.Content | safeCSS }}
-        {{ $scss.Content | safeCSS }}
 
-        {{ if .Site.Params.highlight -}}
-            {{ $cssSyntaxDark := resources.Get "css/syntax-dark.css" }}
-            {{ $cssSyntaxLight := resources.Get "css/syntax-light.css" }}
+        {{- if .Site.Params.highlight -}}
+            {{- $cssSyntaxDark := resources.Get "css/syntax-dark.css" | minify }}
+            {{- $cssSyntaxLight := resources.Get "css/syntax-light.css" | minify }}
 
             @media (prefers-color-scheme: light) {
                 {{ $cssSyntaxLight.Content | safeCSS }}

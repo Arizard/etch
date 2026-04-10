@@ -2,16 +2,7 @@ main {
   .figure-container {
     overflow: hidden;
     margin: $body-font-size auto $body-font-size * 2 auto;
-    border-radius: $default-radius;
     width: fit-content;
-
-    border: 1px solid $body-background-muted;
-    background-color: $body-background;
-
-    @media(prefers-color-scheme: dark) {
-      border-color: $body-background-dark-muted;
-      background-color: $body-background-dark;
-    }
   }
   figure {
     display: table;
@@ -24,7 +15,7 @@ main {
     figcaption {
       display: table-caption;
       caption-side: bottom;
-      border-radius: 0 0 $default-radius $default-radius;
+      padding-top: 0.5em;
 
       p {
         color: $body-text-color;
@@ -34,6 +25,7 @@ main {
     }
 
     img {
+      border-radius: $default-radius;
       width: 100%;
       box-sizing: border-box;
       margin: 0;

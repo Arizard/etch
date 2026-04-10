@@ -14,10 +14,10 @@
   .hr {
     height: 1px;
     width: 100%;
-    background-color: $body-background-alt;
+    background-color: $body-text-color-muted;
 
     @media (prefers-color-scheme: dark) {
-      background-color: $body-background-dark-muted;
+      background-color: $body-text-color-muted-dark;
     }
   }
 
@@ -27,7 +27,7 @@
     flex-direction: column;
     gap: 0;
     background-color: $body-background-alt-1;
-    border: 1px solid $body-background-alt;
+    border: 1px solid $body-text-color-muted;
     border-radius: $default-radius;
     overflow: hidden;
     padding: 0;
@@ -52,17 +52,17 @@
   }
 
   .reply-form-submit-row {
-    padding: 2px 8px;
+    padding: 1em;
     justify-content: space-between;
     font-family: 'Inconsolata', monospace;
   }
 
   .char-count-text {
     opacity: 0.5;
-    color: $body-text-color-muted;
+    color: $body-text-color;
 
     @media (prefers-color-scheme: dark) {
-      color: $body-text-color-muted-dark;
+      color: $body-text-color-dark;
     }
   }
 
@@ -75,6 +75,10 @@
     }
   }
 
+  input[name="name"] {
+    font-weight: bold;
+  }
+
   input[type="text"],
   input[type="password"],
   textarea {
@@ -82,7 +86,7 @@
     font-size: $body-font-size;
     letter-spacing: $letter-spacing-rel;
     width: 100%;
-    padding: 12px;
+    padding: 1em;
     box-sizing: border-box;
     border: none;
     color: #000;
@@ -96,13 +100,13 @@
     }
 
     &::placeholder {
-      color: $body-text-color-muted;
-      opacity: 0.4;
+      color: $body-text-color;
+      opacity: 0.5;
     }
 
     &::-ms-input-placeholder {
-      color: $body-text-color-muted;
-      opacity: 0.4;
+      color: $body-text-color;
+      opacity: 0.5;
     }
   }
 
@@ -127,24 +131,15 @@
     letter-spacing: $letter-spacing-rel;
     background-color: $body-background-alt;
     aspect-ratio: 1;
-    border: 2px solid $body-background-alt;
+    border: 2px solid $body-text-color;
 
     svg {
       margin: 0 auto;
     }
 
     &:disabled {
-      color: $body-text-color-muted;
-      border-color: $body-background-alt;
-      background-color: transparent;
+      opacity: 0.5;
       cursor: not-allowed;
-
-      svg {
-        path {
-          stroke: $body-background-alt;
-          fill: $body-background-alt;
-        }
-      }
     }
 
     svg {
@@ -157,20 +152,7 @@
     @media (prefers-color-scheme: dark) {
       color: $body-text-color-dark;
       background-color: $body-background-dark-alt;
-      border: 2px solid $body-background-dark-alt;
-
-      &:disabled {
-        color: $body-text-color-muted-dark;
-        border-color: $body-background-dark-muted;
-        background-color: transparent;
-
-        svg {
-          path {
-            stroke: $body-background-dark-muted;
-            fill: $body-background-dark-muted;
-          }
-        }
-      }
+      border: 2px solid $body-text-color-dark;
 
       svg {
         path {
@@ -217,24 +199,24 @@
   font-size: $body-font-size;
   letter-spacing: $letter-spacing-rel;
 
-  background-color: $body-background-alt-1;
+  background-color: $body-background-muted;
 
   @media (prefers-color-scheme: dark) {
-    background-color: $body-background-dark;
+    background-color: $body-background-dark-muted;
   }
 
   border-radius: $default-radius;
   width: 100%;
-}
-
-.reply-card-chat-bubble {
-  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  column-gap: 1em;
 }
 
 .reply-card-container {
   display: flex;
   gap: 6px;
-  margin-bottom: 14px;
+  margin-bottom: 1em;
 }
 
 .reply-card-avatar {
@@ -261,12 +243,11 @@
   display: block;
   color: $body-text-color-muted;
   padding: 0;
-  margin: 4px 0;
+  margin: 1em 0 0 auto;
   font-family: $ui-font;
   font-style: italic;
   text-overflow: ellipsis;
   text-align: right;
-  width: 100%;
 
   @media (prefers-color-scheme: dark) {
     color: $body-text-color-muted-dark;
@@ -278,6 +259,7 @@
   gap: 12px;
   margin-bottom: 6px;
   align-items: center;
+  width: 100%;
 
   .name-pill {
     display: flex;
@@ -434,7 +416,7 @@
 @media (prefers-color-scheme: dark) {
   .gomments-container {
     form {
-      border-color: $body-background-dark-muted;
+      border-color: $body-text-color-muted-dark;
       background-color: $body-background-dark;
     }
 
@@ -446,13 +428,13 @@
       color: white;
 
       &::placeholder {
-        color: $body-text-color-muted-dark;
-        opacity: 0.4;
+        color: $body-text-color-dark;
+        opacity: 0.5;
       }
 
       &::-ms-input-placeholder {
-        color: $body-text-color-muted-dark;
-        opacity: 0.4;
+        color: $body-text-color-dark;
+        opacity: 0.5;
       }
     }
 

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Color Scheme Manager</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+
+<body>
+  <section>
+    <p>
+      A color palette manager which lets you name the colors.
+    </p>
+    <p>
+      I didn't like how coolors keeps asking me to upgrade for more shit that I don't need. In the spirit of
+      anti-vibe-coding I made my own color palette manager for my specific purpose.
+    </p>
+    <p>
+      Paste a blob of text into the box below. It will extract the hex codes and put them into a palette which you can
+      then modify. When you update colors they're reflected in the <abbr>csv</abbr> output below the palette.
+    </p>
+  </section>
+  <section class="manager">
+    <pre contenteditable="true" class="text-input">// paste here</pre>
+    <div>
+      <div class="palette-container"></div>
+      <div class="palette-container-dark"></div>
+    </div>
+  </section>
+</body>
+
+</html>

@@ -2,13 +2,11 @@
 <html lang="en">
 {{- partial "head.html" . -}}
 
-<body class="{{- block "body-class" . }}{{- end -}}">
-    {{- partial "nav.html" . -}}
-    <div class="main-container">
-        <main>
-            {{- block "main" . }}{{- end }}
-        </main>
-    </div>
+<body>
+    {{- partial "header.html" . -}}
+    <main>
+        {{- block "main" . }}{{- end }}
+    </main>
     {{- partial "footer.html" . -}}
 </body>
 

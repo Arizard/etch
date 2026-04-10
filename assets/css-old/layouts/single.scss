@@ -1,7 +1,7 @@
 main {
   article {
     blockquote:not(.alert) {
-      margin: $body-font-size 0 $body-font-size -9.5px;
+      margin: $body-font-size 0 $body-font-size 0;
       padding: 0 0 0 12px;
       border-left: 3px solid;
       font-style: italic;
@@ -19,7 +19,6 @@ main {
     }
 
     .alert {
-      border: 1px solid;
       border-radius: $default-radius/2;
       margin: 1.5 * $body-font-size $body-font-size;
 
@@ -218,7 +217,6 @@ main {
         }
       }
     }
-
   }
 }
 
@@ -239,6 +237,7 @@ main {
 
 .post-hero-container {
   aspect-ratio: 2.5;
+
   @media(max-width: $content-width) {
     aspect-ratio: 2;
   }

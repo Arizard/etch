@@ -1,45 +1,31 @@
-<footer id="footer">
-  <div class="footer-nav-container">
-    <div class="footer-nav-menu">
+<div class="site-footer">
+  <footer>
+    <nav>
       {{- range .Site.Menus.footer -}}
-      <div class="footer-nav-menu-item">
+      <div>
         <a href="{{- .URL -}}">{{ .Title }}</a>
       </div>
       {{- end -}}
-    </div>
-    <div class="footer-text">
-      <p>{{ .RenderString .Site.Params.copyright }}</p>
-    </div>
-    <div class="footer-text">
-      <p>
+    </nav>
+    <section>
+      <p>{{ .RenderString .Site.Params.copyright }}
         This site uses <a href="https://umami.is" target="_blank" rel="noopener"
-          data-umami-event="Footer Umami">Umami</a> for privacy-friendly analytics. No personal information is
+          data-umami-event="Footer Umami">Umami</a>
+        for privacy-friendly analytics. No personal information is
         collected.
       </p>
-    </div>
-    {{- $rssName := "" -}}
-    {{- $rssUrl := "" -}}
-    {{- with .OutputFormats.Get "rss" -}}
-      {{- $rssUrl = .Permalink -}}
-    {{- end -}}
-    {{- if .Data.Term -}}
-      {{- $rssName = fmt.Printf "tag: %s" .Name -}}
-    {{- else if .IsSection -}}
-      {{- $rssName = fmt.Printf "section: %s" .Name -}}
-    {{- else -}}
-      {{- $rssName = "all" -}}
-      {{- $rssUrl = urls.AbsURL "/index.xml" -}}
-    {{- end -}}
-    <div class="footer-nav-menu">
-      <div class="footer-nav-menu-item">
+    </section>
+    {{- $rssUrl := urls.AbsURL "index.xml" -}}
+    <section class="rss">
+      <div>
         <a alt="rss" href="{{- $rssUrl -}}">
-          rss ({{- $rssName -}})</a>
+          rss</a>
       </div>
-      <div class="footer-nav-menu-item">
+      <div>
         <a href="http://www.rssboard.org/rss-validator/check.cgi?url={{- $rssUrl -}}">
           <img src="/valid-rss-rogers.png" alt="[Valid RSS]" title="Validate my RSS feed" />
         </a>
       </div>
-    </div>
-  </div>
-</footer>
+    </section>
+  </footer>
+</div>

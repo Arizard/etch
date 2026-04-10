@@ -2,7 +2,7 @@
   display: grid;
 
   @media (min-width: $min-width-breakpoint) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 
   grid-gap: 24px;

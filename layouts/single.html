@@ -1,33 +1,38 @@
-{{- define "body-class" -}}single{{- end -}}
 {{ define "main" }}
 {{- if .Page.Resources.Get .Params.hero -}}
-<div class="post-hero-container">
-    {{- with .Page.Resources.Get .Params.hero -}}
-    {{- $heroImage := .Process "fit 800x3200 jpeg q95 box" -}}
-    <div class="post-hero" style="background-image: url('{{ $heroImage.Permalink }}');"></div>
-    {{- end -}}
-</div>
-{{- end -}}
-<div class="article-container">
-<header class="post-header">
-  <h1>{{ .Title }}</h1>
-</header>
-<div class="byline">
-  {{- with .Params.Author -}}<div class="author">{{- . -}}</div>{{- end -}}
-  {{- with .Page.Params.Date -}}<div><time>{{ .Format "2 January 2006" }}</time></div>{{- end -}}
-  {{- if .Page.Params.hero_attribution -}}
-  <div class="hero-attribution">
-    <span>{{ .RenderString .Page.Params.hero_attribution }}</span>
-  </div>
+<div class="hero">
+  {{- with .Page.Resources.Get .Params.hero -}}
+  {{- $heroImage := .Process "fit 800x3200 jpeg q95 box" -}}
+  <div class="post-hero" style="background-image: url('{{ $heroImage.Permalink }}');"></div>
   {{- end -}}
 </div>
-<article>
-  {{- .Content -}}
+{{- end -}}
+
+<article class="content">
+  {{- if or (.Params.Author) (.Page.Params.Date) (.Page.Params.hero_attribution) -}}<div class="content-inner vsplit">
+    {{- else -}}<div class="content-inner">{{- end -}}
+      <div>
+        <aside class="byline desktop">
+          {{- partial "inline/byline-inner" . -}}
+        </aside>
+      </div>
+      <div>
+        <header>
+          <h1>{{ .Title }}</h1>
+        </header>
+        <aside class="byline mobile">
+          {{- partial "inline/byline-inner" . -}}
+        </aside>
+        <section>
+          {{- .Content -}}
+        </section>
+      </div>
+      <div>&nbsp;</div>
+      <div id="gomments-container">
+      </div>
+    </div>
 </article>
-</div>
 {{- if not .Params.nocomment -}}
-<div id="gomments-container">
-</div>
 {{- $reactBuilt := resources.Get "js/react.js" | js.Build (dict "minify" true "targetPath" "react.js") -}}
 <script src="{{ $reactBuilt.RelPermalink }}" defer></script>
 {{$gommentsBuildOpts := dict
@@ -37,5 +42,15 @@
 }}
 {{- $gommentsBuilt := resources.Get "js/react-gomments/index.jsx" | js.Build $gommentsBuildOpts -}}
 <script src="{{ $gommentsBuilt.RelPermalink }}" defer></script>
+{{- end -}}
+{{ end }}
+
+{{ define "_partials/inline/byline-inner.html" }}
+{{- with .Params.Author -}}<div class="author">{{- . -}}</div>{{- end -}}
+{{- with .Page.Params.Date -}}<div><time>{{ .Format "2 January 2006" }}</time></div>{{- end -}}
+{{- if .Page.Params.hero_attribution -}}
+<div class="hero-attribution">
+  <span>{{ .RenderString .Page.Params.hero_attribution }}</span>
+</div>
 {{- end -}}
 {{ end }}

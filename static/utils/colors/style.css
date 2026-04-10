@@ -1,0 +1,46 @@
+.text-input {
+  padding: 16px;
+  border: 1px solid lightgrey;
+  border-radius: 6px;
+}
+
+.palette-container,
+.palette-container-dark {
+  display: grid;
+  grid-gap: 8px;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 16px;
+
+  .palette-cell {
+    display: grid;
+    grid-gap: 8px;
+    grid-template-columns: 1fr 1fr;
+
+    .name {
+      display: flex;
+      align-items: center;
+      margin-right: 0;
+      margin-left: auto;
+      text-align: right;
+    }
+
+    .swatch {
+      aspect-ratio: 1;
+      width: 100px;
+    }
+  }
+}
+
+.palette-container-dark {
+  background-color: black;
+
+  .name {
+    color: white;
+  }
+}
+
+.manager {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 8px;
+}

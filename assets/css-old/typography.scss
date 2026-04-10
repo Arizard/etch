@@ -95,6 +95,7 @@ nav#breadcrumbs {
         text-decoration: none;
         text-transform: lowercase;
         padding: 0 8px;
+
         &:hover {
           text-decoration: underline;
         }
@@ -186,7 +187,7 @@ main {
   }
 
   article {
-    text-align: left;
+    text-align: justify;
     margin-bottom: 120px;
 
     padding: 0;
@@ -383,22 +384,25 @@ main {
 
   pre,
   pre.chroma {
-    padding: 1rem 1rem;
+    display: block;
+    padding: 1em;
+    margin-left: 1em;
+    margin-right: 1em;
     border-radius: $default-radius/2;
     line-height: $body-line-height;
 
-    border: 1px solid $body-background-muted;
-    background-color: $body-background;
+    overflow-x: scroll;
+    background-color: $body-background-muted;
 
     @media(prefers-color-scheme: dark) {
-      border-color: $body-background-dark-muted;
-      background-color: $body-background-dark;
+      background-color: $body-background-dark-muted;
     }
 
+
     code {
-      background-color: revert;
+      background-color: transparent;
+      width: max-content;
       display: block;
-      overflow-x: auto;
     }
   }
 
@@ -407,10 +411,10 @@ main {
     padding: 0.2rem 0.4rem;
     line-height: 2rem;
 
-    background-color: $body-background;
+    background-color: $body-background-muted;
 
     @media(prefers-color-scheme: dark) {
-      background-color: $body-background-dark;
+      background-color: $body-background-dark-muted;
     }
   }
 
@@ -456,6 +460,8 @@ main {
 
   .table-container {
     overflow: auto;
+    margin-left: 1em;
+    margin-right: 1em;
     margin-bottom: $body-font-size * 2;
     border-radius: $default-radius;
     padding: 0;

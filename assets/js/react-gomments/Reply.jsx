@@ -1,5 +1,13 @@
 import { timeAgoExact, getTripColorClass } from './utils';
 
+function hashToFloat(str) {
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) {
+    hash = (Math.imul(31, hash) + str.charCodeAt(i)) | 0;
+  }
+  return (hash >>> 0) / 0xFFFFFFFF;
+}
+
 export default function Reply({
   id,
   authorName,
@@ -24,9 +32,9 @@ export default function Reply({
           <div className="reply-card-heading-lockup">
             <div className={`name-pill`}>{authorName}</div>
           </div>
+          <div className="reply-created-at">{timeAgoExact(date).toLowerCase()}</div>
           <div className="reply-card-body">{body}</div>
         </div>
-        <div className="reply-created-at">{timeAgoExact(date).toLowerCase()}</div>
       </div>
     </div>
   );

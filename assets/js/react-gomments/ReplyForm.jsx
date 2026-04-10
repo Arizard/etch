@@ -6,7 +6,7 @@ import SubmitReplyButton from './SubmitReplyButton';
 export default function ReplyForm({ onSubmit }) {
   const [nameValue, setNameValue] = useState('');
   const [bodyValue, setBodyValue] = useState('');
-  const [expanded, setExpanded] = useState(false);
+  const [expanded, setExpanded] = useState(true);
 
   const charLimit = 500
 
@@ -59,7 +59,7 @@ export default function ReplyForm({ onSubmit }) {
           onChange={handleNameChange}
           error={''}
         />
-      </div><div className="hr"></div></>}
+      </div></>}
       <div className="row">
         <MessageInput
           value={bodyValue}

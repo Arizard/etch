@@ -1,41 +1,15 @@
-{{ define "body-class" }}index{{ end }}
 {{ define "main" }}
-<section class="index-section">
-<div class="about-me-container">
-    <div class="about-me-intro">
-        {{ .Content }}
-    </div>
-</div>
-</section>
-<section class="index-section">
-<div class="section-label">Featured</div>
-{{- $pages := where site.RegularPages.ByPublishDate.Reverse "Section" "posts" -}}
-{{- $pages = where $pages "Draft" "ne" true }}
-<div class="posts-list-container home featured">
-    {{- range (where $pages "Params.featured" true) }}
-    {{- partial "post-item.html" . -}}
-    {{- end }}
-</div>
-</section>
-<section class="index-section">
-<div class="section-label">Recent</div>
-<div class="posts-list-container home">
-    {{- range (where $pages "Params.featured" "ne" true | first 8) }}
-    {{- partial "post-item.html" . -}}
-    {{- end }}
-</div>
-</section>
-<section class="index-section">
-<div class="section-label">Browse</div>
-<div class="tags-container">
-    {{ with .Site.Taxonomies.tags.ByCount }}
-    {{-
-    $ctx := dict
-    "tags" .
-    "all" true
-    -}}
-    {{- partial "terms-cloud.html" $ctx -}}
-    {{ end }}
-</div>
-</section>
+<article class="content index">
+    <section>
+        {{- .Content -}}
+    </section>
+</article>
+<main>
+    <article class="posts index">
+        {{- $pages := where site.RegularPages.ByPublishDate.Reverse "Section" "posts" -}}
+        {{- range $pages }}
+        {{- partial "post-card.html" . -}}
+        {{- end }}
+    </article>
+</main>
 {{ end }}
