@@ -621,13 +621,6 @@ article.posts {
       position: relative;
       max-height: 6lh;
       overflow-y: hidden;
-
-      .overlay {
-        position: absolute;
-        inset: 0;
-        height: 6lh;
-        width: 100%;
-      }
     }
   }
 }
