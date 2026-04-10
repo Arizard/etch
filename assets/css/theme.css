@@ -178,7 +178,7 @@ body {
   font-weight: 400;
   letter-spacing: -0.02em;
   color: var(--foreground);
-  background-color: var(--background);
+  background-color: var(--primary-900);
   overflow-x: clip;
   display: grid;
   grid-template-rows: auto 1fr auto;
@@ -189,6 +189,11 @@ body {
 
   @media (min-width: 480px) {
     font-size: 125%;
+  }
+
+  main {
+    background-color: var(--background);
+    padding-bottom: 5em;
   }
 }
 
@@ -268,7 +273,8 @@ article.content {
     line-height: 1.1;
     margin-top: 1lh;
     margin-bottom: calc(1lh / 3);
-    hyphens: auto;
+
+    text-overflow: ellipsis;
 
     a {
       color: inherit;
@@ -497,7 +503,6 @@ article.content {
   pre {
     display: block;
     overflow-x: auto;
-    font-size: 0.8em;
     margin: 1lh 0;
     border-radius: var(--radius);
     padding: 1em;
@@ -857,7 +862,6 @@ article.posts {
 }
 
 .site-footer {
-  margin-top: 5em;
   background-color: var(--primary-900);
 
   footer {

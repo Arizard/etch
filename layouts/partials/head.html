@@ -101,15 +101,8 @@
         {{ $css.Content | safeCSS }}
 
         {{- if .Site.Params.highlight -}}
-            {{- $cssSyntaxDark := resources.Get "css/syntax-dark.css" | minify }}
             {{- $cssSyntaxLight := resources.Get "css/syntax-light.css" | minify }}
-
-            @media (prefers-color-scheme: light) {
-                {{ $cssSyntaxLight.Content | safeCSS }}
-            }
-            @media (prefers-color-scheme: dark) {
-                {{ $cssSyntaxDark.Content | safeCSS }}
-            }
+            {{ $cssSyntaxLight.Content | safeCSS }}
         {{ end -}}
     </style>
 </head>
