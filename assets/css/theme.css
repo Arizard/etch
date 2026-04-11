@@ -261,7 +261,6 @@ a {
   max-width: calc(var(--width) - 4em);
   margin: 2em auto 0;
   background-color: var(--primary-100);
-  border-radius: var(--radius);
   overflow: hidden;
 
   .hero-surface {
@@ -525,7 +524,6 @@ article.content {
     display: block;
     overflow-x: auto;
     margin: 1lh 0;
-    border-radius: var(--radius);
     padding: 1em;
     background-color: var(--gray-100);
 
@@ -538,7 +536,6 @@ article.content {
   p {
     code {
       background-color: var(--gray-100);
-      border-radius: var(--radius);
       padding: 0 0.5em;
     }
 
@@ -567,7 +564,6 @@ article.content {
       img {
         margin: 0 auto;
         overflow: hidden;
-        border-radius: var(--radius);
       }
     }
 
@@ -736,17 +732,28 @@ article.posts {
     .row {
       .field-group {
 
+        input {
+          padding: 0.5em 1em;
+          width: 100%;
+          max-width: 60%;
+        }
+
+        textarea {
+          padding: 1em;
+          width: 100%;
+          resize: none;
+        }
+
         input,
         textarea {
-          width: 100%;
-          border: 1px solid var(--gray-500);
-          padding: 0.5em;
+          border: 2px solid var(--gray-200);
           box-sizing: border-box;
           margin: 0;
+          font-size: smaller;
 
           &:focus {
             outline: none;
-            border-width: 2px;
+            border-color: var(--gray-900);
           }
         }
       }
@@ -766,7 +773,8 @@ article.posts {
     }
 
     button.submit-btn {
-      padding: 0.5em 4em;
+      padding: 0.5em 2em;
+      font-size: smaller;
       border: none;
       background-color: var(--gray-200);
       opacity: 0.5;

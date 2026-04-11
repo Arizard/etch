@@ -7,22 +7,27 @@
   {{- end -}}
 </div>
 {{- end -}}
+{{- $hasByline := or (.Params.Author) (.Page.Params.Date) (.Page.Params.hero_attribution) -}}
 
 <article class="content">
-  {{- if or (.Params.Author) (.Page.Params.Date) (.Page.Params.hero_attribution) -}}<div class="content-inner vsplit">
+  {{- if $hasByline -}}<div class="content-inner vsplit">
     {{- else -}}<div class="content-inner">{{- end -}}
       <div>
+        {{- if $hasByline -}}
         <aside class="byline desktop">
           {{- partial "inline/byline-inner" . -}}
         </aside>
+        {{- end -}}
       </div>
       <div>
         <header>
           <h1>{{ .Title }}</h1>
         </header>
+        {{- if $hasByline -}}
         <aside class="byline mobile">
           {{- partial "inline/byline-inner" . -}}
         </aside>
+        {{- end -}}
         <section class="hugo-content">
           {{- .Content -}}
         </section>
@@ -53,4 +58,6 @@
   <span>{{ .RenderString .Page.Params.hero_attribution }}</span>
 </div>
 {{- end -}}
+<div class="comment-count" data-template="{count} {noun}" data-article-id-for-reply-count="{{ .Slug | default .Path }}">
+</div>
 {{ end }}

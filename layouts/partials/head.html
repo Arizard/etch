@@ -79,7 +79,15 @@
                 replyCountSpans.forEach(el => {
                     const count = stats[btoa(el.dataset.articleIdForReplyCount)]?.count;
                     if (count) {
-                        el.innerHTML = `<span>(${count} ${count == 1 ? "reply" : "replies"})</span>`;
+                        if (el.dataset.template) {
+                            const noun = count == 1 ? "reply" : "replies";
+                            const renderedTemplate = el.dataset.template
+                                .replace(/\{count\}/, `${count}`)
+                                .replace(/\{noun\}/, `${noun}`);
+                            el.innerHTML = `<span>${renderedTemplate}</span>`;
+                        } else {
+                            el.innerHTML = `<span>${count}</span>`;
+                        }
                     }
                 });
             } catch (error) {
