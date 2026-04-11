@@ -3,7 +3,7 @@
 <div class="hero">
   {{- with .Page.Resources.Get .Params.hero -}}
   {{- $heroImage := .Process "fit 800x3200 jpeg q95 box" -}}
-  <div class="post-hero" style="background-image: url('{{ $heroImage.Permalink }}');"></div>
+  <div class="hero-surface" style="background-image: url('{{ $heroImage.Permalink }}');"></div>
   {{- end -}}
 </div>
 {{- end -}}
