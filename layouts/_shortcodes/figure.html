@@ -9,7 +9,7 @@
       {{- $src := $u.String -}}
       {{- if not $u.IsAbs -}}
       {{- with or (.Page.Resources.Get $u.Path) (resources.Get $u.Path) -}}
-      {{- $resized := .Process "fit 800x4800 q85" -}}
+      {{- $resized := .Process "fit 800x4800 q85 webp" -}}
       {{- $src = $resized.RelPermalink -}}
       {{- end -}}
       {{- end -}}
