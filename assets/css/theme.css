@@ -13,6 +13,14 @@
 }
 
 @font-face {
+  font-family: 'EB Garamond';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local('Inter'), url('/fonts/eb-garamond/EBGaramond-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 300;
@@ -235,7 +243,13 @@ a {
       font-weight: 600;
       color: var(--primary-50);
       text-decoration: none;
-      font-size: 1.2em;
+      font-size: 1.6em;
+      font-family: "EB Garamond", serif;
+      -webkit-text-stroke: 0.7px currentColor;
+      letter-spacing: 0;
+      &::after {
+        content: '.';
+      }
     }
 
     nav {
@@ -301,6 +315,8 @@ article.content {
   h4,
   h5,
   h6 {
+    font-family: "EB Garamond", serif;
+    -webkit-text-stroke: 1px currentColor;
     font-weight: 600;
     line-height: 1.1;
     margin-top: 1lh;
