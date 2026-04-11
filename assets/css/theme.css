@@ -125,7 +125,7 @@
 }
 
 :root {
-  --width: 900px;
+  --width: 950px;
   --article-content-text-align: justify;
   --radius: 1em;
 }
@@ -411,8 +411,11 @@ article.content {
   p {
     margin-top: 0.5lh;
     margin-bottom: 0.5lh;
-    text-align: var(--article-content-text-align);
-    hyphens: auto;
+
+    @media (min-width: 480px) {
+      text-align: var(--article-content-text-align);
+      hyphens: auto;
+    }
   }
 
   blockquote:not(.alert) {
@@ -534,11 +537,10 @@ article.content {
       border-radius: var(--radius);
       padding: 0 0.5em;
     }
-  }
 
-  .table-container {
-    overflow-x: auto;
-    border-radius: var(--radius);
+    &.text-align-left {
+      text-align: left;
+    }
   }
 
   .figure-container {
@@ -599,17 +601,79 @@ article.content {
       color: transparent;
     }
   }
+
+  .hugo-content {
+    margin-top: 0.5lh;
+  }
+
+  .table-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 100%;
+    margin: 0.5lh 0;
+
+    table {
+      min-width: 600px;
+      box-sizing: border-box;
+      border-spacing: 0;
+      border-collapse: collapse;
+      border: none;
+      font-size: smaller;
+      table-layout: auto;
+      width: 100%;
+
+      thead,
+      tbody,
+      tr,
+      th,
+      td {
+        border: none;
+      }
+
+      thead {
+        font-size: smaller;
+        text-align: left;
+        background-color: var(--primary-800);
+        color: var(--primary-50);
+
+        tr {
+          th {
+            padding: 0.5lh;
+          }
+        }
+      }
+
+      tbody {
+        font-size: smaller;
+        text-align: left;
+
+        tr {
+          background-color: var(--gray-100);
+
+          td {
+            padding: 0.5lh;
+          }
+        }
+
+      }
+    }
+  }
 }
 
 article.index {
   margin-bottom: 2em;
+  margin-top: 2em;
+
+  h1 {
+    margin-top: 0;
+  }
 }
 
 article.posts {
   width: auto;
   max-width: var(--width);
   margin: 0 auto 0 auto;
-  padding: 0 1em 0 1em;
+  padding: 0 2em;
   display: flex;
   flex-direction: column;
   gap: 1.5em;
@@ -675,6 +739,7 @@ article.posts {
           padding: 0.5em;
           box-sizing: border-box;
           margin: 0;
+
           &:focus {
             outline: none;
             border-width: 2px;
