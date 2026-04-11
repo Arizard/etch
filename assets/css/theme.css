@@ -422,7 +422,15 @@ body {
   }
 }
 
-a {
+
+.button-link {
+  all: unset;
+  cursor: pointer;
+}
+
+a,
+.button-link {
+  text-decoration: underline;
   text-underline-offset: 0.1em;
   text-decoration-thickness: 1.5px;
   color: var(--primary-800);
@@ -1231,7 +1239,7 @@ article.posts {
     flex-direction: column;
     color: var(--primary-200);
 
-    a {
+    a, .button-link {
       color: var(--primary-100);
 
       &:hover {

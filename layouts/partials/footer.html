@@ -21,7 +21,7 @@
       <p>Last modified on {{ .Site.Lastmod | time.Format ":date_full" -}}</p>
     </section>
     <section>
-      <p><a aria-role="button" id="cycle-colors" href="#cycle-colors">click here to cycle colours</a></p>
+      <p><button class="button-link" id="cycle-colors">click here to cycle colours</button></p>
     </section>
     {{- $rssUrl := urls.AbsURL "index.xml" -}}
     <section class="rss">
