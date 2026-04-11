@@ -22,19 +22,6 @@
     </section>
     <section>
       <p><a aria-role="button" id="cycle-colors" href="#cycle-colors">click here to cycle colours</a></p>
-      <script>
-        const themeNames = ["cortado", "matcha", "pebble", "rooibos", "1bit", "rose"];
-        addEventListener("load", async () => {
-          const body = document.querySelector("body");
-          const button = document.querySelector("#cycle-colors");
-          const savedTheme = localStorage.getItem("less-coffee-theme-name");
-          body.dataset.theme = themeNames.includes(savedTheme) ? savedTheme : "matcha";
-          button.addEventListener("click", () => {
-            body.dataset.theme = themeNames[(themeNames.indexOf(body.dataset.theme) + 1) % themeNames.length];
-            localStorage.setItem("less-coffee-theme-name", body.dataset.theme);
-          });
-        });
-      </script>
     </section>
     {{- $rssUrl := urls.AbsURL "index.xml" -}}
     <section class="rss">

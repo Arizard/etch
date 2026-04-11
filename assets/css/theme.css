@@ -140,7 +140,7 @@
 
 :root {
 
-  [data-theme="rooibos"] {
+  &[data-theme="rooibos"] {
     --primary: #e35255;
     --primary-50: #ffd1ca;
     --primary-100: #ffb7b1;
@@ -182,7 +182,7 @@
     --popover-foreground: #1b1818;
   }
 
-  [data-theme="matcha"] {
+  &[data-theme="matcha"] {
     --primary: #9bb374;
     --primary-50: #ffffee;
     --primary-100: #ffffd5;
@@ -224,7 +224,7 @@
     --popover-foreground: #1a1a19;
   }
 
-  [data-theme="pebble"] {
+  &[data-theme="pebble"] {
     --primary: #e5e5e5;
     --primary-50: #ffffff;
     --primary-100: #ffffff;
@@ -266,12 +266,12 @@
     --popover-foreground: #1a1a1a;
   }
 
-  [data-theme="1bit"] {
+  &[data-theme="1bit"] {
     --background: #ffffff;
     --foreground: #1a1a1a;
   }
 
-  [data-theme="powerade"] {
+  &[data-theme="powerade"] {
     --primary: #1151e5;
     --primary-50: #c0c4ff;
     --primary-100: #a3abff;
@@ -313,7 +313,7 @@
     --popover-foreground: #18191b;
   }
 
-  [data-theme="rose"] {
+  &[data-theme="rose"] {
     --primary: #e49cbf;
     --primary-50: #ffffff;
     --primary-100: #ffffff;
@@ -355,7 +355,7 @@
     --popover-foreground: #1b1819;
   }
 
-  [data-theme="cortado"] {
+  &[data-theme="cortado"] {
     --primary: #91796a;
     --primary-50: #fff3e2;
     --primary-100: #f5d9c9;
@@ -997,7 +997,7 @@ article.posts {
 
         input,
         textarea {
-          border: 2px solid var(--gray-200);
+          border: 2px solid #e6e5e5;
           box-sizing: border-box;
           margin: 0;
           -webkit-appearance: none;
@@ -1005,7 +1005,7 @@ article.posts {
 
           &:focus {
             outline: none;
-            border-color: var(--gray-900);
+            border-color: #1a1919;
           }
         }
       }
@@ -1028,7 +1028,7 @@ article.posts {
       padding: 0.5em 2em;
       font-size: smaller;
       border: none;
-      background-color: var(--gray-200);
+      background-color: #e6e5e5;
       opacity: 0.5;
       cursor: not-allowed;
 

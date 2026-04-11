@@ -49,6 +49,19 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
     <link rel="manifest" href="/favicon/site.webmanifest">
 
+      <script>
+        const themeNames = ["cortado", "matcha", "pebble", "rooibos", "1bit", "rose"];
+        const savedTheme = localStorage.getItem("less-coffee-theme-name");
+        document.documentElement.dataset.theme = themeNames.includes(savedTheme) ? savedTheme : "matcha";
+        addEventListener("load", async () => {
+          const button = document.querySelector("#cycle-colors");
+          button.addEventListener("click", () => {
+            const page = document.querySelector("html");
+            page.dataset.theme = themeNames[(themeNames.indexOf(page.dataset.theme) + 1) % themeNames.length];
+            localStorage.setItem("less-coffee-theme-name", page.dataset.theme);
+          });
+        });
+      </script>
     <script>
         window.siteConfig = {
             apiURL: {{ if hugo.IsServer }}{{ "http://localhost:8080" }}{{ else }}{{ "https://backend.less.coffee" }}{{ end }},
