@@ -8,12 +8,14 @@
       {{- end -}}
     </nav>
     <section>
-      <p>{{ .RenderString .Site.Params.copyright }}
+      <p>{{ .RenderString .Site.Params.copyright }}</p>
+      <p>
         This site uses <a href="https://umami.is" target="_blank" rel="noopener"
           data-umami-event="Footer Umami">Umami</a>
         for privacy-friendly analytics. No personal information is
         collected.
       </p>
+      <p>Last modified on {{ .Site.Lastmod | time.Format ":date_full" -}}</p>
     </section>
     {{- $rssUrl := urls.AbsURL "index.xml" -}}
     <section class="rss">
