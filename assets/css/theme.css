@@ -256,12 +256,19 @@ a {
 }
 
 .hero {
-  aspect-ratio: 3.6;
-  width: calc(100% - 4em);
-  max-width: calc(var(--width) - 4em);
-  margin: 2em auto 0;
   background-color: var(--primary-100);
   overflow: hidden;
+
+  aspect-ratio: 1.6;
+  @media (min-width: 640px) {
+    aspect-ratio: 2.5;
+    width: calc(100% - 4em);
+    max-width: calc(var(--width) - 4em);
+    margin: 2em auto 0;
+  }
+  @media (min-width: 850px) {
+    aspect-ratio: 3.6;
+  }
 
   .hero-surface {
     width: 100%;
@@ -372,6 +379,7 @@ article.content {
   }
 
   .byline {
+    font-size: smaller;
 
     &.desktop {
       display: none;
