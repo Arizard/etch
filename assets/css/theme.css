@@ -256,9 +256,13 @@ a {
 }
 
 .hero {
-  height: 45vh;
-  width: auto;
+  aspect-ratio: 3.6;
+  width: calc(100% - 4em);
+  max-width: calc(var(--width) - 4em);
+  margin: 2em auto 0;
   background-color: var(--primary-100);
+  border-radius: var(--radius);
+  overflow: hidden;
 
   .hero-surface {
     width: 100%;
