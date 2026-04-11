@@ -2,7 +2,7 @@
 {{- if .Page.Resources.Get .Params.hero -}}
 <div class="hero">
   {{- with .Page.Resources.Get .Params.hero -}}
-  {{- $heroImage := .Process "fit 800x3200 jpeg q95 box" -}}
+  {{- $heroImage := .Process "fit 900x3200 webp q85" -}}
   <div class="hero-surface" style="background-image: url('{{ $heroImage.Permalink }}');"></div>
   {{- end -}}
 </div>
