@@ -39,15 +39,18 @@
 </article>
 {{- if not .Params.nocomment -}}
 {{- $reactBuilt := resources.Get "js/react.js" | js.Build (dict "minify" true "targetPath" "react.js") -}}
-<script src="{{ $reactBuilt.RelPermalink }}" defer></script>
-{{- $rand := printf "%.10s" (sha256 now.Unix) -}}
+{{- with $reactBuilt | fingerprint "sha256" -}}
+<script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" defer></script>
+{{- end -}}
 {{$gommentsBuildOpts := dict
 "minify" (not hugo.IsDevelopment)
 "sourceMap" (cond hugo.IsDevelopment "external" "")
-"targetPath" (printf "gomments_%s.js" $rand)
+"targetPath" "gomments.js"
 }}
 {{- $gommentsBuilt := resources.Get "js/react-gomments/index.jsx" | js.Build $gommentsBuildOpts -}}
-<script src="{{ $gommentsBuilt.RelPermalink }}" defer></script>
+{{- with $gommentsBuilt | fingerprint "sha256" -}}
+<script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" defer></script>
+{{- end -}}
 {{- end -}}
 {{ end }}
 
