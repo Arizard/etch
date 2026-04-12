@@ -139,6 +139,7 @@
   /* color fallbacks */
   --border: #1a1a1a;
   --drop-shadow: black;
+
 }
 
 :root {
@@ -400,6 +401,13 @@
       --popover: #ffffff;
       --popover-foreground: #1a1919;
     }
+  }
+}
+
+:root {
+  /* color overrides */
+  &[data-theme="1bit"] {
+    --drop-shadow: transparent;
   }
 }
 
@@ -1012,6 +1020,7 @@ article.posts {
           border: 2px solid var(--border);
           border-radius: 6px;
           margin: 0;
+
           &::placeholder {
             opacity: 0.5;
           }
@@ -1280,7 +1289,7 @@ article.posts {
 @media print {
 
   .site-header-container,
-  .site-footer {
+  .site-footer, .hero, #gomments-container {
     display: none;
   }
 
@@ -1313,10 +1322,6 @@ article.posts {
     h6 {
       font-size: 1.125rem;
     }
-  }
-
-  .gomments-container {
-    display: none;
   }
 
   .alert {
