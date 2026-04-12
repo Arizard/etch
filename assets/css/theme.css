@@ -423,13 +423,6 @@ body {
   min-height: 100vh;
   min-height: 100svh;
 
-  font-size: 100%;
-
-  @media (min-width: 480px) {
-    font-size: 125%;
-    letter-spacing: -0.01em;
-  }
-
   main {
     background-color: var(--background);
     padding-bottom: 5em;
