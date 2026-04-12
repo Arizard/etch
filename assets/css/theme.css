@@ -135,6 +135,10 @@
 :root {
   --width: 950px;
   --radius: 1em;
+
+  /* color fallbacks */
+  --border: #1a1a1a;
+  --drop-shadow: black;
 }
 
 :root {
@@ -473,6 +477,7 @@ a,
       font-family: "EB Garamond", serif;
       -webkit-text-stroke: 0.7px currentColor;
       letter-spacing: 0;
+      text-shadow: 1.5px 1.5px 0 var(--drop-shadow);
 
       &::after {
         content: '.';
@@ -1003,15 +1008,12 @@ article.posts {
 
         input,
         textarea {
-          border: 2px solid #e6e5e5;
           box-sizing: border-box;
+          border: 2px solid var(--border);
+          border-radius: 6px;
           margin: 0;
-          -webkit-appearance: none;
-          appearance: none;
-
-          &:focus {
-            outline: none;
-            border-color: #1a1919;
+          &::placeholder {
+            opacity: 0.5;
           }
         }
       }
@@ -1031,23 +1033,26 @@ article.posts {
     }
 
     button.submit-btn {
-      padding: 0.5em 2em;
-      font-size: smaller;
-      border: none;
-      background-color: #e6e5e5;
-      opacity: 0.5;
+      background-color: transparent;
+      border-radius: 6px;
+      border: 2px solid var(--border);
       cursor: not-allowed;
+      font-size: smaller;
+      font-weight: 500;
+      padding: 0.5lh 1lh;
 
       &:enabled {
 
+        background-color: green;
+        border-color: green;
+
         &:hover {
-          background-color: #1dd1a1;
+          background-color: hsl(from green calc(h + 15) s calc(l + 5));
+          border-color: hsl(from green calc(h + 15) s calc(l + 5));
         }
 
-        background-color: #10ac84;
         color: white;
         cursor: pointer;
-        opacity: 1;
       }
     }
   }
@@ -1253,10 +1258,11 @@ article.posts {
       font-weight: 600;
       color: var(--primary-50);
       text-decoration: none;
-      font-size: 1.6em;
+      font-size: 1em;
       font-family: "EB Garamond", serif;
       -webkit-text-stroke: 0.7px currentColor;
       letter-spacing: 0;
+      text-shadow: 1px 1px 0 var(--drop-shadow);
 
       &::after {
         content: '.';
