@@ -405,6 +405,7 @@
 }
 
 :root {
+
   /* color overrides */
   &[data-theme="1bit"] {
     --drop-shadow: transparent;
@@ -540,6 +541,7 @@ a,
     background-size: cover;
   }
 }
+
 
 article.content {
 
@@ -874,6 +876,7 @@ article.content {
 
   .hugo-content {
     margin-top: 0.5lh;
+    container-type: inline-size;
   }
 
   .table-container {
@@ -927,6 +930,12 @@ article.content {
 
       }
     }
+  }
+}
+
+@container (width < 36ch) {
+  p {
+    hyphens: auto;
   }
 }
 
@@ -997,7 +1006,6 @@ article.posts {
     display: flex;
     flex-direction: column;
     gap: 0.5lh;
-    overflow: hidden;
 
     .row {
       .field-group {
@@ -1289,7 +1297,9 @@ article.posts {
 @media print {
 
   .site-header-container,
-  .site-footer, .hero, #gomments-container {
+  .site-footer,
+  .hero,
+  #gomments-container {
     display: none;
   }
 
