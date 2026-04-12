@@ -134,7 +134,6 @@
 
 :root {
   --width: 950px;
-  --article-content-text-align: justify;
   --radius: 1em;
 }
 
@@ -676,10 +675,7 @@ article.content {
     margin-top: 0.5lh;
     margin-bottom: 0.5lh;
 
-    @media (min-width: 640px) {
-      text-align: var(--article-content-text-align);
-      hyphens: auto;
-    }
+    text-align: justify;
   }
 
   blockquote:not(.alert) {
