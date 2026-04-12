@@ -684,7 +684,6 @@ article.content {
     margin-top: 0.5lh;
     margin-bottom: 0.5lh;
 
-    text-align: justify;
   }
 
   blockquote:not(.alert) {
@@ -927,8 +926,9 @@ article.content {
   }
 }
 
-@container (width < 36ch) {
+@container (width > 60ch) {
   p {
+    text-align: justify;
     hyphens: auto;
   }
 }
