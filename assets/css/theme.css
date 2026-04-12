@@ -423,6 +423,8 @@ body {
   min-height: 100vh;
   min-height: 100svh;
 
+  letter-spacing: -0.02em;
+
   main {
     background-color: var(--background);
     padding-bottom: 5em;
