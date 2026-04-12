@@ -1005,19 +1005,17 @@ article.posts {
       .field-group {
 
         input {
-          padding: 0.5em 1em;
-          width: 100%;
           max-width: 60%;
         }
 
         textarea {
-          padding: 1em;
-          width: 100%;
           resize: none;
         }
 
         input,
         textarea {
+          width: 100%;
+          padding: 0.5em 0.5em;
           box-sizing: border-box;
           border: 2px solid var(--border);
           border-radius: 6px;
