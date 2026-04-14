@@ -21,6 +21,14 @@
 }
 
 @font-face {
+  font-family: 'EB Garamond';
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: local('EB Garamond'), url('/fonts/eb-garamond/EBGaramond-Italic-VariableFont_wght.woff2') format('woff2'), url('/fonts/eb-garamond/EBGaramond-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 300;
@@ -1283,7 +1291,7 @@ article.posts {
   background-color: var(--primary-900);
 
   footer {
-    padding: 1em 0;
+    padding: 2em 0;
     width: calc(100% - 4em);
     max-width: calc(var(--width) - 4em);
     margin-left: auto;
