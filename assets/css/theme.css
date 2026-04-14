@@ -585,6 +585,12 @@ a,
   }
 }
 
+article {
+  &::selection {
+    background-color: var(--primary-900, var(--foreground));
+    color: var(--primary-50, var(--background));
+  }
+}
 
 article.content {
 
