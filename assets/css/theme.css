@@ -751,10 +751,9 @@ article.content {
 
   blockquote:not(.alert) {
     font-style: italic;
-    border-left: 2px solid var(--primary-800);
-    color: var(--primary-800);
+    border-left: 2px solid var(--foreground);
+    color: var(--foreground);
     padding-left: 1em;
-    font-weight: 500;
   }
 
   .alert {
