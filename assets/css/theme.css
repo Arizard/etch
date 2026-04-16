@@ -480,6 +480,13 @@ body {
 }
 
 
+.back-nav {
+  width: calc(100% - 4em);
+  max-width: calc(var(--width) - 4em);
+  margin: 1em auto 1em auto;
+  font-weight: 500;
+}
+
 .button-link {
   all: unset;
   cursor: pointer;

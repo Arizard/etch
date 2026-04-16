@@ -9,6 +9,9 @@
 {{- end -}}
 {{- $hasByline := or (.Params.Author) (.Page.Params.Date) (.Page.Params.hero_attribution) -}}
 
+<nav class="back-nav">
+  <a href="{{- .Parent.RelPermalink -}}">← {{ .Parent.Title -}}</a>
+</nav>
 <article class="content">
   {{- if $hasByline -}}<div class="content-inner vsplit">
     {{- else -}}<div class="content-inner">{{- end -}}
