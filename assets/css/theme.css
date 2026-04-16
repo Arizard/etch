@@ -742,6 +742,11 @@ article.content {
 
   }
 
+  code {
+    background-color: var(--gray-100);
+    padding: 0.2em 0.4em;
+  }
+
   p {
     margin-top: 0.5lh;
     margin-bottom: 0.5lh;
@@ -860,15 +865,8 @@ article.content {
     }
   }
 
-  p {
-    code {
-      background-color: var(--gray-100);
-      padding: 0.2em 0.4em;
-    }
-
-    &.text-align-left {
-      text-align: left;
-    }
+  p.text-align-left {
+    text-align: left;
   }
 
   .figure-container {
