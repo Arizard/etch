@@ -1030,7 +1030,11 @@ article.posts {
     flex-direction: column;
 
     .title {
-      font-weight: bold;
+
+      &,
+      a {
+        font-weight: bold;
+      }
     }
 
     header {
