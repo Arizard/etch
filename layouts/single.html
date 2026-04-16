@@ -8,7 +8,6 @@
 </div>
 {{- end -}}
 {{- $hasByline := or (.Params.Author) (.Page.Params.Date) (.Page.Params.hero_attribution) -}}
-
 <nav class="back-nav">
   <a href="{{- .Parent.RelPermalink -}}">← {{ .Parent.Title -}}</a>
 </nav>
@@ -40,6 +39,9 @@
       </div>
     </div>
 </article>
+<nav class="back-nav">
+  <a href="{{- .Parent.RelPermalink -}}">← Back to {{ .Parent.Title -}}</a>
+</nav>
 {{- if not .Params.nocomment -}}
 {{- $reactBuilt := resources.Get "js/react.js" | js.Build (dict "minify" true "targetPath" "react.js") -}}
 {{- with $reactBuilt | fingerprint "sha256" -}}
@@ -55,6 +57,7 @@
 <script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" defer></script>
 {{- end -}}
 {{- end -}}
+
 {{ end }}
 
 {{ define "_partials/inline/byline-inner.html" }}

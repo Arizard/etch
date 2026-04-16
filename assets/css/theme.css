@@ -487,6 +487,12 @@ body {
   font-weight: 500;
 }
 
+article.content {
+  .back-nav {
+    width: auto;
+  }
+}
+
 .button-link {
   all: unset;
   cursor: pointer;
