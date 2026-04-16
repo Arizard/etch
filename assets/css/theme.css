@@ -592,12 +592,11 @@ a,
   }
 }
 
-article {
-  &::selection {
-    background-color: var(--primary-900, var(--foreground));
-    color: var(--primary-50, var(--background));
-  }
+article::selection {
+  background-color: var(--primary-900, var(--foreground));
+  color: var(--primary-50, var(--background));
 }
+
 
 article.content {
 
@@ -996,7 +995,8 @@ article.content {
   }
 }
 
-article.index, article.section {
+article.index,
+article.section {
   margin-bottom: 4em;
 }
 
