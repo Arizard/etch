@@ -484,13 +484,6 @@ body {
   width: calc(100% - 4em);
   max-width: calc(var(--width) - 4em);
   margin: 1em auto 1em auto;
-  font-weight: 500;
-}
-
-article.content {
-  .back-nav {
-    width: auto;
-  }
 }
 
 .button-link {
@@ -504,6 +497,7 @@ a,
   text-underline-offset: 0.1em;
   text-decoration-thickness: 1.5px;
   color: var(--primary-800);
+  font-weight: 500;
 
   &:hover {
     color: var(--primary-600);
@@ -760,6 +754,7 @@ article.content {
     border-left: 2px solid var(--primary-800);
     color: var(--primary-800);
     padding-left: 1em;
+    font-weight: 500;
   }
 
   .alert {
