@@ -996,13 +996,8 @@ article.content {
   }
 }
 
-article.index {
-  margin-bottom: 2em;
-  margin-top: 2em;
-
-  h1 {
-    margin-top: 0;
-  }
+article.index, article.section {
+  margin-bottom: 4em;
 }
 
 article.posts {
