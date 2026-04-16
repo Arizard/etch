@@ -1,10 +1,10 @@
 {{- if .IsBlock -}}
 <div class="figure-container {{ with .Attributes.class -}}{{ . }}{{- end -}}">
   <figure>
-      {{- $keepOriginal := .Attributes.original -}}
       {{- $u := urls.Parse (.Destination | safeURL) -}}
       {{- $src := $u.String -}}
       {{- $original := or (.Page.Resources.Get $u.Path) (resources.Get $u.Path) -}}
+      {{- $keepOriginal := or .Attributes.original (eq $original.MediaType.SubType "svg") -}}
       {{- if and (not $u.IsAbs) (not $keepOriginal) -}}
         {{- with $original -}}
           {{- $resized := .Process "fit 800x4800 q85 webp" -}}
