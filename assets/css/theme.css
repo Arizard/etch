@@ -1056,6 +1056,46 @@ article.posts {
   gap: 0.5lh;
   justify-items: stretch;
 
+  .reaction-bar {
+    display: flex;
+    gap: 1em;
+    margin-bottom: 2em;
+
+    button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: none;
+      padding: 8px 16px;
+      background: color-mix(in srgb, var(--primary-50) 50%, transparent);
+      color: var(--primary-700);
+      font-weight: 500;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: transform 100ms ease-out;
+    }
+
+    button[aria-pressed="true"] {
+      background: var(--primary-50);
+    }
+
+    &:not(.locked) {
+      button:hover {
+        transform: scale(0.97, 0.97);
+      }
+
+      button:active {
+        transform: scale(0.92, 0.92);
+      }
+    }
+
+    &.locked {
+      button {
+        cursor: not-allowed;
+      }
+    }
+  }
+
   form {
     display: flex;
     flex-direction: column;
