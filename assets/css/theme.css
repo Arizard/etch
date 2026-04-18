@@ -1066,17 +1066,14 @@ article.posts {
       align-items: center;
       gap: 8px;
       border: none;
-      padding: 8px 16px;
-      background: color-mix(in srgb, var(--primary-50) 50%, transparent);
-      color: var(--primary-700);
+      padding: 0.5em 1em;
+      border: 2px solid var(--primary-800, var(--foreground));
+      background: var(--background);
+      color: var(--primary-800);
       font-weight: 500;
       cursor: pointer;
       border-radius: 6px;
       transition: transform 100ms ease-out;
-    }
-
-    button[aria-pressed="true"] {
-      background: var(--primary-50);
     }
 
     &:not(.locked) {
@@ -1122,7 +1119,9 @@ article.posts {
           margin: 0;
 
           &::placeholder {
+            color: var(--foreground);
             opacity: 0.5;
+            font-style: italic;
           }
         }
       }
@@ -1142,22 +1141,21 @@ article.posts {
     }
 
     button.submit-btn {
-      background-color: transparent;
+      background-color: lightgrey;
+      border: none;
       border-radius: 6px;
-      border: 2px solid var(--border);
       cursor: not-allowed;
       font-size: smaller;
-      font-weight: 500;
+      font-weight: 600;
       padding: 0.5lh 1lh;
+      color: white;
 
       &:enabled {
 
         background-color: green;
-        border-color: green;
 
         &:hover {
           background-color: hsl(from green calc(h + 15) s calc(l + 5));
-          border-color: hsl(from green calc(h + 15) s calc(l + 5));
         }
 
         color: white;
@@ -1199,6 +1197,7 @@ article.posts {
         color: white;
         font-weight: bold;
         overflow: hidden;
+        border-radius: 6px;
 
         div {
           text-align: center;
