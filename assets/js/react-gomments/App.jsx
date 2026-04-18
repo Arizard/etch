@@ -122,7 +122,7 @@ export default function App() {
 
   return (
     <div className="gomments-container">
-    <!-- this may work better as a component -->
+    {/* this may work better as a component */}
     <div className={reactionBarLocked ? "reaction-bar locked" : "reaction-bar"}>
     <button
       className="like-button"
