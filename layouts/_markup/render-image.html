@@ -8,7 +8,7 @@
       {{- with $original -}}
         {{- $keepOriginal := or $ctx.Attributes.original (eq $original.MediaType.SubType "svg") -}}
         {{- if and (not $u.IsAbs) (not $keepOriginal) -}}
-            {{- $resized := .Process "fit 800x4800 q85 webp" -}}
+            {{- $resized := .Process "fit 512x4800 q85 webp" -}}
             {{- $src = $resized.Permalink -}}
         {{- end -}}
       {{- end -}}
