@@ -18,8 +18,6 @@ This copies dependencies from the theme's `package.hugo.json` into your project'
 1. Install `woff2` package using homebrew: `brew install woff2`. Other platforms should use other package managers e.g. `apt`.
 2. `cd` into the font directory and run `woff2_compress` on each `*.ttf`: `woff2_compress my_font.ttf`
 
-
-
 ## Syntax highlighting
 
 `hugo gen chromastyles`
@@ -27,3 +25,7 @@ This copies dependencies from the theme's `package.hugo.json` into your project'
 ```
 hugo gen chromastyles --style="gruvbox" > assets/css/syntax-dark.css
 ```
+
+## Icon Attribution
+
+[Lucide](https://lucide.dev/)

@@ -6,6 +6,8 @@ import ReplyFeed from './ReplyFeed';
 const baseURL = `${window.siteConfig.apiURL}/gomments`;
 const article = btoa(window.articleConfig.articleID);
 const likeDeletionKeyName = `article:${article}:likeDeletionKey`
+const svgHeartOutline = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-icon lucide-heart"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg>`
+const svgHeartSolid = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#ffffff" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-icon lucide-heart"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg>`
 
 export default function App() {
   const [replies, setReplies] = useState([]);
@@ -120,6 +122,8 @@ export default function App() {
     }
   };
 
+  const readerPluralised = likeCount === 1 ? "reader" : "readers";
+
   return (
     <div className="gomments-container">
     {/* this may work better as a component */}
@@ -130,14 +134,15 @@ export default function App() {
       aria-label={liked ? "unlike article" : "like article"}
       onClick={handleLikeButtonOnClick}
     >
-      <div>❤️</div>
+    <div dangerouslySetInnerHTML={{__html: liked ? svgHeartSolid : svgHeartOutline }}>
+      </div>
     {
       liked
         ? likeCount > 0
-          ? <div>Liked by <strong>you</strong> and {likeCount} readers.</div>
+          ? <div>Liked by <strong>you</strong> and {likeCount} {readerPluralised}.</div>
           : <div>Liked by <strong>you</strong>.</div>
         : likeCount > 0
-          ? <div>Liked by {likeCount} readers.</div>
+          ? <div>Liked by {likeCount} {readerPluralised}.</div>
           :  <div>Be the first to leave a like.</div>
     }
     </button>
