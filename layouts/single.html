@@ -10,7 +10,7 @@
 </div>
 {{- end -}}
 {{- $hasByline := or (.Params.Author) (.Page.Params.Date) (.Page.Params.hero_attribution) -}}
-<nav class="back-nav">
+<nav class="back-nav top">
   <a href="{{- .Parent.RelPermalink -}}">← {{ .Parent.Title -}}</a>
 </nav>
 <article class="content">

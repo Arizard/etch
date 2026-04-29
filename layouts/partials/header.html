@@ -2,7 +2,7 @@
   <div class="site-header">
     <div class="primary">
       <p><a alt="Arie's Blog" href="/" class="site-title">{{ .Site.Title }}</a></p>
-      {{ with .Site.Params.greeting -}}<p>{{- . -}}</p>{{- end -}}
+      {{ with .Site.Params.greeting -}}<p class="greeting">{{- . -}}</p>{{- end -}}
     </div>
     <nav>
       {{- range .Site.Menus.main -}}

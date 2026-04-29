@@ -491,6 +491,14 @@ body {
   width: calc(100% - var(--gutter-double));
   max-width: calc(var(--width) - var(--gutter-double));
   margin: 1em auto 1em auto;
+
+  &.top {
+    display: none;
+
+    @media (min-width: 480px) {
+      display: block;
+    }
+  }
 }
 
 .button-link {
@@ -512,23 +520,38 @@ a,
 }
 
 .site-header-container {
-  padding-bottom: 2em;
-  padding-top: 2em;
+  padding-bottom: 1em;
+  padding-top: 1em;
   background-color: var(--primary-900);
+
+  @media (min-width: 480px) {
+    padding-bottom: var(--gutter);
+    padding-top: var(--gutter);
+  }
 
   .site-header {
     display: grid;
-    grid-template-rows: auto auto;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-gap: 0.5em;
 
     @media (min-width: 480px) {
-      grid-template-rows: 1fr;
       grid-template-columns: 2fr 1fr;
       grid-gap: 1em;
     }
 
-    width: calc(100% - 4em);
-    max-width: calc(var(--width) - 4em);
+    .primary {
+      p.greeting {
+        display: none;
+
+        @media (min-width: 480px) {
+          display: inline-block;
+        }
+      }
+    }
+
+    width: calc(100% - var(--gutter-double));
+    max-width: calc(var(--width) - var(--gutter-double));
     margin-left: auto;
     margin-right: auto;
 
@@ -552,10 +575,14 @@ a,
 
     nav {
       display: flex;
-      align-items: end;
+      align-items: center;
       justify-content: flex-end;
       gap: 1em;
       text-transform: lowercase;
+
+      @media (min-width: 480px) {
+        align-items: end;
+      }
 
       a {
         color: var(--primary-100);
