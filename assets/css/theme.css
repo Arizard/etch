@@ -1385,9 +1385,9 @@ article.posts {
   background-color: var(--primary-900);
 
   footer {
-    padding: 2em 0;
-    width: calc(100% - 4em);
-    max-width: calc(var(--width) - 4em);
+    padding: var(--gutter) 0;
+    width: calc(100% - var(--gutter-double));
+    max-width: calc(var(--width) - var(--gutter-double));
     margin-left: auto;
     margin-right: auto;
     display: flex;
