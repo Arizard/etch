@@ -2,7 +2,7 @@
 {{- if .Page.Resources.Get .Params.hero -}}
 <div class="hero">
   {{- with .Page.Resources.Get .Params.hero -}}
-  {{- $heroImage := .Process "fill Center #ffffff lossy 886x554 webp q85" -}}
+  {{- $heroImage := .Process "fill Center #ffffff lossy 880x554 webp q85" -}}
   <div class="hero-surface">
     <img fetchpriority="high" src="{{ $heroImage.Permalink }}" />
   </div>
