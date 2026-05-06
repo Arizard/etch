@@ -28,118 +28,6 @@
   src: local('EB Garamond'), url('/fonts/eb-garamond/EBGaramond-Italic-VariableFont_wght.woff2') format('woff2'), url('/fonts/eb-garamond/EBGaramond-VariableFont_wght.ttf') format('truetype');
 }
 
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 300;
-  font-display: swap;
-  src: local('Inter'), url('/fonts/inter/Inter-VariableFont_opsz,wght.woff2') format('woff2'), url('/fonts/inter/Inter-VariableFont_opsz,wght.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: local('Inter'), url('/fonts/inter/Inter-VariableFont_opsz,wght.woff2') format('woff2'), url('/fonts/inter/Inter-VariableFont_opsz,wght.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: local('Inter'), url('/fonts/inter/Inter-VariableFont_opsz,wght.woff2') format('woff2'), url('/fonts/inter/Inter-VariableFont_opsz,wght.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: local('Inter'), url('/fonts/inter/Inter-VariableFont_opsz,wght.woff2') format('woff2'), url('/fonts/inter/Inter-VariableFont_opsz,wght.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: local('Inter'), url('/fonts/inter/Inter-VariableFont_opsz,wght.woff2') format('woff2'), url('/fonts/inter/Inter-VariableFont_opsz,wght.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 800;
-  font-display: swap;
-  src: local('Inter'), url('/fonts/inter/Inter-VariableFont_opsz,wght.woff2') format('woff2'), url('/fonts/inter/Inter-VariableFont_opsz,wght.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 900;
-  font-display: swap;
-  src: local('Inter'), url('/fonts/inter/Inter-VariableFont_opsz,wght.woff2') format('woff2'), url('/fonts/inter/Inter-VariableFont_opsz,wght.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-style: italic;
-  font-weight: 300;
-  font-display: swap;
-  src: local('Inter'), url('/fonts/inter/Inter-Italic-VariableFont_opsz,wght.woff2') format('woff2'), url('/fonts/inter/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: local('Inter'), url('/fonts/inter/Inter-Italic-VariableFont_opsz,wght.woff2') format('woff2'), url('/fonts/inter/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-style: italic;
-  font-weight: 500;
-  font-display: swap;
-  src: local('Inter'), url('/fonts/inter/Inter-Italic-VariableFont_opsz,wght.woff2') format('woff2'), url('/fonts/inter/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-style: italic;
-  font-weight: 600;
-  font-display: swap;
-  src: local('Inter'), url('/fonts/inter/Inter-Italic-VariableFont_opsz,wght.woff2') format('woff2'), url('/fonts/inter/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-style: italic;
-  font-weight: 700;
-  font-display: swap;
-  src: local('Inter'), url('/fonts/inter/Inter-Italic-VariableFont_opsz,wght.woff2') format('woff2'), url('/fonts/inter/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-style: italic;
-  font-weight: 800;
-  font-display: swap;
-  src: local('Inter'), url('/fonts/inter/Inter-Italic-VariableFont_opsz,wght.woff2') format('woff2'), url('/fonts/inter/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-style: italic;
-  font-weight: 900;
-  font-display: swap;
-  src: local('Inter'), url('/fonts/inter/Inter-Italic-VariableFont_opsz,wght.woff2') format('woff2'), url('/fonts/inter/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype');
-}
-
 :root {
   --width: 950px;
   --radius: 1em;
@@ -470,7 +358,7 @@
 }
 
 body {
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-weight: 400;
   color: var(--foreground);
   background-color: var(--primary-900);

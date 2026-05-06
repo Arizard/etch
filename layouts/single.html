@@ -11,7 +11,7 @@
 {{- end -}}
 {{- $hasByline := or (.Params.Author) (.Page.Params.Date) (.Page.Params.hero_attribution) -}}
 <nav class="back-nav top">
-  <a href="{{- .Parent.RelPermalink -}}">← {{ .Parent.Title -}}</a>
+  <a href="{{- .Parent.RelPermalink -}}">Back to {{ .Parent.Title -}}</a>
 </nav>
 <article class="content">
   {{- if $hasByline -}}<div class="content-inner vsplit">
@@ -42,7 +42,7 @@
     </div>
 </article>
 <nav class="back-nav">
-  <a href="{{- .Parent.RelPermalink -}}">← Back to {{ .Parent.Title -}}</a>
+  <a href="{{- .Parent.RelPermalink -}}">Back to {{ .Parent.Title -}}</a>
 </nav>
 {{- if not .Params.nocomment -}}
 {{- $reactBuilt := resources.Get "js/react.js" | js.Build (dict "minify" true "targetPath" "react.js") -}}
