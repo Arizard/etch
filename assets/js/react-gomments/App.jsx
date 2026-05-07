@@ -134,18 +134,20 @@ export default function App() {
       aria-label={liked ? "unlike article" : "like article"}
       onClick={handleLikeButtonOnClick}
     >
-    <div dangerouslySetInnerHTML={{__html: liked ? svgHeartSolid : svgHeartOutline }}>
+      <div dangerouslySetInnerHTML={{__html: liked ? svgHeartSolid : svgHeartOutline }}>
       </div>
+    </button>
+    <div className="reaction-bar-count">
     {
       liked
         ? likeCount > 0
-          ? <div>Liked by <strong>you</strong> and {likeCount} {readerPluralised}.</div>
-          : <div>Liked by <strong>you</strong>.</div>
+          ? <>Liked by you and {likeCount} {readerPluralised}.</>
+          : <>Liked by you.</>
         : likeCount > 0
-          ? <div>Liked by {likeCount} {readerPluralised}.</div>
-          :  <div>Be the first to leave a like.</div>
+          ? <>Liked by {likeCount} {readerPluralised}.</>
+          :  <>Be the first to leave a like.</>
     }
-    </button>
+    </div>
     </div>
     <div className="section-label">Reply</div>
       <ReplyForm onSubmit={handleSubmitReply} />
