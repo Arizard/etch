@@ -1,6 +1,7 @@
 {{- if .Page.Draft -}}
-<div style="box-sizing: border-box; border-left: 3px dotted red; margin-left: -1em; padding-left: calc(1em - 3px);">
-  <span style="color: red"><strong>draft content - removed when published</strong></span>
-  {{- .Inner | .Page.RenderString -}}
+<div style="background-color: rgba(255,0,0,0.05);">
+  <p style="color: red; text-align: center;">draft content - removed when published</p>
+  {{ $opts := dict "display" "block" }}
+  {{- .Inner | .Page.RenderString $opts -}}
 </div>
 {{- end -}}
