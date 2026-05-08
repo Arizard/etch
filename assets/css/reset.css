@@ -20,13 +20,6 @@
 body {
   /* 4. Increase line-height */
   line-height: 1.5;
-
-  /* 5. Improve text rendering */
-  @media (-webkit-min-device-pixel-ratio: 2),
-  (min-resolution: 192dpi) {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
 }
 
 /* 6. Improve media defaults */
