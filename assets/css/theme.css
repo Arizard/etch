@@ -468,7 +468,7 @@ a,
       font-weight: 600;
       color: var(--primary-50);
       text-decoration: none;
-      font-size: 1.6em;
+      font-size: 2em;
       font-family: "EB Garamond", serif;
       -webkit-text-stroke: 0.7px currentColor;
       letter-spacing: 0;
@@ -1321,7 +1321,7 @@ noscript {
       font-weight: 600;
       color: var(--primary-50);
       text-decoration: none;
-      font-size: 1em;
+      font-size: 2em;
       font-family: "EB Garamond", serif;
       -webkit-text-stroke: 0.7px currentColor;
       letter-spacing: 0;
