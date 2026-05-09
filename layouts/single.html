@@ -21,9 +21,9 @@
           <h1>{{ .Title }}</h1>
         </header>
         {{- if $hasByline -}}
-        <aside class="byline mobile">
+        <address class="byline mobile">
           {{- partial "inline/byline-inner" . -}}
-        </aside>
+        </address>
         {{- end -}}
         <section class="hugo-content">
           {{- .Content -}}
