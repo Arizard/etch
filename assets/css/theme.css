@@ -881,6 +881,10 @@ article.content {
 
   .hugo-content {
     margin-top: 0.5lh;
+    line-height: 1.8;
+    sup {
+      line-height: 0;
+    }
   }
 
   .table-container {
