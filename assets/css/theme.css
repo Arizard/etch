@@ -635,7 +635,7 @@ article.content {
   .content-inner.vsplit {
     @media (min-width: 720px) {
       display: grid;
-      grid-template-columns: 18ch 1fr;
+      grid-template-columns: 1fr 24ch;
       grid-gap: var(--gutter);
 
       &>* {
@@ -650,6 +650,8 @@ article.content {
 
   .byline {
 
+    background-color: var(--gray-100);
+
     &.desktop {
       display: none;
 
@@ -660,8 +662,6 @@ article.content {
       margin-top: 0;
 
       padding: 1em;
-      aspect-ratio: 4/5;
-      text-align: right;
     }
 
     &.mobile {
@@ -674,7 +674,6 @@ article.content {
 
       margin: 1lh 0;
       padding: 0.5em 1em;
-      background-color: var(--gray-100);
     }
 
     &:empty {
@@ -803,13 +802,17 @@ article.content {
     overflow-x: auto;
     margin: 1lh 0;
     padding: 1em;
-    background-color: var(--gray-100);
     font-family: monaco, Consolas, Lucida Console, monospace;
 
     code {
       display: block;
       width: fit-content;
+      background-color: transparent;
     }
+  }
+
+  pre:not(.chroma) {
+    background-color: var(--gray-100);
   }
 
   p.text-align-left {
@@ -1009,7 +1012,7 @@ noscript {
   .reaction-bar {
     display: flex;
     gap: 1em;
-    margin-bottom: 2em;
+    margin: 1em 0;
     align-items: center;
 
     .reaction-bar-count {
@@ -1033,7 +1036,7 @@ noscript {
 
     &:not(.locked) {
       button:hover {
-      background: var(--primary-800, black);
+        background: var(--primary-800, black);
       }
     }
 

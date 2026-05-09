@@ -17,13 +17,6 @@
   {{- if $hasByline -}}<div class="content-inner vsplit">
     {{- else -}}<div class="content-inner">{{- end -}}
       <div>
-        {{- if $hasByline -}}
-        <address class="byline desktop">
-          {{- partial "inline/byline-inner" . -}}
-        </address>
-        {{- end -}}
-      </div>
-      <div>
         <header>
           <h1>{{ .Title }}</h1>
         </header>
@@ -36,10 +29,17 @@
           {{- .Content -}}
         </section>
       </div>
-      <div>&nbsp;</div>
+      <div>
+        {{- if $hasByline -}}
+        <address class="byline desktop">
+          {{- partial "inline/byline-inner" . -}}
+        </address>
+        {{- end -}}
+      </div>
       <div id="gomments-container">
         <noscript>Enable javascript to leave a comment, or submit feedback to <a href="mailto:{{ .Site.Params.email -}}">{{- .Site.Params.email -}}</a></noscript>
       </div>
+      <div>&nbsp;</div>
     </div>
 </article>
 <nav class="back-nav">
