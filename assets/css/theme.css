@@ -418,7 +418,7 @@ a,
   text-underline-offset: 0.1em;
   text-decoration-thickness: 1.5px;
   color: var(--primary-800);
-  font-weight: 500;
+  font-weight: 400;
 
   &:hover {
     color: var(--primary-600);
