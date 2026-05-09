@@ -798,6 +798,7 @@ article.content {
   }
 
   pre {
+    -webkit-text-size-adjust: 100%;
     display: block;
     overflow-x: auto;
     margin: 1lh 0;
