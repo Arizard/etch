@@ -412,11 +412,12 @@ body {
   cursor: pointer;
 }
 
+/* links */
 a,
 .button-link {
   text-decoration: underline;
   text-underline-offset: 0.1em;
-  text-decoration-thickness: 1.5px;
+  text-decoration-thickness: 1px;
   color: var(--primary-800);
   font-weight: 400;
 
@@ -1392,5 +1393,9 @@ noscript {
     * {
       color: black !important;
     }
+  }
+
+  .back-nav {
+    display: none !important;
   }
 }
