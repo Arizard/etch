@@ -376,7 +376,8 @@
 }
 
 body {
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+
   font-weight: 400;
   font-size: 112.5%;
   color: var(--foreground);
@@ -420,7 +421,6 @@ a,
   text-underline-offset: 0.1em;
   text-decoration-thickness: 1px;
   color: var(--primary-800);
-  font-weight: 400;
 
   &:hover {
     color: var(--primary-600);
@@ -472,7 +472,7 @@ a,
       text-decoration: none;
       font-size: 1.8em;
       font-family: "EB Garamond", serif;
-      -webkit-text-stroke: 0.7px currentColor;
+      -webkit-text-stroke: 1px currentColor;
       letter-spacing: 0;
       text-shadow: 1.5px 1.5px 0 var(--drop-shadow);
 
@@ -561,9 +561,7 @@ article.content {
   h4,
   h5,
   h6 {
-    font-family: "EB Garamond", Garamond, Baskerville, serif;
-    -webkit-text-stroke: 1px currentColor;
-    font-weight: 400;
+    font-weight: bold;
     line-height: 1.1;
     margin-top: 1lh;
     margin-bottom: calc(1lh / 3);
@@ -576,53 +574,27 @@ article.content {
   }
 
   h1 {
-    font-size: 2.986rem;
+    font-size: 2.027rem;
   }
 
   h2 {
-    font-size: 2.488rem;
+    font-size: 1.802rem;
   }
 
   h3 {
-    font-size: 2.074rem;
+    font-size: 1.602rem;
   }
 
   h4 {
-    font-size: 1.728rem;
+    font-size: 1.424rem;
   }
 
   h5 {
-    font-size: 1.44rem;
+    font-size: 1.266rem;
   }
 
   h6 {
-    font-size: 1.2rem;
-  }
-
-  @media (min-width: 480px) {
-    h1 {
-      font-size: 3.815rem;
-    }
-
-    h2 {
-      font-size: 3.052rem;
-    }
-
-    h3 {
-      font-size: 2.441rem;
-    }
-
-    h4 {
-      font-size: 1.953rem;
-    }
-
-    h5 {
-      font-size: 1.563rem;
-    }
-
-    h6 {
-      font-size: 1.25rem;
-    }
+    font-size: 1.125rem;
   }
 
   header {
@@ -882,6 +854,7 @@ article.content {
   .hugo-content {
     margin-top: 0.5lh;
     line-height: 1.65;
+
     sup {
       line-height: 0;
     }
@@ -1033,7 +1006,6 @@ noscript {
       padding: 0.5em;
       background: var(--primary-900, black);
       color: white;
-      font-weight: 500;
       cursor: pointer;
       border-radius: 6px;
     }
@@ -1105,7 +1077,6 @@ noscript {
       border-radius: 6px;
       cursor: not-allowed;
       font-size: smaller;
-      font-weight: 600;
       padding: 0.5lh 1lh;
       color: white;
 
@@ -1327,7 +1298,7 @@ noscript {
       text-decoration: none;
       font-size: 2em;
       font-family: "EB Garamond", serif;
-      -webkit-text-stroke: 0.7px currentColor;
+      -webkit-text-stroke: 1px currentColor;
       letter-spacing: 0;
       text-shadow: 1px 1px 0 var(--drop-shadow);
 
