@@ -1,4 +1,7 @@
 {{ define "main" }}
+<nav class="back-nav top">
+  <a href="{{- .Parent.RelPermalink -}}">Back to {{ .Parent.Title -}}</a>
+</nav>
 {{- if .Page.Resources.Get .Params.hero -}}
 <div class="hero">
   {{- with .Page.Resources.Get .Params.hero -}}
@@ -10,36 +13,44 @@
 </div>
 {{- end -}}
 {{- $hasByline := or (.Params.Author) (.Page.Params.Date) (.Page.Params.hero_attribution) -}}
-<nav class="back-nav top">
-  <a href="{{- .Parent.RelPermalink -}}">Back to {{ .Parent.Title -}}</a>
-</nav>
 <article class="content">
-  {{- if $hasByline -}}<div class="content-inner vsplit">
-    {{- else -}}<div class="content-inner">{{- end -}}
+    <div class="content-inner">
       <div>
         <header>
           <h1>{{ .Title }}</h1>
         </header>
         {{- if $hasByline -}}
-        <address class="byline mobile">
-          {{- partial "inline/byline-inner" . -}}
+        <address class="byline">
+            <p>
+                {{- if and .Params.Author .Page.Params.Date -}}Published by <span class="author">{{- .Params.Author -}}</span> on <time>{{ .Page.Params.Date.Format "2 January 2006" }}</time>
+                {{- else if .Params.Author -}}Published by <span class="author">{{- .Params.Author -}}</span>
+                {{- else if .Page.Params.Date -}}<time>{{ .Page.Params.Date.Format "2 January 2006" }}</time>{{- end -}}
+            </p>
+          <!-- <details> -->
+          <!--   <summary> -->
+          <!--       {{- if and .Params.Author .Page.Params.Date -}}Published by <span class="author">{{- .Params.Author -}}</span> on <time>{{ .Page.Params.Date.Format "2 January 2006" }}</time> -->
+          <!--       {{- else if .Params.Author -}}Published by <span class="author">{{- .Params.Author -}}</span> -->
+          <!--       {{- else if .Page.Params.Date -}}<time>{{ .Page.Params.Date.Format "2 January 2006" }}</time>{{- end -}} -->
+          <!--   </summary> -->
+          <!--   <ul> -->
+          <!--   {{- if .Page.Params.hero_attribution -}} -->
+          <!--   <li> -->
+          <!--     <span>Image: {{ .RenderString .Page.Params.hero_attribution }}</span> -->
+          <!--   </li> -->
+          <!--   {{- end -}} -->
+          <!--   <li class="comment-count" data-template="{count} {noun}" data-article-id-for-reply-count="{{ .Slug | default .Path }}"> -->
+          <!--   </li> -->
+          <!--   </ul> -->
+          <!-- </details> -->
         </address>
         {{- end -}}
         <section class="hugo-content">
           {{- .Content -}}
         </section>
       </div>
-      <div>
-        {{- if $hasByline -}}
-        <address class="byline desktop">
-          {{- partial "inline/byline-inner" . -}}
-        </address>
-        {{- end -}}
-      </div>
       <div id="gomments-container">
         <noscript>Enable javascript to leave a comment, or submit feedback to <a href="mailto:{{ .Site.Params.email -}}">{{- .Site.Params.email -}}</a></noscript>
       </div>
-      <div>&nbsp;</div>
     </div>
 </article>
 <nav class="back-nav">
@@ -61,16 +72,4 @@
 {{- end -}}
 {{- end -}}
 
-{{ end }}
-
-{{ define "_partials/inline/byline-inner.html" }}
-{{- with .Params.Author -}}<div class="author">{{- . -}}</div>{{- end -}}
-{{- with .Page.Params.Date -}}<div><time>{{ .Format "2 January 2006" }}</time></div>{{- end -}}
-{{- if .Page.Params.hero_attribution -}}
-<div class="hero-attribution">
-  <span>{{ .RenderString .Page.Params.hero_attribution }}</span>
-</div>
-{{- end -}}
-<div class="comment-count" data-template="{count} {noun}" data-article-id-for-reply-count="{{ .Slug | default .Path }}">
-</div>
 {{ end }}
