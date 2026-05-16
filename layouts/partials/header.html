@@ -1,7 +1,7 @@
 <header class="site-header-container">
   <div class="site-header">
     <div class="primary">
-      <p><a alt="Arie's Blog" href="/" class="site-title">{{ .Site.Title }}</a></p>
+      <a alt="{{ .Site.Title }}" href="/" class="site-title">{{- partial "svg/logo.html" -}}</a>
       {{ with .Site.Params.greeting -}}<p class="greeting">{{- . -}}</p>{{- end -}}
     </div>
     <nav>

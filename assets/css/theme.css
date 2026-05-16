@@ -1,51 +1,3 @@
-@font-face {
-  font-family: 'EB Garamond';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: local('EB Garamond'), url('/fonts/eb-garamond/EBGaramond-VariableFont_wght.woff2') format('woff2'), url('/fonts/eb-garamond/EBGaramond-VariableFont_wght.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'EB Garamond';
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: local('EB Garamond'), url('/fonts/eb-garamond/EBGaramond-Italic-VariableFont_wght.woff2') format('woff2'), url('/fonts/eb-garamond/EBGaramond-VariableFont_wght.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'EB Garamond';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: local('EB Garamond'), url('/fonts/eb-garamond/EBGaramond-VariableFont_wght.woff2') format('woff2'), url('/fonts/eb-garamond/EBGaramond-VariableFont_wght.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'EB Garamond';
-  font-style: italic;
-  font-weight: 500;
-  font-display: swap;
-  src: local('EB Garamond'), url('/fonts/eb-garamond/EBGaramond-Italic-VariableFont_wght.woff2') format('woff2'), url('/fonts/eb-garamond/EBGaramond-VariableFont_wght.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'EB Garamond';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: local('EB Garamond'), url('/fonts/eb-garamond/EBGaramond-VariableFont_wght.woff2') format('woff2'), url('/fonts/eb-garamond/EBGaramond-VariableFont_wght.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'EB Garamond';
-  font-style: italic;
-  font-weight: 600;
-  font-display: swap;
-  src: local('EB Garamond'), url('/fonts/eb-garamond/EBGaramond-Italic-VariableFont_wght.woff2') format('woff2'), url('/fonts/eb-garamond/EBGaramond-VariableFont_wght.ttf') format('truetype');
-}
-
 :root {
   --width: 950px;
   --radius: 1em;
@@ -449,20 +401,14 @@ a,
     margin-right: auto;
 
     .site-title {
-      align-content: center;
+      display: block;
       padding: 0;
       margin: 0;
-      font-weight: 600;
       color: var(--primary-50);
-      text-decoration: none;
-      font-size: 1.8em;
-      font-family: "EB Garamond", serif;
-      -webkit-text-stroke: 1px currentColor;
-      letter-spacing: 0;
-      text-shadow: 1.5px 1.5px 0 var(--drop-shadow);
 
-      &::after {
-        content: '.';
+      svg {
+        width: auto;
+        height: 40px;
       }
     }
 
@@ -1247,18 +1193,7 @@ noscript {
       align-content: center;
       padding: 0;
       margin: 0;
-      font-weight: 600;
       color: var(--primary-50);
-      text-decoration: none;
-      font-size: 2em;
-      font-family: "EB Garamond", serif;
-      -webkit-text-stroke: 1px currentColor;
-      letter-spacing: 0;
-      text-shadow: 1px 1px 0 var(--drop-shadow);
-
-      &::after {
-        content: '.';
-      }
     }
 
     nav,
