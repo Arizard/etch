@@ -365,14 +365,9 @@ a,
 
 .site-header-container {
   -webkit-font-smoothing: antialiased;
-  padding-bottom: 1em;
-  padding-top: 1em;
+  padding-bottom: var(--gutter);
+  padding-top: var(--gutter);
   background-color: var(--primary-900);
-
-  @media (min-width: 480px) {
-    padding-bottom: var(--gutter);
-    padding-top: var(--gutter);
-  }
 
   .site-header {
     display: grid;
