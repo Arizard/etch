@@ -1,6 +1,10 @@
 {{ define "main" }}
 <nav class="back-nav top">
+  {{- if .Parent.RelPermalink -}}
   <a href="{{- .Parent.RelPermalink -}}">Back to {{ .Parent.Title -}}</a>
+  {{- else -}}
+  <a href="{{- .Site.Home.RelPermalink -}}">Back to {{ .Site.Home.Title -}}</a>
+  {{- end -}}
 </nav>
 {{- if .Page.Resources.Get .Params.hero -}}
 <div class="hero">
@@ -54,7 +58,11 @@
     </div>
 </article>
 <nav class="back-nav">
+  {{- if .Parent.RelPermalink -}}
   <a href="{{- .Parent.RelPermalink -}}">Back to {{ .Parent.Title -}}</a>
+  {{- else -}}
+  <a href="{{- .Site.Home.RelPermalink -}}">Back to {{ .Site.Home.Title -}}</a>
+  {{- end -}}
 </nav>
 {{- if not .Params.nocomment -}}
 {{- $reactBuilt := resources.Get "js/react.js" | js.Build (dict "minify" true "targetPath" "react.js") -}}
