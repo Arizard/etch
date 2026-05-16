@@ -477,7 +477,7 @@ article.content {
   width: 0;
   min-width: min(100%, var(--width));
   max-width: var(--width);
-  margin: 0 auto 0 auto;
+  margin: 0 auto var(--gutter) auto;
   padding: 0 var(--gutter);
 
   .hugo-section-header {
