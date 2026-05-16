@@ -1048,6 +1048,7 @@ noscript {
         background-color: green;
 
         &:hover {
+          background-color: #22cc22; /* fallback */
           background-color: hsl(from green calc(h + 15) s calc(l + 5));
         }
 
