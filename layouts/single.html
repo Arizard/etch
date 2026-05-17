@@ -1,10 +1,6 @@
 {{ define "main" }}
 <nav class="back-nav top">
-  {{- if .Parent.RelPermalink -}}
-  <a href="{{- .Parent.RelPermalink -}}">{{- partial "svg.html" "icon/lucide/move-left.svg" -}} Back to {{ .Parent.Title -}}</a>
-  {{- else -}}
-  <a href="{{- .Site.Home.RelPermalink -}}">{{- partial "svg.html" "icon/lucide/move-left.svg" -}} Back to {{ .Site.Home.Title -}}</a>
-  {{- end -}}
+  {{- partial "back-nav.html" . -}}
 </nav>
 {{- if .Page.Resources.Get .Params.hero -}}
 <div class="hero">
@@ -14,9 +10,14 @@
     <img fetchpriority="high" src="{{ $heroImage.Permalink }}" />
   </div>
   {{- end -}}
+  {{- if .Page.Params.hero_attribution -}}
+  <div class="hero-attribution">
+    <p>{{ .RenderString .Page.Params.hero_attribution }}</p>
+  </div>
+  {{- end -}}
 </div>
 {{- end -}}
-{{- $hasByline := or (.Params.Author) (.Page.Params.Date) (.Page.Params.hero_attribution) -}}
+{{- $hasByline := or (.Params.Author) (.Page.Params.Date) -}}
 <article class="content">
     <div class="content-inner">
       <div>
@@ -58,11 +59,7 @@
     </div>
 </article>
 <nav class="back-nav">
-  {{- if .Parent.RelPermalink -}}
-  <a href="{{- .Parent.RelPermalink -}}">{{- partial "svg.html" "icon/lucide/move-left.svg" -}} Back to {{ .Parent.Title -}}</a>
-  {{- else -}}
-  <a href="{{- .Site.Home.RelPermalink -}}">{{- partial "svg.html" "icon/lucide/move-left.svg" -}} Back to {{ .Site.Home.Title -}}</a>
-  {{- end -}}
+  {{- partial "back-nav.html" . -}}
 </nav>
 {{- if not .Params.nocomment -}}
 {{- $reactBuilt := resources.Get "js/react.js" | js.Build (dict "minify" true "targetPath" "react.js") -}}
@@ -80,4 +77,12 @@
 {{- end -}}
 {{- end -}}
 
+{{ end }}
+
+{{ define "_partials/back-nav.html" }}
+{{- if .Parent.RelPermalink -}}
+<a href="{{- .Parent.RelPermalink -}}">{{- partial "svg.html" "icon/lucide/move-left.svg" -}}<div class="label">{{ .Parent.Title -}}</div></a>
+{{- else -}}
+<a href="{{- .Site.Home.RelPermalink -}}">{{- partial "svg.html" "icon/lucide/move-left.svg" -}}<div class="label">{{ .Site.Home.Title -}}</div></a>
+{{- end -}}
 {{ end }}

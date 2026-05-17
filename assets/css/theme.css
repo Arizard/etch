@@ -337,6 +337,7 @@ body {
   width: 100%;
   max-width: var(--width);
   margin: var(--gutter-half) auto;
+  height: 24px;
 
   a {
     display: inline-block;
@@ -344,6 +345,11 @@ body {
     svg {
       float: left;
       margin-right: 0.25em;
+    }
+
+    .label {
+      float: right;
+      text-decoration: inherit;
     }
   }
 
@@ -441,19 +447,18 @@ header.site-header-container {
 }
 
 .hero {
-  background-color: var(--primary-100);
   overflow: hidden;
   max-width: var(--width);
   margin: var(--gutter) auto;
-  aspect-ratio: 1.25;
-
-  @media (min-width: 640px) {
-    aspect-ratio: 2;
-  }
 
   .hero-surface {
+    aspect-ratio: 1.25;
+
+    @media (min-width: 640px) {
+      aspect-ratio: 2;
+    }
+
     width: 100%;
-    height: 100%;
     overflow: hidden;
     display: flex;
     justify-items: center;
@@ -463,7 +468,18 @@ header.site-header-container {
       width: 100%;
     }
   }
+
+  .hero-attribution {
+    p {
+      color: var(--muted-foreground);
+      text-align: right;
+      margin-top: 6px;
+      font-size: smaller;
+      font-style: italic;
+    }
+  }
 }
+
 
 article::selection {
   background-color: var(--primary-900, var(--foreground));
