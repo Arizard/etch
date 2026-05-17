@@ -557,11 +557,8 @@ article.content {
     text-align: left;
   }
 
-  @container (min-width: 60ch) {
-    p {
-      text-align: justify;
-      text-wrap: initial;
-    }
+  strong {
+    font-weight: 500;
   }
 
   blockquote:not(.alert) {
@@ -840,7 +837,7 @@ article.posts {
 
       &,
       a {
-        font-weight: 600;
+        font-weight: 500;
       }
     }
 
