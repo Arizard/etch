@@ -1,15 +1,15 @@
 {{ define "main" }}
 <nav class="back-nav top">
   {{- if .Parent.RelPermalink -}}
-  <a href="{{- .Parent.RelPermalink -}}">Back to {{ .Parent.Title -}}</a>
+  <a href="{{- .Parent.RelPermalink -}}">{{- partial "svg/lucide-move-left.html" -}} Back to {{ .Parent.Title -}}</a>
   {{- else -}}
-  <a href="{{- .Site.Home.RelPermalink -}}">Back to {{ .Site.Home.Title -}}</a>
+  <a href="{{- .Site.Home.RelPermalink -}}">{{- partial "svg/lucide-move-left.html" -}} Back to {{ .Site.Home.Title -}}</a>
   {{- end -}}
 </nav>
 {{- if .Page.Resources.Get .Params.hero -}}
 <div class="hero">
   {{- with .Page.Resources.Get .Params.hero -}}
-  {{- $heroImage := .Process "fill Center #ffffff lossy 880x554 webp q85" -}}
+  {{- $heroImage := .Process "fill Center #ffffff lossy 880x704 webp q85" -}}
   <div class="hero-surface">
     <img fetchpriority="high" src="{{ $heroImage.Permalink }}" />
   </div>
@@ -59,9 +59,9 @@
 </article>
 <nav class="back-nav">
   {{- if .Parent.RelPermalink -}}
-  <a href="{{- .Parent.RelPermalink -}}">Back to {{ .Parent.Title -}}</a>
+  <a href="{{- .Parent.RelPermalink -}}">{{- partial "svg/lucide-move-left.html" -}} Back to {{ .Parent.Title -}}</a>
   {{- else -}}
-  <a href="{{- .Site.Home.RelPermalink -}}">Back to {{ .Site.Home.Title -}}</a>
+  <a href="{{- .Site.Home.RelPermalink -}}">{{- partial "svg/lucide-move-left.html" -}} Back to {{ .Site.Home.Title -}}</a>
   {{- end -}}
 </nav>
 {{- if not .Params.nocomment -}}

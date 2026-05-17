@@ -1,9 +1,9 @@
 :root {
-  --width: 950px;
+  --width: 72ch;
   --radius: 1em;
   --gutter: 2em;
-
-  --gutter-double: calc(var(--gutter) * 2);
+  --gutter-half: 1em;
+  --gutter-double: 4em;
 
   /* color fallbacks */
   --border: #1a1a1a;
@@ -326,23 +326,24 @@ body {
 
   main {
     background-color: var(--background);
-    padding-bottom: 5em;
+    padding: 0 var(--gutter) 5em var(--gutter);
   }
 }
 
 
 .back-nav {
-  width: calc(100% - var(--gutter-double));
-  max-width: calc(var(--width) - var(--gutter-double));
-  margin: 1em auto 1em auto;
+  width: 100%;
+  max-width: var(--width);
+  margin: var(--gutter-half) auto;
 
-  &.top {
-    display: none;
-
-    @media (min-width: 480px) {
-      display: block;
+  a {
+    display: inline-block;
+    svg {
+      float: left;
+      margin-right: 0.25em;
     }
   }
+
 }
 
 .button-link {
@@ -439,18 +440,12 @@ a,
 .hero {
   background-color: var(--primary-100);
   overflow: hidden;
-
-  aspect-ratio: 1.6;
+  max-width: var(--width);
+  margin: var(--gutter) auto;
+  aspect-ratio: 1.25;
 
   @media (min-width: 640px) {
-    aspect-ratio: 2.5;
-    width: calc(100% - 4em);
-    max-width: calc(var(--width) - 4em);
-    margin: 1em auto 0;
-  }
-
-  @media (min-width: 850px) {
-    aspect-ratio: 3.6;
+    aspect-ratio: 2;
   }
 
   .hero-surface {
@@ -473,12 +468,9 @@ article::selection {
 }
 
 article.content {
-  container-type: inline-size;
-  width: 0;
-  min-width: min(100%, var(--width));
+  width: 100%;
   max-width: var(--width);
-  margin: 0 auto var(--gutter) auto;
-  padding: 0 var(--gutter);
+  margin: var(--gutter) auto;
 
   .hugo-section-header {
     font-weight: 600;
@@ -531,11 +523,6 @@ article.content {
       margin-top: 0;
       margin-bottom: 0;
     }
-  }
-
-
-  .content-inner {
-    margin-top: var(--gutter);
   }
 
   .byline {
