@@ -1,6 +1,7 @@
 <a href="{{ .Destination | safeURL }}"
   {{- with .Title }} title="{{ . }}"{{ end -}}
   data-umami-event="Inline Link" data-umami-event-href="{{ .Destination | safeURL }}"
+  {{ if eq .Destination .Text -}}style="overflow-wrap: anywhere;"{{- end -}}
 >
   {{- with .Text }}{{ . }}{{ end -}}
 </a>
