@@ -325,6 +325,7 @@ body {
   min-height: 100svh;
 
   main {
+    min-width: 0; /* needed to allow overflowing child elements */
     background-color: var(--background);
     padding: 0 var(--gutter) 5em var(--gutter);
   }
@@ -545,7 +546,8 @@ article.content {
     padding: 0.2em 0.4em;
   }
 
-  p {
+  p,
+  pre {
     margin-top: 0.5lh;
     margin-bottom: 0.5lh;
   }
@@ -656,16 +658,16 @@ article.content {
 
   pre {
     display: block;
-    overflow-x: auto;
-    margin: 1lh 0;
-    padding: 1em;
     font-family: monaco, Consolas, Lucida Console, monospace;
+    line-height: 1.4;
+    padding: var(--gutter-half);
+    overflow-x: auto;
+  }
 
-    code {
-      display: block;
-      width: fit-content;
-      background-color: transparent;
-    }
+  pre code {
+    display: block;
+    background-color: transparent;
+    min-width: fit-content;
   }
 
   pre:not(.chroma) {
@@ -804,10 +806,8 @@ article.section {
 }
 
 article.posts {
-  width: auto;
   max-width: var(--width);
-  margin: var(--gutter) auto 0 auto;
-  padding: 0 var(--gutter);
+  margin: var(--gutter) auto;
   display: flex;
   flex-direction: column;
   gap: 1.5em;
