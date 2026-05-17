@@ -325,7 +325,8 @@ body {
   min-height: 100svh;
 
   main {
-    min-width: 0; /* needed to allow overflowing child elements */
+    min-width: 0;
+    /* needed to allow overflowing child elements */
     background-color: var(--background);
     padding: 0 var(--gutter) 5em var(--gutter);
   }
@@ -552,6 +553,17 @@ article.content {
     margin-bottom: 0.5lh;
   }
 
+  p {
+    text-align: left;
+  }
+
+  @container (min-width: 60ch) {
+    p {
+      text-align: justify;
+      text-wrap: initial;
+    }
+  }
+
   blockquote:not(.alert) {
     font-style: italic;
     border-left: 3px solid var(--gray-700);
@@ -739,6 +751,7 @@ article.content {
   }
 
   .hugo-content {
+    container-type: inline-size;
     margin-top: 0.5lh;
     line-height: 1.65;
 
