@@ -84,8 +84,6 @@
             articleID: {{ .Page.Slug | default .Page.Path }},
         };
 
-        const iconComment = `{{- partial "svg/comment.html" . -}}`;
-
         addEventListener("load", async () => {
             const replyCountSpans = document.querySelectorAll('[data-article-id-for-reply-count]');
             if (replyCountSpans.length === 0) return;
