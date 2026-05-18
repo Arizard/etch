@@ -315,6 +315,9 @@ body {
 
   font-weight: 400;
   font-size: 106.25%;
+  @media(min-width: 480px) {
+    font-size: 100%;
+  }
   color: var(--foreground);
   background-color: var(--primary-900);
 
