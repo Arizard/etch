@@ -315,9 +315,12 @@ body {
 
   font-weight: 400;
   font-size: 106.25%;
+
   @media(min-width: 480px) {
     font-size: 100%;
   }
+
+  text-wrap: pretty;
   color: var(--foreground);
   background-color: var(--primary-900);
 
@@ -767,6 +770,8 @@ article.content {
 
       &>p {
         text-align: justify;
+        text-wrap: initial;
+
         hyphens: auto;
         text-indent: 2em;
         margin: 0;
