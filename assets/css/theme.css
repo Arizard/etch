@@ -757,7 +757,7 @@ article.content {
     }
 
     p {
-      margin: 0.5lh auto;
+      margin: 0 auto 0.5lh auto;
     }
 
     &.essay {
@@ -814,7 +814,6 @@ article.content {
         font-weight: 500;
       }
     }
-
   }
 
   .table-container {
