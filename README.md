@@ -31,3 +31,9 @@ Quick reference: https://gohugo.io/quick-reference/syntax-highlighting-styles/
 ## Icon Attribution
 
 [Lucide](https://lucide.dev/)
+
+## Custom Markdown Classes
+
+* `.no-indent` removes paragraph indentation from `<p>` elements.
+* `.space-above` adds `0.5lh` margin above `<p>` elements.
+* `.portrait` constraints image width so that portrait images don't look wack.

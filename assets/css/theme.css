@@ -314,7 +314,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 
   font-weight: 400;
-  font-size: 100%;
+  font-size: 106.25%;
   color: var(--foreground);
   background-color: var(--primary-900);
 
@@ -547,6 +547,7 @@ article.content {
   .byline {
     font-size: smaller;
     display: block;
+    margin: 0.25lh 0;
 
     &:empty {
       display: none;
@@ -563,14 +564,9 @@ article.content {
     padding: 0.2em 0.4em;
   }
 
-  p,
   pre {
     margin-top: 0.5lh;
     margin-bottom: 0.5lh;
-  }
-
-  p {
-    text-align: left;
   }
 
   strong {
@@ -733,18 +729,6 @@ article.content {
     }
   }
 
-  ol {
-    li::marker {
-      color: var(--primary-800);
-    }
-  }
-
-  ul {
-    li::marker {
-      color: var(--primary-800);
-    }
-  }
-
   .dinkus {
     text-align: center;
   }
@@ -765,12 +749,44 @@ article.content {
 
   .hugo-content {
     container-type: inline-size;
-    margin-top: 0.5lh;
-    line-height: 1.65;
+    margin: 1lh auto;
+    line-height: 1.6;
 
     sup {
       line-height: 0;
     }
+
+    p {
+      text-align: justify;
+      hyphens: auto;
+      text-indent: 2em;
+      margin: 0;
+    }
+
+    @container (width > 40ch) {
+      p {
+        hyphens: initial;
+      }
+    }
+
+    p.no-indent {
+      text-indent: 0;
+    }
+
+    p.space-above {
+      margin-top: 0.5lh;
+    }
+
+    ol,
+    ul {
+      margin: 0.5lh auto;
+
+      li::marker {
+        color: var(--primary-800);
+        font-weight: 500;
+      }
+    }
+
   }
 
   .table-container {
