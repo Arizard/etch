@@ -31,25 +31,15 @@
                 {{- else if .Params.Author -}}Published by <span class="author">{{- .Params.Author -}}</span>
                 {{- else if .Page.Params.Date -}}<time>{{ .Page.Params.Date.Format "2 January 2006" }}</time>{{- end -}}
             </p>
-          <!-- <details> -->
-          <!--   <summary> -->
-          <!--       {{- if and .Params.Author .Page.Params.Date -}}Published by <span class="author">{{- .Params.Author -}}</span> on <time>{{ .Page.Params.Date.Format "2 January 2006" }}</time> -->
-          <!--       {{- else if .Params.Author -}}Published by <span class="author">{{- .Params.Author -}}</span> -->
-          <!--       {{- else if .Page.Params.Date -}}<time>{{ .Page.Params.Date.Format "2 January 2006" }}</time>{{- end -}} -->
-          <!--   </summary> -->
-          <!--   <ul> -->
-          <!--   {{- if .Page.Params.hero_attribution -}} -->
-          <!--   <li> -->
-          <!--     <span>Image: {{ .RenderString .Page.Params.hero_attribution }}</span> -->
-          <!--   </li> -->
-          <!--   {{- end -}} -->
-          <!--   <li class="comment-count" data-template="{count} {noun}" data-article-id-for-reply-count="{{ .Slug | default .Path }}"> -->
-          <!--   </li> -->
-          <!--   </ul> -->
-          <!-- </details> -->
         </address>
         {{- end -}}
-        <section class="hugo-content">
+        <section
+          {{- with .Params.Class }}
+          class="hugo-content {{ . -}}"
+          {{- else }}
+          class="hugo-content"
+          {{- end }}
+          >
           {{- .Content -}}
         </section>
       </div>

@@ -570,7 +570,7 @@ article.content {
   }
 
   strong {
-    font-weight: 500;
+    font-weight: 600;
   }
 
   blockquote:not(.alert) {
@@ -757,29 +757,57 @@ article.content {
     }
 
     p {
-      text-align: justify;
-      hyphens: auto;
-      text-indent: 2em;
-      margin: 0;
+      margin: 0.5lh auto;
     }
 
-    @container (width > 40ch) {
-      p {
-        hyphens: initial;
+    &.essay {
+
+      &>p {
+        text-align: justify;
+        hyphens: auto;
+        text-indent: 2em;
+        margin: 0;
       }
-    }
 
-    p.no-indent {
-      text-indent: 0;
-    }
+      @container (width > 40ch) {
+        p {
+          hyphens: initial;
+        }
+      }
 
-    p.space-above {
-      margin-top: 0.5lh;
+      p.no-indent {
+        text-indent: 0;
+      }
+
+      p.space-above {
+        margin-top: 0.5lh;
+      }
+
+      h1+p,
+      h2+p,
+      h3+p,
+      h4+p,
+      h5+p,
+      h6+p,
+      ol+p,
+      ul+p,
+      &>p:first-of-type {
+        text-indent: 0;
+      }
+
+      blockquote {
+        margin: 0.5lh auto;
+      }
     }
 
     ol,
     ul {
       margin: 0.5lh auto;
+
+      ol,
+      ul {
+        margin: 0 auto;
+      }
 
       li::marker {
         color: var(--primary-800);

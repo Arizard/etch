@@ -32,8 +32,18 @@ Quick reference: https://gohugo.io/quick-reference/syntax-highlighting-styles/
 
 [Lucide](https://lucide.dev/)
 
-## Custom Markdown Classes
+## Essay Layout
+
+For `single` you can select the `essay` layout by adding `class: essay` to the front matter. This applies the essay styling (justified text, indented paragraphs). It looks good sometimes, but other times you'll want a bit more control. Achieve this with custom classes:
 
 * `.no-indent` removes paragraph indentation from `<p>` elements.
 * `.space-above` adds `0.5lh` margin above `<p>` elements.
 * `.portrait` constraints image width so that portrait images don't look wack.
+
+usage:
+
+```plain
+This is some text which I don't want to indent.
+{.no-indent .space-above}
+```
+
