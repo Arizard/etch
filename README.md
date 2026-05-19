@@ -45,5 +45,11 @@ usage:
 ```plain
 This is some text which I don't want to indent.
 {.no-indent .space-above}
+
+## Acknowledgement
+
+- Lucide
+- Google Fonts
+- https://systemfontstack.com/
 ```
 
