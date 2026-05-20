@@ -2,12 +2,15 @@
     <section class="contents">
         <header>
             <p>
+                {{ if .Draft -}}
+                <span style="opacity: 0.5;">
+                {{- else -}}
+                <span>
+                {{- end -}}
                 <span class="title"><a href="{{ .Permalink }}">{{- .Title }}</a></span><span>, </span>
                 <time>{{ .Date.Format "2 January 2006" }}</time>
                 <span class="comment-count" data-template="({count} {noun})" data-article-id-for-reply-count="{{ .Slug | default .Path }}"></span>
-                {{ if .Draft -}}
-                <span style="color: red">draft</span>
-                {{- end -}}
+                </span>
             </p>
         </header>
     </section>

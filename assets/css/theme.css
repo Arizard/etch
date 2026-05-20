@@ -685,7 +685,7 @@ article.content {
 
   pre {
     display: block;
-    font-family: monaco, Consolas, Lucida Console, monospace;
+    font-family: Menlo, Consolas, Monaco, Adwaita Mono, Liberation Mono, Lucida Console, monospace;
     line-height: 1.4;
     padding: var(--gutter-half);
     overflow-x: auto;
