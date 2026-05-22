@@ -11,6 +11,7 @@
 
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+
 }
 
 :root {
@@ -312,9 +313,9 @@
 
 body {
   font-family: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
-
   font-weight: 400;
   font-size: 106.25%;
+  letter-spacing: -0.01em;
 
   @media(min-width: 480px) {
     font-size: 100%;
@@ -455,7 +456,7 @@ header.site-header-container {
 .hero {
   overflow: hidden;
   max-width: var(--width);
-  margin: var(--gutter) auto;
+  margin: var(--gutter-half) auto var(--gutter) auto;
 
   .hero-surface {
     aspect-ratio: 1.25;
@@ -486,7 +487,6 @@ header.site-header-container {
   }
 }
 
-
 article::selection {
   background-color: var(--primary-900, var(--foreground));
   color: var(--primary-50, var(--background));
@@ -495,7 +495,7 @@ article::selection {
 article.content {
   width: 100%;
   max-width: var(--width);
-  margin: var(--gutter) auto;
+  margin: var(--gutter-half) auto var(--gutter) auto;
 
   .hugo-section-header {
     font-weight: 600;
@@ -507,11 +507,12 @@ article.content {
   h4,
   h5,
   h6 {
-    font-weight: 500;
+    font-weight: 600;
     line-height: 1.1;
     margin-top: 1lh;
     margin-bottom: calc(1lh / 3);
     text-overflow: ellipsis;
+    letter-spacing: -0.02em;
 
     a {
       color: inherit;
@@ -519,28 +520,28 @@ article.content {
     }
   }
 
-  h6 {
-    font-size: 1rem;
-  }
-
-  h5 {
-    font-size: 1.2rem;
-  }
-
-  h4 {
-    font-size: 1.44rem;
-  }
-
-  h3 {
-    font-size: 1.728rem;
+  h1 {
+    font-size: 2.027rem;
   }
 
   h2 {
-    font-size: 2.074rem;
+    font-size: 1.802rem;
   }
 
-  h1 {
-    font-size: 2.488rem;
+  h3 {
+    font-size: 1.602rem;
+  }
+
+  h4 {
+    font-size: 1.424rem;
+  }
+
+  h5 {
+    font-size: 1.266rem;
+  }
+
+  h6 {
+    font-size: 1.125rem;
   }
 
   header {
@@ -773,7 +774,7 @@ article.content {
         text-wrap: initial;
 
         hyphens: auto;
-        text-indent: 2em;
+        text-indent: 1em;
         margin: 0;
       }
 
@@ -1301,27 +1302,27 @@ noscript {
     }
 
     h1 {
-      font-size: 1.383em;
+      font-size: 1.476rem;
     }
 
     h2 {
-      font-size: 1.297em;
+      font-size: 1.383rem;
     }
 
     h3 {
-      font-size: 1.215em;
+      font-size: 1.296rem;
     }
 
     h4 {
-      font-size: 1.138em;
+      font-size: 1.215rem;
     }
 
     h5 {
-      font-size: 1.067em;
+      font-size: 1.138rem;
     }
 
     h6 {
-      font-size: 1em;
+      font-size: 1.067rem;
     }
   }
 }
