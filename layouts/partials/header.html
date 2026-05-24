@@ -8,7 +8,9 @@
       {{- $page := . -}}
       {{- range .Site.Menus.main -}}
       <div><a
-          class="menu-item {{ if $page.IsMenuCurrent .Menu . -}}active{{- end -}}"
+          {{ if or ($page.IsMenuCurrent .Menu .) (and (eq $page.Section "posts") (eq .Name "index")) -}}
+          class="menu-item active"
+          {{- end -}}
           alt="{{ .Title }}" href="{{ .URL }}">{{ title .Title }}</a></div>
       {{- end -}}
     </nav>
