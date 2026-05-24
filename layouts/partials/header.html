@@ -5,8 +5,11 @@
       {{ with .Site.Params.greeting -}}<p class="greeting">{{- . -}}</p>{{- end -}}
     </div>
     <nav>
+      {{- $page := . -}}
       {{- range .Site.Menus.main -}}
-      <div><a alt="{{ .Title }}" href="{{ .URL }}">{{ title .Title }}</a></div>
+      <div><a
+          class="menu-item {{ if $page.IsMenuCurrent .Menu . -}}active{{- end -}}"
+          alt="{{ .Title }}" href="{{ .URL }}">{{ title .Title }}</a></div>
       {{- end -}}
     </nav>
   </div>
