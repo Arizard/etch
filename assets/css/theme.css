@@ -12,6 +12,8 @@
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
 
+  --sans-serif: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, Adwaita Sans, Cantarell, Ubuntu, roboto, noto, helvetica, arial, sans-serif;
+  --serif: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
 }
 
 :root {
@@ -312,10 +314,9 @@
 }
 
 body {
-  font-family: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  font-family: var(--sans-serif);
   font-weight: 400;
   font-size: 106.25%;
-  letter-spacing: -0.01em;
 
   @media(min-width: 480px) {
     font-size: 100%;
@@ -507,6 +508,7 @@ article.content {
   h4,
   h5,
   h6 {
+    font-family: var(--serif);
     font-weight: 600;
     line-height: 1.1;
     margin-top: 1lh;
@@ -940,7 +942,6 @@ noscript {
 }
 
 .gomments-container {
-  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, Adwaita Sans, Cantarell, Ubuntu, roboto, noto, helvetica, arial, sans-serif;
   display: flex;
   flex-direction: column;
   gap: 0.5lh;
