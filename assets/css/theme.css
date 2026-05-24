@@ -429,7 +429,6 @@ header.site-header-container {
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      gap: 4px;
       text-transform: lowercase;
 
       @media (min-width: 480px) {
@@ -437,25 +436,30 @@ header.site-header-container {
       }
 
       a {
-        text-decoration: none;
         display: block;
         font-weight: 600;
         color: var(--primary-100);
 
-        padding: 6px 14px;
-        min-width: 72px;
-        text-align: center;
-        border-radius: var(--radius);
+        padding: 9px 15px;
 
         &:hover {
           color: var(--primary-50);
-          background-color: var(--primary-800);
         }
 
         &.active {
-          background-color: var(--primary-800);
-          color: var(--primary-50);
+          position: relative;
+          &::before {
+            position: absolute;
+            width: 1ch;
+            top: 9px;
+            left: 0;
+            content: ">";
+          }
         }
+      }
+
+      div:last-of-type a {
+        padding-right: 0;
       }
     }
 
