@@ -1,7 +1,4 @@
 {{ define "main" }}
-<nav class="back-nav top">
-    <!-- empty, just keeps space -->
-</nav>
 <article class="section posts">
     {{- $pages := where site.RegularPages.ByPublishDate.Reverse "Section" "posts" -}}
     {{- range $pages }}

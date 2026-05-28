@@ -333,10 +333,11 @@ body {
   min-height: 100svh;
 
   main {
+    /* min-width needed to allow overflowing child elements */
     min-width: 0;
-    /* needed to allow overflowing child elements */
+
     background-color: var(--background);
-    padding: 0 var(--gutter) 5em var(--gutter);
+    padding: 4em var(--gutter);
   }
 }
 
@@ -480,7 +481,7 @@ header.site-header-container {
     aspect-ratio: 1.25;
 
     @media (min-width: 640px) {
-      aspect-ratio: 2;
+      aspect-ratio: 2.66;
     }
 
     width: 100%;
