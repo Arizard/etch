@@ -525,8 +525,6 @@ article.content {
   h4,
   h5,
   h6 {
-    font-family: var(--serif);
-    font-style: italic;
     font-weight: 600;
     line-height: 1.1;
     margin-top: 1lh;
