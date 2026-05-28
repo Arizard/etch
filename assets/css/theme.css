@@ -1,6 +1,6 @@
 :root {
   --width: 690px;
-  --radius: 0.5em;
+  --radius: 12px;
   --gutter: 2em;
   --gutter-half: 1em;
   --gutter-double: 4em;
@@ -480,8 +480,8 @@ header.site-header-container {
   .hero-surface {
     aspect-ratio: 1.25;
 
-    @media (min-width: 640px) {
-      aspect-ratio: 2.66;
+    @media (min-width: 480px) {
+      aspect-ratio: 2.2;
     }
 
     width: 100%;
@@ -591,8 +591,7 @@ article.content {
   }
 
   pre {
-    margin-top: 0.5lh;
-    margin-bottom: 0.5lh;
+    margin: 1lh 0;
   }
 
   strong {
