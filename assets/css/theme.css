@@ -1,8 +1,9 @@
 :root {
-  --width: 690px;
+  --width: 780px;
   --radius: 12px;
-  --gutter: 2rem;
   --gutter-half: 1rem;
+  --gutter: 2rem;
+  --gutter-more: 3rem;
   --gutter-double: 4rem;
 
   /* color fallbacks */
@@ -15,7 +16,7 @@
   --sans-serif: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, Adwaita Sans, Cantarell, Ubuntu, roboto, noto, helvetica, arial, sans-serif;
   --serif: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
 
-  font-size: 100%;
+  font-size: 112.5%;
 }
 
 :root {
@@ -383,7 +384,7 @@ header.site-header-container {
   background-color: var(--primary-900);
   -webkit-font-smoothing: antialiased;
   padding: 0 var(--gutter);
-  font-size: 1.25rem;
+  font-size: 1.1112rem;
 
   .site-header {
     display: grid;
@@ -420,7 +421,6 @@ header.site-header-container {
       align-items: center;
       justify-content: flex-start;
       text-transform: lowercase;
-      margin-top: var(--gutter);
 
       a {
         display: block;
@@ -440,6 +440,7 @@ header.site-header-container {
       display: block;
       width: auto;
       color: var(--primary-200);
+      font-size: smaller;
     }
   }
 }
@@ -487,10 +488,6 @@ article.content {
   width: 100%;
   max-width: var(--width);
   margin: var(--gutter-half) auto var(--gutter) auto;
-
-  .hugo-section-header {
-    font-weight: 600;
-  }
 
   h1,
   h2,
@@ -874,6 +871,12 @@ article.content {
 }
 
 article.section {
+  .hugo-section-header {
+    display: block;
+    font-weight: 600;
+    margin-bottom: var(--gutter);
+  }
+
   margin: var(--gutter) auto;
 }
 
@@ -1270,8 +1273,10 @@ noscript {
     display: none;
   }
 
+  html {
+    font-size: 14px !important;
+  }
   body {
-    font-size: 87.5%;
     background-color: var(--background);
   }
 
@@ -1280,6 +1285,12 @@ noscript {
   }
 
   article.content {
+
+    header {
+      h1 {
+        margin-top: 0 !important;
+      }
+    }
 
     h1,
     h2,

@@ -1,13 +1,8 @@
 {{ define "main" }}
-<article class="section content">
-    <header class="hugo-section-header">
-        {{ .Title }}
-    </header>
-    <section class="hugo-content">
-        {{- .Content -}}
-    </section>
-</article>
 <article class="section posts">
+    <header class="hugo-section-header">
+        All Blog Posts
+    </header>
     {{- $pages := where site.RegularPages.ByPublishDate.Reverse "Section" "posts" -}}
     {{- range $pages }}
     {{- partial "post-card.html" . -}}
