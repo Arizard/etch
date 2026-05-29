@@ -1,4 +1,12 @@
 {{ define "main" }}
+<article class="section content">
+    <header class="hugo-section-header">
+        {{ .Title }}
+    </header>
+    <section class="hugo-content">
+        {{- .Content -}}
+    </section>
+</article>
 <article class="section posts">
     {{- $pages := where site.RegularPages.ByPublishDate.Reverse "Section" "posts" -}}
     {{- range $pages }}

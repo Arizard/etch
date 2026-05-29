@@ -1,7 +1,4 @@
 {{ define "main" }}
-<nav class="back-nav top">
-  {{- partial "back-nav.html" . -}}
-</nav>
 {{- if .Page.Resources.Get .Params.hero -}}
 <div class="hero">
   {{- with .Page.Resources.Get .Params.hero -}}
