@@ -411,7 +411,7 @@ header.site-header-container {
 
       svg {
         width: auto;
-        height: 60px;
+        height: 48px;
       }
     }
 
@@ -420,7 +420,6 @@ header.site-header-container {
       align-items: center;
       justify-content: flex-start;
       text-transform: lowercase;
-      font-size: larger;
 
       a {
         display: block;
@@ -447,7 +446,7 @@ header.site-header-container {
 .hero {
   overflow: hidden;
   max-width: var(--width);
-  margin: 0 auto;
+  margin: var(--gutter) auto 0 auto;
 
   .hero-surface {
     aspect-ratio: 1.25;
@@ -1254,7 +1253,6 @@ noscript {
     }
 
     nav {
-      font-size: larger;
     }
 
     nav, .rss {
