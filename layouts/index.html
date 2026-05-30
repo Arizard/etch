@@ -1,8 +1,25 @@
 {{ define "main" }}
+<article class="section content">
+    <header class="hugo-section-header">
+        <h3>{{ .Title }}</h3>
+    </header>
+    <section class="hugo-content">
+        {{- .Content -}}
+    </section>
+</article>
 <article class="section posts">
     {{- $pages := where site.RegularPages.ByPublishDate.Reverse "Section" "posts" -}}
-    {{- range $pages }}
+    {{- $published := where $pages "Draft" false -}}
+    {{- range $published }}
     {{- partial "post-card.html" . -}}
     {{- end }}
 </article>
+{{- $drafts := where $pages "Draft" true -}}
+{{- if gt (len $drafts) 0 -}}
+<article class="section posts">
+    {{- range $drafts }}
+    {{- partial "post-card.html" . -}}
+    {{- end }}
+</article>
+{{- end -}}
 {{ end }}

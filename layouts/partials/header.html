@@ -2,7 +2,6 @@
   <div class="site-header">
     <div class="primary">
       <a alt="{{ .Site.Title }}" href="/" class="site-title">{{- partial "svg.html" "logo.svg" -}}</a>
-      {{ with .Site.Params.greeting -}}<p class="greeting">{{- . -}}</p>{{- end -}}
     </div>
     <nav>
       {{- $page := . -}}
@@ -15,4 +14,5 @@
       {{- end -}}
     </nav>
   </div>
+    {{ with .Site.Params.greeting -}}<div class="greeting">{{- . -}}</div>{{- end -}}
 </header>

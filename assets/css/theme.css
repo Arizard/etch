@@ -1,5 +1,5 @@
 :root {
-  --width: 780px;
+  --width: 600px;
   --radius: 12px;
   --gutter-half: 1rem;
   --gutter: 2rem;
@@ -16,7 +16,7 @@
   --sans-serif: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, Adwaita Sans, Cantarell, Ubuntu, roboto, noto, helvetica, arial, sans-serif;
   --serif: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
 
-  font-size: 112.5%;
+  font-size: 62.5%;
 }
 
 :root {
@@ -330,6 +330,8 @@ body {
   min-height: 100vh;
   min-height: 100svh;
 
+  font-size: 1.6rem;
+
   main {
     /* min-width needed to allow overflowing child elements */
     min-width: 0;
@@ -385,16 +387,21 @@ header.site-header-container {
   -webkit-font-smoothing: antialiased;
   padding: 0 var(--gutter);
 
+  .greeting {
+    display: block;
+    max-width: var(--width);
+    margin: var(--gutter) auto;
+    color: var(--primary-100);
+  }
+
   .site-header {
-    display: grid;
-    grid-template-rows: auto auto;
-    grid-template-columns: 1fr;
-    grid-gap: 0.25em;
+    display: flex;
+    gap: 2rem;
 
     .primary {
-      p.greeting {
-        display: inline-block;
-      }
+      display: block;
+      width: auto;
+      color: var(--primary-100);
     }
 
     max-width: var(--width);
@@ -407,7 +414,7 @@ header.site-header-container {
       display: block;
       padding: 0;
       margin: 0;
-      color: var(--primary-50);
+      color: var(--primary-100);
 
       svg {
         width: auto;
@@ -420,12 +427,13 @@ header.site-header-container {
       align-items: center;
       justify-content: flex-start;
       text-transform: lowercase;
+      font-size: 2rem;
 
       a {
         display: block;
         font-weight: 600;
         color: var(--primary-100);
-        margin-right: 1em;
+        padding-right: 1em;
 
         &:hover {
           color: var(--primary-50);
@@ -435,11 +443,6 @@ header.site-header-container {
       }
     }
 
-    .primary {
-      display: block;
-      width: auto;
-      color: var(--primary-200);
-    }
   }
 }
 
@@ -493,7 +496,7 @@ article.content {
   h4,
   h5,
   h6 {
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1.1;
     margin-top: 1lh;
     margin-bottom: calc(1lh / 3);
@@ -507,27 +510,27 @@ article.content {
   }
 
   h1 {
-    font-size: 2.027rem;
+    font-size: 2.027em;
   }
 
   h2 {
-    font-size: 1.802rem;
+    font-size: 1.802em;
   }
 
   h3 {
-    font-size: 1.602rem;
+    font-size: 1.602em;
   }
 
   h4 {
-    font-size: 1.424rem;
+    font-size: 1.424em;
   }
 
   h5 {
-    font-size: 1.266rem;
+    font-size: 1.266em;
   }
 
   h6 {
-    font-size: 1.125rem;
+    font-size: 1.125em;
   }
 
   .byline {
@@ -871,7 +874,6 @@ article.content {
 article.section {
   .hugo-section-header {
     display: block;
-    font-weight: 600;
     margin-bottom: var(--gutter);
   }
 
@@ -895,14 +897,6 @@ article.posts {
   .contents {
     display: flex;
     flex-direction: column;
-
-    .title {
-
-      &,
-      a {
-        font-weight: 600;
-      }
-    }
 
     header {
 
@@ -1238,10 +1232,10 @@ noscript {
     a,
     .button-link {
       font-weight: 600;
-      color: var(--primary-100);
+      color: var(--primary-200);
 
       &:hover {
-        color: var(--primary-50);
+        color: var(--primary-100);
       }
     }
 
@@ -1249,13 +1243,11 @@ noscript {
       display: block;
       padding: 0;
       margin: 0;
-      color: var(--primary-50);
+      color: var(--primary-200);
     }
 
-    nav {
-    }
-
-    nav, .rss {
+    nav,
+    .rss {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem 1rem;
@@ -1272,9 +1264,10 @@ noscript {
     display: none;
   }
 
-  html {
-    font-size: 14px !important;
+  :root {
+    --width: 210mm;
   }
+
   body {
     background-color: var(--background);
   }
@@ -1291,37 +1284,28 @@ noscript {
       }
     }
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-weight: 600;
-    }
-
     h1 {
-      font-size: 1.476rem;
+      font-size: 1.476em;
     }
 
     h2 {
-      font-size: 1.383rem;
+      font-size: 1.383em;
     }
 
     h3 {
-      font-size: 1.296rem;
+      font-size: 1.296em;
     }
 
     h4 {
-      font-size: 1.215rem;
+      font-size: 1.215em;
     }
 
     h5 {
-      font-size: 1.138rem;
+      font-size: 1.138em;
     }
 
     h6 {
-      font-size: 1.067rem;
+      font-size: 1.067em;
     }
   }
 }
