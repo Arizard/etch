@@ -756,6 +756,7 @@ noscript {
     }
 
     .char-count-text {
+      color: var(--muted-foreground);
       font-size: smaller;
     }
 
