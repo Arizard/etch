@@ -92,7 +92,7 @@ func main() {
 		fmt.Println("\t--border: #e6e6e5;")
 		fmt.Println("\t--input: #e6e6e5;")
 		fmt.Printf("\t--ring: #%s;\n", primary[100])
-		fmt.Println("\t--background: #ffffff;")
+		fmt.Println("\t--background: #fafafa;")
 		fmt.Println("\t--foreground: #1a1a19;")
 		fmt.Println("\t--muted: #f2f2f2;")
 		fmt.Println("\t--muted-foreground: #80827d;")

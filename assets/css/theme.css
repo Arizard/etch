@@ -152,7 +152,7 @@ header.site-header-container {
       display: block;
       padding: 0;
       margin: 0;
-      color: var(--primary-50);
+      color: var(--primary-100);
 
       svg {
         width: auto;
@@ -187,7 +187,7 @@ header.site-header-container {
 .hero {
   overflow: hidden;
   max-width: var(--width);
-  margin: var(--gutter) auto 0 auto;
+  margin: 0 auto;
 
   .hero-surface {
     aspect-ratio: 1.25;
