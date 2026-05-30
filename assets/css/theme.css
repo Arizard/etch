@@ -19,6 +19,47 @@
   font-size: 62.5%;
 }
 
+/* fallbacks and also for autocomplete */
+:root {
+	--primary-50: #F0F7EA;
+	--primary-100: #E1EFD5;
+	--primary-200: #C3DFAB;
+	--primary-300: #A6D083;
+	--primary-400: #8AC15B;
+	--primary-500: #6FA73F;
+	--primary-600: #568131;
+	--primary-700: #3E5D23;
+	--primary-800: #273A16;
+	--primary-900: #111A0A;
+
+	--gray: #80827d;
+	--gray-50: #fafafa;
+	--gray-100: #f2f2f2;
+	--gray-200: #e6e6e5;
+	--gray-300: #cccdcb;
+	--gray-400: #b3b4b1;
+	--gray-500: #80827d;
+	--gray-600: #676864;
+	--gray-700: #4d4e4b;
+	--gray-800: #333432;
+	--gray-900: #1a1a19;
+	--border: #e6e6e5;
+	--input: #e6e6e5;
+	--ring: #E1EFD5;
+	--background: #ffffff;
+	--foreground: #1a1a19;
+	--muted: #f2f2f2;
+	--muted-foreground: #80827d;
+	--accent: #f2f2f2;
+	--accent-foreground: #3E5D23;
+	--destructive: #ff0000;
+	--destructive-foreground: #ffffff;
+	--card: #ffffff;
+	--card-foreground: #1a1a19;
+	--popover: #ffffff;
+	--popover-foreground: #1a1a19;
+}
+
 body {
   font-family: var(--sans-serif);
   font-weight: 400;
@@ -101,12 +142,6 @@ header.site-header-container {
     display: flex;
     gap: 2rem;
 
-    .primary {
-      display: block;
-      width: auto;
-      color: var(--primary-50);
-    }
-
     max-width: var(--width);
     margin-left: auto;
     margin-right: auto;
@@ -117,7 +152,7 @@ header.site-header-container {
       display: block;
       padding: 0;
       margin: 0;
-      color: var(--primary-100);
+      color: var(--primary-50);
 
       svg {
         width: auto;

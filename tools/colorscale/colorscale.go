@@ -30,6 +30,7 @@ func main() {
 		"rooibos": 0.2,
 		"cortado": 0.4,
 		"matcha":  0.15,
+		"lassi":   -0.2,
 	}
 
 	hexPattern := regexp.MustCompile(`^#[abcdefABCDEF0123456789]{6}$`)
