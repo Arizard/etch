@@ -21,43 +21,43 @@
 
 /* fallbacks and also for autocomplete */
 :root {
-	--primary-50: #F0F7EA;
-	--primary-100: #E1EFD5;
-	--primary-200: #C3DFAB;
-	--primary-300: #A6D083;
-	--primary-400: #8AC15B;
-	--primary-500: #6FA73F;
-	--primary-600: #568131;
-	--primary-700: #3E5D23;
-	--primary-800: #273A16;
-	--primary-900: #111A0A;
+  --primary-50: #F0F7EA;
+  --primary-100: #E1EFD5;
+  --primary-200: #C3DFAB;
+  --primary-300: #A6D083;
+  --primary-400: #8AC15B;
+  --primary-500: #6FA73F;
+  --primary-600: #568131;
+  --primary-700: #3E5D23;
+  --primary-800: #273A16;
+  --primary-900: #111A0A;
 
-	--gray: #80827d;
-	--gray-50: #fafafa;
-	--gray-100: #f2f2f2;
-	--gray-200: #e6e6e5;
-	--gray-300: #cccdcb;
-	--gray-400: #b3b4b1;
-	--gray-500: #80827d;
-	--gray-600: #676864;
-	--gray-700: #4d4e4b;
-	--gray-800: #333432;
-	--gray-900: #1a1a19;
-	--border: #e6e6e5;
-	--input: #e6e6e5;
-	--ring: #E1EFD5;
-	--background: #ffffff;
-	--foreground: #1a1a19;
-	--muted: #f2f2f2;
-	--muted-foreground: #80827d;
-	--accent: #f2f2f2;
-	--accent-foreground: #3E5D23;
-	--destructive: #ff0000;
-	--destructive-foreground: #ffffff;
-	--card: #ffffff;
-	--card-foreground: #1a1a19;
-	--popover: #ffffff;
-	--popover-foreground: #1a1a19;
+  --gray: #80827d;
+  --gray-50: #fafafa;
+  --gray-100: #f2f2f2;
+  --gray-200: #e6e6e5;
+  --gray-300: #cccdcb;
+  --gray-400: #b3b4b1;
+  --gray-500: #80827d;
+  --gray-600: #676864;
+  --gray-700: #4d4e4b;
+  --gray-800: #333432;
+  --gray-900: #1a1a19;
+  --border: #e6e6e5;
+  --input: #e6e6e5;
+  --ring: #E1EFD5;
+  --background: #ffffff;
+  --foreground: #1a1a19;
+  --muted: #f2f2f2;
+  --muted-foreground: #80827d;
+  --accent: #f2f2f2;
+  --accent-foreground: #3E5D23;
+  --destructive: #ff0000;
+  --destructive-foreground: #ffffff;
+  --card: #ffffff;
+  --card-foreground: #1a1a19;
+  --popover: #ffffff;
+  --popover-foreground: #1a1a19;
 }
 
 body {
@@ -286,15 +286,6 @@ article.content {
 
   }
 
-  code {
-    background-color: var(--gray-100);
-    padding: 0.2em 0.4em;
-  }
-
-  pre {
-    margin: 1lh 0;
-  }
-
   strong {
     font-weight: 600;
   }
@@ -409,12 +400,24 @@ article.content {
     line-height: 1.4;
     padding: var(--gutter-half);
     overflow-x: auto;
+    margin: 1lh 0;
+
+    code {
+      display: block;
+      background-color: transparent;
+      min-width: fit-content;
+    }
   }
 
-  pre code {
-    display: block;
-    background-color: transparent;
-    min-width: fit-content;
+  code {
+    background-color: var(--gray-100);
+    padding: 0.2em 0.4em;
+  }
+
+  pre,
+  code {
+    font-family: Menlo, Consolas, Monaco, Adwaita Mono, Liberation Mono, Lucida Console, monospace;
+    font-size: 1.4rem;
   }
 
   pre:not(.chroma) {
@@ -552,6 +555,10 @@ article.content {
         color: var(--primary-800);
         font-weight: 500;
       }
+    }
+
+    mark {
+      background-color: var(--primary-100);
     }
   }
 
