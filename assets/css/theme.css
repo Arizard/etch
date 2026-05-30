@@ -219,7 +219,7 @@ header.site-header-container {
 }
 
 article::selection {
-  background-color: var(--primary-900, var(--foreground));
+  background-color: var(--primary-700, var(--foreground));
   color: var(--primary-50, var(--background));
 }
 
