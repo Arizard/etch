@@ -95,7 +95,7 @@ func main() {
 		fmt.Println("\t--background: #fafafa;")
 		fmt.Println("\t--foreground: #1a1a19;")
 		fmt.Println("\t--muted: #f2f2f2;")
-		fmt.Println("\t--muted-foreground: #80827d;")
+		fmt.Println("\t--muted-foreground: #676864;")
 		fmt.Println("\t--accent: #f2f2f2;")
 		fmt.Printf("\t--accent-foreground: #%s;\n", primary[700])
 		fmt.Println("\t--destructive: #ff0000;")
