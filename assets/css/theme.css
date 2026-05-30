@@ -1011,7 +1011,7 @@ noscript {
     }
 
     .char-count-text {
-      opacity: 0.5;
+      font-size: smaller;
     }
 
     .char-count-text.validation-error-text {
@@ -1086,7 +1086,8 @@ noscript {
       }
 
       .reply-created-at {
-        color: var(--muted-foreground);
+        font-style: italic;
+        font-size: smaller;
       }
 
       .tripcode-color-anon {

@@ -32,8 +32,8 @@ export default function Reply({
           <div className="reply-card-heading-lockup">
             <div className={`name-pill`}>{authorName}</div>
           </div>
-          <div className="reply-created-at">{timeAgoExact(date).toLowerCase()}</div>
           <div className="reply-card-body">{body}</div>
+          <div className="reply-created-at">{timeAgoExact(date).toLowerCase()}</div>
         </div>
       </div>
     </div>
