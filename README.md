@@ -46,10 +46,21 @@ usage:
 This is some text which I don't want to indent.
 {.no-indent .space-above}
 
+## Color Themes
+
+- cortado 774e24
+- matcha 4f772d
+- pebble 8e9aaf
+- rooibos c32f27
+- rose ff7096
+- powerade 00b4d8
+- lassi ffb703
+
 ## Acknowledgement
 
 - Lucide
 - Google Fonts
 - https://systemfontstack.com/
+- https://www.uicolors.dev/
 ```
 

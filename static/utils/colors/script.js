@@ -1,6 +1,8 @@
 function readInput() {
+  console.log('wtf');
   const textInput = document.querySelector(".text-input");
-  const inputRe = /(\$[\w-]+):\s+(\#[abcdefgABCDEFG0123456789]{6});/g;
+  console.log(textInput.innerHTML);
+  const inputRe = /([\w-]+):\s+(\#[abcdefgABCDEFG0123456789]{6});/g;
   const matches = textInput.innerHTML.matchAll(inputRe);
 
   const hexPairs = matches.map(([_, name, hex]) => [name, hex]);
@@ -10,7 +12,9 @@ function readInput() {
 
   const paletteContainerDark = document.querySelector(".palette-container-dark");
   paletteContainerDark.innerHTML = "";
+
   for (const [name, hex] of hexPairs) {
+    console.log(name, hex);
     const cellHTML = `<div class="palette-cell"><div class="name"><p>${name}</p></div><div  style="background-color: ${hex}" class="swatch">&nbsp;</div></div>`;
     if (name.includes("dark")) {
       paletteContainerDark.innerHTML = `${paletteContainerDark.innerHTML}${cellHTML}`;
