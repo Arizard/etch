@@ -301,6 +301,8 @@ article.content {
   .alert {
     padding: 1em;
     margin: 1lh 0;
+    border-radius: var(--radius);
+    border: 1px solid;
 
     .alert-heading {
       font-weight: 600;
@@ -457,6 +459,7 @@ article.content {
         margin: 0 auto;
         width: 100%;
         overflow: hidden;
+        border-radius: var(--radius);
       }
     }
 
@@ -467,6 +470,8 @@ article.content {
     }
 
     figcaption {
+      padding-top: 1rem;
+      line-height: 1.4;
       p {
         text-align: center;
       }
