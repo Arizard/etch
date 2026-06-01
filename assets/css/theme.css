@@ -505,6 +505,10 @@ article.content {
     margin: 1lh auto;
     line-height: 1.8;
 
+    aside#toc {
+      margin-top: 1rem;
+    }
+
     sup {
       line-height: 0;
     }
