@@ -201,6 +201,7 @@ header.site-header-container {
     display: flex;
     justify-items: center;
     align-items: center;
+    border-radius: var(--radius);
 
     img {
       width: 100%;
@@ -472,8 +473,11 @@ article.content {
     figcaption {
       padding-top: 1rem;
       line-height: 1.4;
+
       p {
-        text-align: center;
+        color: var(--muted-foreground);
+        font-style: italic;
+        font-size: smaller;
       }
     }
   }
@@ -628,8 +632,7 @@ article.content {
 }
 
 article.section {
-  .hugo-section-header {
-  }
+  .hugo-section-header {}
 
   margin: var(--gutter) auto;
 }
