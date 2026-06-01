@@ -11,7 +11,7 @@ import (
 )
 
 func main() {
-	fmt.Println("/* welcome to colorscale */")
+	fmt.Println("/* simple colorscale generator by arie */")
 	fmt.Println()
 
 	hexColors := map[string]string{
@@ -30,7 +30,7 @@ func main() {
 		"rooibos": 0.2,
 		"cortado": 0.4,
 		"matcha":  0.15,
-		"lassi":   -0.2,
+		"lassi":   -0.15,
 	}
 
 	hexPattern := regexp.MustCompile(`^#[abcdefABCDEF0123456789]{6}$`)
@@ -77,35 +77,40 @@ func main() {
 		}
 
 		fmt.Println()
-		fmt.Println("\t--gray: #80827d;")
-		fmt.Println("\t--gray-50: #fafafa;")
-		fmt.Println("\t--gray-100: #f2f2f2;")
-		fmt.Println("\t--gray-200: #e6e6e5;")
-		fmt.Println("\t--gray-300: #cccdcb;")
-		fmt.Println("\t--gray-400: #b3b4b1;")
-		fmt.Println("\t--gray-500: #80827d;")
-		fmt.Println("\t--gray-600: #676864;")
-		fmt.Println("\t--gray-700: #4d4e4b;")
-		fmt.Println("\t--gray-800: #333432;")
-		fmt.Println("\t--gray-900: #1a1a19;")
-
-		fmt.Println("\t--border: #e6e6e5;")
-		fmt.Println("\t--input: #e6e6e5;")
 		fmt.Printf("\t--ring: #%s;\n", primary[100])
-		fmt.Println("\t--background: #fafafa;")
-		fmt.Println("\t--foreground: #1a1a19;")
-		fmt.Println("\t--muted: #f2f2f2;")
-		fmt.Println("\t--muted-foreground: #676864;")
-		fmt.Println("\t--accent: #f2f2f2;")
 		fmt.Printf("\t--accent-foreground: #%s;\n", primary[700])
-		fmt.Println("\t--destructive: #ff0000;")
-		fmt.Println("\t--destructive-foreground: #ffffff;")
-		fmt.Println("\t--card: #ffffff;")
-		fmt.Println("\t--card-foreground: #1a1a19;")
-		fmt.Println("\t--popover: #ffffff;")
-		fmt.Println("\t--popover-foreground: #1a1a19;")
 
 		fmt.Println("}")
 	}
+
+	fmt.Println()
+	fmt.Println(":root {")
+
+	fmt.Println("\t--gray: #80827d;")
+	fmt.Println("\t--gray-50: #fafafa;")
+	fmt.Println("\t--gray-100: #f2f2f2;")
+	fmt.Println("\t--gray-200: #e6e6e5;")
+	fmt.Println("\t--gray-300: #cccdcb;")
+	fmt.Println("\t--gray-400: #b3b4b1;")
+	fmt.Println("\t--gray-500: #80827d;")
+	fmt.Println("\t--gray-600: #676864;")
+	fmt.Println("\t--gray-700: #4d4e4b;")
+	fmt.Println("\t--gray-800: #333432;")
+	fmt.Println("\t--gray-900: #1a1a19;")
+	fmt.Println("\t--border: #e6e6e5;")
+	fmt.Println("\t--input: #e6e6e5;")
+	fmt.Println("\t--background: #fafafa;")
+	fmt.Println("\t--foreground: #1a1a19;")
+	fmt.Println("\t--muted: #f2f2f2;")
+	fmt.Println("\t--muted-foreground: #676864;")
+	fmt.Println("\t--accent: #f2f2f2;")
+	fmt.Println("\t--destructive: #ff0000;")
+	fmt.Println("\t--destructive-foreground: #ffffff;")
+	fmt.Println("\t--card: #ffffff;")
+	fmt.Println("\t--card-foreground: #1a1a19;")
+	fmt.Println("\t--popover: #ffffff;")
+	fmt.Println("\t--popover-foreground: #1a1a19;")
+
+	fmt.Println("}")
 
 }
