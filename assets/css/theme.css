@@ -220,7 +220,7 @@ header.site-header-container {
 
 article::selection {
   background-color: var(--primary-700, var(--foreground));
-  color: var(--primary-50, var(--background));
+  color: var(--primary-100, var(--background));
 }
 
 article.content {
@@ -574,7 +574,6 @@ article.content {
       border-spacing: 0;
       border-collapse: collapse;
       border: none;
-      font-size: smaller;
       table-layout: auto;
       width: 100%;
 
@@ -589,8 +588,8 @@ article.content {
       thead {
         font-size: smaller;
         text-align: left;
-        background-color: var(--primary-800);
-        color: var(--primary-50);
+        background-color: var(--primary-700);
+        color: var(--primary-100);
 
         tr {
           th {
