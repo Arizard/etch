@@ -117,7 +117,7 @@ body {
 a,
 .button-link {
   text-decoration: underline;
-  text-underline-offset: 0.1em;
+  text-underline-offset: 0.2rem;
   text-decoration-thickness: 1px;
   color: var(--primary-700);
 
@@ -646,7 +646,7 @@ article.posts {
   margin: var(--gutter) auto;
   display: flex;
   flex-direction: column;
-  gap: 0.6em;
+  gap: 2rem;
 }
 
 .post-card {
@@ -654,6 +654,13 @@ article.posts {
   text-decoration: none;
   color: inherit;
   margin: 0;
+
+  .title {
+    font-weight: 600;
+    font-size: larger;
+  }
+  .not-title {
+  }
 
   .contents {
     display: flex;
