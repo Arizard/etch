@@ -397,7 +397,7 @@ article.content {
   pre {
     display: block;
     font-family: Menlo, Consolas, Monaco, Adwaita Mono, Liberation Mono, Lucida Console, monospace;
-    line-height: 1.4;
+    line-height: 1.6;
     padding: var(--gutter-half);
     overflow-x: auto;
     margin: 1lh 0;
@@ -489,7 +489,7 @@ article.content {
   .hugo-content {
     container-type: inline-size;
     margin: 1lh auto;
-    line-height: 1.6;
+    line-height: 1.8;
 
     sup {
       line-height: 0;
