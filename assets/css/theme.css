@@ -140,7 +140,6 @@ header.site-header-container {
 }
 
 .hero {
-  overflow: hidden;
   max-width: var(--width);
   margin: 0 auto;
 
@@ -255,8 +254,8 @@ article.content {
   }
 
   .alert {
-    padding: 1em;
-    margin: 1lh 0;
+    padding: 2rem 2rem 3rem 2rem;
+    margin: 2rem 0;
     border-radius: var(--radius);
     border: 1px solid;
 
