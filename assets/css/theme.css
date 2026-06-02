@@ -109,6 +109,10 @@ header.site-header-container {
       margin: 0;
       color: var(--primary-100);
 
+      &:hover {
+        color: var(--primary-50);
+      }
+
       svg {
         width: auto;
         height: 48px;
@@ -613,8 +617,8 @@ article.posts {
     font-weight: 600;
     font-size: larger;
   }
-  .not-title {
-  }
+
+  .not-title {}
 
   .contents {
     display: flex;
