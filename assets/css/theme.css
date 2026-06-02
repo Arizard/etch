@@ -87,7 +87,7 @@ header.site-header-container {
   padding: 0 var(--gutter);
 
   .greeting {
-    display: block;
+    display: none;
     max-width: var(--width);
     margin: var(--gutter) auto;
     color: var(--primary-100);
