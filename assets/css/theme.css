@@ -6,10 +6,6 @@
   --gutter-more: 3rem;
   --gutter-double: 4rem;
 
-  /* color fallbacks */
-  --border: #1a1a1a;
-  --drop-shadow: black;
-
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
 
