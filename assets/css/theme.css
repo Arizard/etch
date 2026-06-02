@@ -1,5 +1,5 @@
 :root {
-  --width: 600px;
+  --width: 675px;
   --radius: 12px;
   --gutter-half: 1rem;
   --gutter: 2rem;
@@ -29,7 +29,7 @@ body {
   min-height: 100vh;
   min-height: 100svh;
 
-  font-size: 1.6rem;
+  font-size: 1.8rem;
 
   main {
     /* min-width needed to allow overflowing child elements */
