@@ -461,7 +461,7 @@ article.content {
   .hugo-content {
     container-type: inline-size;
     margin: 1lh auto;
-    line-height: 1.8;
+    line-height: 1.6;
 
     aside#toc {
       margin-top: 1rem;
@@ -484,12 +484,6 @@ article.content {
         hyphens: auto;
         text-indent: 1em;
         margin: 0;
-      }
-
-      @container (width > 40ch) {
-        p {
-          hyphens: initial;
-        }
       }
 
       p.no-indent {
