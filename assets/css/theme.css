@@ -977,6 +977,11 @@ noscript {
   }
 }
 
+@page {
+  size: 210mm 297mm;
+  margin: 1cm;
+}
+
 @media print {
 
   .site-header-container,
@@ -987,7 +992,8 @@ noscript {
   }
 
   :root {
-    --width: 210mm;
+    --width: 100%;
+    font-size: 7.5px; /* 1.6rem is 12px font */
   }
 
   body {
