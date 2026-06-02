@@ -122,6 +122,7 @@
 
     {{ $myCSS := slice -}}
     {{ $myCSS = $myCSS | append (resources.Get "css/reset.css") -}}
+    {{ $myCSS = $myCSS | append (resources.Get "css/fonts.css") -}}
     {{ $myCSS = $myCSS | append (resources.Get "css/colorscale.css") -}}
     {{ $myCSS = $myCSS | append (resources.Get "css/theme.css") -}}
     {{ $css := $myCSS | resources.Concat "css/style.css" | css.PostCSS | minify }}
