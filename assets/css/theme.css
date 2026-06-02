@@ -29,7 +29,7 @@ body {
   min-height: 100vh;
   min-height: 100svh;
 
-  font-size: 1.8rem;
+  font-size: 1.7rem;
 
   main {
     /* min-width needed to allow overflowing child elements */
