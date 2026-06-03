@@ -9,9 +9,9 @@
   --sans-serif: "Inter", -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, Adwaita Sans, Cantarell, Ubuntu, roboto, noto, helvetica, arial, sans-serif;
   --serif: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
 
-  --regular: 380;
-  --bold: 620;
-  --extra-bold: 680;
+  --regular: 400;
+  --bold: 600;
+  --extra-bold: 700;
 
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
