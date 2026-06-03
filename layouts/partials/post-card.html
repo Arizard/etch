@@ -10,7 +10,7 @@
                 <span class="title"><a href="{{ .Permalink }}">{{- .Title }}</a></span><br />
                 <span class="not-title">
                     <time>{{ .Date.Format "2 January 2006" }}</time>
-                    <span class="comment-count" data-template=" • {count} {noun}" data-article-id-for-reply-count="{{ .Slug | default .Path }}"></span>
+                    <span class="comment-count" data-template=" | {count} {noun}" data-article-id-for-reply-count="{{ .Slug | default .Path }}"></span>
                 </span>
                 </span>
             </p>
