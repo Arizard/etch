@@ -152,6 +152,10 @@ header.site-header-container {
   max-width: var(--width);
   margin: 0 auto;
 
+  @media (min-width: 680px) {
+    margin-top: var(--gutter-double);
+  }
+
   .hero-surface {
     aspect-ratio: 1.25;
 
@@ -1000,7 +1004,8 @@ noscript {
 
   :root {
     --width: 100%;
-    font-size: 7.5px; /* 1.6rem is 12px font */
+    font-size: 7.5px;
+    /* 1.6rem is 12px font */
   }
 
   body {
