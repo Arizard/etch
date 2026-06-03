@@ -10,6 +10,7 @@
   --serif: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
 
   --regular: 400;
+  --medium: 500;
   --bold: 600;
   --extra-bold: 700;
 
@@ -20,6 +21,8 @@
 
   --link-color: var(--primary-700);
   --link-color-hover: var(--primary-600);
+
+  --heading-weight: var(--medium);
 }
 
 body {
@@ -206,7 +209,7 @@ article.content {
   h4,
   h5,
   h6 {
-    font-weight: var(--bold);
+    font-weight: var(--heading-weight);
     line-height: 1.1;
     margin-top: 3rem;
     margin-bottom: 1rem;
@@ -1013,6 +1016,7 @@ noscript {
     --width: 100%;
     font-size: 7.5px;
     /* 1.6rem is 12px font */
+    --background: transparent;
   }
 
   body {

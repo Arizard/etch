@@ -32,29 +32,28 @@ Quick reference: https://gohugo.io/quick-reference/syntax-highlighting-styles/
 
 [Lucide](https://lucide.dev/)
 
-## Essay Layout
-
-For `single` you can select the `essay` layout by adding `class: essay` to the front matter. This applies the essay styling (justified text, indented paragraphs). It looks good sometimes, but other times you'll want a bit more control. Achieve this with custom classes:
+## Markdown Custom Classes
 
 * `.no-indent` removes paragraph indentation from `<p>` elements.
-* `.space-above` adds `0.5lh` margin above `<p>` elements.
-* `.portrait` constraints image width so that portrait images don't look wack.
+* `.space-above` adds margin above `<p>` elements.
+* `.portrait` constraint image width so that portrait images don't look wack.
+* `.sm` constrains image width to a fixed value so they even have negative space on mobile.
+* `.nocaption` hides the image caption.
 
 usage:
 
 ```plain
 This is some text which I don't want to indent.
 {.no-indent .space-above}
+```
 
-## Color Themes
+## Essay Layout
 
-- cortado 774e24
-- matcha 4f772d
-- pebble 8e9aaf
-- rooibos c32f27
-- rose ff7096
-- powerade 00b4d8
-- lassi ffb703
+For `single` you can select the `essay` layout by adding `class: essay` to the front matter. This applies the essay styling (justified text, indented paragraphs). It looks good sometimes, but other times you'll want a bit more control. Achieve this with custom classes:
+
+## Color Scale
+
+Color scales are generated in `tools/colorscale.go` based on several base hues. These support "biasing" (toward light or dark on the scale). The output should be dumped to `colorscale.css` and Hugo will concatenate this into the style sheet.
 
 ## Acknowledgement
 
