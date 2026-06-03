@@ -151,10 +151,9 @@ header.site-header-container {
 .hero {
   max-width: var(--width);
   margin: 0 auto;
-
-  @media (min-width: 680px) {
-    margin-top: var(--gutter-double);
-  }
+  margin-top: clamp(0px,
+      calc(50vw - var(--width) / 2 - var(--gutter-double) / 2),
+      calc(2 * var(--gutter-double)));
 
   .hero-surface {
     aspect-ratio: 1.25;

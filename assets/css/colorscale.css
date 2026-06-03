@@ -1,4 +1,4 @@
-/* welcome to colorscale */
+/* simple colorscale generator by arie */
 
 :root[data-theme="cortado"] {
 	--primary-50: #F7EDE4;
@@ -135,8 +135,8 @@
 	--gray-900: #1a1a19;
 	--border: #e6e6e5;
 	--input: #e6e6e5;
-	--background: #fafafa;
-	--foreground: #1a1a19;
+	--background: #f2f2f2;
+	--foreground: #333432;
 	--muted: #f2f2f2;
 	--muted-foreground: #676864;
 	--accent: #f2f2f2;
