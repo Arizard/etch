@@ -131,8 +131,12 @@
         {{ $css.Content | safeCSS }}
 
         {{- if .Site.Params.highlight -}}
-            {{- $cssSyntaxLight := resources.Get "css/syntax.css" | minify }}
+            {{- $cssSyntaxLight := resources.Get "css/syntax-light.css" | minify }}
             {{ $cssSyntaxLight.Content | safeCSS }}
+            @media(prefers-color-scheme: dark) {
+                {{- $cssSyntaxLight := resources.Get "css/syntax-dark.css" | minify }}
+                {{ $cssSyntaxLight.Content | safeCSS }}
+            }
         {{ end -}}
     </style>
 </head>

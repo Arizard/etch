@@ -23,7 +23,8 @@ This copies dependencies from the theme's `package.hugo.json` into your project'
 `hugo gen chromastyles`
 
 ```
-hugo gen chromastyles --style="rose-pine-dawn" > assets/css/syntax.css
+hugo gen chromastyles --style="rose-pine-dawn" > assets/css/syntax-light.css
+hugo gen chromastyles --style="rose-pine-moon" > assets/css/syntax-dark.css
 ```
 
 Quick reference: https://gohugo.io/quick-reference/syntax-highlighting-styles/
