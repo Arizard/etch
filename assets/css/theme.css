@@ -22,7 +22,7 @@
   --link-color: var(--primary-700);
   --link-color-hover: var(--primary-600);
 
-  --heading-weight: var(--medium);
+  --heading-weight: var(--bold);
 }
 
 body {
@@ -374,7 +374,7 @@ article.content {
   pre {
     display: block;
     font-family: Menlo, Consolas, Monaco, Adwaita Mono, Liberation Mono, Lucida Console, monospace;
-    line-height: 1.6;
+    line-height: 1.7;
     padding: var(--gutter-half);
     overflow-x: auto;
     margin: 1lh 0;
