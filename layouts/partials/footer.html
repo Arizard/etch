@@ -1,12 +1,20 @@
 <div class="site-footer">
   <footer>
+    {{- $rssUrl := urls.AbsURL "index.xml" -}}
     <nav>
       {{- range .Site.Menus.footer -}}
       <div>
         <a href="{{- .URL -}}">{{ .Title }}</a>
       </div>
       {{- end -}}
+      <div>
+        <a alt="rss" href="{{- $rssUrl -}}">
+          rss</a>
+      </div>
     </nav>
+    <section>
+      <p><button aria-label="click here to change colour scheme" class="button-icon" id="cycle-colors">{{ partial "svg.html" "icon/lucide/palette.svg" }}<div>Switch colour scheme</div></button></p>
+    </section>
     <section>
       <p>{{ .RenderString .Site.Params.copyright }}</p>
       <p>
@@ -17,15 +25,7 @@
       </p>
       <p>Last modified on {{ .Site.Lastmod | time.Format ":date_full" -}}</p>
     </section>
-    <section>
-      <p><button class="button-link" id="cycle-colors">click here to change colour scheme</button></p>
-    </section>
-    {{- $rssUrl := urls.AbsURL "index.xml" -}}
     <section class="rss">
-      <div>
-        <a alt="rss" href="{{- $rssUrl -}}">
-          rss</a>
-      </div>
       <div>
         <a href="http://www.rssboard.org/rss-validator/check.cgi?url={{- $rssUrl -}}">
           <img src="/valid-rss-rogers.png" width="88px" height="31px" alt="[Valid RSS]" title="Validate my RSS feed" />

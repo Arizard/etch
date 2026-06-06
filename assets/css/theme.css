@@ -1,5 +1,7 @@
 :root {
   --width: 640px;
+  --header-width: 640px;
+  --footer-width: 640px;
   --radius: 12px;
   --gutter-half: 1rem;
   --gutter: 2rem;
@@ -74,6 +76,8 @@
   --header-footer-navigation-links-text-color: var(--primary-100);
   --header-footer-navigation-links-text-color-hover: var(--primary-50);
   --header-footer-text-color: var(--primary-100);
+  --header-footer-button-icon-bg: var(--primary-700);
+  --header-footer-button-icon-bg-hover: var(--primary-600);
 
   @media(prefers-color-scheme: dark) {
     --alert-caution-bg: #2C1810;
@@ -156,6 +160,7 @@ body {
     padding-top: clamp(var(--gutter),
         calc(var(--gutter) + 50vw - var(--width) / 2 - var(--gutter-double) / 2),
         calc(2 * var(--gutter-double)));
+    padding-bottom: 16rem;
   }
 }
 
@@ -182,7 +187,8 @@ body {
 
 }
 
-.button-link {
+.button-link,
+.button-icon {
   all: unset;
   cursor: pointer;
 }
@@ -210,7 +216,7 @@ header.site-header-container {
     display: grid;
     grid-template-columns: 140px 1fr;
     height: 56px;
-    max-width: var(--width);
+    max-width: var(--header-width);
     margin-left: auto;
     margin-right: auto;
     margin-bottom: var(--gutter-half);
@@ -869,14 +875,13 @@ noscript {
     button.submit-btn {
       background-color: var(--button-semantic-disabled-bg);
       border: none;
-      border-radius: 6px;
+      color: white;
+      border-radius: var(--radius);
       cursor: not-allowed;
       font-size: smaller;
       padding: 0.5lh 1lh;
-      color: white;
 
       &:enabled {
-
         background-color: var(--button-semantic-good-bg);
 
         &:hover {
@@ -1068,7 +1073,7 @@ noscript {
   padding: 0 var(--gutter);
 
   footer {
-    max-width: var(--width);
+    max-width: var(--footer-width);
     margin: var(--gutter) auto;
 
     display: flex;
@@ -1084,6 +1089,21 @@ noscript {
 
       &:hover {
         color: var(--header-footer-navigation-links-text-color-hover);
+      }
+    }
+
+    .button-icon {
+      font-weight: var(--bold);
+      display: inline-flex;
+      gap: 10px;
+      padding: 6px 10px;
+      border-radius: var(--radius);
+      color: var(--header-footer-navigation-links-text-color);
+      background-color: var(--header-footer-button-icon-bg);
+      border: 1.5px solid var(--header-footer-button-icon-bg-hover);
+
+      &:hover {
+        background-color: var(--header-footer-button-icon-bg-hover);
       }
     }
 
