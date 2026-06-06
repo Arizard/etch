@@ -19,10 +19,42 @@
   font-optical-sizing: auto;
   font-size: 62.5%;
 
+  --heading-weight: var(--bold);
+
   --link-color: var(--primary-700);
   --link-color-hover: var(--primary-600);
+  --blockquote-accent: var(--gray-400);
+  --content-area-bg: var(--background);
+  --text-color: var(--foreground);
+  --li-marker-color: var(--primary-800);
+  --text-color-muted: var(--muted-foreground);
+  --button-primary-bg: var(--primary-700);
+  --button-primary-bg-hover: var(--primary-600);
+  --button-primary-fg: var(--primary-100);
+  --gomments-input-bg: var(--gray-50);
+  --gomments-input-border: var(--border);
+  --button-semantic-good-bg: #008000;
+  --button-semantic-good-bg-hover: #22cc22;
+  --button-semantic-disabled-bg: var(--gray-400);
+  --ring-primary: var(--ring);
 
-  --heading-weight: var(--bold);
+  @media(prefers-color-scheme: dark) {
+    --content-area-bg: var(--gray-900);
+    --text-color: var(--gray-50);
+    --link-color: var(--primary-300);
+    --link-color-hover: var(--primary-200);
+    --li-marker-color: var(--gray-50);
+    --text-color-muted: var(--gray-100);
+    --button-primary-bg: var(--primary-500);
+    --button-primary-bg-hover: var(--primary-400);
+    --button-primary-fg: var(--primary-50);
+    --gomments-input-bg: var(--gray-800);
+    --gomments-input-border: var(--gray-700);
+    --button-semantic-good-bg: #008000;
+    --button-semantic-good-bg-hover: #22cc22;
+    --button-semantic-disabled-bg: var(--gray-700);
+    --ring-primary: var(--primary-500);
+  }
 }
 
 body {
@@ -30,7 +62,7 @@ body {
   font-weight: var(--regular);
 
   text-wrap: pretty;
-  color: var(--foreground);
+  color: var(--text-color);
   background-color: var(--primary-700);
 
   overflow-x: clip;
@@ -45,7 +77,7 @@ body {
     /* min-width needed to allow overflowing child elements */
     min-width: 0;
 
-    background-color: var(--background);
+    background-color: var(--content-area-bg);
     padding: var(--gutter);
     padding-top: clamp(var(--gutter),
         calc(var(--gutter) + 50vw - var(--width) / 2 - var(--gutter-double) / 2),
@@ -184,7 +216,7 @@ header.site-header-container {
 
   .hero-attribution {
     p {
-      color: var(--muted-foreground);
+      color: var(--text-color-muted);
       text-align: right;
       margin-top: 6px;
       font-size: smaller;
@@ -194,8 +226,8 @@ header.site-header-container {
 }
 
 article::selection {
-  background-color: var(--primary-700, var(--foreground));
-  color: var(--primary-100, var(--background));
+  background-color: var(--primary-700);
+  color: var(--primary-100);
 }
 
 article.content {
@@ -267,9 +299,8 @@ article.content {
 
   blockquote:not(.alert) {
     font-style: italic;
-    border-left: 3px solid var(--gray-300);
-    color: var(--foreground);
-    background: var(--gray-100);
+    border-left: 3px solid var(--blockquote-accent);
+    color: var(--text-color);
     padding-left: 0.66em;
   }
 
@@ -398,7 +429,8 @@ article.content {
     font-size: 1.4rem;
   }
 
-  *:not(pre) > code, pre:not(.chroma) {
+  *:not(pre)>code,
+  pre:not(.chroma) {
     background-color: var(--gray-50);
     border: 1px solid var(--gray-300);
     color: var(--gray-700);
@@ -452,7 +484,7 @@ article.content {
       line-height: 1.4;
 
       p {
-        color: var(--muted-foreground);
+        color: var(--text-color-muted);
         font-style: italic;
         font-size: smaller;
       }
@@ -471,7 +503,7 @@ article.content {
     hr {
       display: block;
       height: 2px;
-      background-color: var(--foreground);
+      background-color: var(--text-color);
       border: none;
       color: transparent;
     }
@@ -541,7 +573,7 @@ article.content {
       }
 
       li::marker {
-        color: var(--primary-800);
+        color: var(--li-marker-color);
         font-weight: var(--bold);
       }
     }
@@ -659,11 +691,11 @@ article.posts {
 
 :focus-visible {
   outline: none;
-  box-shadow: 0 0 0 3px var(--ring);
+  box-shadow: 0 0 0 3px var(--ring-primary);
 }
 
 noscript {
-  color: var(--muted-foreground);
+  color: var(--text-color-muted);
   font-style: italic;
 }
 
@@ -691,8 +723,8 @@ noscript {
       gap: 8px;
       border: none;
       padding: 0.5em;
-      background: var(--primary-700, black);
-      color: var(--primary-100);
+      background: var(--button-primary-bg, black);
+      color: var(--button-primary-fg);
       cursor: pointer;
       border-radius: 6px;
     }
@@ -700,7 +732,7 @@ noscript {
 
     &:not(.locked) {
       button:hover {
-        background: var(--primary-600, black);
+        background: var(--button-primary-bg-hover, black);
       }
     }
 
@@ -729,15 +761,19 @@ noscript {
 
         input,
         textarea {
+          font-family: monospace;
+          font-size: 1.6rem;
           width: 100%;
           padding: 0.5em 0.5em;
           box-sizing: border-box;
-          border: 2px solid var(--border);
+          border: 2px solid var(--gomments-input-border);
           border-radius: 6px;
           margin: 0;
+          background-color: var(--gomments-input-bg);
+          color: var(--text-color);
 
           &::placeholder {
-            color: var(--foreground);
+            color: var(--text-color);
             opacity: 0.5;
             font-style: italic;
           }
@@ -751,7 +787,7 @@ noscript {
     }
 
     .char-count-text {
-      color: var(--muted-foreground);
+      color: var(--text-color-muted);
       font-size: smaller;
     }
 
@@ -760,7 +796,7 @@ noscript {
     }
 
     button.submit-btn {
-      background-color: lightgrey;
+      background-color: var(--button-semantic-disabled-bg);
       border: none;
       border-radius: 6px;
       cursor: not-allowed;
@@ -770,12 +806,10 @@ noscript {
 
       &:enabled {
 
-        background-color: green;
+        background-color: var(--button-semantic-good-bg);
 
         &:hover {
-          background-color: #22cc22;
-          /* fallback */
-          background-color: hsl(from green calc(h + 15) s calc(l + 5));
+          background-color: var(--button-semantic-good-bg-hover);
         }
 
         color: white;
