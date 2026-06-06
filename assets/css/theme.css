@@ -8,6 +8,7 @@
 
   --sans-serif: "Inter", -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, Adwaita Sans, Cantarell, Ubuntu, roboto, noto, helvetica, arial, sans-serif;
   --serif: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  --monospace: Menlo, Consolas, Monaco, Adwaita Mono, Liberation Mono, Lucida Console, monospace;
 
   --regular: 400;
   --medium: 500;
@@ -21,22 +22,6 @@
 
   --heading-weight: var(--bold);
 
-  --link-color: var(--primary-700);
-  --link-color-hover: var(--primary-600);
-  --blockquote-accent: var(--gray-400);
-  --content-area-bg: var(--background);
-  --text-color: var(--foreground);
-  --li-marker-color: var(--primary-800);
-  --text-color-muted: var(--muted-foreground);
-  --button-primary-bg: var(--primary-700);
-  --button-primary-bg-hover: var(--primary-600);
-  --button-primary-fg: var(--primary-100);
-  --gomments-input-bg: var(--gray-50);
-  --gomments-input-border: var(--border);
-  --button-semantic-good-bg: #008000;
-  --button-semantic-good-bg-hover: #22cc22;
-  --button-semantic-disabled-bg: var(--gray-400);
-  --ring-primary: var(--ring);
   --alert-caution-bg: #EDD4C2;
   --alert-caution-border: #DDB8A4;
   --alert-caution-heading-color: #522510;
@@ -57,23 +42,33 @@
   --alert-warning-border: #D8C878;
   --alert-warning-heading-color: #4A3A0C;
   --alert-warning-text-color: #614F18;
+  --blockquote-accent: var(--gray-400);
+  --button-primary-bg-hover: var(--primary-600);
+  --button-primary-bg: var(--primary-700);
+  --button-primary-fg: var(--primary-100);
+  --button-semantic-disabled-bg: var(--gray-400);
+  --button-semantic-good-bg-hover: #22cc22;
+  --button-semantic-good-bg: #008000;
+  --code-bg: var(--gray-50);
+  --code-border: var(--gray-300);
+  --code-chroma-border: var(--gray-300);
+  --code-text-color: var(--gray-700);
+  --content-area-bg: var(--background);
+  --gomments-input-bg: var(--gray-50);
+  --gomments-input-border: var(--border);
+  --li-marker-color: var(--primary-800);
+  --link-color-hover: var(--primary-600);
+  --link-color: var(--primary-700);
+  --ring-primary: var(--ring);
+  --text-color-muted: var(--muted-foreground);
+  --text-color: var(--foreground);
+  --table-border: var(--border);
+  --table-thead-bg: var(--primary-700);
+  --table-thead-text-color: var(--primary-100);
+  --table-tbody-tr-bg: var(--gray-100);
+    --mark-primary: var(--primary-100);
 
   @media(prefers-color-scheme: dark) {
-    --content-area-bg: var(--gray-900);
-    --text-color: var(--gray-50);
-    --link-color: var(--primary-300);
-    --link-color-hover: var(--primary-200);
-    --li-marker-color: var(--gray-50);
-    --text-color-muted: var(--gray-100);
-    --button-primary-bg: var(--primary-500);
-    --button-primary-bg-hover: var(--primary-400);
-    --button-primary-fg: var(--primary-50);
-    --gomments-input-bg: var(--gray-800);
-    --gomments-input-border: var(--gray-700);
-    --button-semantic-good-bg: #008000;
-    --button-semantic-good-bg-hover: #22cc22;
-    --button-semantic-disabled-bg: var(--gray-700);
-    --ring-primary: var(--primary-500);
     --alert-caution-bg: #2C1810;
     --alert-caution-border: #4A3220;
     --alert-caution-heading-color: #FFB380;
@@ -94,6 +89,31 @@
     --alert-warning-border: #6A6030;
     --alert-warning-heading-color: #F0D060;
     --alert-warning-text-color: #FFD050;
+    --blockquote-accent: var(--gray-100);
+    --button-primary-bg-hover: var(--primary-400);
+    --button-primary-bg: var(--primary-500);
+    --button-primary-fg: var(--primary-50);
+    --button-semantic-disabled-bg: var(--gray-700);
+    --button-semantic-good-bg-hover: #22cc22;
+    --button-semantic-good-bg: #008000;
+    --code-bg: var(--gray-900);
+    --code-border: var(--gray-700);
+    --code-chroma-border: transparent;
+    --code-text-color: var(--gray-50);
+    --content-area-bg: var(--gray-900);
+    --gomments-input-bg: var(--gray-800);
+    --gomments-input-border: var(--gray-700);
+    --li-marker-color: var(--gray-50);
+    --link-color-hover: var(--primary-200);
+    --link-color: var(--primary-300);
+    --ring-primary: var(--primary-500);
+    --text-color-muted: var(--gray-100);
+    --text-color: var(--gray-50);
+    --table-border: var(--primary-600);
+    --table-thead-bg: var(--primary-600);
+    --table-thead-text-color: var(--primary-50);
+    --table-tbody-tr-bg: var(--gray-900);
+    --mark-primary: var(--primary-600);
   }
 }
 
@@ -458,27 +478,30 @@ article.content {
   }
 
   code {
-    background-color: var(--gray-50);
     border-radius: 5px;
     padding: 0.2em 0.4em;
   }
 
   pre,
   code {
-    font-family: Menlo, Consolas, Monaco, Adwaita Mono, Liberation Mono, Lucida Console, monospace;
+    font-family: var(--monospace);
     font-size: 1.4rem;
   }
 
   *:not(pre)>code,
   pre:not(.chroma) {
-    background-color: var(--gray-50);
-    border: 1px solid var(--gray-300);
-    color: var(--gray-700);
+    background-color: var(--code-bg);
+    border: 1px solid var(--code-border);
+    color: var(--code-text-color);
   }
 
   pre {
-    border: 1px solid var(--border);
+    border: 1px solid var(--code-border);
     border-radius: var(--radius);
+
+    &.chroma {
+      border: 1px solid var(--code-chroma-border);
+    }
   }
 
   p.text-align-left {
@@ -619,7 +642,8 @@ article.content {
     }
 
     mark {
-      background-color: var(--primary-100);
+      background-color: var(--mark-primary);
+      color: var(--text-color);
     }
   }
 
@@ -628,7 +652,7 @@ article.content {
     overflow-y: hidden;
     max-width: 100%;
     margin: 0.5lh 0;
-    border: 1px solid var(--border);
+    border: 1px solid var(--table-border);
     border-radius: var(--radius);
 
     table {
@@ -651,8 +675,8 @@ article.content {
       thead {
         font-size: smaller;
         text-align: left;
-        background-color: var(--primary-700);
-        color: var(--primary-100);
+        background-color: var(--table-thead-bg);
+        color: var(--table-thead-text-color);
 
         tr {
           th {
@@ -666,7 +690,7 @@ article.content {
         text-align: left;
 
         tr {
-          background-color: var(--gray-100);
+          background-color: var(--table-tbody-tr-bg);
 
           td {
             padding: 0.5lh;
@@ -801,7 +825,7 @@ noscript {
 
         input,
         textarea {
-          font-family: monospace;
+          font-family: var(--monospace);
           font-size: 1.6rem;
           width: 100%;
           padding: 0.5em 0.5em;
