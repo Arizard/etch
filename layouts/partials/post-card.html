@@ -7,7 +7,7 @@
                 {{- else -}}
                 <span>
                 {{- end -}}
-                <span class="title"><a href="{{ .Permalink }}">{{- .Title }}</a></span><br />
+                <span class="title"><a href="{{ .Permalink }}">{{- .Title }}</a></span>,
                 <span class="not-title">
                     <time>{{ .Date.Format "2 January 2006" }}</time>
                     <span class="comment-count" data-template=" | {count} {noun}" data-article-id-for-reply-count="{{ .Slug | default .Path }}"></span>

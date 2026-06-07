@@ -1,25 +1,23 @@
 {{ define "main" }}
 <article class="section content">
-    <header class="hugo-section-header">
-        <h1>{{ .Title }}</h1>
-    </header>
     <section class="hugo-content">
         {{- .Content -}}
     </section>
 </article>
-<article class="section posts">
-    {{- $pages := where site.RegularPages.ByPublishDate.Reverse "Section" "posts" -}}
-    {{- $published := where $pages "Draft" false -}}
-    {{- range $published }}
+{{- $allPages := where site.RegularPages.ByPublishDate.Reverse "Section" "posts" -}}
+<article id="posts" class="section posts">
+    <div class="hugo-section-label subsection"><h2>Posts</h2></div>
+    {{- $pages := where $allPages "Draft" false -}}
+    {{- range $pages }}
     {{- partial "post-card.html" . -}}
     {{- end }}
-</article>
-{{- $drafts := where $pages "Draft" true -}}
-{{- if gt (len $drafts) 0 -}}
-<article class="section posts">
+    {{- $drafts := where $allPages "Draft" true -}}
     {{- range $drafts }}
     {{- partial "post-card.html" . -}}
     {{- end }}
 </article>
-{{- end -}}
+{{ end }}
+
+{{ define "_partials/back-to-top.html" }}
+    <div class="back-to-top"><a href="#navigation" title="back to top">{{- partial "svg.html" "icon/lucide/arrow-up.svg" -}}<span class="label">Back to top</span></a></div>
 {{ end }}

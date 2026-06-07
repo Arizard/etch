@@ -173,6 +173,36 @@ body {
   }
 }
 
+.back-to-top {
+  height: 24px;
+
+  a {
+    display: inline-block;
+
+    svg {
+      float: left;
+      margin-right: 0.25em;
+    }
+
+    .label {
+      float: right;
+      text-decoration: inherit;
+    }
+  }
+}
+
+.hugo-section-label.subsection {
+  display: flex;
+  align-items: center;
+  gap: var(--gutter);
+  h2 {
+    display: block;
+  }
+  .back-to-top {
+    display: block;
+    margin: 0;
+  }
+}
 
 .back-nav {
   width: 100%;
@@ -193,7 +223,6 @@ body {
       text-decoration: inherit;
     }
   }
-
 }
 
 .button-link,
@@ -744,8 +773,6 @@ article.posts {
   margin: 0;
 
   .title {
-    font-weight: var(--bold);
-    font-size: larger;
   }
 
   .not-title {}
