@@ -3,6 +3,7 @@
   --header-width: 640px;
   --footer-width: 640px;
   --radius: 12px;
+  --radius-sharp: 6px;
   --gutter-half: 1rem;
   --gutter: 2rem;
   --gutter-more: 3rem;
@@ -28,6 +29,8 @@
   @media(min-width: 480px) {
     --base-font-size: 1.7rem;
   }
+
+  --button-radius: var(--radius-sharp);
 
   --body-bg: var(--primary-700);
   --alert-caution-bg: #EDD4C2;
@@ -83,6 +86,7 @@
   --header-footer-text-color: var(--primary-100);
   --header-footer-button-icon-bg: var(--primary-700);
   --header-footer-button-icon-bg-hover: var(--primary-600);
+  --header-footer-button-icon-text-color: var(--primary-100);
 
   @media(prefers-color-scheme: dark) {
     --alert-caution-bg: #2C1810;
@@ -807,7 +811,7 @@ noscript {
       background: var(--button-primary-bg, black);
       color: var(--button-primary-fg);
       cursor: pointer;
-      border-radius: 6px;
+      border-radius: var(--button-radius);
     }
 
 
@@ -848,7 +852,7 @@ noscript {
           padding: 0.5em 0.5em;
           box-sizing: border-box;
           border: 2px solid var(--gomments-input-border);
-          border-radius: 6px;
+          border-radius: var(--radius-sharp);
           margin: 0;
           background-color: var(--gomments-input-bg);
           color: var(--text-color);
@@ -880,7 +884,7 @@ noscript {
       background-color: var(--button-semantic-disabled-bg);
       border: none;
       color: white;
-      border-radius: var(--radius);
+      border-radius: var(--button-radius);
       cursor: not-allowed;
       font-size: smaller;
       padding: 0.5lh 1lh;
@@ -931,7 +935,7 @@ noscript {
         color: white;
         font-weight: var(--bold);
         overflow: hidden;
-        border-radius: 6px;
+        border-radius: var(--radius-sharp);
 
         div {
           text-align: center;
@@ -1101,8 +1105,8 @@ noscript {
       display: inline-flex;
       gap: 10px;
       padding: 6px 10px;
-      border-radius: var(--radius);
-      color: var(--header-footer-navigation-links-text-color);
+      border-radius: var(--button-radius);
+      color: var(--header-footer-button-icon-text-color);
       background-color: var(--header-footer-button-icon-bg);
       border: 1.5px solid var(--header-footer-button-icon-bg-hover);
 
