@@ -1,19 +1,20 @@
 <div class="post-card">
     <section class="contents">
-        <header>
-            <p>
-                {{ if .Draft -}}
-                <span style="opacity: 0.5;">
-                {{- else -}}
-                <span>
+        <header
+            {{ if .Draft }}
+            style="opacity: 0.5;"
+            {{ end }}
+            >
+            <div class="tag-list">
+                <div class="title"><a href="{{ .Permalink }}">{{- .Title }}</a></div>
+                {{- range .GetTerms "tags" -}}
+                    <div class="tag">{{ .LinkTitle }}</div>
                 {{- end -}}
-                <span class="title"><a href="{{ .Permalink }}">{{- .Title }}</a></span>,
-                <span class="not-title">
+                <div class="comment-count tag" data-template="{count} {noun}" data-article-id-for-reply-count="{{ .Slug | default .Path }}"></div>
+                <div class="not-title">
                     <time>{{ .Date.Format "2 January 2006" }}</time>
-                    <span class="comment-count" data-template=" | {count} {noun}" data-article-id-for-reply-count="{{ .Slug | default .Path }}"></span>
-                </span>
-                </span>
-            </p>
+                </div>
+            </div>
         </header>
     </section>
 </div>

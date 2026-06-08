@@ -6,8 +6,10 @@
 </article>
 {{- $allPages := where site.RegularPages.ByPublishDate.Reverse "Section" "posts" -}}
 <article id="posts" class="section posts">
-    <div class="hugo-section-label subsection"><h2>Posts</h2></div>
     {{- $pages := where $allPages "Draft" false -}}
+    <header class="hugo-section-header">
+        <p>{{ .Title }}</p>
+    </header>
     {{- range $pages }}
     {{- partial "post-card.html" . -}}
     {{- end }}
@@ -15,9 +17,10 @@
     {{- range $drafts }}
     {{- partial "post-card.html" . -}}
     {{- end }}
+    {{ partial "back-to-top.html" }}
 </article>
 {{ end }}
 
 {{ define "_partials/back-to-top.html" }}
-    <div class="back-to-top"><a href="#navigation" title="back to top">{{- partial "svg.html" "icon/lucide/arrow-up.svg" -}}<span class="label">Back to top</span></a></div>
+    <div class="back-to-top"><a href="#" title="back to top">{{- partial "svg.html" "icon/lucide/arrow-up.svg" -}}<span class="label">Back to top</span></a></div>
 {{ end }}
