@@ -68,7 +68,7 @@
   --gomments-input-bg: var(--gray-50);
   --gomments-input-border: var(--border);
   --li-marker-color: var(--primary-800);
-  --link-color: var(--primary-600);
+  --link-color: var(--primary-700);
   --link-color-hover: var(--link-color);
   --ring-primary: var(--ring);
   --text-color-muted: var(--muted-foreground);
@@ -677,7 +677,7 @@ article.content {
 
       li::marker {
         color: var(--li-marker-color);
-        font-weight: var(--bold);
+        font-weight: var(--regular);
       }
     }
 
