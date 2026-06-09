@@ -5,16 +5,18 @@
             style="opacity: 0.5;"
             {{ end }}
             >
-            <div class="tag-list">
-                <div class="title"><a href="{{ .Permalink }}">{{- .Title }}</a></div>
-                {{- range .GetTerms "tags" -}}
-                    <div class="tag">{{ .LinkTitle }}</div>
-                {{- end -}}
-                <div class="comment-count tag" data-template="{count} {noun}" data-article-id-for-reply-count="{{ .Slug | default .Path }}"></div>
-                <div class="not-title">
+            <div>
+                <span class="title"><a href="{{ .Permalink }}">{{- .Title }}</a></span>,
+                <span class="publish-date">
                     <time>{{ .Date.Format "2 January 2006" }}</time>
-                </div>
+                </span>
+            <div>
+            <div>
+                {{ .Summary }}
             </div>
+            <!-- <div> -->
+            <!--     <span class="comment-count tag" data-template="{count} {noun}" data-article-id-for-reply-count="{{ .Slug | default .Path }}"></span> -->
+            <!-- </div> -->
         </header>
     </section>
 </div>

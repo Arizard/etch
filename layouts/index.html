@@ -1,15 +1,17 @@
 {{ define "main" }}
 <article class="section content">
+    <header class="hugo-section-header">
+        <h1>{{ .Title }}</h1>
+    </header>
+    {{ if not (eq .Content "") }}
     <section class="hugo-content">
         {{- .Content -}}
     </section>
+    {{ end }}
 </article>
 {{- $allPages := where site.RegularPages.ByPublishDate.Reverse "Section" "posts" -}}
 <article id="posts" class="section posts">
     {{- $pages := where $allPages "Draft" false -}}
-    <header class="hugo-section-header">
-        <p>{{ .Title }}</p>
-    </header>
     {{- range $pages }}
     {{- partial "post-card.html" . -}}
     {{- end }}

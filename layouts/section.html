@@ -3,9 +3,11 @@
     <header class="hugo-section-header">
         <h1>{{ .Title }}</h1>
     </header>
+    {{ if not (eq .Content "") }}
     <section class="hugo-content">
         {{- .Content -}}
     </section>
+    {{ end }}
 </article>
 <article class="section posts">
     {{- $pages := where site.RegularPages.ByPublishDate.Reverse "Section" .Section -}}

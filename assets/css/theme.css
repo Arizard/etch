@@ -23,11 +23,11 @@
   font-optical-sizing: auto;
   font-size: 62.5%;
 
-  --heading-weight: var(--bold);
+  --heading-weight: var(--extra-bold);
   --base-font-size: 1.6rem;
 
   @media(min-width: 480px) {
-    --base-font-size: 1.7rem;
+    --base-font-size: 1.6rem;
   }
 
   --button-radius: var(--radius-sharp);
@@ -68,7 +68,7 @@
   --gomments-input-bg: var(--gray-50);
   --gomments-input-border: var(--border);
   --li-marker-color: var(--primary-800);
-  --link-color: var(--primary-700);
+  --link-color: var(--primary-600);
   --link-color-hover: var(--link-color);
   --ring-primary: var(--ring);
   --text-color-muted: var(--muted-foreground);
@@ -87,9 +87,7 @@
   --header-footer-button-icon-bg: var(--primary-700);
   --header-footer-button-icon-bg-hover: var(--primary-600);
   --header-footer-button-icon-text-color: var(--primary-100);
-  --tag-bg: var(--gray-200);
-  --tag-border: transparent;
-  --tag-text-color: var(--gray-700);
+  --post-card-publish-date-text-color: var(--gray-600);
 
   @media(prefers-color-scheme: dark) {
     --alert-caution-bg: #2C1810;
@@ -144,6 +142,7 @@
     --header-footer-navigation-links-text-color-hover: var(--header-footer-navigation-links-text-color);
     --header-footer-text-color: var(--primary-400);
     --body-bg: var(--gray-900);
+    --post-card-publish-date-text-color: var(--gray-400);
   }
 }
 
@@ -225,14 +224,12 @@ body {
 /* links */
 a,
 .button-link {
-  text-decoration: underline;
-  text-underline-offset: 0.2rem;
-  text-decoration-thickness: 1.5px;
   color: var(--link-color);
+  text-decoration: none;
 
   &:hover {
     color: var(--link-color-hover);
-    text-decoration-style: dotted;
+    text-decoration: underline;
   }
 }
 
@@ -747,7 +744,7 @@ article.content {
 
 article.section {
   .hugo-section-header {
-    font-weight: var(--heading-weight);
+    font-weight: var(--bold);
   }
 
   margin: var(--gutter) auto;
@@ -767,37 +764,15 @@ article.posts {
   color: inherit;
   margin: 0;
 
-  .title {}
-
-  .not-title {
-    font-size: smaller;
+  .title {
+    font-weight: var(--bold);
   }
 
-  .tag-list {
-    display: flex;
-    gap: 8px;
-    align-items: flex-start;
-    margin-top: 8px;
-    flex-wrap: wrap;
-
-    .tag {
-      font-family: var(--monospace);
-      text-transform: lowercase;
-      font-size: 1.2rem;
-      letter-spacing: -2%;
-      word-spacing: -20%;
-      background-color: var(--tag-bg);
-      border: 1px solid var(--tag-border);
-      color: var(--tag-text-color);
-      border-radius: var(--radius-sharp);
-      padding: 2px 4px;
-    }
+  .publish-date {
+    color: var(--post-card-publish-date-text-color);
   }
 
   .contents {
-    display: flex;
-    flex-direction: column;
-
     header {
 
       time,
