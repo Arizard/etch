@@ -13,6 +13,9 @@
 <article id="posts" class="section posts">
     {{- $pages := where $allPages "Draft" false -}}
     {{- range $pages }}
+    {{- if eq .Params.unlisted true -}}
+    {{- continue -}}
+    {{- end -}}
     {{- partial "post-card.html" . -}}
     {{- end }}
     {{- $drafts := where $allPages "Draft" true -}}
