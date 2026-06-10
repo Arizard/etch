@@ -88,6 +88,7 @@
   --header-footer-button-icon-bg-hover: var(--primary-600);
   --header-footer-button-icon-text-color: var(--primary-100);
   --post-card-publish-date-text-color: var(--gray-600);
+  --hr-color: var(--gray-400);
 
   @media(prefers-color-scheme: dark) {
     --alert-caution-bg: #2C1810;
@@ -143,6 +144,7 @@
     --header-footer-text-color: var(--primary-400);
     --body-bg: var(--gray-900);
     --post-card-publish-date-text-color: var(--gray-400);
+    --hr-color: var(--gray-100);
   }
 }
 
@@ -605,8 +607,8 @@ article.content {
 
     hr {
       display: block;
-      height: 2px;
-      background-color: var(--text-color);
+      height: 1.5px;
+      background-color: var(--hr-color);
       border: none;
       color: transparent;
     }
@@ -1157,6 +1159,7 @@ noscript {
 
 @media print {
 
+  .draft-content,
   .site-header-container,
   .site-footer,
   .hero,
