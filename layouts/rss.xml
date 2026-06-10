@@ -48,6 +48,9 @@
     {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
     {{- end }}
     {{- range $pages }}
+    {{- if eq .Params.unlisted true -}}
+    {{- continue -}}
+    {{- end -}}
     <item>
       <title>{{ .Title }}</title>
       <link>{{ .Permalink }}</link>
