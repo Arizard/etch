@@ -18,6 +18,8 @@
   --bold: 600;
   --extra-bold: 700;
 
+  --main-side-margins: var(--gutter-double);
+
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
   font-optical-sizing: auto;
@@ -169,10 +171,10 @@ body {
     min-width: 0;
 
     background-color: var(--content-area-bg);
-    padding: var(--gutter);
-    padding-top: clamp(var(--gutter),
-        calc(var(--gutter) + 50vw - var(--width) / 2 - var(--gutter-double) / 2),
-        calc(2 * var(--gutter-double)));
+    padding: var(--main-side-margins);
+    padding-top: clamp(var(--main-side-margins),
+        calc(var(--main-side-margins) + 50vw - var(--width) / 2 - var(--main-side-margins)),
+        calc(2 * var(--main-side-margins)));
     padding-bottom: 16rem;
   }
 }
