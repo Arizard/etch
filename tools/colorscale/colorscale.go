@@ -26,11 +26,24 @@ func main() {
 	}
 
 	weight := map[string]float64{
-		"rose":    -0.2,
-		"rooibos": 0.2,
-		"cortado": 0.4,
-		"matcha":  0.15,
-		"lassi":   -0.15,
+		"rose":     -0.2,
+		"rooibos":  0.2,
+		"cortado":  0.4,
+		"matcha":   -0,
+		"lassi":    -0.15,
+		"lavender": -0.2,
+		"powerade": -0.2,
+	}
+
+	sat := map[string]float64{
+		"cortado":  -0.12,
+		"matcha":   -0.15,
+		"pebble":   -0.1,
+		"rooibos":  -0.6,
+		"rose":     -0.55,
+		"powerade": -0.6,
+		"lassi":    -0.33,
+		"lavender": -0.35,
 	}
 
 	hexPattern := regexp.MustCompile(`^#[abcdefABCDEF0123456789]{6}$`)
@@ -62,7 +75,7 @@ func main() {
 
 		for _, lv := range levels {
 			newLightness := math.Pow((1000-lv)/1000, 1+weight[name])
-			out, err := colorconv.HSLToColor(h, s, newLightness)
+			out, err := colorconv.HSLToColor(h, math.Max(0.0, math.Min(s+sat[name], 1.0)), newLightness)
 			if err != nil {
 				panic(err)
 			}
