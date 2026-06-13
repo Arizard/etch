@@ -630,7 +630,7 @@ article.content {
     }
 
     p {
-      margin: 0 auto 0.5lh auto;
+      margin: 0 auto 0.66lh auto;
     }
 
     &.essay {
@@ -640,33 +640,6 @@ article.content {
         text-wrap: initial;
 
         hyphens: auto;
-        text-indent: 1em;
-        margin: 0;
-      }
-
-      p.no-indent {
-        text-indent: 0;
-      }
-
-      p.space-above {
-        margin-top: 0.5lh;
-      }
-
-      h1+p,
-      h2+p,
-      h3+p,
-      h4+p,
-      h5+p,
-      h6+p,
-      ol+p,
-      ul+p,
-      .figure-container+p,
-      &>p:first-of-type {
-        text-indent: 0;
-      }
-
-      blockquote {
-        margin: 0.5lh auto;
       }
     }
 
