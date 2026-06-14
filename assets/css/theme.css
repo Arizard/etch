@@ -627,7 +627,7 @@ article.content {
     h3,
     h4,
     h5,
-    h6 {
+    h6, .alert-heading {
       font-family: var(--sans-serif);
     }
 
