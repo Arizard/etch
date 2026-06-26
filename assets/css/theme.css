@@ -25,6 +25,8 @@
   font-optical-sizing: auto;
   font-size: 62.5%;
 
+  scroll-behavior: smooth;
+
   --heading-weight: var(--extra-bold);
   --base-font-size: 1.8rem;
 
