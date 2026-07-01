@@ -955,8 +955,11 @@ noscript {
           font-weight: var(--bold);
         }
 
-        .reply-created-at {}
 
+        .interpunct {
+        }
+
+        .reply-created-at {}
 
         .reply-card-avatar {
           aspect-ratio: 1;
