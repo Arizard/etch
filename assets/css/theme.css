@@ -946,7 +946,7 @@ noscript {
         font-size: 1.5rem;
         display: flex;
         align-items: center;
-        gap: 6px;
+        gap: 3px;
         height: 20px;
         letter-spacing: -0.2px;
 
@@ -966,6 +966,7 @@ noscript {
           color: white;
           overflow: hidden;
           border-radius: var(--radius-sharp);
+          margin-right: 3px;
 
           .reply-card-avatar-icon {
             svg {

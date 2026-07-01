@@ -62,6 +62,7 @@ export default function Reply({
           <div className="reply-card-avatar-icon" dangerouslySetInnerHTML={{__html: tripIcon}}></div>
         </div>
         <div className="reply-card-name">{authorName}</div>
+        <div>∙</div>
         <div className="reply-created-at">{timeAgoExact(date).toLowerCase()}</div>
       </div>
       <div
