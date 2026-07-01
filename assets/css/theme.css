@@ -146,6 +146,7 @@
     --body-bg: var(--gray-900);
     --post-card-publish-date-text-color: var(--gray-400);
     --hr-color: var(--gray-100);
+    --elbow-color: var(--gray-600);
   }
 }
 
