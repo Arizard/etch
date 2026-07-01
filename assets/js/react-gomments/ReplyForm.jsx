@@ -33,6 +33,10 @@ export default function ReplyForm({ onSubmit }) {
     if (localStorage.getItem("fallbackReplySecret") === null) {
       localStorage.setItem("fallbackReplySecret", uuid4());
     }
+    const name = localStorage.getItem("fallbackReplyName");
+    if (name) {
+      setNameValue(name);
+    }
   }, []);
 
   const handleBodyChange = (value) => {
@@ -43,6 +47,14 @@ export default function ReplyForm({ onSubmit }) {
     e.preventDefault();
 
     const [name, secret] = nameValue.split('#');
+
+    if (secret) {
+      localStorage.setItem("fallbackReplySecret", secret);
+    }
+
+    if (name) {
+      localStorage.setItem("fallbackReplyName", name);
+    }
 
     const success = await onSubmit({
       name: name ?? '',
