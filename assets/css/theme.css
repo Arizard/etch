@@ -89,6 +89,7 @@
   --header-footer-button-icon-text-color: var(--primary-100);
   --post-card-publish-date-text-color: var(--gray-600);
   --hr-color: var(--gray-400);
+  --elbow-color: var(--gray-300);
 
   @media(prefers-color-scheme: dark) {
     --alert-caution-bg: #2C1810;
@@ -264,7 +265,6 @@ header.site-header-container {
       svg {
         position: absolute;
         top: 1.5px;
-        filter: drop-shadow(0px 0px 2px #00000080);
         width: auto;
       }
     }
@@ -629,7 +629,8 @@ article.content {
     h3,
     h4,
     h5,
-    h6, .alert-heading {
+    h6,
+    .alert-heading {
       font-family: var(--sans-serif);
     }
 
@@ -917,45 +918,65 @@ noscript {
   .reply-feed {
     display: flex;
     flex-direction: column;
-    gap: 0.5lh;
+    gap: 2.8rem;
+    margin: 3rem 0;
 
     .reply-card-container {
-      display: grid;
-      grid-template-columns: 32px 1fr;
-      grid-gap: 0.5lh;
-
       &>* {
         min-width: 0;
       }
 
-      .reply-card-heading-lockup {
-        .name-pill {
-          font-weight: var(--bold);
+      .reply-card-body {
+        margin-top: 0.4rem;
+        display: grid;
+        grid-gap: 6px;
+        grid-template-columns: 20px auto;
+
+        .elbow {
+          width: 11px;
+          height: 11px;
+          border-left: 1.5px solid var(--elbow-color);
+          border-bottom: 1.5px solid var(--elbow-color);
+          margin: 6px 1px 0 8px;
+          border-radius: 0 0 0 3px;
         }
       }
 
-      .reply-card-avatar {
-        aspect-ratio: 1;
-        width: 32px;
+      .reply-card-byline {
+        font-size: 1.5rem;
         display: flex;
         align-items: center;
-        justify-content: center;
-        color: white;
-        font-weight: var(--bold);
-        overflow: hidden;
-        border-radius: var(--radius-sharp);
+        gap: 6px;
+        height: 20px;
+        letter-spacing: -0.2px;
 
-        div {
-          text-align: center;
-          height: min-content;
-          line-height: 1;
+        .reply-card-name {
+          font-weight: var(--bold);
         }
+
+        .reply-created-at {}
+
+
+        .reply-card-avatar {
+          aspect-ratio: 1;
+          width: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          overflow: hidden;
+          border-radius: var(--radius-sharp);
+
+          .reply-card-avatar-icon {
+            svg {
+              width: 14px;
+              height: 14px;
+            }
+          }
+        }
+
       }
 
-      .reply-created-at {
-        font-style: italic;
-        font-size: smaller;
-      }
 
       .tripcode-color-anon {
         background-color: #888;
@@ -965,116 +986,93 @@ noscript {
         background-color: #e53935;
       }
 
-
       .tripcode-color-1 {
         background-color: #d81b60;
       }
-
 
       .tripcode-color-2 {
         background-color: #8e24aa;
       }
 
-
       .tripcode-color-3 {
         background-color: #5e35b1;
       }
-
 
       .tripcode-color-4 {
         background-color: #3949ab;
       }
 
-
       .tripcode-color-5 {
         background-color: #1e88e5;
       }
-
 
       .tripcode-color-6 {
         background-color: #039be5;
       }
 
-
       .tripcode-color-7 {
         background-color: #00acc1;
       }
-
 
       .tripcode-color-8 {
         background-color: #00897b;
       }
 
-
       .tripcode-color-9 {
-        background-color: #43a047;
+        background-color: #2e7d32;
       }
-
 
       .tripcode-color-10 {
-        background-color: #7cb342;
+        background-color: #558b2f;
       }
-
 
       .tripcode-color-11 {
-        background-color: #c0ca33;
+        background-color: #9e9d24;
       }
-
 
       .tripcode-color-12 {
-        background-color: #fdd835;
+        background-color: #f9a825;
       }
-
 
       .tripcode-color-13 {
-        background-color: #ffb300;
+        background-color: #e65100;
       }
-
 
       .tripcode-color-14 {
         background-color: #fb8c00;
       }
 
-
       .tripcode-color-15 {
         background-color: #f4511e;
       }
-
 
       .tripcode-color-16 {
         background-color: #6d4c41;
       }
 
-
       .tripcode-color-17 {
         background-color: #757575;
       }
-
 
       .tripcode-color-18 {
         background-color: #546e7a;
       }
 
-
       .tripcode-color-19 {
         background-color: #c62828;
       }
-
 
       .tripcode-color-20 {
         background-color: #ad1457;
       }
 
-
       .tripcode-color-21 {
         background-color: #6a1b9a;
       }
 
-
       .tripcode-color-22 {
         background-color: #283593;
       }
-
 
       .tripcode-color-23 {
         background-color: #1565c0;

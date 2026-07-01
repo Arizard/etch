@@ -23,7 +23,7 @@ export function timeAgoExact(date) {
 
   if (days > 0) parts.push(`${days} days`);
   if (days == 0 && hours > 0) parts.push(`${hours} hours`);
-  if (days == 0 && hours == 0 && minutes > 0) parts.push(`${minutes} minutes`);
+  if (days == 0 && hours == 0 && minutes > 1) parts.push(`${minutes} minutes`);
 
   return parts.length > 0 ? parts.join(' ') + ' ago' : 'just now';
 }
