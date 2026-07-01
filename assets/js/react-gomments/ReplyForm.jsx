@@ -1,12 +1,13 @@
-import { useState, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 import NameInput from './NameInput';
 import MessageInput from './MessageInput';
 import SubmitReplyButton from './SubmitReplyButton';
+import { uuid4 } from './utils';
 
 export default function ReplyForm({ onSubmit }) {
   const [nameValue, setNameValue] = useState('');
   const [bodyValue, setBodyValue] = useState('');
-  const [expanded, setExpanded] = useState(true);
+  const [expanded, setExpanded] = useState(false);
 
   const charLimit = 500
 
@@ -28,6 +29,12 @@ export default function ReplyForm({ onSubmit }) {
     setNameValue(value);
   };
 
+  useEffect(() => {
+    if (localStorage.getItem("fallbackReplySecret") === null) {
+      localStorage.setItem("fallbackReplySecret", uuid4());
+    }
+  }, []);
+
   const handleBodyChange = (value) => {
     setBodyValue(value);
   };
@@ -36,9 +43,10 @@ export default function ReplyForm({ onSubmit }) {
     e.preventDefault();
 
     const [name, secret] = nameValue.split('#');
+
     const success = await onSubmit({
       name: name ?? '',
-      secret: secret ?? '',
+      secret: secret ?? localStorage.getItem("fallbackReplySecret") ?? '',
       body: bodyValue,
     });
 

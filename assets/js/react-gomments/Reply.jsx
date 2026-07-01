@@ -69,8 +69,8 @@ export default function Reply({
         className={`reply-card-body ${isAttention ? 'attention' : ''}`}
         title={`ID: ${id}, ${timeAgoExact(date)} at ${date.toLocaleString()}`}
       >
-        <div class="elbow"></div>
-        <div class="content">{body}</div>
+        <div className="elbow"></div>
+        <div className="content">{body}</div>
       </div>
     </div>
   );
