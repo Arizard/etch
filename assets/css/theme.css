@@ -382,6 +382,14 @@ article.content {
   max-width: var(--width);
   margin: var(--gutter-half) auto var(--gutter) auto;
 
+  .content-inner {
+    header {
+      h1 {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
   .byline {
     font-family: var(--serif);
     font-size: smaller;
