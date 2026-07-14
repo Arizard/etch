@@ -4,10 +4,10 @@
   --footer-width: 640px;
   --radius: 12px;
   --radius-sharp: 6px;
-  --gutter-half: 1rem;
-  --gutter: 2rem;
-  --gutter-more: 3rem;
-  --gutter-double: 4rem;
+  --gutter-half: 0.75rem;
+  --gutter: 1.5rem;
+  --gutter-more: 2.25rem;
+  --gutter-double: 3rem;
 
   --sans-serif: "Inter", -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, Adwaita Sans, Cantarell, Ubuntu, roboto, noto, helvetica, arial, sans-serif;
   --serif: "Source Serif 4", Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
@@ -753,6 +753,7 @@ article.section {
   }
 
   margin: var(--gutter) auto;
+
 }
 
 article.posts {
@@ -761,6 +762,14 @@ article.posts {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+
+  .post-card {
+    .summary {
+    }
+  }
+
+  .group-heading {
+  }
 }
 
 .post-card {
@@ -768,6 +777,7 @@ article.posts {
   text-decoration: none;
   color: inherit;
   margin: 0;
+  line-height: 1.6;
 
   .title {
     font-weight: var(--bold);
@@ -970,8 +980,7 @@ noscript {
         }
 
 
-        .interpunct {
-        }
+        .interpunct {}
 
         .reply-created-at {}
 

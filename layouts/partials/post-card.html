@@ -6,12 +6,9 @@
             {{ end }}
             >
             <div>
-                <span class="title"><a href="{{ .Permalink }}">{{- .Title }}</a></span>,
-                <span class="publish-date">
-                    <time>{{ .Date.Format "2 January 2006" }}</time>
-                </span>
+                <span class="title"><a href="{{ .Permalink }}">{{- .Title }}</a></span>
             <div>
-            <div>
+            <div class="summary">
                 {{ .Summary }}
             </div>
             <!-- <div> -->

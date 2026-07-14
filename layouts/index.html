@@ -12,15 +12,22 @@
 {{- $allPages := where site.RegularPages.ByPublishDate.Reverse "Section" "posts" -}}
 <article id="posts" class="section posts">
     {{- $pages := where $allPages "Draft" false -}}
-    {{- range $pages }}
-    {{- if eq .Params.unlisted true -}}
-    {{- continue -}}
+    {{ range $pages.GroupByDate "January 2006" }}
+    <div class="group-heading"><h6>{{ .Key }}</h6></div>
+        {{- range .Pages -}}
+            {{- if eq .Params.unlisted true -}}
+                {{- continue -}}
+            {{- end -}}
+            {{- partial "post-card.html" . -}}
+        {{- end -}}
     {{- end -}}
-    {{- partial "post-card.html" . -}}
-    {{- end }}
+
     {{- $drafts := where $allPages "Draft" true -}}
+    {{- if gt (len $drafts) 0 -}}
+    <div class="group-heading"><h6>Drafts</h6></div>
+    {{- end -}}
     {{- range $drafts }}
-    {{- partial "post-card.html" . -}}
+        {{- partial "post-card.html" . -}}
     {{- end }}
     {{ partial "back-to-top.html" }}
 </article>
