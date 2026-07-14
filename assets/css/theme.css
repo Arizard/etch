@@ -13,10 +13,14 @@
   --serif: "Source Serif 4", Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   --monospace: Menlo, Consolas, Monaco, Adwaita Mono, Liberation Mono, Lucida Console, monospace;
 
+  --heading-font: "Archivo", -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, Adwaita Sans, Cantarell, Ubuntu, roboto, noto, helvetica, arial, sans-serif;
+  --base-font: "Geist", -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, Adwaita Sans, Cantarell, Ubuntu, roboto, noto, helvetica, arial, sans-serif;
+
   --regular: 400;
   --medium: 500;
   --bold: 600;
   --extra-bold: 700;
+  --black: 900;
 
   --main-side-margins: var(--gutter-double);
 
@@ -27,7 +31,7 @@
 
   scroll-behavior: smooth;
 
-  --heading-weight-primary: var(--extra-bold);
+  --heading-weight-primary: var(--black);
   --base-font-size: 1.8rem;
 
   --button-radius: var(--radius-sharp);
@@ -151,7 +155,7 @@
 }
 
 body {
-  font-family: var(--sans-serif);
+  font-family: var(--base-font);
   font-weight: var(--regular);
 
   text-wrap: pretty;
@@ -238,7 +242,7 @@ a,
 }
 
 header.site-header-container {
-  font-family: var(--sans-serif);
+  font-family: var(--base-font);
   background-color: var(--header-footer-bg);
   -webkit-font-smoothing: antialiased;
   padding: 0 var(--gutter);
@@ -281,6 +285,7 @@ header.site-header-container {
       a {
         display: block;
         font-weight: var(--bold);
+        font-family: var(--heading-font);
         color: var(--header-footer-navigation-links-text-color);
         padding-left: 1em;
 
@@ -324,7 +329,7 @@ header.site-header-container {
       text-align: right;
       margin-top: 6px;
       font-size: smaller;
-      font-style: italic;
+      font-style: normal;
     }
   }
 }
@@ -341,6 +346,7 @@ h4,
 h5,
 h6 {
   font-weight: var(--heading-weight-primary);
+  font-family: var(--heading-font);
   line-height: 1.1;
   margin-top: 6rem;
   margin-bottom: 3rem;
@@ -391,10 +397,11 @@ article.content {
   }
 
   .byline {
-    font-family: var(--serif);
+    font-family: var(--base-font);
     font-size: smaller;
     display: block;
     margin: 0.25lh 0;
+    font-style: normal;
 
     &:empty {
       display: none;
@@ -630,7 +637,7 @@ article.content {
     margin: 1lh auto;
     line-height: 1.6;
 
-    font-family: var(--serif);
+    font-family: var(--base-font);
 
     h1,
     h2,
@@ -639,7 +646,7 @@ article.content {
     h5,
     h6,
     .alert-heading {
-      font-family: var(--sans-serif);
+      font-family: var(--base-font);
     }
 
     aside#toc {
@@ -802,7 +809,7 @@ noscript {
 }
 
 .gomments-container {
-  font-family: var(--sans-serif);
+  font-family: var(--base-font);
   display: flex;
   flex-direction: column;
   gap: 0.5lh;
@@ -1094,7 +1101,7 @@ noscript {
 }
 
 .site-footer {
-  font-family: var(--sans-serif);
+  font-family: var(--base-font);
   background-color: var(--header-footer-bg);
   padding: 0 var(--gutter);
 
