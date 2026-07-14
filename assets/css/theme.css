@@ -606,7 +606,7 @@ article.content {
 
       p {
         color: var(--text-color-muted);
-        font-style: italic;
+        font-style: normal;
         font-size: smaller;
       }
     }
@@ -642,9 +642,8 @@ article.content {
     h3,
     h4,
     h5,
-    h6,
-    .alert-heading {
-      font-family: var(--base-font);
+    h6 {
+      font-family: var(--heading-font);
     }
 
     aside#toc {
@@ -762,12 +761,10 @@ article.posts {
   gap: 2rem;
 
   .post-card {
-    .summary {
-    }
+    .summary {}
   }
 
-  .group-heading {
-  }
+  .group-heading {}
 }
 
 .post-card {
