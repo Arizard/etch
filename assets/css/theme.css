@@ -90,7 +90,7 @@
   --header-footer-button-icon-bg-hover: var(--primary-600);
   --header-footer-button-icon-text-color: var(--primary-100);
   --post-card-publish-date-text-color: var(--gray-600);
-  --hr-color: var(--gray-400);
+  --hr-color: var(--text-color);
   --elbow-color: var(--gray-300);
 
   @media(prefers-color-scheme: dark) {
@@ -616,17 +616,27 @@ article.content {
     text-align: center;
   }
 
+  :not(.footnotes)>hr {
+    border: none;
+    overflow: visible;
+    text-align: center;
+    color: var(--hr-color);
+
+    &::after {
+      content: "* * *"; /* renders as a dinkus */
+      position: relative;
+      top: -11px;
+    }
+  }
+
   .footnotes {
     width: auto;
     margin-top: 2em;
     text-align: left;
 
     hr {
-      display: block;
-      height: 1.5px;
-      background-color: var(--hr-color);
       border: none;
-      color: transparent;
+      border-top: 1.5px dashed var(--hr-color);
     }
   }
 
