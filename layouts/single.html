@@ -7,11 +7,6 @@
     <img fetchpriority="high" src="{{ $heroImage.Permalink }}" />
   </div>
   {{- end -}}
-  {{- if .Page.Params.hero_attribution -}}
-  <div class="hero-attribution">
-    <p>{{ .RenderString .Page.Params.hero_attribution }}</p>
-  </div>
-  {{- end -}}
 </div>
 {{- end -}}
 {{- $hasByline := or (.Params.Author) (.Page.Params.Date) -}}
@@ -28,6 +23,11 @@
                 {{- else if .Params.Author -}}Published by <span class="author">{{- .Params.Author -}}</span>
                 {{- else if .Page.Params.Date -}}<time>{{ .Page.Params.Date.Format "2 January 2006" }}</time>{{- end -}}
             </p>
+        {{- if .Page.Params.hero_attribution -}}
+        <div class="hero-attribution">
+          <p>{{ .RenderString .Page.Params.hero_attribution }}</p>
+        </div>
+        {{- end -}}
         </address>
         {{- end -}}
         <section
