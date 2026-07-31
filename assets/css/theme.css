@@ -244,7 +244,7 @@ header.site-header-container {
 
   .site-header {
     display: grid;
-    grid-template-columns: 105px 1fr;
+    grid-template-columns: 125px 1fr;
     height: 42px;
     max-width: var(--header-width);
     margin: var(--gutter-half) auto;
@@ -255,8 +255,12 @@ header.site-header-container {
       padding: 0;
       margin: 0;
       color: var(--header-footer-site-title-color);
-      height: 100%;
       flex-grow: 1;
+      line-height: 42px;
+      text-transform: lowercase;
+      font-weight: var(--black);
+      font-family: var(--heading-font);
+      font-size: 2rem;
 
       &:hover {
         color: var(--header-footer-site-title-color-hover);
