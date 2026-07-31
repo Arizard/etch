@@ -305,7 +305,7 @@ header.site-header-container {
 
   @media (min-width: 760px) {
     max-width: calc(var(--width) + 2 * var(--main-side-margins));
-    margin: 0 auto;
+    margin: 6rem auto 0 auto;
   }
 
   .hero-surface {
