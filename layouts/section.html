@@ -12,7 +12,7 @@
 <article class="section posts">
     {{- $pages := where site.RegularPages.ByPublishDate.Reverse "Section" .Section -}}
     {{ range $pages.GroupByDate "January 2006" }}
-    <div class="group-heading"><h6>{{ .Key }}</h6></div>
+    <div class="group-heading">{{ .Key }}</div>
         {{- range .Pages -}}
             {{- if eq .Params.unlisted true -}}
                 {{- continue -}}

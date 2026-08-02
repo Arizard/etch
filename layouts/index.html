@@ -13,7 +13,7 @@
 <article id="posts" class="section posts">
     {{- $pages := where $allPages "Draft" false -}}
     {{ range $pages.GroupByDate "January 2006" }}
-    <div class="group-heading"><h6>{{ .Key }}</h6></div>
+    <div class="group-heading">{{ .Key }}</div>
         {{- range .Pages -}}
             {{- if eq .Params.unlisted true -}}
                 {{- continue -}}
@@ -24,7 +24,7 @@
 
     {{- $drafts := where $allPages "Draft" true -}}
     {{- if gt (len $drafts) 0 -}}
-    <div class="group-heading"><h6>Drafts</h6></div>
+    <div class="group-heading">Drafts</div>
     {{- end -}}
     {{- range $drafts }}
         {{- partial "post-card.html" . -}}

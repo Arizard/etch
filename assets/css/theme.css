@@ -775,7 +775,15 @@ article.posts {
     .summary {}
   }
 
-  .group-heading {}
+  .group-heading {
+    text-transform: lowercase;
+    font-weight: var(--heading-weight-primary);
+    font-family: var(--heading-font);
+    font-size: smaller;
+    letter-spacing: 10%;
+    color: var(--text-color-muted);
+    margin-top: 6rem;
+  }
 }
 
 .post-card {
@@ -786,7 +794,15 @@ article.posts {
   line-height: 1.6;
 
   .title {
-    font-weight: var(--bold);
+    display: block;
+    font-weight: var(--heading-weight-primary);
+    font-family: var(--heading-font);
+    line-height: 1.1;
+    margin-top: 6rem;
+    margin-bottom: 1rem;
+    text-overflow: ellipsis;
+    letter-spacing: -1%;
+    font-size: 2.027em;
   }
 
   .publish-date {
