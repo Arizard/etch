@@ -13,7 +13,7 @@
       </div>
     </nav>
     <section>
-      <p><button aria-label="click here to change colour scheme" class="button-icon" id="cycle-colors">{{ partial "svg.html" "icon/lucide/palette.svg" }}<div>Switch colour scheme</div></button></p>
+      <a id="cycle-colors" style="cursor: pointer;">switch theme</a>
     </section>
     <section>
       <p>{{ .RenderString .Site.Params.copyright }}</p>

@@ -68,7 +68,7 @@
         document.documentElement.dataset.theme = themeNames.includes(savedTheme) ? savedTheme : "matcha";
         addEventListener("load", async () => {
           const button = document.querySelector("#cycle-colors");
-          button.addEventListener("click", () => {
+          button.addEventListener("click", (e) => {
             const page = document.querySelector("html");
             page.dataset.theme = themeNames[(themeNames.indexOf(page.dataset.theme) + 1) % themeNames.length];
             localStorage.setItem("less-coffee-theme-name", page.dataset.theme);
