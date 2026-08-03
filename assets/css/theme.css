@@ -1,7 +1,7 @@
 :root {
-  --width: 640px;
-  --header-width: 640px;
-  --footer-width: 640px;
+  --width: 800px;
+  --header-width: 800px;
+  --footer-width: 800px;
   --radius: 12px;
   --radius-sharp: 6px;
   --spacing-xs: 1.800rem;
@@ -235,7 +235,6 @@ header.site-header-container {
   font-family: var(--base-font);
   background-color: var(--body-bg);
   border-bottom: 1px solid var(--header-border-color);
-  -webkit-font-smoothing: antialiased;
   padding: 0 var(--spacing-s);
 
   .site-header {
@@ -291,7 +290,7 @@ header.site-header-container {
 
   @media (min-width: 760px) {
     max-width: calc(var(--width) + 2 * var(--main-side-margins));
-    margin: var(--spacing-s) auto 0 auto;
+    margin: 0 auto;
   }
 
   .hero-surface {
@@ -1127,7 +1126,6 @@ noscript {
     gap: var(--spacing-m);
     flex-direction: column;
     color: var(--header-text-color);
-    -webkit-font-smoothing: antialiased;
 
     section {
       p {
