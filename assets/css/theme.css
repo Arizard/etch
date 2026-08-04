@@ -252,7 +252,7 @@ header.site-header-container {
 
   .site-header {
     display: grid;
-    grid-template-columns: 125px 1fr;
+    grid-template-columns: auto 1fr;
     width: min(100%, var(--header-width));
     margin: auto;
 
@@ -262,7 +262,6 @@ header.site-header-container {
       padding: 0;
       margin: 0;
       color: var(--header-text-color);
-      flex-grow: 1;
       text-transform: lowercase;
       font-weight: var(--black);
       font-family: var(--heading-font);
@@ -284,13 +283,41 @@ header.site-header-container {
       font-size: 2rem;
       line-height: 100%;
       width: 100%;
+      gap: var(--spacing-l);
 
       a {
         display: block;
         font-weight: var(--bold);
         font-family: var(--heading-font);
         color: var(--header-text-color);
-        padding-left: 1em;
+      }
+    }
+
+    a {
+      position: relative;
+      color: var(--link-color);
+      text-decoration: none;
+
+      &::after {
+        display: block;
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        height: 2px;
+        background-color: currentColor;
+        width: 100%;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.2s ease-out;
+      }
+
+      &:hover {
+        color: var(--link-color-hover);
+
+        &::after {
+          transform: scaleX(1);
+        }
       }
     }
 
