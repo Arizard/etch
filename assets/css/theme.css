@@ -18,7 +18,7 @@
   --heading-font: "Archivo", -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, Adwaita Sans, Cantarell, Ubuntu, roboto, noto, helvetica, arial, sans-serif;
   --base-font: "Geist", -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, Adwaita Sans, Cantarell, Ubuntu, roboto, noto, helvetica, arial, sans-serif;
 
-  --regular: 400;
+  --regular: 340;
   --medium: 500;
   --bold: 600;
   --extra-bold: 700;
@@ -287,7 +287,7 @@ header.site-header-container {
 
       a {
         display: block;
-        font-weight: var(--bold);
+        font-weight: var(--medium);
         font-family: var(--heading-font);
         color: var(--header-text-color);
       }
@@ -1222,7 +1222,13 @@ noscript {
   .site-footer,
   .hero,
   #gomments-container {
-    display: none;
+    display: none !important;
+  }
+
+  body {
+    main {
+      margin-top: 0 !important;
+    }
   }
 
   :root {
