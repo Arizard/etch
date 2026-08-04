@@ -18,7 +18,7 @@
   --heading-font: "Archivo", -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, Adwaita Sans, Cantarell, Ubuntu, roboto, noto, helvetica, arial, sans-serif;
   --base-font: "Geist", -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, Adwaita Sans, Cantarell, Ubuntu, roboto, noto, helvetica, arial, sans-serif;
 
-  --regular: 340;
+  --regular: 320;
   --medium: 500;
   --bold: 600;
   --extra-bold: 700;
@@ -1236,6 +1236,8 @@ noscript {
     font-size: 7.5px;
     /* 1.6rem is 12px font */
     --background: transparent;
+    --regular: 380;
+    --text-color: black;
   }
 
   body {
