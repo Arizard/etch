@@ -445,7 +445,7 @@ article.content {
   }
 
   .alert {
-    padding: var(--spacing-s);
+    padding: calc(var(--spacing-s) - 6px) var(--spacing-s) var(--spacing-s);
     margin: var(--spacing-l) 0;
     border-radius: var(--radius);
     border: 1px solid;
