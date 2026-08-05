@@ -179,6 +179,7 @@ body {
 .back-to-top {
   height: 24px;
   margin: var(--spacing-l) 0 0 0;
+  font-weight: var(--medium);
 
   a {
     display: inline-block;
@@ -200,6 +201,7 @@ body {
   max-width: var(--width);
   margin: var(--spacing-xs) auto;
   height: 24px;
+  font-weight: var(--medium);
 
   a {
     display: inline-block;
