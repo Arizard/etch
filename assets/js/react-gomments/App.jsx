@@ -122,7 +122,7 @@ export default function App() {
     }
   };
 
-  const readerPluralised = likeCount === 1 ? "reader" : "readers";
+  const readerPluralised = likeCount === 1 ? "other person" : "other people";
 
   return (
     <div className="gomments-container">
@@ -136,18 +136,18 @@ export default function App() {
     >
       <div dangerouslySetInnerHTML={{__html: liked ? svgHeartSolid : svgHeartOutline }}>
       </div>
+      <div className="reaction-bar-count">
+      {
+        liked
+          ? likeCount > 0
+            ? <>Liked by you and {likeCount} {readerPluralised}.</>
+            : <>Liked by you.</>
+          : likeCount > 0
+            ? <>Liked by {likeCount} {readerPluralised}.</>
+            :  <>No likes yet. Be the first.</>
+      }
+      </div>
     </button>
-    <div className="reaction-bar-count">
-    {
-      liked
-        ? likeCount > 0
-          ? <>Liked by you and {likeCount} {readerPluralised}.</>
-          : <>Liked by you.</>
-        : likeCount > 0
-          ? <>Liked by {likeCount} {readerPluralised}.</>
-          :  <>Be the first to leave a like.</>
-    }
-    </div>
     </div>
     <div className="section-label">Reply</div>
       <ReplyForm onSubmit={handleSubmitReply} />

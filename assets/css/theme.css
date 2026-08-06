@@ -18,7 +18,7 @@
   --heading-font: "Archivo", -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, Adwaita Sans, Cantarell, Ubuntu, roboto, noto, helvetica, arial, sans-serif;
   --base-font: "Archivo", -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, Adwaita Sans, Cantarell, Ubuntu, roboto, noto, helvetica, arial, sans-serif;
 
-  --regular: 340;
+  --regular: 300;
   --medium: 500;
   --bold: 600;
   --extra-bold: 700;
@@ -60,9 +60,9 @@
   --alert-warning-heading-color: #4A3A0C;
   --alert-warning-text-color: #614F18;
   --blockquote-accent: var(--primary-600);
-  --button-primary-bg-hover: var(--primary-600);
-  --button-primary-bg: var(--primary-700);
-  --button-primary-fg: var(--primary-100);
+  --like-button-bg-hover: var(--primary-100);
+  --like-button-bg: var(--background);
+  --like-button-fg: var(--text-color);
   --button-semantic-disabled-bg: var(--gray-400);
   --button-semantic-good-bg-hover: #22cc22;
   --button-semantic-good-bg: #008000;
@@ -118,9 +118,9 @@
     --alert-warning-heading-color: #F0D060;
     --alert-warning-text-color: #FFD050;
     --blockquote-accent: var(--primary-300);
-    --button-primary-bg-hover: var(--primary-400);
-    --button-primary-bg: var(--primary-500);
-    --button-primary-fg: var(--primary-50);
+    --like-button-bg-hover: var(--primary-800);
+    --like-button-bg: var(--body-bg);
+    --like-button-fg: var(--text-color);
     --button-semantic-disabled-bg: var(--gray-700);
     --button-semantic-good-bg-hover: #22cc22;
     --button-semantic-good-bg: #008000;
@@ -141,7 +141,7 @@
     --table-thead-bg: var(--primary-600);
     --table-thead-text-color: var(--primary-50);
     --table-tbody-tr-bg: var(--gray-900);
-    --mark-primary: var(--primary-700);
+    --mark-primary: var(--primary-800);
     --body-bg: var(--gray-900);
     --post-card-publish-date-text-color: var(--gray-400);
     --hr-color: var(--gray-100);
@@ -209,6 +209,7 @@ body {
     svg {
       float: left;
       margin-right: 0.25em;
+      margin-top: 2px;
     }
 
     .label {
@@ -875,6 +876,7 @@ noscript {
     gap: 1em;
     margin: 1em 0;
     align-items: center;
+    font-size: smaller;
 
     .reaction-bar-count {
       height: 25px;
@@ -887,8 +889,8 @@ noscript {
       gap: 8px;
       border: none;
       padding: 0.5em;
-      background: var(--button-primary-bg, black);
-      color: var(--button-primary-fg);
+      background: var(--like-button-bg, black);
+      color: var(--like-button-fg);
       cursor: pointer;
       border-radius: var(--button-radius);
     }
@@ -896,7 +898,7 @@ noscript {
 
     &:not(.locked) {
       button:hover {
-        background: var(--button-primary-bg-hover, black);
+        background: var(--like-button-bg-hover, black);
       }
     }
 
@@ -1177,7 +1179,7 @@ noscript {
 
     a,
     .button-link {
-      font-weight: var(--bold);
+      font-weight: var(--medium);
       color: var(--header-text-color);
     }
 
@@ -1238,7 +1240,7 @@ noscript {
     font-size: 7.5px;
     /* 1.6rem is 12px font */
     --background: transparent;
-    --regular: 380;
+    --regular: 300;
     --text-color: black;
   }
 
