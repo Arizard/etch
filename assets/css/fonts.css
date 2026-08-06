@@ -15,6 +15,7 @@
 	src: local('Archivo'), url(/fonts/archivo/Archivo-VariableFont_wdth,wght.woff2) format('woff2');
 }
 
+/*
 @font-face {
 	font-family: 'Geist';
 	font-style: italic;
@@ -30,3 +31,4 @@
 	font-display: swap;
 	src: local('Geist'), url(/fonts/geist/Geist-VariableFont_wght.woff2) format('woff2');
 }
+*/

@@ -16,7 +16,7 @@
   --monospace: Menlo, Consolas, Monaco, Adwaita Mono, Liberation Mono, Lucida Console, monospace;
 
   --heading-font: "Archivo", -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, Adwaita Sans, Cantarell, Ubuntu, roboto, noto, helvetica, arial, sans-serif;
-  --base-font: "Geist", -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, Adwaita Sans, Cantarell, Ubuntu, roboto, noto, helvetica, arial, sans-serif;
+  --base-font: "Archivo", -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, Adwaita Sans, Cantarell, Ubuntu, roboto, noto, helvetica, arial, sans-serif;
 
   --regular: 340;
   --medium: 500;
@@ -447,7 +447,7 @@ article.content {
   }
 
   .alert {
-    padding: calc(var(--spacing-s) - 6px) var(--spacing-s) var(--spacing-s);
+    padding: calc(var(--spacing-s) - 6px) var(--spacing-s);
     margin: var(--spacing-l) 0;
     border-radius: var(--radius);
     border: 1px solid;
