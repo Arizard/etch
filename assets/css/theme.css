@@ -1020,7 +1020,6 @@ noscript {
         align-items: center;
         gap: 3px;
         height: 20px;
-        letter-spacing: -0.2px;
 
         .reply-card-name {
           font-weight: var(--bold);
