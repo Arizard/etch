@@ -182,12 +182,16 @@ body {
     width: 390px;
     margin: auto;
 
-    h1.site-title {
-      font-weight: var(--black);
-      text-transform: lowercase;
-      color: var(--header-text-color);
-      font-size: 64px;
-      margin: 0 0 var(--spacing-s) 0;
+    header {
+      text-align: center;
+
+      h1.site-title {
+        font-weight: var(--black);
+        text-transform: lowercase;
+        color: var(--header-text-color);
+        font-size: 64px;
+        margin: 0 0 var(--spacing-s) 0;
+      }
     }
 
     nav {
