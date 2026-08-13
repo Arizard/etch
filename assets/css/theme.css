@@ -171,8 +171,64 @@ body {
 
     background-color: var(--content-area-bg);
     padding: var(--main-side-margins);
+  }
+
+  main:not(.index) {
     padding-bottom: 16rem;
     margin-top: var(--header-height);
+  }
+
+  main.index {
+    width: 390px;
+    margin: auto;
+
+    h1.site-title {
+      font-weight: var(--black);
+      text-transform: lowercase;
+      color: var(--header-text-color);
+      font-size: 64px;
+      margin: 0 0 var(--spacing-s) 0;
+    }
+
+    nav {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      text-transform: lowercase;
+      font-weight: var(--medium);
+      font-size: 2.4rem;
+      line-height: 1;
+
+      a {
+        display: block;
+        font-family: var(--heading-font);
+        position: relative;
+        color: var(--link-color);
+        text-decoration: none;
+
+        &::after {
+          display: block;
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: -4px;
+          height: 2px;
+          background-color: currentColor;
+          width: 100%;
+          transform: scaleX(0);
+          transform-origin: left;
+          transition: transform 0.2s ease-out;
+        }
+
+        &:hover {
+          color: var(--link-color-hover);
+
+          &::after {
+            transform: scaleX(1);
+          }
+        }
+      }
+    }
   }
 }
 

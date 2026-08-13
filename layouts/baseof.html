@@ -3,11 +3,19 @@
 {{- partial "head.html" . -}}
 
 <body>
-    {{- partial "header.html" . -}}
-    <main id="content-start">
-        {{- block "main" . }}{{- end }}
-    </main>
-    {{- partial "footer.html" . -}}
+    {{- if .IsHome -}}
+        <div></div>
+        <main class="index" id="content-start">
+            {{- block "main" . }}{{- end }}
+        </main>
+        <div></div>
+    {{- else -}}
+        {{- partial "header.html" . -}}
+        <main id="content-start">
+            {{- block "main" . }}{{- end }}
+        </main>
+        {{- partial "footer.html" . -}}
+    {{- end -}}
 </body>
 
 </html>
