@@ -68,6 +68,9 @@
         document.documentElement.dataset.theme = themeNames.includes(savedTheme) ? savedTheme : "matcha";
         addEventListener("load", async () => {
           const button = document.querySelector("#cycle-colors");
+          if (!button) {
+            return;
+          }
           button.addEventListener("click", (e) => {
             const page = document.querySelector("html");
             page.dataset.theme = themeNames[(themeNames.indexOf(page.dataset.theme) + 1) % themeNames.length];

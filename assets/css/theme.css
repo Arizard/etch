@@ -174,12 +174,13 @@ body {
   }
 
   main:not(.index) {
-    padding-bottom: 16rem;
     margin-top: var(--header-height);
+    padding-bottom: 16rem;
   }
 
   main.index {
     width: 390px;
+
     margin: auto;
 
     header {
