@@ -1,6 +1,10 @@
 {{ define "main" }}
 <div>
     <header>
+        <div class="index-img-container">
+            {{- $img := resources.Get "beanchip-640x800.png" -}}
+            <img width="240" src="{{- $img.Permalink -}}" />
+        </div>
         <h1 class="site-title">{{ .Site.Title }}</h1>
     </header>
     <nav>
