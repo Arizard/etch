@@ -192,9 +192,11 @@ body {
 
         img {
           width: 220px;
+          height: auto;
 
           @media(min-height: 680px) {
             width: 260px;
+            height: auto;
           }
         }
       }
