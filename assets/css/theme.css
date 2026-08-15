@@ -180,6 +180,8 @@ body {
 
   main.index {
     width: fit-content;
+    user-select: none;
+    -webkit-user-select: none;
 
     margin: auto;
 
