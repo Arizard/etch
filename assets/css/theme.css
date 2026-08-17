@@ -347,10 +347,10 @@ header.site-header-container {
   border-bottom: 1px solid var(--header-border-color);
 
   .site-header {
-    display: grid;
-    grid-template-columns: auto 1fr;
+    display: flex;
     width: min(100%, var(--header-width));
     margin: auto;
+    gap: var(--spacing-s);
 
     .site-title {
       position: relative;
@@ -378,8 +378,7 @@ header.site-header-container {
       text-transform: lowercase;
       font-size: 2rem;
       line-height: 100%;
-      width: 100%;
-      gap: var(--spacing-l);
+      gap: var(--spacing-s);
 
       a {
         display: block;
