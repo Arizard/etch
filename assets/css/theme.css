@@ -407,7 +407,8 @@ header.site-header-container {
         transition: transform 0.2s ease-out;
       }
 
-      &:hover {
+      &:hover,
+      &.active {
         color: var(--link-color-hover);
 
         &::after {

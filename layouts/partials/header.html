@@ -2,11 +2,10 @@
   <div class="site-header">
     <a alt="{{ .Site.Title }}" aria-label="index" href="/" class="site-title">{{- .Site.Title -}}</a>
     <nav>
-      {{- $page := . -}}
       {{- range .Site.Menus.main -}}
       <div><a
-          {{ if or ($page.IsMenuCurrent .Menu .) (and (eq $page.Section "posts") (eq .Name "index")) -}}
-          class="menu-item active"
+          {{ if or ($.IsMenuCurrent .Menu .) ($.HasMenuCurrent .Menu .) -}}
+          class="active"
           {{- end -}}
           alt="{{ .Title }}" href="{{ .URL }}">{{ title .Title }}</a></div>
       {{- end -}}
