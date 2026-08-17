@@ -527,17 +527,23 @@ article.content {
       font-weight: var(--bold);
     }
 
-    .tag-container {
-      display: inline-flex;
+    .author-icon,
+    .tag-icon,
+    .hero-attribution-icon {
+      width: 15px;
+      height: 15px;
+
+      svg {
+        height: 100%;
+      }
+    }
+
+    .tag-container,
+    .author-container,
+    .hero-attribution-container {
+      display: flex;
       align-items: center;
       gap: 4px;
-      .tag-icon {
-        width: 15px;
-        height: 15px;
-        svg {
-          height: 100%;
-        }
-      }
     }
   }
 

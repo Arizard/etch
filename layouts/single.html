@@ -18,14 +18,22 @@
         </header>
         {{- if $hasByline -}}
         <address class="byline">
-            <p>
+            <div class="author-container">
+              <div class="author-icon">
+                {{ partial "svg.html" "icon/lucide/circle-user-round.svg" }}
+              </div>
+              <div>
                 {{- if and .Params.Author .Page.Params.Date -}}Published by <span class="author">{{- .Params.Author -}}</span> on <time>{{ .Page.Params.Date.Format "2 January 2006" }}</time>
                 {{- else if .Params.Author -}}Published by <span class="author">{{- .Params.Author -}}</span>
                 {{- else if .Page.Params.Date -}}<time>{{ .Page.Params.Date.Format "2 January 2006" }}</time>{{- end -}}
-            </p>
+              </div>
+            </div>
             {{- if .Page.Params.hero_attribution -}}
-            <div class="hero-attribution">
-              <p>{{ .RenderString .Page.Params.hero_attribution }}</p>
+            <div class="hero-attribution-container">
+              <div class="hero-attribution-icon">
+                {{ partial "svg.html" "icon/lucide/camera.svg" }}
+              </div>
+              <div>{{ .RenderString .Page.Params.hero_attribution }}</div>
             </div>
             {{- end -}}
             {{- if len (.GetTerms "tags") -}}
