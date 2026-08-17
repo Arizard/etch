@@ -147,6 +147,13 @@
     --hr-color: var(--gray-100);
     --elbow-color: var(--gray-600);
   }
+
+  --tags-bg: var(--primary-100);
+
+  @media(prefers-color-scheme: dark) {
+    --tags-bg: var(--primary-800);
+  }
+
 }
 
 body {
@@ -526,6 +533,22 @@ article.content {
       font-weight: var(--bold);
     }
 
+    .tag-container {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      .tag-icon {
+        width: 15px;
+        height: 15px;
+        svg {
+          height: 100%;
+        }
+      }
+      margin: 6px 0;
+      padding: 2px 8px;
+      background-color: var(--tags-bg);
+      border-radius: var(--radius-sharp);
+    }
   }
 
   strong {
