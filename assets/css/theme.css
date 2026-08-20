@@ -530,9 +530,7 @@ article.content {
     .author-icon,
     .tag-icon,
     .hero-attribution-icon {
-      width: 15px;
-      height: 15px;
-
+      height: 1lh;
       svg {
         height: 100%;
       }
@@ -541,8 +539,8 @@ article.content {
     .tag-container,
     .author-container,
     .hero-attribution-container {
-      display: flex;
-      align-items: center;
+      display: grid;
+      grid-template-columns: 15px auto;
       gap: 4px;
     }
   }
