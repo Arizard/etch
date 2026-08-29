@@ -336,7 +336,7 @@ header.site-header-container {
 
   width: 100vw;
   height: var(--header-height);
-  padding: 0 var(--spacing-s);
+  padding: 0 var(--spacing-xs);
 
   display: flex;
   flex-direction: column;
